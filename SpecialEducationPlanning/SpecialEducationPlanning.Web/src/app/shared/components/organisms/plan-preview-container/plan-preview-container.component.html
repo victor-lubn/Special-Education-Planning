@@ -1,0 +1,89 @@
+﻿<div class="plan-preview-container">
+
+  <div class="plan-preview-container-body">
+
+    <div class="plan-preview-container-image">
+      <tdp-spinner *ngIf="loadingImage"></tdp-spinner>
+      <img [src]="image" *ngIf="!loadingImage">
+    </div>
+
+    <ng-template [ngIf]="noImageAvailable">
+      <div class="plan-preview-container-no-image">
+        <tdp-no-image-icon width="5rem" height="5rem"></tdp-no-image-icon>
+        {{ 'dialog.noPlanPreview' | translate }}
+      </div>
+    </ng-template>
+
+    <ng-template [ngIf]="previewUnavailable">
+      <div class ="plan-preview-container-unavaliable">
+        <div class="plan-preview-container-unavaliable-title">
+          {{ 'dialog.previewUnavailable.title' | translate}}
+        </div>
+        <div
+          class="plan-preview-container-unavailable-description"
+          innerHTML="{{ 'dialog.previewUnavailable.messageOnline' | translate }}"
+        ></div>
+        <tdp-no-image-icon width="7rem" height="7rem"></tdp-no-image-icon>
+      </div>
+    </ng-template>
+
+  </div>
+
+  <div class="separator"></div>
+
+  <div class="plan-preview-container-footer">
+    <tdp-button
+      class="plan-preview-container-edit-button"
+      color="navy"
+      size="small"
+      (onClick)="handleEdit()">
+      {{ 'button.edit' | translate }}
+    </tdp-button>
+    <tdp-button
+      *tdpPermission="'Plan_Publish'"
+      class="plan-preview-container-publish-button"
+      color="green"
+      size="small"
+      [disabled]="noImageAvailable"
+      (onClick)="handlePublish()">
+      {{ 'dialog.publishTitle' | translate }}
+    </tdp-button>
+    @if (EducationOrigin === EducationToolType.THREE_DC) {
+      <tdp-button
+        class="plan-preview-container-fitters-pack-download-button"
+        color="navy"
+        size="small"
+        (onClick)="downloadFittersPackPdf()">
+        {{ 'dialog.printPlan' | translate }}
+      </tdp-button>
+    }
+
+     <!--<tdp-button
+      *ngIf="publishStatus === publishStatusEnum.Success"
+      class="plan-preview-container-publish-button"
+      size="small"
+      whiteGreenButton="true"
+      (onClick)="handleOpenMyKitchen()"
+    >
+      {{ 'button.openMyKitchen' | translate }}
+    </tdp-button>
+
+    <tdp-status-label
+      *ngIf="publishStatus === publishStatusEnum.Rendering"
+      color="green"
+      icon="true"
+    >
+      <tdp-spinner icon-button strokeWidth="3" diameter="20"></tdp-spinner>
+      {{ 'button.rendering' | translate }}
+    </tdp-status-label>
+
+    <tdp-status-label
+      *ngIf="publishStatus === publishStatusEnum.Error"
+      color="red"
+    >
+      {{ 'button.publishingError' | translate }}
+    </tdp-status-label>-->
+
+  </div>
+</div>
+

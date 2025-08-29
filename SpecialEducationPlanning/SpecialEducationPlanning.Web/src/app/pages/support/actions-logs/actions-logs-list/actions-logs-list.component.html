@@ -1,0 +1,38 @@
+<tdp-main-view>
+
+  <div class="main-view--header">
+    <tdp-content-subheader
+      [options]="options"
+      [form]="form"
+      [maxDate]="maximumDate"
+      ></tdp-content-subheader>
+  </div>
+
+  <div class="main-view--content">
+    <div class="tdp-action-logs-list-subheader">
+      <tdp-back-with-title
+        [title]="'support.actionLogs' | translate"
+        (onClick)="goBack()">
+      </tdp-back-with-title>
+      <tdp-button
+        class="tdp-action-logs-list-subheader-button"
+        whiteBlueButton="true"
+        icon="true"
+        (onClick)="exportToCsv()"
+      >
+        <tdp-globe-icon icon-button></tdp-globe-icon>
+        {{ 'actionLogsPage.export' | translate }}
+      </tdp-button>
+    </div>
+    <tdp-table
+      [records]="actionLogs"
+      [columnsConfiguration]="actionsColumnsConfiguration"
+      [hasActions]="false"
+      [pageSize]="pageSize"
+      (onPageChanged)="pageChanged($event)"
+      (onSortChanged)="sortChanged($event)">
+    </tdp-table>
+
+  </div>
+
+</tdp-main-view>

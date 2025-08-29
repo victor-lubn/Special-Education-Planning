@@ -1,0 +1,30 @@
+<tdp-modal
+  width="600px"
+  height="400px"
+  (onClosed)="close()">
+
+  <div title>{{ 'dialog.fusionDisabled.title' | translate }}</div>
+
+  <div>
+    {{ 'dialog.fusionDisabled.description' | translate }}
+    <ul>
+      <li>{{ 'dialog.fusionDisabled.createPlan' | translate }}</li>
+      <li>{{ 'dialog.fusionDisabled.openPlan' | translate }}</li>
+      <li>{{ 'dialog.fusionDisabled.modifyPlan' | translate }}</li>
+    </ul>
+    {{ 'dialog.fusionDisabled.support' | translate }}
+
+  </div>
+
+  <div actions>
+    <tdp-button
+      size="large"
+      color="green"
+      (onClick)="close()"
+      >
+      {{ 'button.cancel' | translate}}
+      </tdp-button>
+  </div>
+
+
+</tdp-modal>

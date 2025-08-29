@@ -1,0 +1,111 @@
+<tdp-modal
+  class="upload-csv-dialog"
+  maxWidth="800px"
+  height="100%"
+  (onClosed)="cancelDialog()"
+>
+  <div title>
+    {{ "dialog.uploadCSV.title" | translate }}
+  </div>
+
+  <div class="upload-csv-dialog-body">
+    <ng-container *ngIf="!file; else fileUploaded">
+      <div
+        tdpDndZone
+        (filesChange)="onFilesChange($event)"
+        class="upload-csv-dialog-upload-files"
+      >
+        <div class="icon-padding">
+          <tdp-cloud-upload-icon></tdp-cloud-upload-icon>
+        </div>
+        <div class="upload-csv-dialog-upload-files-main-text">
+          {{ "dialog.dropFileMsg" | translate }}
+          <input
+            type="file"
+            #uploadExplorer
+            hidden
+            multiple
+            accept=".csv"
+            (input)="onFilesChange($event.srcElement.files)"
+          />
+          <span
+            class="upload-csv-dialog-upload-files-link"
+            (click)="onClickSpan()"
+          >
+            {{ "dialog.chooseAFileMsg" | translate | lowercase }}
+          </span>
+        </div>
+        <div class="upload-csv-dialog-upload-files-bottom-text">
+          {{ "dialog.uploadOnlyOneFile" | translate }}
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-template #fileUploaded>
+      <div
+        class="upload-release-notes-dialog-body-files"
+        *ngIf="!csvUploadSuccess"
+      >
+        <div class="tdp-row tdp-dialog-file-uploaded">
+          <tdp-note-icon-svg></tdp-note-icon-svg>
+          {{ file.name }}
+          <tdp-cancel-icon
+            (click)="deleteFile()"
+            fillColor="#adadad"
+            width="0.8rem"
+            height="0.8rem"
+          ></tdp-cancel-icon>
+        </div>
+      </div>
+      <ng-container *ngIf="csvUploadSuccess; else uploadEntitiesErrors">
+        <div class="tdp-dialog-upload-success">
+          {{
+            "dialog.entitiesUploadedSuccess"
+              | translate: { numberOfEntities: entitiesUploaded }
+          }}
+        </div>
+      </ng-container>
+      <ng-template #uploadEntitiesErrors>
+        <div class="tdp-dialog-upload-errors-container">
+          <div
+            *ngFor="let errorMsg of uploadErrors"
+            class="tdp-dialog-upload-error"
+          >
+            - {{ errorMsg }}
+          </div>
+        </div>
+      </ng-template>
+    </ng-template>
+  </div>
+
+  <div actions>
+    <ng-container *ngIf="!csvUploadSuccess; else success">
+      <tdp-button
+        color="text-only"
+        size="large"
+        (onClick)="cancelDialog()"
+        class="cancel-button"
+      >
+        {{ "button.cancel" | translate }}
+      </tdp-button>
+      <ng-container>
+        <tdp-button
+          [disabled]="!file"
+          color="green"
+          size="large"
+          (onClick)="submitFiles()"
+        >
+          {{ "button.upload" | translate }}
+        </tdp-button>
+      </ng-container>
+    </ng-container>
+    <ng-template #success>
+      <tdp-button 
+        color="green"
+        size="large"
+        (onClick)="closeDialog()">
+        {{ "button.accept2" | translate }}
+      </tdp-button>
+    </ng-template>
+  </div>
+</tdp-modal>

@@ -1,0 +1,23 @@
+<form class="tdp-main-plan-details-form" [formGroup]="entityForm">
+    <div class="tdp-main-plan-details-form-control">
+        <tdp-input 
+            class="tdp-main-plan-details-form-input"
+            formControlName="tradingName"
+            type="text"
+            [ngClass]="{ 'error-message': checkHasErrorV2('tradingName') }"
+            [title]="'planDetails.tradingName' | translate"
+            [required]="true">
+        </tdp-input>
+        <div *ngIf="checkHasErrorV2('tradingName', 'required')" class="tdp-main-plan-details-form-error">
+            {{ 'validationErrors.required' | translate }}
+        </div>
+    </div>
+
+    <div class="tdp-main-plan-details-form-control">
+        <tdp-partial-address-form 
+            class="tdp-main-plan-details-form--partial-address-form"
+            [formGroup]="entityForm"
+            [singleLine]="true">
+        </tdp-partial-address-form>
+    </div>   
+</form>

@@ -1,0 +1,46 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-account-details {
+    transform: translateY(-1px);
+
+    &-box {
+        display: flex;
+        flex-direction: row;
+        border: 1px solid $input-border-grey;
+        border-radius: 0.625rem;
+        border-top-left-radius: 0%;
+        border-top-right-radius: 0%;
+        padding: 1.875rem 1.25rem;
+    }
+
+    &-item {
+        padding: 0 0.25rem;
+
+        &--title,
+        &--value {
+            font-size: 0.938rem;
+            line-height: 1.313rem;
+        }
+        
+        &--title {
+            font-weight: 700;
+            margin-bottom: 0.313rem;
+        }
+
+        &.trading-name {
+            flex: 0 1 27%;
+        }
+
+        &.address {
+            flex: 0 1 38%;
+        }
+
+        &.postcode {
+            flex: 0 1 20%;
+        }
+
+        &.mobile-number {
+            flex: 0 1 15%;
+        }
+    }
+}

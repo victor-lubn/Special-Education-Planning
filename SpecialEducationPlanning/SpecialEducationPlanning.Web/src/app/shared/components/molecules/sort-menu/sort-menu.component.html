@@ -1,0 +1,12 @@
+<mat-menu class="tdp-sort-menu" #sortMenu="matMenu" [overlapTrigger]="overlapTrigger">
+  <button mat-menu-item>
+    <tdp-radio-button value="asc" (change)="changeHandler($event)" [checked]="value === 'asc'">
+      {{ 'sortBy.ascending' | translate }}
+    </tdp-radio-button>
+  </button>
+  <button mat-menu-item>
+    <tdp-radio-button value="desc" (change)="changeHandler($event)" [checked]="value === 'desc'">
+      {{ 'sortBy.descending' | translate }}
+    </tdp-radio-button>
+  </button>
+</mat-menu>

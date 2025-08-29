@@ -1,0 +1,46 @@
+@import "/src/assets/sass/abstracts/variables";
+
+tdp-autocomplete {
+
+  tdp-input {
+    &.autocomplete-opened {
+
+      .tdp-input {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+  }
+}
+
+.tdp-autocomplete {
+  &.mat-mdc-autocomplete-panel {
+    box-shadow: none !important;
+    border: 0.063rem solid $input-border-grey;
+    border-top-width: 0;
+    border-radius: .625rem;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-sizing: border-box;
+    max-height: 12.75rem;
+  
+    .mat-mdc-option {
+      line-height: normal;
+      height: auto;
+      min-height: 3.125rem;
+      font-family: 'Rooster', 'Open Sans', serif;
+      font-size: 0.938rem;
+      padding: 0.375rem;
+
+      &:hover {
+        background-color: $very-light-grey;
+        background-clip: content-box;
+        outline: 0.063rem solid $border-grey;
+        outline-offset: -0.375;
+      }      
+      .mdc-list-item__primary-text {
+        margin-left: 1.125rem;
+      }
+    }
+  }
+}

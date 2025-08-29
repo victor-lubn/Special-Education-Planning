@@ -1,0 +1,15 @@
+.tdp-unable-supports-log-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &-subtitle{
+      margin: 0 4rem;
+      text-align-last: center;
+    }
+    &-okay{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 6.25rem;
+    }
+  }

@@ -1,0 +1,12 @@
+<div class="content-subheader-container">
+    <div class="content-subheader-container-date-picker">
+        <tdp-date-picker-range
+            [formGroup]="form"
+            groupControlName="range"
+            [max]="maxDate"
+            [startLabel]="'dateRange.startDate' | translate"
+            [endLabel]="'dateRange.endDate' | translate">
+        </tdp-date-picker-range>
+    </div>
+    <tdp-filter-header [form]="form" [options]="options"> </tdp-filter-header>
+</div>

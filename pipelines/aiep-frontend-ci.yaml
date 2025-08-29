@@ -1,0 +1,37 @@
+﻿trigger: none
+
+schedules:
+- cron: "0 19 * * 1-5"  # Runs at 7pm UTC Mon - Fri
+  displayName: "Daily Front-End CI Build"
+  branches:
+    include:
+    - develop
+  always: true
+
+resources:
+  repositories:
+  - repository: templates
+    type: git
+    name: 'aiep Core/aiep.core.azdo.templates'
+    ref: feature/Educationview_templates_protool
+
+name: $(Build.DefinitionName)_$(Date:ddMMyyyy)$(Rev:.r)
+
+variables:
+- group: tdp-frontend-app
+
+extends:
+  template: docker/stages/build_tdp_frontend_stage.yaml@templates
+  parameters:
+    StageName:                         'Build_TDP_Frontend_Assets'
+    AgentPool:                         'aiep Trade Windows NonPrd UKS - VMSS'
+    CD_Build:                          false
+    CI_Build:                          true
+    AngularVersion:                    $(angular_version)
+    BuildArtifactName:                 $(build_artifact_name)
+    MiddlewareWorkingDirectory:        $(middleware_folder)
+    Middleware3DCWorkingDirectory:     $(middleware_3dc_folder)
+    OfflineMiddlewareWorkingDirectory: $(offline_middleware_folder)
+    NodeVersion:                       $(node_version)
+    PythonVersion:                     $(python_version)
+    WebWorkingDirectory:               $(web_working_folder)

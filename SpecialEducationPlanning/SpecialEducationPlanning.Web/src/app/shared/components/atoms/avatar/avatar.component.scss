@@ -1,0 +1,38 @@
+@use "/src/assets/sass/abstracts/variables";
+
+.tdp-avatar {
+  display: flex;
+}
+
+.tdp-avatar-circle {
+  display: flex;
+  border-radius: 50%;
+  background: variables.$blue;
+  align-content: center;
+  justify-content: center;
+
+  &--large {
+    width: 140px;
+    height: 140px;
+    font-size: 72px;
+  }
+
+  &--small {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.tdp-avatar-initials {
+  color: variables.$white;
+  align-self: center;
+  margin-top: -10%;
+  font-weight: 700;
+  font-style: normal;
+  font-family: 'Rooster';
+}

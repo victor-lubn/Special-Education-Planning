@@ -1,0 +1,29 @@
+<div class="tdp-molecules-project-container">
+  <ng-container *ngIf="!isNotMainPlanDetails">
+    <ng-container *ngIf="isUnassigned; else builderTradingName">
+      <tdp-item-details
+        class="unassigned-text"
+        [label]="'Plan.BuilderTradingName'"
+        [data]="'plan.unassigned' | translate"
+        [isNotice]="true">
+      </tdp-item-details>
+    </ng-container>
+    <ng-template #builderTradingName>
+      <tdp-item-details
+        [label]="'Plan.BuilderTradingName'"
+        [data]="data?.builderTradingName">
+      </tdp-item-details>
+    </ng-template>
+  </ng-container>
+  
+  <tdp-item-details
+    [label]="'Plan.CadFilePlanId'"
+    [data]="data?.cadFilePlanId"
+    *ngIf="data?.cadFilePlanId">
+  </tdp-item-details>
+  
+  <tdp-item-details 
+    [label]="'Plan.PlanCode'" 
+    [data]="data?.planCode">
+  </tdp-item-details>
+</div>

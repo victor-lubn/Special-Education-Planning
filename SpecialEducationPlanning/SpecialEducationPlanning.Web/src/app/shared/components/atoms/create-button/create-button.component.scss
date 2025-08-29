@@ -1,0 +1,52 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-create-button {
+    width: 62px;
+    height: 62px;
+    font-size: 12px;
+    background: $aiep-green;
+    border-radius: 100%;
+    cursor: pointer;
+    border: 0;
+
+    &-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: max-content;
+        padding: 30px;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        z-index: 1;
+    }
+
+    &-text {
+        margin-top: 6px;
+        font-size: 12px;
+        line-height: 21px;
+    }
+
+    &:focus {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), $aiep-green;
+    }
+
+    &:hover {
+        background: linear-gradient(0deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.15)), $aiep-green;
+    }
+
+    &:active {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), $aiep-green;
+    }
+
+    &:disabled {
+        background: #C4C4C4;
+        cursor: auto;
+    }
+}
+
+.fa-plus {
+    color: white;
+    font-size: 31px;
+    transform: translateY(3%);
+}

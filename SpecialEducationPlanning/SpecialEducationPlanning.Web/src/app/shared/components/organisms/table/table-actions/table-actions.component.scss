@@ -1,0 +1,9 @@
+.table-actions {
+  display: flex;
+  opacity: 1;
+  position: absolute;
+
+  &.actions-invisible {
+    opacity: 0;
+  }
+}

@@ -1,0 +1,35 @@
+.tdp-release-notes {
+    &-content {
+        &-header {
+            margin-bottom: 2.5rem;
+            display: flex;
+            align-items: center;
+    
+            &--upload-button {
+                margin-left: auto;
+            }
+        }
+
+        &-table {
+            ::ng-deep {
+                .mat-column-title {
+                    flex: 0 1 25%;
+                  }
+                
+                  .mat-column-version {
+                    flex: 0 1 20%;
+                  }
+                
+                  .mat-column-fusionVersion {
+                    flex: 0 1 20%;
+                  }
+              
+                  .mat-column-dateTime {
+                    flex: 0 1 15%;
+                  }
+              
+
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+<form [formGroup]="entityForm">
+  <div class="tdp-new-template-form">
+    <tdp-input
+      class="tdp-new-template-form-input"
+      formControlName="templateName"
+      [ngClass]="{ 'error-message': checkHasErrorV2('templateName') }"
+      [required]="true"
+      [type]="'text'"
+      [title]="templateNameString"
+    ></tdp-input>
+    <div class="tdp-new-template-form-container">
+      <div *ngIf="checkHasErrorV2('templateName', 'required')" class="tdp-new-template-form-container-error">
+        {{ "validationErrors.required" | translate }}
+      </div>
+      <div *ngIf="checkHasErrorV2('templateName', 'maxlength')" class="tdp-new-template-form-container-error">
+        {{ 'validationErrors.maxlength' | translate: { maxlength: templateNameMaxLength } }}
+      </div>
+      <div *ngIf="entityForm.get('templateName').hasError('duplicate') && entityForm.get('templateName').touched" class="tdp-new-template-form-container-error">
+        {{ "validationErrors.duplicateTemplateName" | translate }}
+      </div>
+    </div>
+    <div class="tdp-atom-search-advanced-options">
+      <div class="tdp-atom-search-advanced-options-label">
+        {{ 'template.templateType' | translate }}
+      </div>
+      <div class="tdp-atom-search-advanced-options-radio">
+        <mat-radio-group formControlName="templateType">
+          <mat-radio-button value="projectWide"  class="vertical-radio-button">
+            {{ 'template.projectWide' | translate }}
+          </mat-radio-button>
+          <mat-radio-button value="assignedToHouseSpecification"  class="vertical-radio-button">
+            {{ 'template.assignedToHouseSpecification' | translate }}
+          </mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </div>
+    <div class="tdp-new-template-form-container"></div>
+    <tdp-select
+      *ngIf="isAssignedToHouseSpecification()"
+      formControlName="housingSpecification"
+      [ngClass]="{ 'error-message': checkHasErrorV2('housingSpecification') }"
+      [label]="housingSpecificationString"
+      [options]="housingSpecificationsOptions" 
+      [required]="true" 
+      (valueChange)="selectHousingSpecification($event)" 
+    ></tdp-select>
+    <div class="tdp-new-template-form-container" *ngIf="isAssignedToHouseSpecification()">
+      <div
+        *ngIf="checkHasErrorV2('housingSpecification', 'required')"
+        class="tdp-new-template-form-container-error"
+      >
+        {{ "validationErrors.required" | translate }}
+      </div>
+    </div>
+    <tdp-select 
+      formControlName="planType" 
+      [ngClass]="{ 'error-message': checkHasErrorV2('planType') }"
+      [label]="planTypeString"
+      [required]="true"
+      [options]="displayPlanTypeOptions()"
+      (valueChange)="selectHousingType($event)"
+    ></tdp-select>
+    <div class="tdp-new-template-form-container">
+      <div
+        *ngIf="checkHasErrorV2('planType', 'required')"
+        class="tdp-new-template-form-container-error"
+      >
+        {{ "validationErrors.required" | translate }}
+      </div>
+    </div>
+    <tdp-select 
+      formControlName="catalogue"
+      [required]="true"
+      [ngClass]="{ 'error-message': checkHasErrorV2('catalogue') }"
+      [label]="catalogueString" 
+      [options]="displayCatalogOptions()"
+    ></tdp-select>
+    <div class="tdp-new-template-form-container">
+      <div
+        *ngIf="checkHasErrorV2('catalogue', 'required')"
+        class="tdp-new-template-form-container-error"
+      >
+        {{ "validationErrors.required" | translate }}
+      </div>
+    </div>
+  </div>
+</form>

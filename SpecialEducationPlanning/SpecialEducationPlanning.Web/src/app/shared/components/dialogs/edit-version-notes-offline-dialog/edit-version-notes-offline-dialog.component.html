@@ -1,0 +1,57 @@
+<tdp-modal
+  width="800px"
+  height="100%"
+  [hasBodySeparator]="true"
+  [closable]="false">
+
+  <div title>
+    {{ 'dialog.editVersionNotes.title' | translate }}
+  </div>
+
+  <div class="edit-version-notes-offline-body">
+    <form [formGroup]="entityForm" (ngSubmit)="saveVersionNote()" id="saveNotes">
+
+      <tdp-text-area
+        [title]="'dialog.editVersionNotes.versionNotes' | translate"
+        formControlName="versionNotes"
+        [ngClass]="{ 'edit-version-notes-offline-body-error': checkHasErrorV2('versionNotes') }"
+      ></tdp-text-area>
+      <div *ngIf="checkHasErrorV2('versionNotes', 'maxlength')" class="edit-version-notes-offline-body-error-message">
+        {{ 'validationErrors.maxlength' | translate: { maxlength: maxVersionNotesLength }  }}
+      </div>
+
+      <tdp-input
+        class="edit-version-notes-offline-body-input"
+        [title]="'dialog.editVersionNotes.quoteOrderNumber' | translate"
+        formControlName="quoteOrderNumber"
+        [ngClass]="{ 'edit-version-notes-offline-body-error': checkHasErrorV2('quoteOrderNumber')}"
+      ></tdp-input>
+      <div *ngIf="checkHasErrorV2('quoteOrderNumber', 'maxlength')" class="edit-version-notes-offline-body-error-message">
+        {{ 'validationErrors.maxlength' | translate: { maxlength: maxVersionQuoteNumberLength }  }}
+      </div>
+
+    </form>
+  </div>
+
+  <div actions>
+    <tdp-button
+      size="large"
+      color="text-only"
+      (onClick)="closeDialog()"
+    >
+      {{ 'button.discardChanges' | translate }}
+    </tdp-button>
+
+    <tdp-button
+      type="submit"
+      form="saveNotes"
+      size="large"
+      color="green"
+      [disabled]="!entityForm.valid"
+    >
+      {{ 'button.save' | translate }}
+    </tdp-button>
+
+  </div>
+
+</tdp-modal>

@@ -1,0 +1,127 @@
+﻿<tdp-details-template>
+  <div class="details-header">
+    <tdp-customer-header
+      [builderName]="originalBuilder?.tradingName"
+      [creditAccount]="originalBuilder?.accountNumber"
+    ></tdp-customer-header>
+  </div>
+
+  <div class="details-left-sidebar">
+    <tdp-customer-container-left-hand-side
+      [customerData]="originalBuilder"
+      (submitData)="updateInfo($event)"
+    ></tdp-customer-container-left-hand-side>
+  </div>
+
+  <div class="details-top-container">
+    <form [formGroup]="builderNotesForm">
+      <tdp-customer-notes
+        [noteValue]="builderNotesValue"
+        [placeholder]="'plan.makeNote' | translate"
+        [disabledButton]="true"
+        (submitted)="updateBuilderNotes($event)"
+        formControlName="builderNotes"
+        ngDefaultControl
+      ></tdp-customer-notes>
+    </form>
+  </div>
+
+  <div class="details-bottom-container">
+    <tdp-button
+      class="tdp-assign-plan-button"
+      [size]="'small'"
+      [color]="'green'"
+      (onClick)="openUnassignedPlanDialog()"
+    >
+      {{ "button.assignPlan" | translate }}
+    </tdp-button>
+    <tdp-tabs>
+      <mat-tab label="{{ 'builder.activePlans' | translate }}">
+        <tdp-table
+          [records]="tablePlans"
+          [columnsConfiguration]="planColumnNames"
+          (onPageChanged)="pageChanged($event)"
+          (onSortChanged)="sortChanged($event)"
+          (onRowClicked)="goToPlanDetails($event)"
+          [pageSize]="pageSize"
+        >
+          <tdp-table-actions>
+            <ng-template let-record="record">
+              <tdp-table-action (click)="openPreviewDialog($event, record)">
+                <tdp-preview-icon
+                  class="tdp-actions-icon"
+                  fillColor="#ADADAD"
+                  width="1.5rem"
+                  height="1.5rem"
+                  [matTooltip]="'button.preview' | translate">
+                </tdp-preview-icon>
+              </tdp-table-action>
+              <tdp-table-action *tdpPermission="'Plan_Modify'" (click)="openPlanInEducationTool($event, record)">
+                <tdp-launch-icon
+                  class="tdp-actions-icon"
+                  [matTooltip]="'button.edit' | translate">
+                </tdp-launch-icon>
+              </tdp-table-action>
+              <tdp-table-more-actions *tdpPermission="'Plan_Management'">
+                <tdp-table-more-action
+                  (click)="openTransferSinglePlanDialog($event, record)"
+                >
+                  {{ "button.transferPlan" | translate }}
+                </tdp-table-more-action>
+              </tdp-table-more-actions>
+            </ng-template>
+          </tdp-table-actions>
+        </tdp-table>
+      </mat-tab>
+      <mat-tab label="{{ 'builder.archivedPlans' | translate }}">
+        <tdp-table
+          [records]="archivedTablePlans"
+          [columnsConfiguration]="planColumnNames"
+          (onPageChanged)="pageChangedArchivedPlans($event)"
+          (onSortChanged)="sortChangedArchivedPlans($event)"
+          (onRowClicked)="goToPlanDetails($event)"
+          [pageSize]="pageSize"
+        >
+          <tdp-table-actions>
+            <ng-template let-record="record">
+              <tdp-table-action (click)="openPreviewDialog($event, record)">
+                <tdp-preview-icon
+                  class="tdp-actions-icon"
+                  fillColor="#ADADAD"
+                  width="1.5rem"
+                  height="1.5rem"
+                  [matTooltip]="'button.preview' | translate">
+                </tdp-preview-icon>
+              </tdp-table-action>
+              <tdp-table-action
+                (click)="restoreArchivedPlan($event, record)">
+                <tdp-restore-icon
+                  class="tdp-actions-icon"
+                  fillColor="#ADADAD"
+                  width="1.5rem"
+                  height="1.5rem"
+                  [matTooltip]="'button.restore' | translate">
+                </tdp-restore-icon>
+              </tdp-table-action>
+              <tdp-table-more-actions>
+                <tdp-table-more-action
+                  *tdpPermission="'Plan_Management'"
+                  (click)="openTransferSinglePlanDialog($event, record)"
+                >
+                  {{ "button.transferPlan" | translate }}
+                </tdp-table-more-action>
+              </tdp-table-more-actions>
+            </ng-template>
+          </tdp-table-actions>
+        </tdp-table>
+      </mat-tab>
+    </tdp-tabs>
+  </div>
+</tdp-details-template>
+
+<tdp-create-button
+  *tdpPermission="'Plan_Create'"
+  [text]="'button.createPlan' | translate"
+  (onClick)="openCreatePlanModal()">
+</tdp-create-button>
+

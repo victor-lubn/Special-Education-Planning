@@ -1,0 +1,54 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-input {
+    border-radius: 10px;
+    height: 56px;
+    font-family: 'Rooster';
+    padding-left: 18px;
+    padding-right: 44px;
+    width: 328px;
+    box-sizing: border-box;
+    border: 1px solid $input-border-grey;
+    outline: none;
+    font-size: 0.9375rem;
+
+    &:focus {
+        border: 1px solid $navy;
+    }
+
+    &--error {
+        border: 2px solid $error-red;
+    }
+}
+
+tdp-icon {
+    position: absolute;
+    transform: translate(-32px, 17px);
+}
+
+label {
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 21px;
+    margin-bottom: 6px;
+    display: inline-block;
+}
+
+.error-message-text {
+    margin-top: 9px;
+    color: $error-red;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    line-height: 21px;
+}
+
+.ng-invalid.ng-touched,
+.error-message {
+    border: 2px solid $error-red;
+}
+
+.required {
+    &:after {
+        content: "*";
+    }
+}

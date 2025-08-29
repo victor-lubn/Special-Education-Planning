@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(netcoreapp)</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="EntityFramework" Version="$(EntityFramework)" />
+    <PackageReference Include="Koa.Domain" Version="$(KoaPackageVersion)" />
+    <PackageReference Include="Koa.Domain.Search" Version="$(KoaPackageVersion)" />
+    <PackageReference Include="Koa.Integration.PubSub" Version="$(KoaPackageVersion)" />
+    <PackageReference Include="Koa.Persistence.Abstractions" Version="$(KoaPackageVersion)" />
+    <PackageReference Include="Koa.Persistence.EntityRepository" Version="$(KoaPackageVersion)" />
+    <PackageReference Include="Koa.Persistence.EntityRepository.EntityFrameworkCore" Version="$(KoaPackageVersion)" />
+    <PackageReference Include="LaunchDarkly.ServerSdk" Version="$(LaunchDarklyServerSdk)" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Abstractions" Version="$(MicrosoftAspNetCoreMvcAbstractions)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="$(MicrosoftExtensionsConfigurationAbstractions)" />
+    <PackageReference Include="System.Text.Json" Version="$(SystemTextJson)" />
+  </ItemGroup>
+
+  <ItemGroup>
+  <PackageReference Include="SharpZipLib" Version="1.2.0" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <ProjectReference Include="..\SpecialEducationPlanning
+.Domain\SpecialEducationPlanning
+.Domain.csproj" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Folder Include="Service\" />
+  </ItemGroup>
+
+</Project>

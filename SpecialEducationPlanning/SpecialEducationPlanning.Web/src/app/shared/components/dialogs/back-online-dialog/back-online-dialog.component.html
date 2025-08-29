@@ -1,0 +1,18 @@
+<div class="tdp-row tdp-dialog-upper">
+  {{ 'dialog.backOnline.title' | translate }}
+  <i class="fas fa-times" (click)="cancelAndCloseDialog()"></i>
+</div>
+<p class="tdp-dialog-info-message">
+   {{ 'dialog.backOnline.connected' | translate }}<br/>
+  <b>{{ 'dialog.backOnline.saveWork' | translate }}</b><br/><br/>
+
+  {{ 'dialog.backOnline.options' | translate }}
+</p>
+<div class="tdp-row tdp-dialog-actions">
+  <button
+    (click)="acceptAction()"
+    class="tdp-primary-btn">
+    {{ 'button.goOnline' | translate }}
+    <i class="fas fa-chevron-right"></i>
+  </button>
+</div>

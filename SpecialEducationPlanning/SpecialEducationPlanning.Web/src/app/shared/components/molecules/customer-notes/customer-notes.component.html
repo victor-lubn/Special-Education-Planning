@@ -1,0 +1,39 @@
+<form
+  [formGroup]="entityForm"
+  (ngSubmit)="onSubmit()"
+  class="tdp-customer-notes"
+>
+  <div class="tdp-customer-notes-content" [ngClass]="{ 'tdp-customer-notes-content-error' : checkHasErrorV2('note', 'maxlength') }">
+    <tdp-text-area
+      formControlName="note"
+      [value]="noteValue"
+      [placeholder]="placeholder"
+      (keydown)="autoGrowTextZone($event)"
+    ></tdp-text-area>
+  </div>
+  <div class="tdp-customer-notes-button-container">
+    <div *ngIf="checkHasErrorV2('note', 'maxlength')" class="tdp-atoms-error-message">
+      {{ 'validationErrors.maxlength' | translate: { maxlength: maxNotesLength }  }}
+    </div>
+    <tdp-button
+      class="tdp-customer-notes-button-container-button"
+      [color]="'white'"
+      [size]="'small'"
+      type="submit"
+      [disabled]="disableButton"
+      >
+        {{ updateButtonText | translate }}
+      </tdp-button
+    >
+  </div>
+
+
+  <div class="tdp-customer-notes-resizer" (click)="expandTheCustomerNotes()">
+    <tdp-expand-icon
+      fillColor="#ADADAD"
+      width="1.5rem"
+      height="1.5rem"
+      [matTooltip]="'button.notesExpand' | translate">
+    </tdp-expand-icon>
+  </div>
+</form>

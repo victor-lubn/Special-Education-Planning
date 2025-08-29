@@ -1,0 +1,106 @@
+﻿<div class="plan-body">
+    <div class="plan-details">
+        <div class="plan-details-header">
+            <div class="plan-details-header--title">
+                {{ 'plan.tradeCustomer' | translate }}
+            </div>
+            <div class="plan-details-header--sub-title">
+                {{ plan?.builderTradingName ? plan.builderTradingName : ('plan.unassigned' | translate) }}
+            </div>
+        </div>
+
+        <div class="plan-details-group">
+            <div class="plan-details-sub-header-key">
+                {{ 'plan.EducationTool' | translate }}
+            </div>
+            <div class="plan-details-sub-header-value">
+                <ng-container *ngIf="plan?.EducationOrigin; else noOrigin">
+                    {{ ('EducationToolType.' + plan.EducationOrigin) | translate }}
+                </ng-container>
+                <ng-template #noOrigin>-</ng-template>
+            </div>
+        </div>
+        <div class="plan-details-group">
+            <div class="plan-details-sub-header-key">
+                {{ 'plan.Educationer' | translate }}
+            </div>
+            <div class="plan-details-sub-header-value">
+                {{ Educationer?.fullName || '-' }}
+            </div>
+        </div>
+        <form [formGroup]="entityForm" (ngSubmit)="onUpdate()">
+            <div class="plan-details-group">
+                <tdp-select formControlName="planType" ngDefaultControl [label]="planTypeTranslation"
+                    [options]="displayPlanTypeOptions()">
+                </tdp-select>
+            </div>
+            <div class="plan-details-group">
+                <tdp-input [title]="'plan.planName' | translate" [type]="'text'" class="tdp-plan-details-input" ngDefaultControl
+                    formControlName="planName">
+                </tdp-input>
+            </div>
+            <div class="plan-details-group">
+                <tdp-select formControlName="catalogId" ngDefaultControl
+                    [label]="catalogueTranslation" [options]="displayCatalogOptions()">
+                </tdp-select>
+            </div>
+            <div class="plan-details-group survey-group">
+                <div class="plan-details-sub-header-key">
+                    {{ 'plan.survey' | translate }}
+                </div>
+                <mat-radio-group class="radio-button-options" formControlName="survey">
+                    <div class="radio-button-option">
+                        <tdp-radio-button [value]="true" (change)="changeSurveyResponse($event)"
+                            [checked]="entityForm.get('survey').value === true">
+                            {{ 'booleanResponse.yes' | translate }}
+                        </tdp-radio-button>
+                    </div>
+                    <div class="radio-button-option">
+                        <tdp-radio-button [value]="false" (change)="changeSurveyResponse($event)"
+                            [checked]="entityForm.get('survey').value === false">
+                            {{ 'booleanResponse.no' | translate}}
+                        </tdp-radio-button>
+                    </div>
+                </mat-radio-group>
+            </div>
+            <div class="plan-details-group">
+                <div class="plan-details-sub-header-key">
+                    {{ 'plan.endUser' | translate }}
+                </div>
+                <mat-radio-group class="radio-button-options" formControlName="hasEndUser">
+                    <div class="radio-button-option">
+                        <tdp-radio-button [value]="true" (change)="changeEndUserResponse($event)"
+                            [checked]="entityForm.get('hasEndUser').value === true">
+                            {{ 'booleanResponse.yes' | translate }}
+                        </tdp-radio-button>
+                    </div>
+                    <div class="radio-button-option">
+                        <tdp-radio-button [value]="false" (change)="changeEndUserResponse($event)"
+                            [checked]="entityForm.get('hasEndUser').value === false">
+                            {{ 'booleanResponse.no' | translate}}
+                        </tdp-radio-button>
+                    </div>
+                </mat-radio-group>
+            </div>
+            <tdp-button class="update-button" [size]="'small'" [color]="'white'" [disabled]="entityForm.pristine" type="submit">
+                {{ 'button.update' | translate | uppercase }}
+            </tdp-button>
+        </form>
+    </div>
+</div>
+<div class="separator"></div>
+<div class="plan-footer">
+    <tdp-button *ngIf="plan?.builderId" [size]="'small'" [color]="'white'" (onClick)="onUnassignPlanClick()">
+        {{ 'button.unassignPlan' | translate }}
+    </tdp-button>
+    <tdp-button *ngIf="plan?.planState === planStateEnum.Active" [size]="'small'" [color]="'white'" (onClick)="onArchivePlanClick()">
+        {{ 'button.archivePlan' | translate }}
+    </tdp-button>
+    <tdp-button *ngIf="plan?.planState === planStateEnum.Archived" [size]="'small'" [color]="'white'" (onClick)="onRestoreArchivedPlanClick()">
+        {{ 'button.unarchive' | translate }}
+    </tdp-button>
+    <tdp-button *tdpPermission="'Plan_Management'" [size]="'small'" [color]="'white'" (onClick)="onUploadPlanClick()">
+        {{ 'button.uploadNewVersion' | translate }}
+    </tdp-button>
+</div>
+

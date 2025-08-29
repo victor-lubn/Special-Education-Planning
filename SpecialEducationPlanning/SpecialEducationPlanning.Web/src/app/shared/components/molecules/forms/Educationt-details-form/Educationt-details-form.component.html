@@ -1,0 +1,158 @@
+﻿<form
+    class="tdp-Aiep-details-form"
+    [formGroup]="entityForm">
+    <div
+        class="tdp-Aiep-details-form-inputs">
+        <div class="tdp-Aiep-details-form-control">
+            <tdp-input
+                class="tdp-Aiep-details-form-control--input"
+                formControlName="AiepCode"
+                [class.error-message]="checkHasErrorV2('AiepCode')"
+                [title]="'Aiep.AiepCode' | translate"
+                [required]="true">
+            </tdp-input>
+            <div *ngIf="checkHasErrorV2('AiepCode', 'required')" class="tdp-Aiep-details-form-error">
+                {{ 'validationErrors.required' | translate }}
+            </div>
+        </div>
+        <div class="tdp-Aiep-details-form-control">
+            <tdp-input
+                class="tdp-Aiep-details-form-control--input"
+                formControlName="name"
+                [class.error-message]="checkHasErrorV2('name')"
+                [title]="'Aiep.name' | translate"
+                [required]="true">
+            </tdp-input>
+            <div *ngIf="checkHasErrorV2('name', 'required')" class="tdp-Aiep-details-form-error">
+                {{ 'validationErrors.required' | translate }}
+            </div>
+        </div>
+        <div class="tdp-Aiep-details-form-control">
+            <tdp-input
+                class="tdp-Aiep-details-form-control--input"
+                formControlName="email"
+                [class.error-message]="checkHasErrorV2('email')"
+                [title]="'Aiep.email' | translate"
+                [required]="true">
+            </tdp-input>
+            <div *ngIf="checkHasErrorV2('email', 'required')" class="tdp-Aiep-details-form-error">
+                {{ 'validationErrors.required' | translate }}
+            </div>
+            <div *ngIf="checkHasErrorV2('email', 'email')" class="tdp-Aiep-details-form-error">
+                {{ 'validationErrors.mustBeEmail' | translate }}
+            </div>
+        </div>
+        <div class="tdp-Aiep-details-form-control">
+            <tdp-autocomplete
+                ngDefaultControl
+                class="tdp-Aiep-details-form-control--autocomplete"
+                formControlName="areaName"
+                [class.error-message]="checkHasErrorV2('areaName')"
+                [title]="'Aiep.area' | translate"
+                [elementList]="areaNameList"
+                [displayWith]="displayWith"
+                [required]="true">
+            </tdp-autocomplete>
+            <div *ngIf="checkHasErrorV2('areaName', 'required')" class="tdp-Aiep-details-form-error">
+                {{ 'validationErrors.required' | translate }}
+            </div>
+        </div>
+        <div class="tdp-Aiep-details-form-control-partial-address">
+            <tdp-partial-address-form 
+                gap="4rem"
+                [formGroup]="entityForm" 
+                [singleLine]="true">
+            </tdp-partial-address-form>
+        </div>
+        <div class="tdp-Aiep-details-form-control">
+            <tdp-input
+                class="tdp-Aiep-details-form-control--input"
+                formControlName="address2"
+                [title]="'Aiep.address2' | translate">
+            </tdp-input>
+        </div>
+        <div class="tdp-Aiep-details-form-control">
+            <tdp-input
+                class="tdp-Aiep-details-form-control--input"
+                formControlName="address3"
+                [title]="'Aiep.address3' | translate">
+            </tdp-input>
+        </div>
+        <div class="tdp-Aiep-details-form-control">
+            <tdp-input
+                class="tdp-Aiep-details-form-control--input"
+                formControlName="phoneNumber"
+                [title]="'Aiep.phoneNumber' | translate"
+                >
+            </tdp-input>
+        </div>
+        <div class="tdp-Aiep-details-form-control">
+            <tdp-input
+                class="tdp-Aiep-details-form-control--input"
+                formControlName="faxNumber"
+                [title]="'Aiep.faxNumber' | translate">
+            </tdp-input>
+        </div>
+        <div class="tdp-Aiep-details-form-control">
+            <tdp-autocomplete
+                ngDefaultControl
+                class="tdp-Aiep-details-form-control--autocomplete"
+                formControlName="managerName"
+                [title]="'Aiep.manager' | translate"
+                [elementList]="managerUsernameList"
+                [displayWith]="displayWith">
+            </tdp-autocomplete>
+        </div>
+        <div class="tdp-Aiep-details-form-control">
+            <tdp-input
+                class="tdp-Aiep-details-form-control--input"
+                formControlName="ipAddress"
+                [class.error-message]="checkHasErrorV2('ipAddress')"
+                [title]="'Aiep.ipAddress' | translate">
+            </tdp-input>
+            <div *ngIf="checkHasErrorV2('ipAddress', 'pattern')" class="tdp-Aiep-details-form-error">
+                {{ 'validationErrors.invalidIpAddress' | translate}}
+            </div>
+        </div>
+        <div class="tdp-Aiep-details-form-control">
+            <tdp-input
+                class="tdp-Aiep-details-form-control--input"
+                formControlName="downloadLimit"
+                [class.error-message]="checkHasErrorV2('downloadLimit')"
+                [title]="'Aiep.downloadLimit' | translate"
+                [required]="true">
+            </tdp-input>
+            <div *ngIf="checkHasErrorV2('downloadLimit', 'required')" class="tdp-Aiep-details-form-error">
+                {{ 'validationErrors.required' | translate }}
+            </div>
+            <div *ngIf="checkHasErrorV2('downloadLimit', 'min')" class="tdp-Aiep-details-form-error">
+                {{ 'validationErrors.min' | translate: { minValue: '0' } }}
+              </div>
+              <div *ngIf="checkHasErrorV2('downloadLimit', 'max')" class="tdp-Aiep-details-form-error">
+                {{ 'validationErrors.max' | translate: { maxValue: '100' } }}
+              </div>
+        </div>
+        <div class="tdp-Aiep-details-form-control">
+            <tdp-input
+                class="tdp-Aiep-details-form-control--input"
+                formControlName="downloadSpeed"
+                [class.error-message]="checkHasErrorV2('downloadSpeed')"
+                [title]="'Aiep.downloadSpeed' | translate"
+                [required]="true">
+            </tdp-input>
+            <div *ngIf="checkHasErrorV2('downloadSpeed', 'min')" class="tdp-Aiep-details-form-error">
+                {{ 'validationErrors.min' | translate: { minValue: '0' } }}
+              </div>
+            <div *ngIf="checkHasErrorV2('downloadSpeed', 'required')" class="tdp-Aiep-details-form-error">
+                {{ 'validationErrors.required' | translate }}
+            </div>
+        </div>
+    </div>
+    <div class="tdp-Aiep-details-form-checkbox">
+        <mat-checkbox
+          formControlName="htmlEmail">
+          {{ 'Aiep.htmlEmail' | translate }}
+        </mat-checkbox>
+      </div>
+</form>
+

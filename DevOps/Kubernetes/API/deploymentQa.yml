@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tdp-api
+  namespace: tdp-dev
+  labels:
+    app: tdp-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tdp-api
+  template:
+    metadata:
+      labels:
+        app: tdp-api
+    spec:
+      containers:
+      - name: tdp-api
+        image: tdpdevregistry.azurecr.io/dev/api/containerapi:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 80
+        env:
+        - name: CUSTOMCONNSTR_DefaultConexionString
+          value: Server=tcp:tdpdevdatabase.database.windows.net,1433;Initial Catalog=tdpdevdatabase;Persist Security Info=False;User ID=Gt4JKRzgnpLp;Password=bBdDxl4dvFtY;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+        - name: Azurestorage_AzureAccountName
+          value: tdptfdevstoragegeneral
+        - name: Azurestorage_AzureKeyValue
+          value: +go9u9Sug3VQRFqebiRjd/IxxThglQMhFvOINlEXjO6KXVacG7L73Idl/YRKcZrnGAhum5AYykUhYKYr4OA==
+      imagePullSecrets:
+        - name: tdp-acr

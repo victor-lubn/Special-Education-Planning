@@ -1,0 +1,41 @@
+﻿<tdp-main-view>
+  <div class="main-view--content">
+    <div class="tdp-Aiep-new-template">
+      <div class="tdp-Aieps-list-header">
+        <tdp-back-with-title
+          class="tdp-Aieps-list-header--back-component"
+          [title]="'AiepsPage.createNewAiep' | translate"
+          (onClick)="goBack()">
+        </tdp-back-with-title>
+        <tdp-button
+          class="tdp-Aieps-list-header--manage-button"
+          [icon]="true"
+          [whiteBlueButton]="true"
+          (onClick)="openCSVUpload()">
+          <tdp-upload-icon
+            icon-button
+            fillColor="#4A90E2"
+            height="0.938rem"
+            width="0.938rem"></tdp-upload-icon>
+          {{ 'dialog.uploadCSV.title' | translate }}
+        </tdp-button>
+      </div>
+    </div>
+  </div>
+  <tdp-Aiep-create-new-template>
+    <tdp-Aiep-details-form
+      (AiepSubmitted)="AiepSubmittedHandler($event)"
+    ></tdp-Aiep-details-form>
+    <div class="Aiep-new-bottom-container" actions>
+      <tdp-button
+        size="large"
+        color="green"
+        [disabled]="!hasChanges()"
+        (onClick)="saveNewAiep()"
+      >
+        {{ 'button.createAiep' | translate }}
+      </tdp-button>
+    </div>
+  </tdp-Aiep-create-new-template>
+</tdp-main-view>
+

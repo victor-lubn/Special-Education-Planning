@@ -1,0 +1,47 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-project-templates {
+    color: $navy;
+    margin-top: 15px;
+    
+    &-title {
+        font-weight: 700;
+        font-size: 1.875rem;
+        line-height: 1.875rem;
+        margin: 2.5rem 0;
+    }
+
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        &-text {
+            font-size: 0.938rem;
+            font-weight: 700;
+            line-height: 1.313rem;
+            color: #28343d;
+        }
+    }
+    
+    tdp-table {
+        ::ng-deep {
+            .mat-mdc-cell{
+                border: none !important;
+            }
+            .tdp-table mat-header-row {
+                min-height: 4rem !important;
+                margin-bottom: 0 !important;
+                padding-left: 0 !important;
+            }
+            .tdp-actions-link {
+                display: inline-block;
+                margin-right: 10px;
+                font-size: inherit;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+    }
+}

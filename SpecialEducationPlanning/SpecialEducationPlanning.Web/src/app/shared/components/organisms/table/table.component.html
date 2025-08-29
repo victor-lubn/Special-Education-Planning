@@ -1,0 +1,189 @@
+<div
+  class="tdp-table-container"
+  [ngStyle]="{ height: tableHeight, 'min-height': tableMinHeight }"
+>
+  <mat-table
+    class="tdp-table"
+    #table
+    [dataSource]="dataSource"
+    matSort
+    [matSortDisabled]="true"
+    matSortStart="desc"
+    disableClear="true"
+    [class.actions]="hasActions"
+  >
+    <ng-container *ngFor="let config of columnsConfiguration">
+      <ng-container *ngIf="!config.custom">
+        <ng-container [matColumnDef]="config.columnDef">
+          <mat-header-cell
+            *matHeaderCellDef
+            [id]="config.sortField"
+            [disabled]="!config.sortField"
+            [class.field-disabled]="!config.sortField"
+            [ngStyle]="{ 'max-width': config.width }"
+          >
+            {{ config.header }}
+            <tdp-icon
+              size="24px"
+              [name]="unfoldIcon"
+              *ngIf="tableSort && sort?.active !== config.sortField"
+              class="sort-icon"
+              (click)="announceSortStart(config.sortField)"
+              [matMenuTriggerFor]="menu.sortMenu"
+              #sortMenuTrigger="matMenuTrigger"
+            >
+            </tdp-icon>
+            <tdp-icon
+              size="24px"
+              [name]="expandIcon"
+              *ngIf="
+                tableSort &&
+                sort?.direction === 'asc' &&
+                sort?.active === config.sortField
+              "
+              class="sort-icon"
+              (click)="announceSortStart(config.sortField)"
+              [matMenuTriggerFor]="menu.sortMenu"
+              #sortMenuTrigger="matMenuTrigger"
+            >
+            </tdp-icon>
+            <tdp-icon
+              size="24px"
+              [name]="expandIcon"
+              *ngIf="
+                tableSort &&
+                sort?.direction === 'desc' &&
+                sort?.active === config.sortField
+              "
+              class="sort-icon invert"
+              (click)="announceSortStart(config.sortField)"
+              [matMenuTriggerFor]="menu.sortMenu"
+              #sortMenuTrigger="matMenuTrigger"
+            >
+            </tdp-icon>
+          </mat-header-cell>
+          <mat-cell
+            *matCellDef="let record"
+            [ngStyle]="{ 'max-width': config.width }"
+            [ngClass]="{
+              'underlined-text': config.columnDef === 'projectName'
+            }"
+          >
+            <p
+              *ngIf="
+                isEmpty(resolveObject(config.field || config.columnDef, record))
+              "
+              class="text-truncate"
+              [matTooltip]="
+                defaultValue?.length > (config.tooltipAtLength || 10)
+                  ? defaultValue
+                  : null
+              "
+            >
+              {{ defaultValue }}
+            </p>
+            <p
+              *ngIf="
+                !isEmpty(
+                  resolveObject(config.field || config.columnDef, record)
+                ) && !config.callback
+              "
+              class="text-truncate"
+              [matTooltip]="
+                resolveObject(config.field || config.columnDef, record)
+                  ?.length > (config.tooltipAtLength || 10)
+                  ? resolveObject(config.field || config.columnDef, record)
+                  : null
+              "
+            >
+              <span *ngIf="config.isDate; else DateAndTime">
+                {{
+                  resolveObject(config.field || config.columnDef, record)
+                    | date : defaultDateFormat
+                }}
+              </span>
+              <ng-template #DateAndTime>
+                <ng-container *ngIf="config.isDateAndTime; else noDateField">
+                  <span>
+                    {{
+                      resolveObject(config.field || config.columnDef, record)
+                        | tdpDate : true
+                    }}
+                  </span>
+                </ng-container>
+              </ng-template>
+              <ng-template #noDateField>
+                <span>
+                  {{ resolveObject(config.field || config.columnDef, record) }}
+                </span>
+              </ng-template>
+            </p>
+            <p
+              *ngIf="
+                !isEmpty(
+                  resolveObject(config.field || config.columnDef, record)
+                ) && config.callback
+              "
+              class="text-truncate"
+              [matTooltip]="
+                config.callback(record)?.length > (config.tooltipAtLength || 10)
+                  ? config.callback(record)
+                  : null
+              "
+            >
+              {{ config.callback(record) }}
+            </p>
+          </mat-cell>
+        </ng-container>
+      </ng-container>
+    </ng-container>
+
+    <ng-content></ng-content>
+
+    <ng-container *ngIf="hasActions">
+      <ng-content select="tdp-table-actions"></ng-content>
+    </ng-container>
+
+    <ng-container *ngIf="selectable">
+      <ng-container matColumnDef="action-radio">
+        <mat-header-cell *matHeaderCellDef></mat-header-cell>
+        <mat-cell *matCellDef="let record">
+          <div>
+            <tdp-icon [size]="'24px'" [name]="getRadioIcon(record)"></tdp-icon>
+          </div>
+        </mat-cell>
+      </ng-container>
+    </ng-container>
+
+    <mat-header-row
+      *matHeaderRowDef="displayedColumns; sticky: true"
+    ></mat-header-row>
+
+    <mat-row
+      *matRowDef="let record; columns: displayedColumns"
+      class="tdp-record"
+      [ngClass]="{ 'green-row': record === firstRow }"
+      [class.tdp-table-row-selected]="record === selectedRow"
+      [class.hovered-row]="record === hoveredRow"
+      (mouseover)="mouseOverRow(record)"
+      (mouseleave)="mouseLeaveRow(record)"
+      (click)="selectRow(record)"
+    >
+    </mat-row>
+  </mat-table>
+
+  <mat-paginator
+    *ngIf="tablePaginator"
+    #paginator
+    [length]="records?.total || dataSource?.data?.length"
+    [pageIndex]="0"
+    [pageSize]="pageSize"
+    [pageSizeOptions]="pageSizeOptions"
+    [showFirstLastButtons]="showFirstLastButtons"
+    [hidePageSize]="hidePageSize"
+    (page)="pageChanged($event)"
+  >
+  </mat-paginator>
+</div>
+
+<tdp-sort-menu #menu> </tdp-sort-menu>

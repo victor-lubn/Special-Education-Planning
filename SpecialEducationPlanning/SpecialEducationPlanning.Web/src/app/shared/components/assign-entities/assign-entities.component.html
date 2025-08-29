@@ -1,0 +1,92 @@
+<div class="tdp-row tdp-assign-entities-list-filters">
+  <div class="tdp-column tdp-assign-entitties-filter-container">
+    <tdp-input
+      class="tdp-create-edit-area-form__input"
+      [(ngModel)]="searchTextAssigned"
+      name="searchTextAssigned"
+      [type]="'text'"
+      [title]="leftInputTitle"
+      placeholder="{{ 'assignEntities.searchPlaceHolder' | translate }}"
+    ></tdp-input>
+  </div>
+  <div class="tdp-column tdp-assign-entities-filters-space"></div>
+  <div class="tdp-column tdp-assign-entitties-filter-container">
+    <tdp-input
+      class="tdp-create-edit-area-form__input"
+      [(ngModel)]="searchTextAvailable"
+      name="searchTextAvailable"
+      [type]="'text'"
+      [title]="rightInputTitle"
+      placeholder="{{ 'assignEntities.searchPlaceHolder' | translate }}"
+    ></tdp-input>
+  </div>
+</div>
+
+<div class="tdp-row tdp-assign-entities-container">
+  <div class="tdp-column tdp-assigned-available-list">
+    <ng-container *ngIf="onlyAssignAction; else withCheckbox">
+      <div
+        class="tdp-assign-entities-no-checkbox"
+        *ngFor="
+          let assignedOption of assignedEntities
+            | tdpSearchfilter: displayProperty:searchTextAssigned
+        "
+      >
+        {{ assignedOption[displayProperty] }}
+      </div>
+    </ng-container>
+    <ng-template #withCheckbox>
+      <mat-checkbox
+        *ngFor="
+          let assignedOption of assignedEntities
+            | tdpSearchfilter: displayProperty:searchTextAssigned
+        "
+        color="warn"
+        [value]="assignedOption"
+        (change)="onAssignedOptionchecked($event)"
+        unchecked
+      >
+        {{ assignedOption[displayProperty] }}
+      </mat-checkbox>
+    </ng-template>
+  </div>
+
+  <div class="tdp-column tdp-assign-entities-buttons">
+    <tdp-button
+      class="tdp-column"
+      [color]="'white'"
+      [size]="'medium'"
+      [icon]="true"
+      (onClick)="assignHandler()"
+    >
+      <tdp-chevron-left-icon icon-button></tdp-chevron-left-icon>
+      {{ "button.assign" | translate }}
+    </tdp-button>
+    <tdp-button
+      class="tdp-column tdp-assign-entities-buttons_unassign"
+      *ngIf="!onlyAssignAction"
+      [color]="'white'"
+      [size]="'medium'"
+      [icon]="true"
+      (onClick)="unassignHandler()"
+    >
+      {{ "button.unassign" | translate }}
+      <tdp-chevron-left-icon rightIcon></tdp-chevron-left-icon>
+    </tdp-button>
+  </div>
+
+  <div class="tdp-column tdp-assigned-available-list">
+    <mat-checkbox
+      *ngFor="
+        let availableOption of availableEntities
+          | tdpSearchfilter: displayProperty:searchTextAvailable
+      "
+      color="warn"
+      [value]="availableOption"
+      (change)="onAvailabledOptionchecked($event)"
+      unchecked
+    >
+      {{ availableOption[displayProperty] }}
+    </mat-checkbox>
+  </div>
+</div>

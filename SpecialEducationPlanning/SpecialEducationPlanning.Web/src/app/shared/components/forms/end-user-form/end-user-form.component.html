@@ -1,0 +1,199 @@
+<form class="tdp-column tdp-entity-form" [formGroup]="entityForm">
+
+  <div class="tdp-row">
+    <div class="tdp-form-group">
+      <label class="tdp-form-group-label">
+        {{ 'builder.title' | translate }}
+      </label>
+      <tdp-selector
+        [elementList]="endUserTitles"
+        formControlName="titleId">
+      </tdp-selector>
+    </div>
+    <div class="tdp-form-group">
+      <label class="tdp-form-group-label">
+        {{ 'plan.endUserName' | translate }}
+      </label>
+      <input type="text" formControlName="firstName">
+    </div>
+    <div class="tdp-form-group">
+      <label class="tdp-form-group-label">
+        {{ 'builder.surname' | translate }}
+        <div class="tdp-required-dot"></div>
+      </label>
+      <input
+        [ngClass]="{ 'tdp-form-border-error': checkHasErrorV2('surname') }"
+        type="text"
+        formControlName="surname">
+      <div *ngIf="checkHasErrorV2('surname', 'required')" class="tdp-form-error">
+        {{ 'validationErrors.required' | translate }}
+      </div>
+    </div>
+    <div class="tdp-form-group">
+      <label class="tdp-form-group-label">
+        {{ 'builder.email' | translate }}
+      </label>
+      <input type="text" formControlName="contactEmail">
+    </div>
+    <div class="tdp-form-group"></div>
+  </div>
+
+  <div class="tdp-row">
+    <!-- Country selector only for France-->
+    <div *ngIf="showCountrySelector">
+      <div class="tdp-form-group">
+        <label class="tdp-form-group-label">
+          {{ 'builder.countrySelector' | translate}}
+        </label>
+        <tdp-selector-country
+        [elementList]="countriesSelectionOptions" 
+        [displayDefault]="displayDefault"
+        (selectedCountryOption)="selectCountryOptionFunction($event)"
+        formControlName="country">
+        </tdp-selector-country>
+      </div>      
+    </div>
+    <div class="tdp-form-group">
+      <label class="tdp-form-group-label">
+        {{ 'builder.postcode' | translate }}
+        <div class="tdp-required-dot"></div>
+      </label>
+      <tdp-postcode
+        [selectedCountry]="selectedCountry"
+        [hasError]="checkHasErrorV2('postcode')"
+        (selectedAddress)="onSelectedAddress($event)"
+        formControlName="postcode">
+      </tdp-postcode>
+      <div *ngIf="checkHasErrorV2('postcode', 'required')" class="tdp-form-error">
+        {{ 'validationErrors.required' | translate }}
+      </div>
+      <div *ngIf="checkHasErrorV2('postcode', 'invalidPostcode')" class="tdp-form-error">
+        {{ 'validationErrors.invalidPostcode' | translate }}
+      </div>
+    </div>
+    <div class="tdp-form-group"></div>
+    <div class="tdp-form-group"></div>
+    <div class="tdp-form-group"></div>
+    <div class="tdp-form-group"></div>
+  </div>
+
+  <div class="tdp-row">
+    <div [ngClass]="{ 'tdp-form-group': true, 'tdp-end-user-form-address': selectedCountry }">
+      <label class="tdp-form-group-label">
+        {{ 'builder.address1' | translate }}
+        <div class="tdp-required-dot"></div>
+      </label>
+      <tdp-postcode
+        [selectedCountry]="selectedCountry"
+        [postcode]="getPostcode()"
+        isAddress1="true"
+        [hasError]="checkHasErrorV2('address1')"
+        (selectedAddress)="onSelectedAddress($event)"
+        formControlName="address1">
+      </tdp-postcode>
+      <div *ngIf="checkHasErrorV2('address1', 'required')" class="tdp-form-error">
+        {{ 'validationErrors.required' | translate }}
+      </div>
+    </div>
+    <div class="tdp-form-group">
+      <label class="tdp-form-group-label">
+        {{ 'builder.address2' | translate }}
+      </label>
+      <input type="text" formControlName="address2">
+    </div>
+    <div class="tdp-form-group">
+      <label class="tdp-form-group-label">
+        {{ 'builder.address3' | translate }}
+      </label>  
+      <input type="text" formControlName="address3">
+    </div>
+    <div class="tdp-form-group">
+      <label class="tdp-form-group-label">
+        {{ 'builder.address4' | translate }}
+      </label>
+      <input type="text" formControlName="address4">
+    </div>
+    <div class="tdp-form-group">
+      <label class="tdp-form-group-label">
+        {{ 'builder.address5' | translate }}
+      </label>
+      <input type="text" formControlName="address5">
+    </div>
+  </div>
+
+  <div class="tdp-row">
+    <div class="tdp-form-group">
+      <label class="tdp-form-group-label">
+        {{ 'builder.mobileNumber' | translate }}
+      </label>
+      <input type="text" formControlName="mobileNumber">
+    </div>
+    <div class="tdp-form-group">
+      <label class="tdp-form-group-label">
+        {{ 'builder.landlineNumber' | translate }}
+      </label>
+      <input type="text" formControlName="landLineNumber">
+    </div>
+    <div class="tdp-form-group"></div>
+    <div class="tdp-form-group"></div>
+    <div class="tdp-form-group"></div>
+  </div>
+
+  <div class="tdp-row">
+    <div class="tdp-form-group">
+      <label class="tdp-form-group-label">
+        {{ 'plan.comments' | translate }}
+      </label>
+      <textarea
+        rows="5"
+        cols="60"
+        formControlName="comment">
+      </textarea>
+    </div>
+  </div>
+
+</form>
+
+<div class="tdp-row tdp-entity-form-actions">
+
+  <ng-container *ngIf="!endUser; else editButtons">
+    <button
+      class="tdp-secondary-btn"
+      (click)="cancelEndUser()">
+      {{ 'button.cancel' | translate }}
+      <i class="fas fa-times"></i>
+    </button>
+    <button
+      [disabled]="!entityForm.valid"
+      (click)="submitForm()"
+      class="tdp-primary-btn">
+      {{ 'button.submit' | translate }}
+      <i class="fas fa-plus"></i>
+    </button>
+  </ng-container>
+  <ng-template #editButtons>
+    <button
+      *ngIf="!editing"
+      class="tdp-secondary-btn"
+      (click)="enableButtonClick()">
+      {{ 'button.edit' | translate }}
+      <i class="fas fa-pen"></i>
+    </button>
+    <button
+      *ngIf="editing"
+      (click)="cancelEndUser()"
+      class="tdp-secondary-btn">
+      {{ 'button.cancel' | translate }}
+      <i class="fas fa-times"></i>
+    </button>
+    <button
+      *ngIf="editing"
+      [disabled]="!entityForm.valid"
+      (click)="submitForm()"
+      class="tdp-primary-btn">
+      {{ 'button.save' | translate }}
+      <i class="fas fa-plus"></i>
+    </button>
+  </ng-template>
+
+</div>

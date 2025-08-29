@@ -1,0 +1,116 @@
+﻿trigger: none
+
+parameters:
+- name: 'Build_Source_Project'
+  type: boolean
+  default: true
+- name: 'Build_Image'
+  type: boolean
+  default: true
+- name: 'Publish_Artifacts'
+  type: boolean
+  default: true
+- name: 'Deploy_Dev'
+  type: boolean
+  default: true
+- name: 'Deploy_QA'
+  type: boolean
+  default: true
+- name: 'Deploy_PrePrd'
+  type: boolean
+  default: true
+
+
+resources:
+  repositories:
+  - repository: templates
+    type: git
+    name: 'aiep Core/aiep.core.azdo.templates'
+    ref: feature/Educationview_templates
+
+name: $(Build.DefinitionName)_$(Date:ddMMyyyy)$(Rev:.r)
+
+variables:
+- name:  artifact_name
+  value: 'Educationview'
+- name: database_artifact_name
+  value: 'Educationview-database'
+- name:  repository
+  value: 'api/containerapi'
+- name:  image_tag
+  value: $(Build.SourceBranchName)-$(Build.BuildId)
+
+extends:
+  template: docker/base/docker_base_template.yaml@templates
+  parameters:
+    BuildStages:
+
+    - template: docker/stages/docker_build_push_net_image_stage.yaml@templates
+      parameters:
+        VariableGroups: []
+        StageName:              'Build_and_Push_Image'
+        AgentPool:              'aiep Trade Linux NonPrd UKS - VMSS'
+        #### Build Flags
+        BuildSourceProject:      ${{ parameters.Build_Source_Project }}
+        BuildImage:              ${{ parameters.Build_Image }}
+        PublishArtifacts:        ${{ parameters.Publish_Artifacts }}
+        #### Working Dir
+        WorkingDirectory:        $(System.DefaultWorkingDirectory)
+        #### App Publish
+        NugtRestorePath:         SpecialEducationPlanning
+/SpecialEducationPlanning
+.Api.Host/*.csproj
+        NugetFeed:               '800e42bd-640c-4531-9216-2ccd562a596d'
+        ProjectFolder:           /SpecialEducationPlanning
+/SpecialEducationPlanning
+.Api.Host
+        #### Docker Build\ Push
+        AdditionalTags:          '$(Build.SourceVersion)-$(Build.BuildId)'
+        AzureContainerRegistry:  crtdpdvwnonprduks001.azurecr.io
+        DockerFile:              'SpecialEducationPlanning
+/SpecialEducationPlanning
+.Api.Host/Dockerfile'
+        DockerFolder:            'SpecialEducationPlanning
+/SpecialEducationPlanning
+.Api.Host'
+        Repository:              $(repository)
+        ServiceConnection:       hjs-trade-dev-001-app-svc
+        Tag:                     $(image_tag)
+        UseDockerCompose:        'false'
+        #### Publish Artifacts
+        ArtifactFilter:          '**/*'
+        BuildArtifactName:       $(artifact_name)
+        SourceFolder:            'deployment'
+        StagingDirectory:        $(build.artifactstagingdirectory)
+        TargetFolder:            'deployment'
+
+        #### Custom Pre and Post Build steps to inject in to pipeline
+        # PostDockerBuildSteps:
+
+        # PreDockerBuildSteps:
+
+    - template: docker/stages/build_database_schema_stage.yaml@templates
+      parameters:
+        VariableGroups: []
+        StageName:          'Build_Database_Schema'
+        AgentPool:          'aiep Trade Windows NonPrd UKS - VMSS'
+        BuildArtifactName:  $(database_artifact_name)
+        BuildConfiguration: 'Release'
+        DatabaseProject:    SpecialEducationPlanning
+.Database.sqlproj
+        PublishArtifact:   'true'
+        WorkingDirectory:   SpecialEducationPlanning
+/SpecialEducationPlanning
+.Database
+
+    DeploymentStages:
+
+    - ${{ if eq(parameters.Deploy_Dev, 'true') }}:
+      - template: ./deployment_templates/dev.yaml
+
+    - ${{ if eq(parameters.Deploy_QA, 'true') }}:
+      - template: ./deployment_templates/qa.yaml
+
+    - ${{ if eq(parameters.Deploy_Preprd, 'true') }}:
+      - template: ./deployment_templates/preprd.yaml
+

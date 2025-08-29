@@ -1,0 +1,71 @@
+<div class="tdp-account-look-up">
+    <form [formGroup]="entityForm" class="tdp-account-look-up-container">
+        <tdp-input
+            class="tdp-account-look-up-input"
+            [ngClass]="{ 'checked': !isChecking }"
+            [ngClass]="{ 'error': checkHasErrorV2('accountNumber') }"
+            [title]="'planDetails.accountNumber' | translate"
+            formControlName="accountNumber">
+        </tdp-input>
+        <div 
+            *ngIf="checkHasErrorV2('accountNumber', 'maxlength')" 
+            class="tdp-form-error-message">
+            {{ 'validationErrors.maxNumericLength' | translate: {'maxlength': maxAccountNumberLength} }}
+        </div>
+        <div 
+            class="tdp-account-look-up-buttons">
+            <ng-container *ngIf="isChecking; else confirm">
+                <tdp-button
+                    @fadeAnimation
+                    class="tdp-account-look-up-check"
+                    size="small"
+                    color="white"
+                    [disabled]="entityForm.invalid"
+                    (onClick)="onCheck()">
+                    {{ 'button.check' | translate }}                
+                </tdp-button>
+            </ng-container>
+            <ng-template #confirm>
+                <tdp-button
+                    @fadeAnimation
+                    class="tdp-account-look-up-cancel"
+                    size="small"
+                    color="text-only"
+                    (onClick)="onCancel()">
+                    {{ 'button.cancel' | translate }} 
+                </tdp-button>
+                <tdp-button
+                    *ngIf="!isConfirmed"
+                    @fadeAnimation
+                    class="tdp-account-look-up-confirm"
+                    size="small"
+                    color="white"
+                    (onClick)="onConfirm()">
+                    {{ 'button.confirm' | translate }} 
+                </tdp-button>
+                <tdp-button
+                    *ngIf="isConfirmed"
+                    @fadeAnimation
+                    class="tdp-account-look-up-confirmed"
+                    size="small"
+                    color="navy"
+                    [icon]="true">
+                    <tdp-check-icon 
+                        icon-button
+                        fillColor="#70C624"
+                        height="14px"
+                        width="14px">
+                    </tdp-check-icon>
+                    {{ 'button.confirmed' | translate }}
+                </tdp-button>
+            </ng-template>
+        </div>
+        <div *ngIf="!isChecking" [@slideAnimation]>
+            <tdp-account-details 
+                [tradeCustomer]="tradeCustomer">
+            </tdp-account-details>
+        </div>
+    </form>
+    
+
+</div>

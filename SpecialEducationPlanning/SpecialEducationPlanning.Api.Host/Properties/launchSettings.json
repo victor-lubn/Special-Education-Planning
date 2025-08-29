@@ -1,0 +1,32 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "http://localhost:19226/",
+      "sslPort": 0
+    }
+  },
+  "profiles": {
+    "SpecialEducationPlanning
+.Api.Host": {
+      "commandName": "Project",
+      "applicationUrl": "http://localhost:19226/",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local"
+      }
+    },
+    "SpecialEducationPlanning
+.Api.IIS": {
+      "commandName": "IISExpress",
+      "applicationUrl": "http://localhost:19226/",
+      "launchBrowser": true,
+      "launchUrl": "swagger",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Local"
+      }
+    }
+  }
+}

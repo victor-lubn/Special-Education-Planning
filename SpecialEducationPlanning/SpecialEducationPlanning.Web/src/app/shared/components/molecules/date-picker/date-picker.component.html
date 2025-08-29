@@ -1,0 +1,50 @@
+<label 
+  *ngIf="label"
+  [ngClass]="{ 'required': required }">
+  {{ label }}
+</label>
+<div class="tdp-datepicker">
+  <input
+    class="tdp-input"
+    matInput
+    [matDatepicker]="datepicker"
+    [min]="min"
+    [max]="max"
+    (focus)="datepicker.open()"
+    (click)="datepicker.open()"
+    (keydown)="keydownHandler($event)"
+    (ngModelChange)="changeHandler($event)"
+    [ngModel]="value"
+    [disabled]="disabled"
+    [placeholder]="placeholder"
+  >
+  <span class="input-actions">
+    <tdp-button
+      color="ghost"
+      type="button"
+      (onClick)="resetHandler()"
+      *ngIf="value"
+      [disabled]="disabled"
+    >
+      <tdp-cancel-icon fillColor="#28343d" width="0.5rem" height="0.8rem"></tdp-cancel-icon>
+    </tdp-button>
+    <tdp-button
+      color="ghost"
+      type="button"
+      (onClick)="datepicker.open()"
+      [disabled]="disabled"
+    >
+      <tdp-calendar-icon fill="#28343d" width="1rem" height="1rem"></tdp-calendar-icon>
+    </tdp-button>
+  </span>
+  <mat-datepicker #datepicker [calendarHeaderComponent]="datePickerHeader" (closed)="closedHandler()">
+    <mat-datepicker-actions>
+      <tdp-button type="button" color="text-only" matDatepickerCancel>
+        {{ 'button.cancel' | translate }}
+      </tdp-button>
+      <tdp-button type="button" color="green" matDatepickerApply>
+        {{ 'button.apply' | translate }}
+      </tdp-button>
+    </mat-datepicker-actions>
+  </mat-datepicker>
+</div>

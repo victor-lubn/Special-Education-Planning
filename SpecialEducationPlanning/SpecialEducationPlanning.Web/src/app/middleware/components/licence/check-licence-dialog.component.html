@@ -1,0 +1,12 @@
+<h2 mat-dialog-title>{{ 'licence.title' | translate }}</h2>
+<mat-dialog-content>
+  {{ description }}
+</mat-dialog-content>
+<mat-dialog-actions>
+  <div class="tdp-column lower-button">
+    <button (click)="close()" class="tdp-secondary-btn">
+      {{ 'button.cancel' | translate}}
+      <i class="fas fa-times"></i>
+    </button>
+  </div>
+</mat-dialog-actions>

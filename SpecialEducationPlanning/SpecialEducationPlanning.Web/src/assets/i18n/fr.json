@@ -1,0 +1,1180 @@
+﻿{
+  "builder": {
+    "accountNumber": "NumГ©ro du compte",
+    "builderType": "Type d'Artisan",
+    "address": "Adresse",
+    "address1": "Adresse 1",
+    "address2": "Adresse 2",
+    "address3": "Ville",
+    "address4": "Adresse 4",
+    "address5": "Adresse 5",
+    "builderName": "Nom de l'artisan",
+    "companyName": "Nom de l'entreprise",
+    "contactDetails": "CoordonnГ©es",
+    "countryCode": "Code pays",
+    "countrySelector": "Pays",
+    "email": "Email",
+    "firstName": "PrГ©nom",
+    "landlineNumber": "NumГ©ro de ligne fixe",
+    "mobileNumber": "NumГ©ro de Portable",
+    "owningAiep": "DГ©pГґt propriГ©taire",
+    "sAPAccountStatus": "Statut",
+    "planCountDisplay": "{{ planCount }} plans au total",
+    "plans": "Plans",
+    "activePlans": "Projets En Cours",
+    "archivedPlans": "Plans archivГ©s",
+    "postcode": "Code postal",
+    "surname": "Nom de famille",
+    "title": "CivilitГ©",
+    "Type": {
+      "credit": "CrГ©dit"
+    },
+    "createBuilderTitle": "CrГ©er un Nouvel Artisan",
+    "tradingName": "Raison Sociale",
+    "name": "Nom",
+    "pendingCredit": "CrГ©dit en cours",
+    "notes": "Notes",
+    "notesPlaceholder": "Ajouter des Notes sur cet artisan ici...",
+    "createErrorMsg": "Une erreur s'est produite lors de la crГ©ation de cet artisan dans la base de donnГ©es",
+    "duplicateValidationError": "Erreur lors de la vГ©rification des doublons d'artisans",
+    "unassigned": "Plan non attribuГ©",
+    "notApplicable": "N/A"
+  },
+  "button": {
+    "createLocalCashAccount": "Creer un compte de passage",
+    "updateNotes": "Unregistrer",
+    "viewAllNotes": "Afficher toutes les notes",
+    "viewAllLogs": "Afficher tous les journaux",
+    "next": "Suivant",
+    "assign": "Assigner",
+    "submit": "Soumettre",
+    "unassign": "DГ©sattribuer",
+    "createNewRegion": "CrГ©er une nouvelle rГ©gion",
+    "publishAllPlans": "Publier tous les plans",
+    "createNewArea": "CrГ©er une nouvelle zone",
+    "createNewRole": "CrГ©er un nouveau rГґle",
+    "upload": "Importer",
+    "uploadNewVersion": "Importer une nouvelle version",
+    "assignPlan": "Assigner un plan",
+    "unassignPlan": "RГ©affecter le plan",
+    "archive": "Archiver",
+    "archivePlan": "Archiver le plan",
+    "recentPlans": "Plans rГ©cents",
+    "accept": "OK",
+    "accept2": "Accepter",
+    "accept3": "Okay",
+    "close": "Fermer",
+    "apply": "Appliquer",
+    "unarchive": "Restaurer le plan",
+    "discard": "Abandonner",
+    "discardPlan": "Abandonner le Plan",
+    "discardTemplate": "Abandonner le ModГЁle",
+    "discardChanges": "Annuler les modifications",
+    "overwrite": "Remplacer la version existante",
+    "newVersion": "Enregistrer comme une nouvelle version",
+    "restore": "Restaurer",
+    "searchPlans": "Recherchez des Plans",
+    "searchBuilders": "Rechercher un Artisan",
+    "attachment": "PiГЁces Jointes",
+    "cancel": "Annuler",
+    "download": "TГ©lГ©charger",
+    "clearAll": "Tout Effacer",
+    "createPlan": "CrГ©er un plan",
+    "createAPlan": "CrГ©er un plan",
+    "createTemplate": "CrГ©er un modГЁle",
+    "viewInCreatio": "Voir dans Creatio",
+    "createAiep": "CrГ©er un dГ©pГґt",
+    "editBuilder": "Modifier l'Artisan",
+    "saveBuilder": "Sauvegarder l'artisan",
+    "saveNewPlan": "Enregistrer le nouveau plan",
+    "saveNewTemplate": "Enregistrer le nouveau modГЁle",
+    "save": "Sauvegarder",
+    "edit": "Modifier",
+    "goBack": "Retour",
+    "back": "Retour",
+    "goToBuilder": "Aller Г  Artisan",
+    "openFusion": "Ouvrir dans Fusion",
+    "open": "Ouvrir",
+    "editFusion": "Ouvrir sous fusion",
+    "orderBy": "Commander par",
+    "preview": "AperГ§u",
+    "viewPlan": "Details du plan",
+    "print": "Imprimer",
+    "publishPlan": "Publier",
+    "openMyKitchen": "View on My Kitchen",
+    "publishingError": "Publishing Error",
+    "rendering": "Rendering",
+    "send": "Envoyer",
+    "delete": "Supprimer",
+    "toggleHomeFilters": "Menu des Filtres",
+    "createAsNewBuilder": "CrГ©er comme Nouvel Artisan",
+    "createUnassignedPlan": "CrГ©er un plan non assignГ©",
+    "searchTradeAccounts": "Rechercher compte client",
+    "continueBuilder": "Continuer avec l'artisan",
+    "selectBuilder": "Choisir l'Artisan",
+    "selectPlan": "SГ©lectionner le plan",
+    "markAsMasterVersion": "Marquer comme Version Principale",
+    "promoteToMaster": "Promouvoir Г  la version principale",
+    "managePermissions": "GГ©rer les rГґles",
+    "transfer": "TransfГ©rer",
+    "transferPlan": "TransfГ©rer",
+    "transferBuilderPlans": "TransfГ©rer tous les Plans",
+    "clearReleaseNotes": "Effacer",
+    "viewReleaseDocuments": "Voir",
+    "createUser": "CrГ©er un utilisateur",
+    "editReleaseNotes": "Modifier",
+    "editVersionNotes": "Modifier",
+    "remove": "Supprimer",
+    "filter": "Filtrer",
+    "printTimeline": "Imprimer l'historique",
+    "search": "Rechercher",
+    "goOnline": "Travailler en Ligne",
+    "continue": "Continuer",
+    "retry": "RГ©essayer",
+    "goToUnassignedPlans": "Aller Г  Plans non assignГ©s",
+    "recoverWork": "RГ©cupГ©rer le Plan",
+    "update": "Mettre Г  jour",
+    "options": "Options",
+    "moreOptions": "Plus d'options",
+    "createNew": "CrГ©er un Nouveau Compte",
+    "useAccount": "Utiliser le Compte",
+    "restoreLocalAutosave": "Restauration Du plan en local",
+    "reset": "Reinitialiser",
+    "check": "Valider",
+    "confirm": "Confirmer",
+    "confirmed": "ConfirmГ©",
+    "saveNotes": "Sauvegarder les notes",
+    "notesExpand": "Etendre"
+  },
+  "dialog": {
+    "EducationToolUnavailableError": {
+      "title": "Education tool is unavailable",
+      "content": "Protool is currently unavailable. Please try again later. If the problem persists, please contact Service Desk."
+    },
+    "publishPlanServiceBusError": {
+      "title": "Publishing service is not available",
+      "content": "Plan can't be published at the moment. Please try again later. If the problem persists, contact service desk"
+    },
+    "newRoleSuccess": "Nouveau rГґle crГ©Г© avec succГЁs",
+    "newRoleError": "Erreur lors de la crГ©ation d'un nouveau rГґle",
+    "updateRoleSuccess": "Le rГґle a Г©tГ© mis Г  jour avec succГЁs",
+    "updateRoleError": "Erreur lors de la mise Г  jour du rГґle",
+    "newRole": "Nouveau rГґle",
+    "editRole": "Modifier le rГґle",
+    "entitiesUploadedSuccess": "Import rГ©ussi de {{ numberOfEntities }} entitГ©s",
+    "uploadOnlyOneFile": "Vous ne pouvez importer qu'un seul fichier",
+    "accessError": "Erreur d'accГЁs",
+    "accessErrorText": "Vous n'avez pas accГЁs Г  Education View. Cliquez sur 'OK' pour quitter",
+    "accessUnauthorizedText": "Vous essayer d'accГ©der Г  une page pour laquelle vous n'avez pas d'autorisations, ou votre accГЁs a Г©tГ© supprimГ©. Cliquez sur 'OK' pour Quitter.",
+    "aboutTitle": "A propos de Education View",
+    "aboutDescription": "Front end Version <strong>{{ version }}</strong><br>Back end Version <strong>{{ backendVersion }}</strong><br>Commit: {{ commit }}<br>Copyright (c) 2018-2019, aiep, Tous Droits rГ©servГ©s",
+    "catalogError": "Erreur de catalogue",
+    "catalogErrorMessage": "Le catalogue que vous essayez d'ouvrir n'est pas disponible dans Fusion",
+    "planSaved": "Le Plan {{ planId }} a Г©tГ© modifiГ©",
+    "newPlanSaved": "Sauvegarder le Plan",
+    "newTemplateSaved": "Sauvegarder le ModГЁle",
+    "overwritePlanSuccess": "La version du plan a Г©tГ© remplacГ©e avec succГЁs",
+    "overwritePlanError": "Impossible de remplacer la version du plan",
+    "saveNewVersionSuccess": "Une nouvelle version du plan a Г©tГ© sauvegardГ©e",
+    "saveNewVersionError": "Impossible d'enregistrer la nouvelle version du plan",
+    "saveFirstSuccess": "PremiГЁre version du plan crГ©Г©e avec succГЁs",
+    "saveFirstError": "Erreur lors de la sauvegarde de la premiГЁre version du plan",
+    "planPreview": "AperГ§u du plan",
+    "noPlanPreview": "L'image n'est pas disponible",
+    "archivePlan": "Archiver le Plan",
+    "archiveProject": "Archiver le Projet",
+    "unarchivePlan": "Restaurer le Plan",
+    "unarchiveProject": "Restore le Project",
+    "archiveMessage": "Voulez-vous vraiment archiver ce plan ?",
+    "unarchiveMessage": "Le plan va ГЄtre restaurГ© et marquГ© comme actif. Voulez-vous continuer ?",
+    "unarchiveProjectMessage": "Le project va ГЄtre restaurГ© et marquГ© comme actif. Voulez-vous continuer ?",
+    "discardPlanVersion": "Abandonner la version du plan",
+    "discardTemplateVersion": "Abandonner la version du modГЁle",
+    "discardPlanMessage": "Voulez-vous vraiment abandonner la source de ce planВ ? Vos modifications ne seront pas enregistrГ©es",
+    "discardNewPlanMessage": "Voulez-vous vraiment abandonner le planВ ? Votre plan ne sera pas enregistrГ© et tout le travail sera perdu",
+    "discardNewTemplateMessage": "Voulez-vous vraiment abandonner le modГЁle? Votre modГЁle ne sera pas enregistrГ© et tout le travail sera perdu",
+    "duplicatedData": "Artisan Existant trouvГ©",
+    "builderAlreadyExistsMessage": "Cet artisan existe dГ©jГ  dans votre dГ©pГґt. Aller Г  Archives Artisans",
+    "selectMusic": "SГ©lectionnez la musique",
+    "userDeletion": "Suppression de l'utilisateur",
+    "userDeletionMessage": "ГЉtes-vous sГ»r de vouloir enregistrer les modifications ? Cet utilisateur sera supprimГ©",
+    "leaverAiepChanged": "DГ©pГґt Leaver",
+    "leaverAiepChangedMessage": "Le dГ©pГґt ne peut pas ГЄtre modifiГ© pour un dГ©part, sauf en cas d'Г©chec",
+    "deleteUser": "Supprimer l'utilisateur",
+    "deleteUserMessage": "ГЉtes-vous sГ»r de vouloir supprimer {{userName}}?",
+    "transferConfirmation": "ГЉtes-vous sГ»r de vouloir transfГ©rer le projet au dГ©pГґt {{AiepCode}} ?",
+    "publishOptions": {
+      "1": "Images de qualitГ© standard et/ou Panorama",
+      "2": "Images et/ou panorama de haute qualitГ© (veuillez prГ©voir un dГ©lai supplГ©mentaire)",
+      "3": "Images et vidГ©o de qualitГ© standard et/ou Panorama",
+      "4": "Images & VidГ©os de QualitГ© Standard et/ou Panorama, + VidГ©o Haute QualitГ© pour Showroom virtuel",
+      "willReceive": "Vous recevrez : ",
+      "pictureSd": "Images en SD",
+      "pictureSdMessage": "Images de qualitГ© standard et/ou Panorama",
+      "pictureHd": "Images en HD",
+      "pictureHdMessage": "Images et/ou panorama de haute qualitГ© (veuillez prГ©voir un dГ©lai supplГ©mentaire)",
+      "pictureVideo": "Images & VidГ©o en SD",
+      "pictureVideoMessage": "Images et vidГ©o de qualitГ© standard et/ou Panorama",
+      "pictureVideoShowroom": "Images & VidГ©o en HD",
+      "pictureVideoShowroomMessasge": "Images & VidГ©os de QualitГ© Standard et/ou Panorama, + VidГ©o Haute QualitГ© pour Showroom virtuel"
+    },
+    "planPublished": "Votre plan a Г©tГ© soumis",
+    "planPublishedDescription": "Vous recevrez sous peu un courriel contenant un lien pour la visualisation.",
+    "versionPublishing": {
+      "title": "Publishing In Progress",
+      "message": "Check the 'Publish History' tab for more detailed information or possible errors."
+    },
+    "versionNotPublished": {
+      "title": "Version Not Published",
+      "message": "This version has not been published.",
+      "message2": "If you wish to publish this version, click 'More Options' and select 'Publish'."
+    },
+    "uploadReleaseNotes": {
+      "information": "Informations",
+      "title": "Titre",
+      "titlePlaceholder": "Pas plus de {{ maxLength }} caractГЁres",
+      "releaseDate": "Date",
+      "tdpVersion": "Version Education View",
+      "fusionVersion": "Version Fusion",
+      "datePlaceholder": "Cliquez ici pour choisir une date",
+      "wrongTypeErrorMsg": "Vous ne pouvez importer que des fichiers pdf."
+    },
+    "EducationerEmail": "Email du Educationer",
+    "mailTo": "Envoyer Г ",
+    "recipientsEmail": "Email des destinataires",
+    "additionalEmail": "Email supplГ©mentaire",
+    "messageCustomer": "Message au client",
+    "publishOptionsLabel": "SГ©lectionner le format",
+    "publishTitle": "Publier le plan",
+    "printPlan": "Print Plan",
+    "publishTenderPlanTitle": "Publier le(s) plan(s)",
+    "publishTenderPlanMessage": "Publication de <b>plans d'Г©tage</b> et de <b>listes d'articles</b>",
+    "cadRenderedImages":"CAD images rendues",
+    "manageRoleTitle": "GГ©rer le rГґle",
+    "builderCreditPendingApproval": "Est-ce que l'artisan est dans l'attente d'approbation de son compte crГ©dit?",
+    "publishCancel": "ГЉtes-vous sГ»r de vouloir annulerВ ?",
+    "qualityLabel": "QualitГ© d'image",
+    "qualitySD": "DГ©finition standard",
+    "qualityHD": "Haute DГ©finition",
+    "publishPlanSuccess": "Plan publiГ© avec succГЁs",
+    "publishPlanError": "Une erreur s'est produite lors de la publication du plan",
+    "publishProjectSuccess": "Projet publiГ© avec succГЁs",
+    "publishProjectError": "Une erreur s'est produite lors de la publication du projet",
+    "genericCancelDialog": "Il y a des modifications non enregistrГ©es. Voulez-vous vraiment quitter ?",
+    "genericUnsavedChanges": "Modifications non enregistrГ©es",
+    "builderDuplicatedDialogTitle": "Artisan Existant trouvГ©",
+    "builderDuplicatedDialogMessage": "Les informations de l'artisan que vous essayez d'ajouter existent dГ©jГ  dans le systГЁme. Merci de vГ©rifer les informations, ou contactez le support.",
+    "versionModified": "La version du plan {{ versionNumber }} a Г©tГ© modifiГ©e",
+    "unassignedPlanDialogTitle": "Assigner un plan",
+    "unassignedPlanDialogMessage": "Voulez-vous vraiment affecter ce plan au compte sГ©lectionnГ©?",
+    "unassignedPlanCancelMessage": "ГЉtes-vous sГ»r d'annuler l'attribution du planВ ?",
+    "fusionNotAllowedToUserDialogTittle": "L'utilisateur n'est pas autorisГ© Г  modifier les plans",
+    "fusionNotAllowedToUserDialogMessage": "Vos droits d'utilisateurs ne vous permettent pas de modifier les plans sous Fusion, veuillez en discuter avec votre Manager de dГ©pГґt.",
+    "signoutDialogTitle": "DГ©connexion",
+    "signoutDialogMessage": "Voulez-vous vraiment vous dГ©connecterВ ?",
+    "uploadPlans": "Importer les plans",
+    "dropFileMsg": "DГ©poser le fichier Г  importer ou",
+    "deleteCommentTitle": "Supprimer le commentaire",
+    "deleteCommentMessage": "Voulez-vous vraiment supprimer ce commentaireВ ?",
+    "saveEmptyComment": "Commentaire vide",
+    "saveEmptyCommentMessage": "Non autorisГ© Г  soumettre du texte vide dans un commentaire",
+    "chooseAFileMsg": "choisir un fichier",
+    "uploadDialogMaxFilesError": "Nombre max de fichiers dГ©passГ©",
+    "uploadDialogMaxSizeError": "Taille des fichiers dГ©passГ©e",
+    "uploadDialogWrongTypesError": "Un seul plan peut ГЄtre importГ© Г  la fois, avec Г©ventuellement un fichier JSON et/ou une image.",
+    "uploadPlanFilesOneFileAtAType": "Vous ne pouvez importer qu'un seul fichier Г  la fois",
+    "uploadPlanFilesVersionNotesHere": "Ecrivez les notes pour cette version ici",
+    "serviceUnavailable": "Service indisponible",
+    "errorInfo": "Erreur",
+    "fusionDisabled": {
+      "title": "Fusion est indisponible",
+      "description": "Vous ne pouvez utiliser Fusion, car la configuration de Fusion est erronГ©e, ou le programme n'est pas installГ© sur votre poste.",
+      "createPlan": "Ouvrir le Plan",
+      "openPlan": "CrГ©er un plan",
+      "modifyPlan": "Modifier le plan",
+      "support": "Veuillez contacter le support informatique."
+    },
+    "EducationToolOpened" : {
+      "title": "Une seule instance de l'outil de conception peut ГЄtre ouverte",
+      "content": "Cliquez pour accГ©der Г  l'outil de conception"
+    },
+    "endUserExistingTitle": "Client Final Existant TrouvГ©",
+    "endUserExistingSameAiepMessage": "Ce client final existe dГ©jГ  dans votre dГ©pГґt, ГЄtes-vous sГ»r de vouloir continuer?",
+    "endUserExistingOtherAiep": "Ce client final existe dГ©jГ  dans le dГ©pГґt {{ AiepName }}, ГЄtes-vous sur de vouloir continuer?",
+    "noUnassignedPlansFoundTitle": "Aucun plan non affectГ© trouvГ©",
+    "noUnassignedPlansFoundMsg": "Aucun plan disponible Г  attribuer",
+    "removeEndUserTitle": "Supprimer le Client Final",
+    "removeEndUserMsg": "Cela supprimera la relation entre ce client final et ce plan. ГЉtes-vous sГ»r de vouloir continuer?",
+    "creditBuilderUpdateForbiddenTitle": "Artisan en compte crГ©dit",
+    "creditBuilderUpdateForbiddenMsg": "Vous ne pouvez pas apporter de modifications aux Artisans CrГ©dit. Merci de contacter le crГ©dit control pour mettre Г  jour les informations de l'artisan",
+    "emptyPlanTitle": "Plan vide",
+    "emptyTemplateTitle": "ModГЁle vide",
+    "emptyPlanMsg": "Ce plan a Г©tГ© abandonnГ© et sera supprimГ© du systГЁme dans les 24heures. Si vous avez des questions, Contactez le support informatique.",
+    "emptyTemplateMsg": "Ce modГЁle a Г©tГ© abandonnГ© et sera supprimГ© du systГЁme dans les 24heures. Si vous avez des questions, Contactez le support informatique.",
+    "uploadCSV": {
+      "title": "Importer CSV",
+      "wrongTypeErrorMsg": "Vous ne pouvez importer que des fichiers CSV."
+    },
+    "transferBuilderPlans": {
+      "title": "TransfГ©rer tous les plans vers un autre dГ©pГґt",
+      "fromAiep": "Du dГ©pГґt",
+      "toAiep": "Au dГ©pГґt",
+      "successMessage": "Plans transfГ©rГ©s avec succГЁs",
+      "errorMessage": "Erreur lors du transfert des plans"
+    },
+    "transferSinglePlan": {
+      "title": "TransfГ©rer un seul plan",
+      "successMessage": "Plan transfГ©rГ© avec succГЁs",
+      "errorMessage": "Erreur lors du transfert des plans"
+    },
+    "transferProject": {
+      "title": "TransfГ©rer projet",
+      "successMessage": "Projet transfГ©rГ© avec succГЁs",
+      "errorMessage": "Erreur lors du transfert du projet"
+    },
+    "createEditCountry": {
+      "titleCreate": "CrГ©er un pays",
+      "titleEdit": "Modifier le pays",
+      "name": "Nom du pays"
+    },
+    "removeCountry": "Supprimer le pays",
+    "removeCountryMessage": "Le pays va ГЄtre supprimГ©. Voulez-vous continuerВ ?",
+    "createEditRegion": {
+      "titleCreate": "CrГ©er une rГ©gion",
+      "titleEdit": "Modifier la rГ©gion",
+      "name": "Nom de la rГ©gion"
+    },
+    "removeRegion": "Supprimer la rГ©gion",
+    "removeRegionMessage": "La rГ©gion va ГЄtre supprimГ©e. Voulez-vous continuerВ ?",
+    "createEditArea": {
+      "titleCreate": "CrГ©er une zone",
+      "titleEdit": "Modifier la Zone",
+      "name": "Nom de la zone"
+    },
+    "removeArea": "Supprimer la zone",
+    "removeAreaMessage": "La zone va ГЄtre supprimГ©e. Voulez-vous continuerВ ?",
+    "logDetail": "DГ©tail du journal",
+    "logDetailError": {
+      "title": "Aucun message disponible",
+      "message": "Aucun dГ©tail du journal n'est disponible"
+    },
+    "unassignBuilder": {
+      "title": "Dissocier de Client Commercial",
+      "message": "Voulez-vous vraiment supprimer '{{ name }}' de ce plan?",
+      "stepsTitle": "Г‰tapes suivantes:",
+      "stepsMessage": "1. Trouvez votre artisan.",
+      "stepsMessage2": "2. RГ©attribuez ce plan."
+    },
+    "actionLogExportDateNotFilled": {
+      "title": "Export des Logs Impossible",
+      "message": "N'oubliez pas que pour exporter les journaux, la date de dГ©but et la date de fin doivent ГЄtre renseignГ©es"
+    },
+    "narrowSearch": {
+      "title": "Impossible de rГ©cupГ©rer les donnГ©es",
+      "message": "Veuillez affiner votre recherche afin d'obtenir un rГ©sultat plus prГ©cis"
+    },
+    "editVersionNotes": {
+      "title": "Modifier la version",
+      "versionNotes": "Modifier les notes de version",
+      "quoteOrderNumber": "Modifier le numГ©ro de commande K8"
+    },
+    "builderAccountNumberNotFound": {
+      "title": "Aucun compte trouvГ©",
+      "message": "Veuillez vГ©rifier le numГ©ro de compte ou entrez le nom et l'adresse de l'artisan pour continuer"
+    },
+    "builderAccountNumberNotEntered": {
+      "title": "Aucun compte fourni",
+      "message": "Veuillez saisir un numГ©ro de compte"
+    },
+    "homeLimitExceeded": {
+      "title": "Limite de rГ©sultats dГ©passГ©e",
+      "message": "Veuillez affiner votre recherche"
+    },
+    "updateBuilderConfirmation": {
+      "title": "Mettre Г  jour l'artisan",
+      "message": "Voulez-vous vraiment mettre Г  jour cet artisan?"
+    },
+    "connectionIssues": {
+      "title": "ProblГЁme de connexion",
+      "connectionLost": " La connexion rГ©seau a Г©tГ© perdue",
+      "experienceIssues": "Votre plan enregistrГ© le plus rГ©cemment doit ГЄtre restaurer. Veuillez contacter le support informatique.",
+      "options": "Veuillez attendre que la connexion soit rГ©tablie ou cliquez sur 'Continuer' pour travailler hors ligne.",
+      "description": "Lorsque vous ГЄtes hors ligne, vous ne pouvez crГ©er et modifier que les plans enregistrГ©s localement.",
+      "action": "Continuer"
+    },
+    "workOffline": {
+      "title": "Vous ГЄtes actuellement hors ligne",
+      "description": "Lorsque vous ГЄtes hors ligne, vous ne pouvez crГ©er et modifier que les plans enregistrГ©s localement",
+      "action": "Travailler hors ligne"
+    },
+    "offlineBanner": {
+      "offline": "Vous ГЄtes actuellement en mode hors ligne"
+    },
+    "backOnline": {
+      "title": "Connexion restaurГ©e",
+      "connected": "La connexion rГ©seau a Г©tГ© restaurГ©e. Si votre plan est toujours ouvert sous Fusion, veuillez l'enregistrer et le quitter avant de continuer. Cliquez sur 'Travailler en Ligne' pour continuer."
+    },
+    "plansWillBeSynced": {
+      "title": "Vous avez travaillГ© hors ligne",
+      "message": "Les plans crГ©Г©s pendant cette pГ©riode seront synchronisГ©s"
+    },
+    "syncOfflinePlans": {
+      "title": "TГ©lГ©chargement du plan hors ligne",
+      "syncSummary": "Le tГ©lГ©chargement de votre plan hors ligne est maintenant terminГ©",
+      "areUnassigned": "Vous retrouverez la liste des plans importГ©s avec succГЁs dans la liste des plans \"Non assignГ©s\"",
+      "planId": "ID du plan hors ligne",
+      "offlineId": "ID hors ligne",
+      "offlinePlansSynced": "TГ©lГ©chargement rГ©ussiВ :",
+      "offlinePlansNotSynced": "Le tГ©lГ©chargement a Г©chouГ©В :",
+      "serviceDesk": "Veuillez Contacter le support informatique pour relancer le TГ©lГ©chargement EchouГ©."
+    },
+    "file": {
+      "readFileError": "Erreur de lecture du fichier",
+      "readFileErrorMessage": "Il y a une erreur dans le fichier que vous essayez de lire"
+    },
+    "plansToBeSynced": {
+      "title": "TГ©lГ©chargement du plan hors ligne",
+      "message1": "Vos plans hors connexion sont en cours de tГ©lГ©chargement et seront disponibles sous peu.",
+      "message2": "Cliquez sur 'Ok' pour continuer.",
+      "readFileErrorMessage": "Il y a une erreur dans le fichier que vous essayez de lire",
+      "createFileError": "Erreur lors de la crГ©ation du plan",
+      "createFileErrorMessage": "Il y a une erreur dans le fichier que vous essayez de modifier",
+      "editFileError": "Erreur lors de l'Г©dition du plan",
+      "editFileErrorMessage": "Il y a une erreur dans le plan que vous essayez de modifier"
+    },
+    "previewUnavailable": {
+      "title": "AperГ§u non disponible",
+      "message": "Il n'y a pas d'image d'aperГ§u pour cette version.",
+      "messageOnline": "Il n'y a pas d'image d'aperГ§u pour cette version.<br> Contactez le service informatique pour importer des fichiers d'image."
+    },
+    "unableToPrintPreview": {
+      "title": "AperГ§u du plan",
+      "message": "Il n'y a pas d'aperГ§u pour le plan sГ©lectionnГ©"
+    },
+    "saveAutosaveSuccess": "Une sauvegarde automatique a Г©tГ© enregistrГ©e",
+    "saveAutosaveError": "Impossible d'enregistrer une version de la sauvegarde automatique",
+    "unableToRecoverAutosave": {
+      "title": "Impossible de restaurer la derniГЁre sauvegarde automatique",
+      "message": "Aucune sauvegarde automatique trouvГ©e depuis votre derniГЁre rГ©cupГ©ration",
+      "message2": "Veuillez vous assurer que l'ordinateur que vous utilisez est le mГЄme que celui qui a Г©tГ© utilisГ© pour enregistrer le plan."
+    },
+    "recoverLastAutosave": {
+      "title": "Restaurer le plan",
+      "message": "Voulez-vous restaurer le plan "
+    },
+    "noMatchesFound": {
+      "noMatchesFoundTitle": "Aucune correspondance trouvГ©e - CrГ©er un Nouveau Compte de Passage",
+      "noMatchesFoundDescription": "Nous n'avons pas trouvГ© de compte client sur la base des informations fourniesвЂ¦ CrГ©ez un nouveau compte de passage (CF)"
+    }
+  },
+  "offline": {
+    "createPlan": "CrГ©er un plan",
+    "login": {
+      "status": "Vous ГЄtes actuellement hors ligne",
+      "actions": "Vous pouvez effectuer les actions suivantesВ :",
+      "create": "CrГ©er de nouveaux plans",
+      "edit": "Modifier les nouveaux plans",
+      "workOffline": "Travailler hors ligne"
+    },
+    "planForm": {
+      "OfflinePlans": "Plans hors ligne",
+      "planNumber": "NumГ©ro du plan",
+      "planName": "Nom du plan",
+      "EducationerName": "Nom du Educationer",
+      "lastUpdate": "DerniГЁre mise Г  jour",
+      "catalogue": "Catalogue",
+      "planId": "ID du Plan",
+      "createdAt": "Date de crГ©ation"
+    },
+    "list": {
+      "none": "Il n'y a pas de plans hors ligne"
+    }
+  },
+  "housingTypePlanForm": {
+    "housingSpecification": "SpГ©cification du logement",
+    "housingType": "Nom du type de logement",
+    "template": "ModГЁle",
+    "reference": "RГ©fГ©rence"
+  },
+  "booleanResponse": {
+    "no": "Non",
+    "yes": "Oui"
+  },
+  "builderType": {
+    "Cash": "Compte De Passage",
+    "Credit": "Client Compte"
+  },
+  "EducationToolType": {
+    "Fusion": "Fusion",
+    "3DC": "Protool"
+  },
+  "dropdownCatalogue": {
+    "kitchen": "Kitchens",
+    "balham": "Balham"
+  },
+  "dropdownSortOptions": {
+    "firstName": "PrГ©nom",
+    "id": "ID du Plan",
+    "createdDate": "Date de crГ©ation",
+    "surname": "Nom de famille",
+    "postcode": "Code postal",
+    "endUserFullName": "Nom complet du Client Final"
+  },
+  "filters": {
+    "adress1": "Adresse 1",
+    "Educationer": "Educationer",
+    "email": "Email",
+    "endUser": "Client Final",
+    "firstName": "PrГ©nom du Client Final",
+    "initials": "Initiales",
+    "accountNumber": "NumГ©ro du Compte",
+    "postcode": "Code postal",
+    "postcodeEndUser": "Code Postal Du Client Final",
+    "addressEndUser": "Adresse du Client Final",
+    "endUserSurname": "Nom du Client Final",
+    "mobileNumber": "NumГ©ro de portable",
+    "mobileNumberEndUser": "NumГ©ro de Portable du client final",
+    "landlineNumber": "NumГ©ro de ligne fixe",
+    "tradeCustomerLabel": "Artisan",
+    "projectLabel": "Projet",
+    "endUserLabel": "Plan par Client Final",
+    "planLabel": "Plan",
+    "planId": "ID du Plan",
+    "builderType": "Type d'Artisan",
+    "companyName": "Nom de la sociГ©tГ©",
+    "telephone": "NumГ©ro de portable",
+    "unassignedPlans": "Plans non attribuГ©s",
+    "archivedPlans": "Plans archivГ©s",
+    "archivedProjects": "Projets archivГ©s",
+    "planName": "Nom du plan",
+    "sAPAccountStatus": "Statut",
+    "showAll": "Tout Afficher",
+    "advancedOptions": "Options avancГ©es",
+    "searchBarPlaceholder": "Recherchez vos artisans, vos plans et projets",
+    "searchBarPlaceholderWithoutProjects": "Recherchez vos artisans et vos plans"
+  },
+  "endUser": {
+    "title": "Clients Finaux",
+    "createNewEndUser": "CrГ©er un Client Final",
+    "endUserDetails": "DГ©tails du Client Final",
+    "formTitle": "Titre",
+    "firstName": "PrГ©nom",
+    "surname": "Nom de famille",
+    "email": "Email",
+    "landlineNumber": "NumГ©ro de tГ©lГ©phone fixe",
+    "mobileNumber": "NumГ©ro de portable",
+    "postcode": "Code postal",
+    "address1": "Adresse 1",
+    "address2": "Adresse 2",
+    "address3": "Adresse 3",
+    "notes": "Remarques",
+    "notesPlaceholder": "Prendre note...",
+    "comments": "Commentaires",
+    "commentsPlaceholder": "Faire un commentaire...",
+    "results": "RГ©sultats",
+    "resNum": "Nombre de rГ©sultats"
+  },
+  "fusionNotifications": {
+    "alreadyOpen": "Ce plan est dГ©jГ  ouvert dans Fusion",
+    "excededFusionInstances": "Seulement une session Fusion peut ГЄtre ouverte Г  la fois",
+    "goToFusion": "Cliquez pour accГ©der Г  Fusion"
+  },
+  "home": {
+    "results": "{{ resNum }} rГ©sultats pour votre recherche",
+    "title": "Artisans & Plans",
+    "enterBuilderButton": "CrГ©er un Nouvel Artisan",
+    "sort": "Trier par",
+    "createWalletButton": "Portefeuilles",
+    "endUser": "CrГ©er un Client Final",
+    "builderTitle": "Artisans",
+    "planTitle": "Plans",
+    "tradeCustomers": "Comptes",
+    "personal": "Personnel"
+  },
+  "login": {
+    "forgotPassword": "Mot de passe oubliГ©В ?",
+    "keepSignedIn": "Gardez ma session active",
+    "logIn": "Connexion",
+    "password": "Mot de passe",
+    "username": "Nom d'utilisateur",
+    "email": "Email",
+    "environment": "Environnement",
+    "mainRol": "RГґle principal",
+    "Aiep": "DГ©pГґt",
+    "signIn": "Connexion"
+  },
+  "validationErrors": {
+    "required": "Champ obligatoire",
+    "mustBeEmail": "La valeur doit ГЄtre un email",
+    "maxlength": "Maximum {{ maxlength }} caractГЁres",
+    "minlength": "Minimum {{ minLength }} caractГЁres",
+    "maxNumericLength": "Maximum {{ maxlength }} chiffres",
+    "aiepEmail": "La valeur doit ГЄtre un email aiep. Ex. @aiep.com",
+    "invalidPostcode": "Code postal invalide",
+    "invalidVersionNumber": "Utiliser le format x.y.z",
+    "invalidFusionVersionNumber": "Utiliser le format a.b.c.d",
+    "invalidIpAddress": "L'adresse IP ne doit pas dГ©passer 255.255.255.255",
+    "valueList": "La valeur doit ГЄtre l'une des valeurs de la liste ci-dessous",
+    "min": "La valeur minimale doit ГЄtre {{ minValue }}",
+    "max": "La valeur maximale doit ГЄtre {{ maxValue }}",
+    "invalidNumber": "La valeur doit ГЄtre un nombre",
+    "invalidPhoneNumber": "NumГ©ro de tГ©lГ©phone invalide",
+    "invalidDateFormat": "La date doit ГЄtre au format jj/mm/AAAA.",
+    "duplicatePlanName": "Le plan avec le nom saisi existe dГ©jГ .",
+    "duplicateTemplateName": "Le modГЁle avec le nom saisi existe dГ©jГ ."
+  },
+  "plan": {
+    "plan": "Plan",
+    "tradeCustomer": "Artisan",
+    "endUserFullName": "Nom complet du Client Final",
+    "versionId": "ID de la version",
+    "K8Number": "NumГ©ro de Commande K8",
+    "createNewPlan": "CrГ©er un nouveau plan",
+    "planId": "ID du plan",
+    "range": "Gamme",
+    "createdDatetime": "CrГ©er la date et l'heure",
+    "lastUpdate": "DerniГЁre mise Г  jour",
+    "EducationOrigin": "Origine de la conception",
+    "EducationTool": "Outil de conception",
+    "versionNum": "NumГ©ro de la Version",
+    "versionNotes": "Notes de version",
+    "versionNo": "NВє Version",
+    "quoteOrderNumber": "NumГ©ro de commande K8",
+    "houseTypeName": "Nom du type de maison",
+    "updated": "Mis Г  jour",
+    "lastUpdated": "DerniГЁre mise Г  jour",
+    "versionsLabel": "Versions",
+    "builderName": "Nom de l'Artisan",
+    "catalogue": "Catalogue",
+    "Educationer": "Concepteur",
+    "planDetails": "DГ©tails du plan",
+    "unassigned": "Non attribuГ©",
+    "survey": "MГ©trГ© aiep",
+    "endUser": "Client Final",
+    "endUserName": "PrГ©nom",
+    "fromAiep": "Du DГ©pГґt",
+    "toAiep": "Vers le DГ©pГґt",
+    "planHeader": "ID du plan {{ id }}",
+    "attachments": "PiГЁces jointes",
+    "timeline": "Historique",
+    "endUserTitle": "Entrer les Informations du Client Final",
+    "comments": "Commentaires",
+    "makeNote": "Ecrire une note...",
+    "assignBuilderPlaceholder": "A assigner Г  l'artisan..",
+    "savedPlanComment": "Laissez les commentaires de la version ici...",
+    "masterVersion": "Version principale",
+    "versionHistory": "Historique des versions",
+    "publishHistory": "Publish History",
+    "cadFilePlanId": "ID du Plan Cadfile",
+    "planType": "Type de plan",
+    "planName": "Nom du plan",
+    "CADFilePlanId": "NВє Plan Cadfile",
+    "planTypeOptions": {
+      "noPlanType": "Aucun type de plan",
+      "localAuthNewBuild": "AutoritГ© locale - Nouvelle construction",
+      "localAuthPlannedMaint": "AutoritГ© locale - Maintenance planifiГ©e",
+      "localAuthReactiveMaint": "AutoritГ© locale - Maintenance rГ©active",
+      "housingAssnNewBuild": "Association de logement - Nouvelle construction",
+      "housingAssnPlannedMaint": "Association de logement - Maintenance planifiГ©e",
+      "housingAssnReactiveMaint": "Association de logement - Maintenance rГ©active",
+      "commercialNewBuild": "Commercial - Nouvelle construction",
+      "commercialDev": "Commercial - DГ©veloppement",
+      "landlordsNewBuild": "PropriГ©taires - Nouvelle construction",
+      "landlordsDev": "PropriГ©taires - DГ©veloppement",
+      "landlordsMaint": "PropriГ©taires - Maintenance",
+      "rentalNewBuild": "Location - Nouvelle construction",
+      "rentalDev": "Location - DГ©veloppement",
+      "rentalMaint": "Location - Maintenance",
+      "domesticNewBuild": "Particuliers - Nouvelle construction",
+      "domesticRepl": "Particuliers - Remplacement",
+      "privateNewBuild": "PrivГ© - Nouvelle construction",
+      "privateRepl": "PrivГ© - Remplacement"
+    }
+  },
+  "project": {
+    "projectName": "Nom du projet",
+    "projectReference": "RГ©fГ©rence du projet",
+    "lastUpdated": "DerniГЁre mise Г  jour"
+  },
+  "template": {
+    "createNewTemplate": "CrГ©er un nouveau modГЁle",
+    "templateName": "Nom du modГЁle",
+    "templateType": "Type de modГЁle",
+    "housingSpecification": "SpГ©cifications du logement",
+    "projectWide": "Projet Г  grande Г©chelle",
+    "assignedToHouseSpecification": "AffectГ© aux spГ©cifications de la maison",
+    "noTemplate": "Non modГЁle"
+  },
+  "publish": {
+    "renderType": "Type de rendu",
+    "state": "Statut",
+    "dateTime": "Date/Heure",
+    "renderTypeOptions": {
+      "1": "Images en SD",
+      "2": "Images en HD",
+      "3": "Images & VidГ©o en SD",
+      "4": "Images & VidГ©o en HD"
+    },
+    "publishJobState": {
+      "Initial": "Initialiser",
+      "Initialised": "InitialisГ©",
+      "Request": "Demander",
+      "Requested": "Demande EffectuГ©",
+      "Render": "CrГ©ation du Rendu",
+      "QueuedForRendering": "En Attente De Rendu",
+      "Rendering": "Rendu en cours",
+      "Rendered": "Rendu GГ©nГ©rГ©",
+      "Encode": "Encoder",
+      "QueuedForEncoding": "En Attente D'encodage",
+      "Encoding": "Encodage",
+      "Encoded": "EncodГ©",
+      "Publish": "Publier",
+      "Published": "PubliГ©",
+      "EmailSent": "E-Mail EnvoyГ©",
+      "Error": "Erreur",
+      "QueuedForRenderingError": "Erreur De Mise attente du Rendu",
+      "SubscribedToRenderingError": "Souscrit Г  L'erreur De Rendu",
+      "RenderingError": "Erreur De Rendu",
+      "PostRenderingError": "Erreur Post-Rendu",
+      "SubscribedToEncodingError": "Souscrit Г  L'erreur D'encodage",
+      "EncodingError": "Erreur D'encodage",
+      "PublishedError": "Erreur PubliГ©e",
+      "EmailError": "Erreur D'email"
+    }
+  },
+  "timeline": {
+    "commentPlaceholder": "Ecrire un commentaire...",
+    "genericTimelineMessage": "{{ entity }} a Г©tГ© {{ action }} le {{ date }} par {{ user }}.",
+    "entityCreateMessage": "{{ entity }} {{ additionalInfo }} a Г©tГ© crГ©Г© le {{ date }} par {{ user }}.",
+    "entityUpdateMessage": "{{ entity }} {{ additionalInfo }} a Г©tГ© mis Г  jour le {{ date }} par {{ user }}.",
+    "entityDeleteMessage": "{{ entity }} {{ additionalInfo }} a Г©tГ© supprimГ© le {{ date }} par {{ user }}",
+    "planPublishMessage": "Le plan a Г©tГ© envoyГ© pour publication le {{ date }} par {{ user }}.",
+    "fileCreateMessage": "Un nouveau fichier a Г©tГ© importГ© le {{ date }} par {{ user }}.",
+    "fileUpdateMessage": "Un fichier a Г©tГ© mis Г  jour le {{ date }} par {{ user }}.",
+    "commentEdited": "ModifiГ© le {{ date }}.",
+    "planActions": {
+      "1": "{{ entity }} {{ additionalInfo }} a Г©tГ© crГ©Г© le {{ date }} par {{ user }}",
+      "2": "{{ entity }} {{ additionalInfo }} a Г©tГ© mis Г  jour le {{ date }} par {{ user }}.",
+      "3": "{{ entity }} {{ additionalInfo }} a Г©tГ© supprimГ© le {{ date }} par {{ user }}",
+      "4": "Le plan a Г©tГ© envoyГ© pour publication le {{ date }} par {{ user }}.",
+      "5": "Un nouveau fichier a Г©tГ© importГ© le {{ date }} par {{ user }}.",
+      "6": "Un fichier a Г©tГ© mis Г  jour le {{ date }} par {{ user }}."
+    }
+  },
+  "printTimeline": {
+    "entityCreateMessage": " a Г©tГ© crГ©Г© le ",
+    "entityUpdateMessage": " a Г©tГ© mis Г  jour le ",
+    "entityDeleteMessage": " a Г©tГ© supprimГ© le ",
+    "planPublishMessage": "Le plan a Г©tГ© envoyГ© pour publication le ",
+    "fileCreateMessage": "Un nouveau fichier a Г©tГ© importГ© le ",
+    "fileUpdateMessage": "Un fichier a Г©tГ© mis Г  jour le ",
+    "comment": " commentГ© le ",
+    "by": "par ",
+    "on": "le",
+    "timeline": "Historique",
+    "plan": "Plan"
+  },
+  "notification": {
+    "result": {
+      "none": "Aucun rГ©sultat renvoyГ©",
+      "plural": "rГ©sultats renvoyГ©s",
+      "singular": "rГ©sultat renvoyГ©"
+    },
+    "search": "Recherche",
+    "assignBuilderSuccess": "Plan attribuГ© avec succГЁs Г  l'artisan",
+    "assignBuilderError": "Une erreur s'est produite lors de l'attribution du plan",
+    "markMasterVersionError": "Une erreur s'est produite lors de la mise Г  jour de la version principale",
+    "archivePlanSuccess": "Le plan a Г©tГ© archivГ© avec succГЁs",
+    "archivePlanError": "Une erreur s'est produite lors de l'archivage du Plan",
+    "archiveProjectSuccess": "Le projet a Г©tГ© archivГ© avec succГЁs",
+    "archiveProjectError": "Une erreur s'est produite lors de l'archivage du Projet",
+    "unarchivePlanSuccess": "Le plan a Г©tГ© restaurГ© avec succГЁs",
+    "unarchivePlanError": "Une erreur s'est produite lors de la restauration du Plan",
+    "unarchiveProjectSuccess": "Le projet a Г©tГ© restaurГ© avec succГЁs",
+    "unarchiveProjectError": "Une erreur s'est produite lors de la restauration du Projet",
+    "noProjectSearchResults":"Aucun projet ne correspond Г  vos critГЁres de recherche",
+    "noReleaseInfo": "Aucune information de Version  n'est disponible",
+    "invalidFormTitle": "DonnГ©es de formulaire invalides",
+    "invalidFormMessage": "EntrГ©e Invalide. Veuillez vГ©rifier les donnГ©es saisies pour l'artisan.",
+    "changesSaved": "Modifications enregistrГ©es",
+    "saveError": "Enregistrer l'erreur",
+    "updateBuilderSuccess": "L'artisan a Г©tГ© mis Г  jour avec succГЁs",
+    "updateBuilderError": "Un problГЁme est survenu lors de l'enregistrement de vos modifications",
+    "documentUploadSuccess": "Document importГ© avec succГЁs",
+    "documentUploadError": "Erreur lors de l'import du document",
+    "documentDuplicatedError": "Document dupliquГ©",
+    "versionUploadSuccess": "La version a Г©tГ© importГ© avec succГЁs",
+    "versionUploadError": "Erreur lors de l'import de la version",
+    "countryCreatedSuccess": "Le pays a Г©tГ© crГ©Г© avec succГЁs",
+    "countryCreatedError": "Erreur lors de la crГ©ation du pays",
+    "countryEditedSuccess": "Le pays a Г©tГ© modifiГ© avec succГЁs",
+    "countryEditedError": "Erreur lors de l'Г©dition du pays",
+    "countryDeletedSuccess": "Le pays a Г©tГ© supprimГ© avec succГЁs",
+    "countryDeletedError": "Erreur lors de la suppression du pays",
+    "regionCreatedSuccess": "La rГ©gion a Г©tГ© crГ©Г©e avec succГЁs",
+    "regionCreatedError": "Erreur lors de la crГ©ation de la rГ©gion",
+    "regionEditedSuccess": "La rГ©gion a Г©tГ© modifiГ©e avec succГЁs",
+    "regionEditedError": "Erreur lors de l'Г©dition de la rГ©gion",
+    "regionDeletedSuccess": "La rГ©gion a Г©tГ© supprimГ©e avec succГЁs",
+    "regionDeletedError": "Erreur lors de la suppression de la rГ©gion",
+    "areaCreatedSuccess": "La zone a Г©tГ© crГ©Г©e avec succГЁs",
+    "areaCreatedError": "Erreur lors de la crГ©ation de la zone",
+    "areaEditedSuccess": "La zone a Г©tГ© modifiГ©e avec succГЁs",
+    "areaEditedError": "Erreur lors de l'Г©dition de la zone",
+    "areaDeletedSuccess": "La zone a Г©tГ© supprimГ©e avec succГЁs",
+    "areaDeletedError": "Erreur lors de la suppression de la zone",
+    "planUpdatedSuccess": "Plan mis Г  jour avec succГЁs",
+    "planUpdatedError": "Un problГЁme est survenu lors de l'enregistrement des modifications du plan",
+    "userDeletedSuccess": "L'utilisateur a Г©tГ© supprimГ© avec succГЁs",
+    "deleteUserError": "Erreur lors de la suppression de l'utilisateur",
+    "AiepInfo": "Info DГ©pГґt",
+    "AiepCreatedSuccess": "Le dГ©pГґt a Г©tГ© crГ©Г© avec succГЁs",
+    "AiepCreatedError": "Une erreur s'est produite lors de la crГ©ation de votre dГ©pГґt",
+    "AiepUpdatedSuccess": "Le dГ©pГґt a Г©tГ© mis Г  jour avec succГЁs",
+    "AiepUpdatedError": "Une erreur s'est produite lors de la mise Г  jour de votre dГ©pГґt",
+    "planInfo": "Info sur le Plan",
+    "planCreatedSuccess": "Le Plan a Г©tГ© crГ©Г© avec succГЁs",
+    "planActivatedSuccess": "Le Plan a Г©tГ© activГ© avec succГЁs",
+    "planActivatedError": "Une erreur s'est produite lors de l'activation du Plan",
+    "planCreatedError": "Une erreur s'est produite lors de la crГ©ation du Plan",
+    "planCreatingError": "Une erreur s'est produite lors de la crГ©ation de votre Plan",
+    "endUserInfo": "Informatons sur le Client Final",
+    "endUserCreatedSuccess": "Le Client Final a Г©tГ© crГ©Г© avec succГЁs",
+    "endUserCreatedError": "Une erreur s'est produite lors de la crГ©ation de votre client final",
+    "endUserUpdatedSuccess": "Le client final a Г©tГ© mis Г  jour avec succГЁs",
+    "endUserUpdatedError": "Une erreur s'est produite lors de la mise Г  jour de votre client final",
+    "permissionWarning": "Vous n'ГЄtes pas autorisГ© Г  effectuer cette action",
+    "emptySearchWarning": "Les requГЄtes comportant des espaces vides supplГ©mentaires sont ignorГ©es",
+    "noActivePlans": "Aucun plan actif disponible pour le transfert."
+  },
+  "paginator": {
+    "display": "Afficher les Г©lГ©ments"
+  },
+  "topbar": {
+    "noAiep": "Pas de dГ©pГґt",
+    "supportAiep": "Support",
+    "workingAiep": "DГ©pГґt de travail",
+    "about": "ГЂ propos de",
+    "releaseNotesDocumentMenu": "Notes de Mise Г  jour - Version Document",
+    "externalReleaseNotesMenu": "Notes de Mise Г  jour - Version Web",
+    "uploadReleaseNotesDialogMenu": "Г‰diter les Notes de Mise Г  jour",
+    "signOutMenu": "DГ©connexion",
+    "placeholder": "Rechercher",
+    "selectAiepPlaceholder": "SГ©lectionner le dГ©pГґt de travail",
+    "title": "Education View",
+    "supportDashboard": "Tableau de bord du support",
+    "offline": "Hors ligne",
+    "AiepError": "Erreur lors de la mise Г  jour du dГ©pГґt de travail actuel",
+    "releaseNotesError": "Fusion ne pouvait pas charger les notes de mise Г  jour",
+    "releaseNotesRecoveringError": "Une erreur s'est produite lors de la rГ©cupГ©ration des donnГ©es des notes de mise Г  jour."
+  },
+  "existingBuilderDialog": {
+    "exactMatchTitle": "Artisan Existant trouvГ©",
+    "partialMatchTitle": "Archives d'artisan existant trouvГ©es",
+    "createBuilderMessage1": "Aucun de ces rГ©sultats n'est votre artisan?",
+    "createBuilderMessage2": "Continuer Г  crГ©er l'artisan {{ builderSurname }}, {{ builderAddress1 }}, {{ builderPostcode }}"
+  },
+  "existingTradeCustomers": {
+    "foundTradeCustomersTitle": "Ces comptes ont Г©tГ© trouvГ©s"
+  },
+  "licence": {
+    "title": "Licence Fusion",
+    "correctMessage": "Votre Licence Fusion est valide",
+    "expireMessage": "Votre licence Fusion a expirГ© depuis : {{ licenceDate }}, veuillez contacter le support informatique",
+    "warnMessage": "Votre licence Fusion expirera le : {{ licenceDate }}, veuillez contacter le support informatique",
+    "noLicenceMessage": "Vous n'avez pas de licence Fusion, veuillez contacter le support Informatique."
+  },
+  "support": {
+    "title": "Equipe Support",
+    "manageBuilderPlans": "GГ©rer les Artisans & les Plans",
+    "userRolesPermissions": "RГґles & autorisations des utilisateurs",
+    "archivedPlans": "Plans archivГ©s",
+    "supportTeamAiep": "DГ©pГґt de l'Г©quipe Support",
+    "manageAieps": "GГ©rer les dГ©pГґts",
+    "releaseNotes": "Notes de Mise Г  jour & FAQ",
+    "publishSystem": "SystГЁme de publication",
+    "usersAndRoles": "Utilisateurs & rГґles",
+    "logs": "Journaux systГЁme",
+    "actionLogs": "Journaux d'action",
+    "jobs": "Jobs"
+  },
+  "clearReleaseNotes": {
+    "clearSuccessMessage": "Notes de mise Г  jour effacГ©es avec succГЁs",
+    "clearErrorMessage": "Erreur lors de l'effacement des notes de version"
+  },
+  "releaseNotesPage": {
+    "title": "Unregistrer",
+    "releaseTitle": "Titre",
+    "upload": "Importer les Notes de Mise Г  jour",
+    "dvVersion": "Version DV",
+    "fusionVersion": "Version Fusion",
+    "date": "Date"
+  },
+  "AiepsPage": {
+    "title": "GГ©rer les dГ©pГґts",
+    "createNewAiep": "CrГ©er un nouveau dГ©pГґt",
+    "manageContryRegionArea": "GГ©rer les pays, rГ©gions et zones"
+  },
+  "countriesPage": {
+    "title": "GГ©rer les pays",
+    "createNewCountry": "CrГ©er un nouveau pays"
+  },
+  "Aiep": {
+    "AiepCode": "Code dГ©pГґt",
+    "AiepNumber": "NumГ©ro de dГ©pГґt",
+    "address": "Adresse",
+    "address1": "Adresse 1",
+    "address2": "Adresse 2",
+    "address3": "Ville",
+    "address4": "Adresse 4",
+    "address5": "Adresse 5",
+    "faxNumber": "NumГ©ro de fax",
+    "phoneNumber": "NumГ©ro de tГ©lГ©phone",
+    "name": "Nom",
+    "email": "Email",
+    "area": "Zone",
+    "ipAddress": "Adresse IP",
+    "manager": "Manager",
+    "region": "rГ©gion",
+    "lastUpdate": "DerniГЁre mise Г  jour",
+    "AiepDetails": "DГ©tails du dГ©pГґt",
+    "postcode": "Code postal",
+    "downloadSpeed": "Vitesse de tГ©lГ©chargement (KB/s)",
+    "downloadLimit": "Limite de tГ©lГ©chargement (%)",
+    "htmlEmail": "Activer l'email HTML"
+  },
+  "country": {
+    "name": "Nom",
+    "regions": "RГ©gions",
+    "areas": "Zones",
+    "Aieps": "DГ©pГґts",
+    "lastUpdate": "DerniГЁre mise Г  jour"
+  },
+  "areasPage": {
+    "title": "GГ©rer les zones",
+    "area": "Zone",
+    "Aieps": "DГ©pГґts"
+  },
+  "regionsPage": {
+    "title": "GГ©rer les rГ©gions",
+    "region": "RГ©gion",
+    "areas": "Zones"
+  },
+  "rolesPage": {
+    "title": "RГґles et Autorisations",
+    "role": "RГґle",
+    "name": "Nom"
+  },
+  "archivedPlans": {
+    "title": "Plans archivГ©s",
+    "planNumber": "NumГ©ro du Plan",
+    "endClient": "Client Final",
+    "tradingName": "Raison Sociale",
+    "range": "Gamme",
+    "archivedOn": "ArchivГ© le"
+  },
+  "restoreArchivedPlan": {
+    "restoredSuccessMessage": "Plan archivГ© restaurГ© avec succГЁs",
+    "restoredErrorMessage": "Erreur lors de la restauration du plan archivГ©"
+  },
+  "systemLog": {
+    "title": "Journaux systГЁme",
+    "level": "Niveau",
+    "message": "Message",
+    "messageTemplate": "ModГЁle de message",
+    "exception": "Type d'exception",
+    "dateTime": "Date",
+    "properties": "PropriГ©tГ©s"
+  },
+  "sortBy": {
+    "title": "Trier par",
+    "ascending": "Ordre Croissant",
+    "descending": "Ordre DГ©croissant"
+  },
+  "filterBy": {
+    "title": "Filtrer par",
+    "placeholder": "Entrez un mot-clГ©"
+  },
+  "user": {
+    "name": "Nom",
+    "AiepCode": "Code dГ©pГґt",
+    "AiepName": "Nom du dГ©pГґt",
+    "upn": "UPN",
+    "create": "CrГ©er un nouvel utilisateur",
+    "role": "RГґle",
+    "newUser": "Nouvel utilisateur",
+    "userDetails": "DГ©tails de l'utilisateur",
+    "firstName": "PrГ©nom",
+    "surname": "Nom de famille",
+    "uniqueIdentifier": "Adresse Mail",
+    "notification": {
+      "header": "Info utilisateur",
+      "createSuccess": "Utilisateur crГ©Г© avec succГЁs",
+      "createError": "Une erreur s'est produite lors de la crГ©ation de l'utilisateur",
+      "updateSuccess": "Utilisateur mis Г  jour avec succГЁs",
+      "updateError": "Une erreur s'est produite lors de la mise Г  jour de l'utilisateur"
+    },
+    "leaver": "Sortant",
+    "delegatetouser": "DГ©lГ©guer Г "
+  },
+  "assignEntities": {
+    "permissions": "Autorisations",
+    "assignedListTitle": "AssignГ©",
+    "availableListTitle": "Disponible",
+    "searchPlaceHolder": "Tapez quelque chose..."
+  },
+  "actionLogsPage": {
+    "title": "Journaux d'action",
+    "export": "Exporter"
+  },
+  "actionLogs": {
+    "action": "Action",
+    "user": "Utilisateur",
+    "date": "Date",
+    "belongsTo": "Appartient Г ",
+    "value": "Valeur",
+    "messages": {
+      "entityCreateMessage": "CrГ©er",
+      "entityUpdateMessage": "Mise Г  jour",
+      "entityDeleteMessage": "Supprimer",
+      "planPublishMessage": "Plan PubliГ©",
+      "fileCreateMessage": "CrГ©er Fichier",
+      "fileUpdateMessage": "Mise Г  jour du fichier"
+    }
+  },
+  "dateRange": {
+    "end": "Date de fin",
+    "start": "Date de dГ©but",
+    "startDate": "Du",
+    "endDate": "Au"
+  },
+  "Plan": {
+    "PlanCode": "ID du plan",
+    "EndUser.Surname": "Client final",
+    "BuilderTradingName": "Raison Sociale",
+    "Educationer.Surname": "Educationer",
+    "CadFilePlanId": "ID du Plan Cadfile",
+    "UpdatedDate": "DerniГЁre mise Г  jour"
+  },
+  "Builder": {
+    "AccountNumber": "NumГ©ro du Compte",
+    "TradingName": "Raison Sociale",
+    "Address1": "Adresse",
+    "Postcode": "Code postal",
+    "MobileNumber": "NumГ©ro de portable"
+  },
+  "SystemLog": {
+    "Level": "Niveau",
+    "Message": "Message",
+    "MessageTemplate": "ModГЁle de message",
+    "Exception": "Type d'exception",
+    "Properties": "PropriГ©tГ©s",
+    "TimeStamp": "Date"
+  },
+  "ActionLogs": {
+    "ActionType": "Action",
+    "User": "Utilisateur",
+    "Date": "Date",
+    "EntityName": "Appartient Г ",
+    "EntityValue": " Valeur"
+  },
+  "ReleaseInfo": {
+    "Title": "Titre",
+    "Version": "Version DV",
+    "FusionVersion": "Version Fusion",
+    "DateTime": "Date"
+  },
+  "ArchivedPlan": {
+    "PlanCode": "NumГ©ro du Plan",
+    "EndUser.FirstName": "Client final",
+    "BuilderTradingName": "Raison Sociale",
+    "UpdatedDate": "ArchivГ© le"
+  },
+  "Country": {
+    "KeyName": "Nom",
+    "RegionsCount": "RГ©gions"
+  },
+  "Region": {
+    "KeyName": "RГ©gion",
+    "AreasCount": "Zones"
+  },
+  "Area": {
+    "KeyName": "Zone",
+    "AiepCount": "DГ©pГґts"
+  },
+  "Aiep": {
+    "AiepCode": "Code du dГ©pГґt",
+    "Name": "Nom",
+    "Area.KeyName": "Zone",
+    "UpdatedDate": "DerniГЁre mise Г  jour"
+  },
+  "Role": {
+    "Name": "RГґle"
+  },
+  "User": {
+    "FirstName": "Nom",
+    "UniqueIdentifier": "UPN",
+    "Aiep.AiepCode": "DГ©pГґt code",
+    "Aiep.Name": "Nom du dГ©pГґt"
+  },
+  "BuilderPlan": {
+    "Id": "ID du plan",
+    "EndUser.Surname": "Client final",
+    "Educationer.Surname": "Educationer",
+    "cadFilePlanId": "ID du Plan Cadfile",
+    "updatedDate": "DerniГЁre mise Г  jour"
+  },
+  "planSummary": {
+    "planSummary": "RГ©sumГ© du plan",
+    "planCreated": "Plan crГ©Г©",
+    "lastUpdated": "DerniГЁre mise Г  jour",
+    "EducationerName": "Nom du Educationer",
+    "masterVersionId": "Identifiant de la version principale",
+    "noOfVersions": "Nombre de versions",
+    "survey": "MГ©trГ© aiep",
+    "logButton": "Voir l'historique"
+  },
+  "planDetails": {
+    "planDetailsTitle": "DГ©tails du plan",
+    "tradingName": "Raison Sociale",
+    "postcode": "Code postal",
+    "address1": "Adresse 1",
+    "knownAccountMessage": "Vous connaissez le numГ©ro du compte?",
+    "accountNumber": "NumГ©ro de compte"
+  },
+  "projectOverview": {
+    "projectOverviewString": "AperГ§u",
+    "projectName": "Projet Nom",
+    "projectReference": "Projet RГ©fГ©rence",
+    "createdDate": "Date de crГ©ation",
+    "customerName": "Nom du client"
+  },
+  "projectTemplates": {
+    "templatesAndPlans": "ModГЁles et plans",
+    "name": "Nom",
+    "housingSpec": "SpГ©cifications du logement"
+  },
+  "projectSpecifications": {
+    "projectsSpecificationString": "CaractГ©ristiques"
+  },
+  "projectPlans": {
+    "cadPlanNo": "CAD Plan No.",
+    "housingSpec": "SpГ©c du logement",
+    "housingType": "Type de logement",
+    "plans": "Plans",
+    "status": "Statut",
+    "archived": "ArchivГ©",
+    "active": "Active"
+  },
+  "search": {
+    "title": "Recherche"
+  },
+  "selectOptions": {
+    "postcodeCountries": {
+      "FRA": "France",
+      "BEL": "Belgique"
+    }
+  }
+}
+
+

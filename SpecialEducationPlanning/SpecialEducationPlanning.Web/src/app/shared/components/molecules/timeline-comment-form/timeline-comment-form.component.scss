@@ -1,0 +1,16 @@
+.tdp-molecules-timeline-comment-form {
+  &-actions {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 0.75rem;
+    gap: 1rem;
+  }
+
+  .tdp-atoms-textarea-input-container
+    .tdp-atoms-textarea-body.tdp-atoms-textarea-body.tdp-atoms-textarea-body {
+    padding: 1.75rem 2rem;
+    resize: none;
+    height: 9rem;
+  }
+}

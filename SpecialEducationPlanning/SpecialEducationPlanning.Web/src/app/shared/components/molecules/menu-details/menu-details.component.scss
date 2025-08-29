@@ -1,0 +1,94 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-menu-details {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+    &--avatar {
+      display: flex;
+      align-self: center;
+      align-items: center;
+      margin: 2.5rem; 
+    }
+
+    &--user-info {
+      display: flex;
+      flex-direction: column;
+      margin: 1.875rem 2.5rem;
+      color: $navy;
+      font-family: 'Rooster';
+      font-size: 1.125rem;
+    }
+
+    &--options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 1.25rem 1.875rem;
+    }
+
+    &--sign-out {
+      display: flex;
+      margin: 1.563rem;
+      justify-content: flex-end;
+    }
+}
+
+.seperator {
+  border-bottom: 0.063rem solid $gray-89;
+}
+
+.button-close { 
+  margin: 1.5rem 1.5rem 0.625rem auto;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  border: none;
+  &:hover {
+    background-color: rgba(218, 218, 218, 0.5);
+    border-radius: 100%;
+    cursor: pointer;
+  }
+}
+
+.user-info-row {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.313rem;
+  margin-bottom: 0.313rem;
+}
+
+.user-info-general {
+  font-weight: 600;
+}
+
+.user-info {
+  font-weight: 400;
+  margin-left: 0.313rem;
+}
+
+.tdp-button-with-icon { 
+  background: none;
+  border: none;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0.313rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.125rem;
+  font-family: 'Rooster';
+  font-weight: 400;
+  color: $navy;
+    tdp-icon {
+      margin-right: 15px;
+    }
+
+  &:hover {
+    background: $white;
+    border-radius: 10%;
+  }
+}

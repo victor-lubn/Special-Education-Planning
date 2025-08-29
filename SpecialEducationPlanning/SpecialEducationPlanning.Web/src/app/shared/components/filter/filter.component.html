@@ -1,0 +1,32 @@
+<div class="tdp-row tdp-filter-container">
+  <label class="tdp-filter-label">
+    {{ 'filterBy.title' | translate }}
+  </label>
+  <div class="tdp-filter-dropdown">
+    <div class="tdp-select-container">
+      <input class="tdp-input" 
+        type="text" 
+        #filterTrigger 
+        readonly 
+        [matAutocomplete]="filteringOptions" 
+        (click)="openFilterOptions()">
+      <i class="fas fa-chevron-down tdp-chevron" (click)="openFilterOptions()"></i>
+    </div>
+    <mat-autocomplete 
+      #filteringOptions="matAutocomplete" 
+      [displayWith]="displayFiltering.bind(this)"
+      (optionSelected)="setFilteringOption($event)">
+      <mat-option></mat-option>
+      <ng-container *ngFor="let item of filteringItems">
+        <mat-option [value]="item.propertyName">
+          {{ item.translate | translate }}
+        </mat-option>
+      </ng-container>
+    </mat-autocomplete>
+  </div>
+  <input 
+    type="text"
+    [formControl]="filterValue"
+    class="tdp-filter-input" 
+    placeholder="{{ 'filterBy.placeholder' | translate }}"/>
+</div>

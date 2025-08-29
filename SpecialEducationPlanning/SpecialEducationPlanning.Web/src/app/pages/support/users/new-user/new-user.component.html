@@ -1,0 +1,50 @@
+﻿<tdp-main-view>
+  <div class="main-view--content">
+    <div class="tdp-Aiep-new-template">
+      <div class="tdp-Aieps-list-header">
+        <tdp-back-with-title
+          class="tdp-Aieps-list-header--back-component"
+          [title]="'user.newUser' | translate"
+          (onClick)="goBack()">
+        </tdp-back-with-title>
+        <tdp-button
+          class="tdp-Aieps-list-header--manage-button"
+          [icon]="true"
+          [whiteBlueButton]="true"
+          (onClick)="uploadCsv()">
+          <tdp-upload-icon
+            icon-button
+            fillColor="#4A90E2"
+            height="0.938rem"
+            width="0.938rem">
+          </tdp-upload-icon>
+          {{ 'dialog.uploadCSV.title' | translate }}
+        </tdp-button>
+      </div>
+    </div>
+  </div>
+  <tdp-Aiep-create-new-template>
+    <tdp-user-create-and-details-form
+      (userSubmitted)="userSubmittedHandler($event)">
+    </tdp-user-create-and-details-form>
+    <div class="Aiep-new-bottom-container" actions>
+      <tdp-button
+        color="ghost"
+        size="large"
+        (click)="cancel()"
+        class="cancel-button"
+      >
+        <span class="btn-text">{{ 'button.cancel' | translate }}</span>
+      </tdp-button>
+      <tdp-button
+        size="large"
+        color="green"
+        [disabled]="!hasChanges()"
+        (onClick)="saveNewUser()"
+      >
+        {{ 'button.save' | translate }}
+      </tdp-button>
+    </div>
+  </tdp-Aiep-create-new-template>
+</tdp-main-view>
+

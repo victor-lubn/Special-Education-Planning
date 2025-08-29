@@ -1,0 +1,30 @@
+@import "/src/assets/sass/abstracts/variables";
+
+tdp-main-view {
+  .header {
+    background-color: $tdp-atom-tabs-label-background;
+    display: flex;
+    .main-view--header {
+      max-width: 75rem;
+      margin: 1.5rem auto;
+      padding: 0 6rem;
+      width: 100%;
+    }
+    &.header--sticky {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+  }
+  .main-view-item:empty {
+    display: none;
+  }
+  .content {
+    padding-top: 40px;
+    .main-view--content {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+﻿<div class="tdp-project-plans">
+  <div class="tdp-project-plans-header">
+    <span class="tdp-project-plans-header-text">{{"projectPlans.plans" | translate }}</span>
+    <tdp-button
+      *ngIf="!project?.isArchived"
+      class="reset-button"
+      color="white"
+      (onClick)="publishAllPlans()"
+    >
+      {{ "button.publishAllPlans" | translate }}
+    </tdp-button>
+  </div>
+  <tdp-table
+    [tableSort]="true"
+    [tablePaginator]="false"
+    [dynamicData]="false"
+    [hasActions]="true"
+    [records]="plansRecords"
+    [columnsConfiguration]="planColumnNames"
+    tableHeight="500px"
+    tableMinHeight="500px"
+    (onRowClicked)="onPlanClick($event)"
+  >
+    <tdp-table-actions>
+        <ng-template let-record="record">
+          <div class="ng-content-wraper" *ngIf="record.status === active && !record.isStarred">
+            <tdp-table-action (click)="publishPlan($event, record)" [matTooltip]="'button.publishPlan' | translate">
+              <tdp-publish-icon class="tdp-actions-icon"></tdp-publish-icon>
+            </tdp-table-action>
+            <tdp-table-action (click)="editInEducationTool($event, record)" [matTooltip]="'button.edit' | translate">
+              <tdp-launch-icon class="tdp-actions-icon"></tdp-launch-icon>
+            </tdp-table-action>
+          </div>
+          <div class="ng-content-wraper" *ngIf="record.status === archived">
+            <tdp-table-action (click)="openRestoreDialog($event, record)" [matTooltip]="'button.restore' | translate">
+              <tdp-restore-icon
+                class="tdp-actions-icon"
+                fillColor="#ADADAD"
+                width="1.5rem"
+                height="1.5rem">
+              </tdp-restore-icon>
+            </tdp-table-action>
+          </div>
+          <tdp-table-more-actions *ngIf="record.status === active && !record.isStarred">
+            <tdp-table-more-action
+              (click)="openArchiveDialog($event, record)"
+            >
+              {{ "button.archive" | translate }}
+            </tdp-table-more-action>
+          </tdp-table-more-actions>
+        </ng-template>
+    </tdp-table-actions>
+  </tdp-table>
+</div>
+

@@ -1,0 +1,22 @@
+<tdp-modal
+  maxWidth="1000px"
+  (onClosed)="closeDialog()">
+
+  <div title> {{ 'plan.timeline' | translate }} </div>
+
+  <div class="tdp-embed-file-viewer-container" *ngIf="fileLoaded">
+    <div class= "tdp-embed-txt-viewer"> {{ fileContent }}</div>
+  </div>
+
+  <div actions>
+    <tdp-button
+      size="large"
+      color="green"
+      [disabled]="!fileLoaded"
+      (onClick)="print()"
+    >
+      {{ 'button.print' | translate }}
+    </tdp-button>
+  </div>
+
+</tdp-modal>

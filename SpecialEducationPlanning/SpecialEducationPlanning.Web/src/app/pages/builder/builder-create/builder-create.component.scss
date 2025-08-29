@@ -1,0 +1,33 @@
+@import '/src/assets/sass/abstracts/_variables.scss';
+
+.tdp-create-builder-first-column {
+  flex: 1 1 0;
+}
+
+.tdp-create-builder-second-column {
+  flex: 2 1 0;
+}
+
+.tdp-plan-create-row {
+
+  .tdp-form-group {
+    max-width: 180px;
+    margin-right: 40px;
+  }
+
+  .tdp-plan-create-radio-group {
+    max-width: 115px;
+  }
+
+  .tdp-long-dropdown {
+    max-width: 270px; 
+   }
+
+}
+
+.tdp-builder-create-textarea {
+  box-sizing: border-box;
+  border-radius: 3px;
+  width: 100%;
+  resize: none;
+}

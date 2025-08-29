@@ -1,0 +1,85 @@
+<tdp-main-view>
+    <div class="main-view--header">
+            <tdp-filter-header
+      [options]="options" 
+      [form]="form">
+      </tdp-filter-header>
+  </div>
+
+
+  <div class="main-view--content">
+    <div class="tdp-release-notes-content-header">
+      <tdp-back-with-title
+        class="tdp-release-notes-content-header--back-component"
+        [title]="'releaseNotesPage.title' | translate"
+        (onClick)="goBack()">
+      </tdp-back-with-title>
+      <tdp-button
+        class="tdp-release-notes-content-header--upload-button"
+        [icon]="true" 
+        [whiteBlueButton]="true"
+        (onClick)="openUploadReleaseNotes()">
+        <tdp-upload-icon 
+          icon-button
+          fillColor="#4A90E2"
+          width="1.125rem"
+          height="1.125rem">
+        </tdp-upload-icon>
+        {{ 'releaseNotesPage.upload' | translate }}
+      </tdp-button>
+    </div>
+
+    <div class="tdp-release-notes-content-table">
+      <ng-container *ngIf="releaseInfo">
+        <tdp-table
+          [records]="releaseInfo"
+          [columnsConfiguration]="columnsConfiguration"
+          [pageSize]="pageSize"
+          [hasActions]="true"
+          (onPageChanged)="pageChanged($event)"
+          (onSortChanged)="sortChanged($event)">
+          <tdp-table-actions>
+            <ng-template let-record="record">
+              <tdp-table-action (click)="showReleaseNotes(record)">
+                <tdp-info-icon
+                  class="tdp-actions-icon"
+                  fillColor="#ADADAD"
+                  height="1.5rem"
+                  width="1.5rem"
+                  [matTooltip]="'button.viewReleaseDocuments' | translate">
+                </tdp-info-icon>
+              </tdp-table-action>
+              <tdp-table-action (click)="openUploadReleaseNotes(record)">
+                <tdp-pencil-icon
+                  class="tdp-actions-icon"
+                  fillColor="#ADADAD"
+                  height="1.5rem"
+                  width="1.5rem"
+                  [matTooltip]="'button.editReleaseNotes' | translate">
+                </tdp-pencil-icon>
+              </tdp-table-action>
+              <tdp-table-action (click)="clearReleaseNotes(record)">
+                <tdp-restore-icon
+                  class="tdp-actions-icon"
+                  fillColor="#ADADAD"
+                  height="1.5rem"
+                  width="1.5rem"
+                  [matTooltip]="'button.clearReleaseNotes' | translate">
+                </tdp-restore-icon>
+              </tdp-table-action>
+              <tdp-table-action (click)="download(record)">
+                <tdp-download-icon
+                  class="tdp-actions-icon"
+                  fillColor="#ADADAD"
+                  height="1.5rem"
+                  width="1.5rem"
+                  [matTooltip]="'button.download' | translate">
+                </tdp-download-icon>
+              </tdp-table-action>
+            </ng-template>
+          </tdp-table-actions>
+        </tdp-table>
+      </ng-container>
+    </div>
+  </div>
+</tdp-main-view>

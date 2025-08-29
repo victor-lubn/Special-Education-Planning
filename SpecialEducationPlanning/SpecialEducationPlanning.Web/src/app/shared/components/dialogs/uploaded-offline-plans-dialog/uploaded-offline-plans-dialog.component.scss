@@ -1,0 +1,29 @@
+@import '/src/assets/sass/abstracts/_variables.scss';
+
+.uploaded-offline-plans-title {
+  text-align: center;
+}
+
+.uploaded-offline-plans-body {
+  text-align: center;
+  color: $navy;
+  font-size: 0.938rem;
+  font-weight: 400;
+  overflow: auto;
+  flex-grow: 1;
+  margin: 0 -2.5rem;
+  padding: 1.25rem 2.5rem;
+
+  .uploaded-offline-plans-body-text {
+    padding-bottom: 1rem;
+  }
+
+  .uploaded-offline-plans-body-plans {
+    padding-top: 0.2rem;
+  }
+
+  .uploaded-offline-plans-body-support {
+    padding-top: 1rem;
+  }
+
+}

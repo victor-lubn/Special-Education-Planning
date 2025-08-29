@@ -1,0 +1,20 @@
+﻿  <tdp-quick-preview
+    [image]="imageUrl"
+    [altText]="previewAltText"
+    [title]="previewTitle"
+    [promoteToMaster]="previewPromoteMaster"
+    [showPromoteMaster]="data?.showPromoteMaster"
+    [isMasterVersion]="data?.isMasterVersion"
+    [planId]="planId"
+    [print]="previewPrint"
+    [edit]="previewEdit"
+    [view]="previewView"
+    [loadingImage]="loadingImage"
+    [showViewDetailsButton]="showViewDetailsButton"
+    (onClose)="closeDialog()"
+    (onPrint)="printPreview()"
+    (onView)="goToPlanDetails()"
+    (onEdit)="openPlanInEducationTool()"
+    (onPromoteMaster)="markMasterVersionHandler()"
+  ></tdp-quick-preview>
+

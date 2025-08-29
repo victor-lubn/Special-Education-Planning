@@ -1,0 +1,28 @@
+<div class="tdp-molecules-customer-container-left">
+  <ng-container
+    *ngIf="customerInfoUpdateState; then updateState; else infoState"
+  ></ng-container>
+  <ng-template #infoState>
+    <tdp-customer-info [customerData]="customerData"></tdp-customer-info>
+    <div class="tdp-molecules-customer-container-left-buttons">
+      <tdp-button
+        [size]="'small'"
+        [color]="'white'"
+        (onClick)="updateCustomerInfo()"
+        [disabled]="customerData?.accountNumber"
+        ><div title>
+          {{ "button.update" | translate }}
+        </div></tdp-button
+      >
+    </div>
+  </ng-template>
+  <ng-template #updateState>
+    <tdp-customer-form
+      [customerContainerInternationalization]="
+        customerContainerInternationalization
+      "
+      [initialValues]="customerData"
+      (submitForm)="onSubmit($event)"
+    ></tdp-customer-form>
+  </ng-template>
+</div>

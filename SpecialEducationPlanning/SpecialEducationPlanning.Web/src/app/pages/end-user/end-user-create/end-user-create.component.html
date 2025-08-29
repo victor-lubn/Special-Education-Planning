@@ -1,0 +1,32 @@
+<div class="tdp-column tdp-entity-page">
+  <div class="tdp-row tdp-entity-header">
+    <div class="tdp-row tdp-entity-header-start-section">
+      <button class="tdp-text-btn" (click)="goBack()">
+        <i class="fas fa-chevron-left"></i>
+        <span>
+          {{ "button.goBack" | translate }}
+        </span>
+      </button>
+    </div>
+    <div class="tdp-row tdp-entity-header-center-section">
+      <div class="tdp-entity-title">
+        {{ "endUser.createNewEndUser" | translate }}
+      </div>
+    </div>
+    <div class="tdp-row tdp-entity-header-end-section"></div>
+  </div>
+  <div class="tdp-column tdp-entity-page-content">
+    <mat-expansion-panel expanded>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ "endUser.endUserDetails" | translate }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <tdp-end-user-form
+        #endUserForm
+        [endUserValidation]="getEndUserValidation()"
+        (endUserSubmitted)="endUserSubmitHandler($event)">
+      </tdp-end-user-form>
+    </mat-expansion-panel>
+  </div>
+</div>

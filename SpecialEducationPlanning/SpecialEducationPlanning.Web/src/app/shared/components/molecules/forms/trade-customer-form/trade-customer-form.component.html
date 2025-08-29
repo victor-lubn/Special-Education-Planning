@@ -1,0 +1,95 @@
+<form [formGroup]="entityForm">
+    <div class="tdp-trade-customer-form">
+        <div class="tdp-form-row">
+            <div class="tdp-form-group">
+                <tdp-input
+                    class="tdp-trade-customer-form-input"
+                    formControlName="tradingName"
+                    type="text"
+                    [ngClass]="{ 'error-message': checkHasErrorV2('tradingName') }"
+                    [title]="'builder.tradingName' | translate"
+                    [required]="true">
+                </tdp-input>
+                <div *ngIf="checkHasErrorV2('tradingName', 'required')" class="tdp-form-error-message">
+                    {{ 'validationErrors.required' | translate }}
+                </div>
+            </div>
+            <div class="tdp-form-group">
+                <tdp-input
+                    class="tdp-trade-customer-form-input"
+                    formControlName="name"
+                    type="text"
+                    [title]="'builder.name' | translate">
+                </tdp-input>
+            </div>
+            <div class="tdp-form-group">
+                <tdp-input
+                    class="tdp-trade-customer-form-input"
+                    formControlName="email"
+                    type="text"
+                    [title]="'builder.email' | translate"
+                    [ngClass]="{ 'error-message': checkHasErrorV2('email') }">
+                </tdp-input>
+                <div *ngIf="checkHasErrorV2('email', 'email')" class="tdp-form-error-message">
+                    {{ 'validationErrors.mustBeEmail' | translate }}
+                </div>
+            </div>
+        </div>
+        <div class="tdp-form-row">
+            <div class="tdp-form-group tdp-trade-customer-form-partial-address-container">
+                <tdp-partial-address-form 
+                    [singleLine]="true"
+                    [formGroup]="entityForm">
+                </tdp-partial-address-form>
+            </div>
+        </div>
+        <div class="tdp-form-row">
+            <div class="tdp-form-group">
+                <tdp-input
+                    class="tdp-trade-customer-form-input"
+                    formControlName="address2"
+                    type="text"
+                    [title]="'builder.address2' | translate">
+                </tdp-input>
+            </div>
+            <div class="tdp-form-group">
+                <tdp-input
+                    class="tdp-trade-customer-form-input"
+                    formControlName="address3"
+                    type="text"
+                    [title]="'builder.address3' | translate">
+                </tdp-input>
+            </div>
+        </div>
+        <div class="tdp-form-row">
+            <div class="tdp-form-group">
+                <tdp-input
+                    class="tdp-trade-customer-form-input"
+                    formControlName="mobileNumber"
+                    type="text"
+                    [title]="'builder.mobileNumber' | translate">
+                </tdp-input>
+            </div>
+            <div class="tdp-form-group">
+                <tdp-input
+                    class="tdp-trade-customer-form-input"
+                    formControlName="landlineNumber"
+                    type="text"
+                    [title]="'builder.landlineNumber' | translate">
+                </tdp-input>
+            </div>
+        </div>
+        <div class="tdp-form-group">
+            <tdp-text-area
+                class="tdp-trade-customer-form-textarea"
+                formControlName="notes" 
+                [title]="'builder.notes' | translate"
+                [ngClass]=" { 'textarea-error': checkHasErrorV2('notes')} "
+                [placeholder]="'builder.notesPlaceholder' | translate">
+            </tdp-text-area>
+            <div *ngIf="checkHasErrorV2('notes', 'maxlength')" class="tdp-form-error-message">
+                {{ 'validationErrors.maxlength' | translate: { maxlength: notesMaxLength }  }}
+            </div>
+        </div>
+    </div>
+</form>

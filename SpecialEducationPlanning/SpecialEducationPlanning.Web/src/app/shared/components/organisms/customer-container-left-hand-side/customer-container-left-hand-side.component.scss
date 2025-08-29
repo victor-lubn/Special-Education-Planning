@@ -1,0 +1,55 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-molecules-customer-container-left {
+  width: 381px;
+  box-sizing: border-box;
+  min-height: 870px;
+  border-radius: 10px;
+  border: 1px solid $gray-89;
+  background-color: $very-light-grey;
+  padding: 55px 32px;
+
+  h5,
+  p {
+    font-size: 15px;
+    line-height: 21px;
+    margin: 0;
+    margin-bottom: 4px;
+  }
+
+  p {
+    vertical-align: middle;
+  }
+
+  div.icon-wrapper {
+    display: inline-block;
+    margin-right: 16px;
+    vertical-align: middle;
+  }
+
+  &-address {
+    margin-bottom: 34px;
+  }
+
+  &-buttons {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  input.tdp-input {
+    width: 100%;
+  }
+
+  div.tdp-input-container {
+    height: 104px;
+  }
+
+  div.error-message-text {
+    margin-top: 0;
+  }
+
+  .tdp-molecules-customer-container-left-postcode {
+    margin-bottom: 20px;
+  }
+}

@@ -1,0 +1,39 @@
+<div class="tdp-plans-list-offline">
+  <tdp-tabs>
+    <mat-tab label="{{ 'builder.plans' | translate }}">
+      <tdp-table
+        [tableSort]="false"
+        [dynamicData]="false"
+        [records]="offlinePlanList"
+        [columnsConfiguration]="columnsConfigurationForOfflinePlans"
+        [pageSize]="pageSize"
+        (onRowClicked)="goToPlanDetails($event)"
+      >
+        <tdp-table-actions>
+          <ng-template let-record="record">
+            <tdp-table-action (click)="openLatestVersionPreview($event, record)">
+              <tdp-preview-icon
+                class="tdp-actions-icon"
+                fillColor="#ADADAD"
+                width="1.5rem"
+                height="1.5rem"
+                [matTooltip]="'button.preview' | translate">
+              </tdp-preview-icon>
+            </tdp-table-action>
+            <tdp-table-action (click)="openLatestVersionInFusion($event, record)">
+              <tdp-launch-icon
+                class="tdp-actions-icon"
+                [matTooltip]="'button.open' | translate">
+              </tdp-launch-icon>
+            </tdp-table-action>
+          </ng-template>
+        </tdp-table-actions>
+      </tdp-table>
+    </mat-tab>
+  </tdp-tabs>
+
+  <tdp-create-button
+    text="{{ 'button.createPlan' | translate }}"
+    (click)="openCreatePlanOfflineModal()"
+  ></tdp-create-button>
+</div>

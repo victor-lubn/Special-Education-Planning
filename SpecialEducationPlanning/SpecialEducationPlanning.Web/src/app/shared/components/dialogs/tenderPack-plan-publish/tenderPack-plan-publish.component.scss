@@ -1,0 +1,18 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-tenderpack-plan-publish {
+
+  &-buttons {
+    display: flex;
+    justify-content: center !important;
+    align-items: flex-end;
+  }
+
+  div[title] {
+    margin-top: 1.5rem !important;
+  }
+
+  ::ng-deep .separator { 
+    display: none !important;
+  }
+}

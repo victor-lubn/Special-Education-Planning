@@ -1,0 +1,19 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-create-new-template {
+  ::ng-deep .separator { 
+    display: none !important;
+  }
+
+  ::ng-deep  .tdp-modal {
+    overflow: visible !important;
+  }
+}
+
+::ng-deep  .tdp-create-new-template{
+  overflow: visible !important;
+}
+
+::ng-deep .tdp-create-new-template .tdp-create-new-template-body{
+    overflow: visible !important;
+}

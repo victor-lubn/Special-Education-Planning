@@ -1,0 +1,32 @@
+<div class="tdp-row tdp-sort-container">
+  <label class="tdp-sort-label">
+    {{ 'sortBy.title' | translate }}
+  </label>
+  <div class="tdp-sort-dropdown">
+    <div class="tdp-select-container">
+      <input class="tdp-input" 
+        type="text" 
+        #sortTrigger 
+        readonly
+        [value]="currentPropertyText"
+        [matAutocomplete]="sortingOptions"
+        (click)="openSortOptions()">
+      <i class="fas fa-chevron-down tdp-chevron" (click)="openSortOptions()"></i>
+    </div>
+    <mat-autocomplete 
+      #sortingOptions="matAutocomplete" 
+      [displayWith]="displaySorting.bind(this)"
+      (optionSelected)="setSortingOption($event)">
+      <mat-option></mat-option>
+      <ng-container *ngFor="let item of sortingItems">
+        <mat-option [value]="item.propertyName">
+          {{ item.translate | translate}}
+        </mat-option>
+      </ng-container>
+    </mat-autocomplete>
+  </div>
+  <button class="tdp-sort-direction-button" [disabled]="!sortDescriptor.member" (click)="setSortingDirection()">
+    <i class="fas fa-sort-amount-up" *ngIf="sortDescriptor.direction === 0"></i>
+    <i class="fas fa-sort-amount-down" *ngIf="sortDescriptor.direction === 1"></i>
+  </button>
+</div>

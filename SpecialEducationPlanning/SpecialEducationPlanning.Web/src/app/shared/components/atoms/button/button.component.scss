@@ -1,0 +1,251 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-atom-button {
+  cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
+  &.tdp-atom-button-ghost {
+    display: contents;
+  }
+  &:not(.tdp-atom-button-ghost) {
+    color: $button-enabled-text-border-color;
+    border-color: $button-enabled-text-border-color;
+    line-height: 22px;
+    background-color: $white;
+    letter-spacing: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    font-weight: bold;
+    outline: none;
+    text-transform: uppercase;
+
+    .tdp-atom-button-icon-container {
+      margin-right: 0.375rem;
+    }
+
+    .tdp-atom-button-tooltip {
+      position: absolute;
+      display: none;
+      top: 20px;
+      left: 20px;
+      padding: 6px 12px;
+      white-space: nowrap;
+      background-color: $tooltip-background-color;
+      opacity: 0.6;
+      border-radius: 5px;
+      color: $white;
+      font-size: 12px;
+      line-height: 20px;
+
+      &.tdp-atom-button-show-tooltip {
+        display: block;
+      }
+    }
+    
+    /*----------  Button colors  ----------*/
+    &.tdp-atom-button-white {
+      border: 1px solid $navy;
+      color: $navy;
+      background-color: $white;
+
+      /*----------  White button states ----------*/
+      &:disabled,
+      &[disabled] {
+        background-color: $white;
+        border-color: $white-disabled-border-color;
+        color: $button-disabled-text-border-color;
+        cursor: not-allowed;
+      }
+
+      &:hover:enabled {
+        background: $white-hovered-background-color;
+      }
+
+      &:focus {
+        background: $white-focused-background-color;
+      }
+
+      &:active:enabled {
+        background: $white-active-background-color;
+      }
+    }
+    &.tdp-atom-button-navy {
+      border: 1px solid $navy;
+      color: $white;
+      background-color: $navy;
+
+      /*----------  Naivy button states ----------*/
+      &:disabled,
+      &[disabled] {
+        background: $navy-disabled-background-color;
+        border: none;
+        cursor: not-allowed;
+      }
+
+      &:hover:enabled {
+        background: $navy-hovered-background-color;
+      }
+
+      &:focus {
+        background: $navy-focused-background-color;
+      }
+
+      &:active:enabled {
+        background: $navy-active-background-color;
+      }
+    }
+
+    &.tdp-atom-button-green {
+      border: 1px solid $aiep-button-green;
+      color: white;
+      background-color: $aiep-button-green;
+
+      /*----------  Green button states ----------*/
+      &:disabled,
+      &[disabled] {
+        background: $green-disabled-background-color;
+        border-color: $green-disabled-background-color;
+        cursor: not-allowed;
+      }
+
+      &:hover:enabled {
+        background: $green-hovered-background-color;
+        border-color: $green-hovered-border-color;
+      }
+
+      &:focus {
+        background: $green-focused-background-color;
+      }
+
+      &:active:enabled {
+        background: $green-active-background-color;
+      }
+    }
+
+    &.tdp-atom-button-text-only {
+      border: 1px solid $white;
+      color: $textonly-text-color;
+      background-color: $white;
+
+      /*----------  Text only button states ----------*/
+      &:disabled,
+      &[disabled] {
+        background: $white;
+        cursor: not-allowed;
+        color: $button-disabled-text-border-color;
+      }
+
+      &:hover:enabled {
+        color: $textonly-hovered-text-color;
+      }
+
+      &:focus {
+        color: $textonly-focused-text-color;
+      }
+
+      &:active:enabled {
+        color: $textonly-active-text-color;
+      }
+    }
+
+    /*----------  Button sizes  ----------*/
+    &.tdp-atom-button-small {
+      height: 34px;
+      border-radius: $small-medium-button-radius;
+      padding: $small-medium-button-padding;
+      font-size: $small-medium-button-font-size;
+
+      tdp-icon {
+
+        img {
+          width: 15px;
+        }
+      }
+    }
+    
+    &.tdp-atom-button-medium {
+      height: 43px;
+      padding: $small-medium-button-padding;
+      font-size: $small-medium-button-font-size;
+      border-radius: $small-medium-button-radius;
+    }
+
+    &.tdp-atom-button-large {
+      height: 46px;
+      padding: $large-button-padding;
+      font-size: $large-button-font-size;
+      border-radius: $large-button-radius;
+      border-width: 2px;
+    }
+
+    &.tdp-atom-button-xl {
+      height: 54px;
+      padding: $xl-button-padding;
+      font-size: $xl-button-font-size;
+      border-radius: $xl-button-radius;
+      border-width: 2px;
+    }
+
+    &.tdp-atom-white-blue {
+      padding: 8px 12px;
+      height: 34px;
+      color: #4a90e2;
+      border-color: #4a90e2;
+      background: white;
+      font-size: $small-medium-button-font-size;
+
+      /*----------  Blue-white button states ----------*/
+      &:disabled,
+      &[disabled] {
+        border-color: $button-disabled-text-border-color;
+        cursor: not-allowed;
+        color: $button-disabled-text-border-color;
+      }
+
+      &:hover:enabled {
+        background: $blue-white-hovered-background-color;
+      }
+
+      &:focus {
+        background: $blue-white-focused-background-color;
+      }
+
+      &:active:enabled {
+        background: $blue-white-active-background-color;
+      }
+    }
+
+    &.tdp-atom-white-green {
+      padding: 0.5rem 0.75rem;
+      height: 2.125rem;
+      color: $aiep-green;
+      border-color: $aiep-green;
+      background: $white;
+      font-size: $small-medium-button-font-size;
+
+      &:disabled,
+      &[disabled] {
+        border-color: $button-disabled-text-border-color;
+        cursor: not-allowed;
+        color: $button-disabled-text-border-color;
+      }
+
+      &:hover:enabled {
+        background: $green-white-hovered-background-color;
+      }
+
+      &:focus {
+        background: $green-white-focused-background-color;
+      }
+
+      &:active:enabled {
+        background: $green-white-active-background-color;
+      }
+    }
+  }
+  
+}

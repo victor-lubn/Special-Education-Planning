@@ -1,0 +1,9 @@
+
+<ng-container matColumnDef="actions">
+  <mat-header-cell *matHeaderCellDef></mat-header-cell>
+  <mat-cell *matCellDef="let record">
+    <div class="table-actions" [class.actions-invisible]="!hoveredRow || (record !== hoveredRow)">
+      <ng-content *ngTemplateOutlet="actionsTemplateRef; context:{record: record}" [ngIf]="actionsTemplateRef"></ng-content>
+    </div>
+  </mat-cell>
+</ng-container>

@@ -1,0 +1,33 @@
+@import "/src/assets/sass/abstracts/_variables.scss";
+
+tdp-home {
+  .header {
+    .main-view--header {
+      &.minimize-header {
+        margin: 2rem auto;
+      }
+      &.hidden-header {
+        display: none;
+      }
+    }
+  }
+
+  .reset-button {
+    text-transform: uppercase;
+    position: absolute;
+    right: 0;
+    top: 0.438rem;
+    z-index: 2;
+  }
+
+  tdp-create-button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+  }
+
+  .mat-mdc-cell {
+    border: none;
+  }
+}

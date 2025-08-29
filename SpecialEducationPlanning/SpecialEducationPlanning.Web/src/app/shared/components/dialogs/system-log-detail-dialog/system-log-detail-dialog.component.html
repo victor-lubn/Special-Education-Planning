@@ -1,0 +1,57 @@
+<tdp-modal (onClosed)="closeDialog()">
+
+  <div title>
+    {{ 'dialog.logDetail' | translate }}
+  </div>
+
+  <div class="tdp-system-log-detail-dialog-body">
+    <div class="tdp-system-log-detail-dialog-body-label">
+      {{ 'systemLog.level' | translate }}
+    </div>
+    <div class="tdp-system-log-detail-dialog-body-message">{{ systemlog.level }}</div>
+
+    <div class="tdp-system-log-detail-dialog-body-label">
+      {{ 'systemLog.message' | translate }}
+    </div>
+    <div class="tdp-system-log-detail-dialog-body-message">{{ systemlog.message }}</div>
+
+    <div class="tdp-system-log-detail-dialog-body-label">
+      {{ 'systemLog.messageTemplate' | translate }}
+    </div>
+    <div class="tdp-system-log-detail-dialog-body-message">{{ systemlog.messageTemplate }}</div>
+
+    <div class="tdp-system-log-detail-dialog-body-label">
+      {{ 'systemLog.dateTime' | translate }}
+    </div>
+    <div class="tdp-system-log-detail-dialog-body-message">{{ systemlog.timeStamp | tdpDate: true }}</div>
+
+    <div class="tdp-system-log-detail-dialog-body-label">
+      {{ 'systemLog.exception' | translate }}
+    </div>
+    <div class="tdp-system-log-detail-dialog-body-message">{{ systemlog.exception }}</div>
+
+    <div class="tdp-system-log-detail-dialog-body-label">
+      {{ 'systemLog.properties' | translate }}
+    </div>
+    <div class="tdp-system-log-detail-dialog-body-message">{{ systemlog.properties }}</div>
+  </div>
+
+  <div actions>
+    <tdp-button
+      size="large"
+      color="text-only"
+      (onClick)="closeDialog()"
+    >
+      {{ 'button.cancel' | translate }}
+    </tdp-button>
+
+    <tdp-button
+      size="large"
+      color="green"
+      (onClick)="closeDialog()"
+    >
+      {{ 'button.accept3' | translate }}
+  </tdp-button>
+  </div>
+
+</tdp-modal>

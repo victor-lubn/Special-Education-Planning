@@ -1,0 +1,33 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-atoms-top-banner {
+  width: 100%;
+  height: 4.1875rem;
+  box-sizing: border-box;
+  background-color: $light-silver;
+  border-top: 0.25rem solid $navy;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  position: relative;
+  z-index: 100;
+  top: 5.125rem;
+
+  &.informative {
+    background-color: $light-green;
+    color: $aiep-green;
+    border-top: 0.25rem solid $aiep-green;
+  }
+
+  &.error {
+    background-color: #fcf2f3;
+    color: $error-color;
+    border-top: 0.25rem solid $error-color;
+  }
+
+  p {
+    font-size: 0.9375rem;
+    line-height: 1.3125rem;
+  }
+}

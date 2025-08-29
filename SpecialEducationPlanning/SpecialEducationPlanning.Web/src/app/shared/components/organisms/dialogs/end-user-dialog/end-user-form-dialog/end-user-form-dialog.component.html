@@ -1,0 +1,126 @@
+<form class="tdp-end-user-form" [formGroup]="entityForm" (ngSubmit)="submitEndUserForm()">
+    <div>
+        <tdp-select
+            class="tdp-end-user-select"
+            ngDefaultControl
+            formControlName="titleId"
+            [value]=""
+            [label]="titleString"
+            [options]="endUserTitles">
+        </tdp-select>
+    </div>
+    <div class="tdp-form-row">
+        <div class="tdp-form-group">
+            <tdp-input
+                class="tdp-end-user-input"
+                ngDefaultControl
+                formControlName="firstName"
+                [title]="firstNameString"
+                [type]="'text'">
+            </tdp-input>
+        </div>
+        <div class="tdp-form-group">
+            <tdp-input
+                class="tdp-end-user-input"
+                ngDefaultControl
+                formControlName="surname"
+                [ngClass]="{ 'error-message': checkHasErrorV2('surname') }" 
+                [title]="surnameString"
+                [type]="'text'"
+                [required]="true">
+            </tdp-input>
+            <div *ngIf="checkHasErrorV2('surname', 'required')" class="tdp-form-error-message">
+                {{ 'validationErrors.required' | translate }}
+            </div>
+        </div>
+        <div class="tdp-form-group">
+            <tdp-input
+                class="tdp-end-user-input"
+                ngDefaultControl
+                formControlName="contactEmail"
+                [ngClass]="{ 'error-message': checkHasErrorV2('contactEmail') }" 
+                [title]="emailString"
+                [type]="'text'">
+            </tdp-input>
+            <div *ngIf="checkHasErrorV2('contactEmail', 'email')" class="tdp-form-error-message">
+                {{ 'validationErrors.mustBeEmail' | translate }}
+            </div>
+        </div>
+    </div>
+    <div class="tdp-form-row">
+        <div class="tdp-form-group">
+            <tdp-input
+                class="tdp-end-user-input"
+                ngDefaultControl
+                formControlName="mobileNumber"
+                [ngClass]="{ 'error-message': checkHasErrorV2('mobileNumber') }" 
+                [title]="mobileNumberString"
+                [type]="'text'">
+            </tdp-input>
+            <div *ngIf="checkHasErrorV2('mobileNumber')" class="tdp-form-error-message">
+                {{ 'validationErrors.invalidPhoneNumber' | translate }}
+            </div>
+        </div>
+        <div class="tdp-form-group">
+            <tdp-input
+                class="tdp-end-user-input"
+                ngDefaultControl
+                formControlName="landLineNumber"
+                [ngClass]="{ 'error-message': checkHasErrorV2('landLineNumber') }" 
+                [title]="landlineNumberString"
+                [type]="'text'">
+            </tdp-input>
+            <div *ngIf="checkHasErrorV2('landLineNumber')" class="tdp-form-error-message">
+                {{ 'validationErrors.invalidPhoneNumber' | translate }}
+            </div>
+        </div>
+    </div>
+    <div class="tdp-form-group">
+        <tdp-partial-address-form
+            class="tdp-end-user-form--partial-address-form"
+            [formGroup]="entityForm"
+            [singleLine]="true">
+        </tdp-partial-address-form>
+    </div>
+    <div class="tdp-form-row">
+        <div class="tdp-form-group">
+            <tdp-input
+                class="tdp-end-user-input"
+                ngDefaultControl
+                formControlName="address2"
+                [ngClass]="{ 'error-message': checkHasErrorV2('address2') }" 
+                [title]="address2String"
+                [type]="'text'">
+            </tdp-input>
+            <div *ngIf="checkHasErrorV2('address2', 'maxlength')" class="tdp-form-error-message">
+                {{ 'validationErrors.maxlength' | translate: { 'maxlength': addressMaxLength } }}
+            </div>
+        </div>
+        <div class="tdp-form-group">
+            <tdp-input
+                class="tdp-end-user-input"
+                ngDefaultControl
+                formControlName="address3"
+                [ngClass]="{ 'error-message': checkHasErrorV2('address3') }" 
+                [title]="address3String"
+                [type]="'text'">
+            </tdp-input>
+            <div *ngIf="checkHasErrorV2('address3', 'maxlength')" class="tdp-form-error-message">
+                {{ 'validationErrors.maxlength' | translate: { 'maxlength': addressMaxLength } }}
+            </div>
+        </div>
+    </div> 
+    <div class="tdp-form-group">
+        <tdp-text-area
+            class="tdp-end-user-textarea"
+            [title]="notesString"
+            ngDefaultControl
+            formControlName="comment"
+            [placeholder]="notesPlaceholderString"
+            [ngClass]="{ 'textarea-error':checkHasErrorV2('comment') }">
+        </tdp-text-area>
+        <div *ngIf="checkHasErrorV2('comment', 'maxlength')" class="tdp-form-error-message">
+            {{ 'validationErrors.maxlength' | translate: { maxlength: notesMaxLength }  }}
+        </div>
+    </div>
+</form>

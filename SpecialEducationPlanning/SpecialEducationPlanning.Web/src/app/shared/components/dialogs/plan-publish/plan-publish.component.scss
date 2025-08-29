@@ -1,0 +1,61 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.plan-publish-title {
+  width: 50%;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.plan-publish-body {
+  overflow-y: scroll;
+  flex-grow: 1;
+  margin: 0 -2.5rem;
+  padding: 1.25rem 2.5rem;
+
+  .plan-publish-plan-header {
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+  
+  .plan-publish-form-input input{
+    width: 100%;
+  }
+
+  div.tdp-input-container {
+    padding-top: 24px;
+  }
+
+  .plan-publish-error-message {
+    margin-top: 9px;
+    color: $error-red;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    line-height: 21px;
+  }
+  
+  .plan-publish-error-input input.tdp-input {
+    border: 2px $error-red solid;
+  }
+
+  .plan-publish-error-textarea .tdp-atoms-textarea-input-container textarea.tdp-atoms-textarea-body {
+    border: 2px $error-red solid;
+  }
+
+  tdp-text-area textarea {
+    height: 158px;
+  }
+
+  .tdp-atoms-textarea-input-container {
+    padding-top: 24px;
+  } 
+  
+  div.tdp-atoms-select { 
+    padding-top: 24px;
+    margin-bottom: 10px;
+  }
+
+  .plan-publish-text-description {
+    font-size: 15px;
+  }
+}
+

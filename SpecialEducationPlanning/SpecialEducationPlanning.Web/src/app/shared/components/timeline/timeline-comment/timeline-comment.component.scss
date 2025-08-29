@@ -1,0 +1,40 @@
+@import '/src/assets/sass/abstracts/_variables.scss';
+
+.arrow-left {
+  width: 0; 
+  height: 0; 
+  border-top: 7px solid transparent;
+  border-bottom: 7px solid transparent;
+  border-right:10px solid $light-grey;
+  margin-left: 10px;
+}
+
+.tdp-timeline-item {
+  align-items: center;
+  margin: 10px 0;
+  min-height: 47px;
+}
+
+.tdp-timeline-comment {
+  background-color: $light-grey;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  .tdp-timeline-comment-header {
+    font-size: 12px;
+    font-style: italic;
+    margin-bottom: 5px;
+    min-width: 210px;
+    min-height: 24px;
+    justify-content: space-between;
+    i {
+      cursor: pointer;
+    }
+    .tdp-icon-line {
+      margin-left: 10px;
+      i {
+        margin-left: 11px;
+      }
+    }
+  }
+}

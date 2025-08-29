@@ -1,0 +1,98 @@
+@import "/src/assets/sass/abstracts/_variables.scss";
+
+.separator {
+  border-bottom: 0.0625rem solid $gray-89;
+  margin-top: auto;
+  width: calc(100% + 4rem);
+  margin-left: -2rem;
+  margin-top: auto;
+}
+
+.plan-details {
+  color: $navy;
+
+  &-header {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+  }
+
+  &-group {
+    margin-bottom: 1.25rem;
+    font-size: 0.9375rem;
+    line-height: 1.3125rem;
+
+    .plan-details-sub-header-key {
+      font-weight: 700;
+    }
+  }
+
+  .tdp-plan-details-input {
+    ::ng-deep {
+      input {
+        width: 19.6875rem;
+      }
+    }
+  }
+
+  .radio-button-options {
+    margin-bottom: 0.625rem;
+  }
+
+  .radio-button-option {
+    margin-top: 0.5rem;
+  }
+
+  .update-button {
+    letter-spacing: 0.125rem;
+  }
+}
+
+.plan-footer {
+  min-height: 5.625rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.survey-group {
+  margin-top: 1.875rem;
+
+  label {
+    display: block;
+  }
+
+  .radio-group {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+}
+
+.error-message {
+  ::ng-deep {
+    input {
+      border: 0.125rem solid $error-red !important;
+      outline: none;
+    }
+  }
+}
+
+::ng-deep {
+  .tdp-input-container {
+    margin-bottom: 1.25rem;
+  }
+
+  input {
+    width: 100%;
+  }
+}
+
+.tdp-plan-form-offline-error {
+  margin-bottom: 0.5625rem;
+  color: $error-red;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.3125rem;
+}

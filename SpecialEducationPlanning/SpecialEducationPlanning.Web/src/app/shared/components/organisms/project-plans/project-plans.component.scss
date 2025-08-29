@@ -1,0 +1,78 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.table-actions,
+.ng-content-wraper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tdp-actions-link {
+    display: inline-block;
+    margin-right: 10px;
+    font-size: inherit;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.tdp-project-plans {
+    &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+
+        &-text {
+            font-size: 0.938rem;
+            font-weight: 700;
+            line-height: 1.313rem;
+            color: #28343d;
+        }
+    }
+
+    tdp-table {
+        ::ng-deep {
+            .mat-mdc-cell{
+                border: none !important;
+            }
+            .tdp-table mat-header-row {
+                min-height: 4rem !important;
+                margin-bottom: 0 !important;
+                padding-left: 0 !important;
+            }
+
+            .tdp-table-action-button {
+                display: flex;
+            }
+
+            tdp-table-actions {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+                z-index: 1;
+                white-space: nowrap;
+            }
+
+            .tdp-actions-icon,
+            .tdp-more-options-icon {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                vertical-align: middle;
+            }
+
+        }
+    }
+
+    tr.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+::ng-deep tdp-table .tdp-table mat-row:not(.green-row) .mat-mdc-icon-button {
+    display: flex
+}

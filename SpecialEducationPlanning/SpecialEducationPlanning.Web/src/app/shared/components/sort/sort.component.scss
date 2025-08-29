@@ -1,0 +1,35 @@
+.tdp-sort-container {
+    height: 100%;
+    align-items: center;
+    .tdp-sort-label {
+        margin-right: 1em;
+        font-weight: bold;
+        font-size: 13px;
+    }
+    
+    .tdp-sort-dropdown {
+        .tdp-select-container {
+            height: 30px;
+            margin-right: 0.5em;
+            .tdp-input {
+                font-size: 13px;
+                height: 24px;
+                padding: 1px 7px;
+                box-sizing: content-box;
+            }
+        }
+    }
+    
+    .tdp-chevron {
+        padding-right: 0.5em;
+    }
+    
+    .tdp-sort-direction-button {
+        background-color: white;
+        border-style: solid;
+        border-width: thin;
+        border-color: grey;
+        height: 30px;
+        width: 30px;
+    }
+}

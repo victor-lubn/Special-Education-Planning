@@ -1,0 +1,28 @@
+<mat-tab-group animationDuration="0" disableRipple class="tdp-atom-tabs">
+  <mat-tab *ngFor="let table of tables; trackBy: trackBy" [label]="table.label">
+    <tdp-table
+      [records]="table.records"
+      [columnsConfiguration]="table.columns"
+      (onPageChanged)="table.pageChanged($event)"
+      (onSortChanged)="table.sortChanged($event)"
+      (onRowClicked)="table.rowClicked($event)"
+      [pageSize]="table.pageSize"
+      [tablePaginator]="table.tablePaginator"
+      [tableSort]="table.tableSort"
+      [rowMapper]="table.rowMapper"
+      [tableHeight]="tableHeight"
+    >
+      <tdp-table-actions>
+        <ng-template let-record="record">
+          <ng-content
+            *ngTemplateOutlet="
+              templatesRef;
+              context: { record: record, table: table }
+            "
+            [ngIf]="templatesRef"
+          ></ng-content>
+        </ng-template>
+      </tdp-table-actions>
+    </tdp-table>
+  </mat-tab>
+</mat-tab-group>

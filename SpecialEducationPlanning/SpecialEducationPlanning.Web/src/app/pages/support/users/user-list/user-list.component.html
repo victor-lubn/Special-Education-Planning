@@ -1,0 +1,58 @@
+<tdp-main-view>
+  <form [formGroup]="form" class="main-view--header">
+    <tdp-filter-header
+      [options]="options"
+      [form]="form">
+    </tdp-filter-header>
+  </form>
+  <div class="main-view--content">
+    <div class="tdp-user-list-header">
+      <tdp-back-with-title
+        class="tdp-user-list-header--back-component"
+        [title]="'support.usersAndRoles' | translate"
+        (onClick)="goBack()"
+      >
+      </tdp-back-with-title>
+      <tdp-button
+        class="tdp-user-list-header--manage-button"
+        [icon]="true"
+        [whiteBlueButton]="true"
+        (onClick)="goToRolesList()">
+        <tdp-globe-icon icon-button></tdp-globe-icon>
+        {{ 'button.managePermissions' | translate }}
+      </tdp-button>
+    </div>
+
+    <div class="tdp-user-list-table">
+      <ng-container *ngIf="users">
+        <tdp-table
+          class="user-column-width"
+          [records]="users"
+          [columnsConfiguration]="columnsConfiguration"
+          [pageSize]="pageSize"
+          [hasActions]="true"
+          (onPageChanged)="pageChanged($event)"
+          (onSortChanged)="sortChanged($event)"
+        >
+          <tdp-table-actions>
+            <ng-template let-record="record">
+              <tdp-table-action (click)="goToUsersDetails(record)">
+                <tdp-pencil-icon
+                  class="tdp-actions-icon"
+                  fillColor="#ADADAD"
+                  [matTooltip]="'button.edit' | translate"
+                >
+                </tdp-pencil-icon>
+              </tdp-table-action>
+            </ng-template>
+          </tdp-table-actions>
+        </tdp-table>
+      </ng-container>
+    </div>
+  </div>
+  <tdp-create-button
+    [text]="'user.create' | translate"
+    (click)="goToCreateNewUser()"
+  >
+  </tdp-create-button>
+</tdp-main-view>

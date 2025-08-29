@@ -1,0 +1,68 @@
+<tdp-modal
+    class="tdp-main-plan-details-dialog"
+    maxWidth="1000px"
+    height="100%"
+    [hasBodySeparator]="true"
+    [closable]="true"
+    (onClosed)="onCancel()">
+
+    <div title class="tdp-main-plan-details-dialog-header--title">
+        {{ 'planDetails.planDetailsTitle' | translate }}
+    </div>
+
+    <div class="tdp-main-plan-details-dialog-body">
+        <tdp-project-container 
+            [data]="planDetails"
+            [isNotMainPlanDetails]="true">
+        </tdp-project-container>
+        <tdp-main-plan-details-form
+            [tradeCustomer]="tradeCustomer">
+        </tdp-main-plan-details-form>
+        <div 
+            class="tdp-main-plan-details-dialog-known-account-message"
+            (click)="onKnownAccountNumberClick()">
+            {{ 'planDetails.knownAccountMessage' | translate }}
+        </div>
+        <ng-container *ngIf="isAccountNumberKnown">
+            <tdp-account-look-up
+                (cancelEmitter)="onAccountNumberCancel()"
+                (isConfirmedEmitter)="onChangeConfirmed($event)">
+            </tdp-account-look-up>
+        </ng-container>
+    </div>
+
+    <div actions class="tdp-main-plan-details-dialog-actions">
+        <tdp-button 
+            class="tdp-main-plan-details-dialog-cancel"
+            size="large"
+            color="text-only"
+            (onClick)="onCancel()">
+            {{ 'button.cancel' | translate }}
+        </tdp-button>
+        <tdp-button 
+            class="tdp-main-plan-details-dialog-create"
+            size="large"
+            color="text-only"
+            (onClick)="onCreateUnassignedPlan()">
+            {{ 'button.createUnassignedPlan' | translate }}
+        </tdp-button>
+        <tdp-button 
+            *ngIf="!isTradeCustomerConfirmed"
+            class="tdp-main-plan-details-dialog-search"
+            size="large"
+            color="green"
+            [disabled]="isAccountNumberKnown"
+            (onClick)="onSearchTradeAccounts()">
+            {{ 'button.searchTradeAccounts' | translate }}
+        </tdp-button>
+        <tdp-button 
+            *ngIf="isTradeCustomerConfirmed"
+            class="tdp-main-plan-details-dialog-continue"
+            size="large"
+            color="green"
+            (onClick)="onContinue()">
+            {{ 'button.continue' | translate }}
+        </tdp-button>
+    </div>
+
+</tdp-modal>

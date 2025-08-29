@@ -1,0 +1,34 @@
+<div class="tdp-input-container">
+  <label
+    [ngClass]="{ 'required': required }">
+    {{ title }}
+  </label>
+  <div class="tdp-input-wrapper">
+    <input
+      [(ngModel)]="value"
+      [value]="value"
+      [disabled]="disabled"
+      [readonly]="readonly"
+      class="tdp-input"
+      [name]="name"
+      [type]="inputType"
+      [placeholder]="placeholder"
+      [pattern]="pattern"
+      (blur)="_onTouched()"
+      (input)="onInputChange($event); _controlValueAccessorChangeFn($event.target.value)"
+      [ngClass]="{ 'error-message': errorMessage }"
+      [matAutocomplete]="matAutocomplete"
+      [matAutocompleteDisabled]="!matAutocomplete"
+      #inputElement
+    />
+    <tdp-icon
+      *ngIf="type === 'password'"
+      [size]="'24px'"
+      [name]="iconNames.size24px.VISIBILITY"
+      (click)="onToggle()"
+    ></tdp-icon>
+    <div *ngIf="errorMessage" class="error-message-text">
+      {{ errorMessage }}
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+@import '/src/assets/sass/abstracts/_variables.scss';
+
+.login-page {
+  background: $navy;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+    .login-card {
+      background: $very-light-grey;
+      box-shadow: 0 0 20px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0,0,0,0.24);
+      border-radius: 10px;
+      width: 550px;
+
+      .login-label {
+        font-family: 'Rooster Black', 'Open Sans', serif;
+        font-weight: 900;
+        font-size: 55px;
+        line-height: 72px;
+        color: $navy;
+        letter-spacing: 0.5px;
+        margin-bottom: 40px;
+        display: inline-block;
+      }
+    }
+
+    .login-button {
+      font-size: 16px;
+      margin-bottom: 10px;
+
+      ::ng-deep {
+        .tdp-atom-button {
+          width: 100%;
+          letter-spacing: normal;
+        }
+      }
+    }
+
+    ::ng-deep {
+      .spinner {
+        place-items: initial;
+        justify-items: center;
+      }
+    }
+
+    .login-card-container {
+      margin: 100px;
+    }
+    
+    .tdp-column {
+      align-items: center;
+    }
+}

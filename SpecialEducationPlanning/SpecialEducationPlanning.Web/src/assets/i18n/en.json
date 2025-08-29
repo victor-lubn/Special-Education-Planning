@@ -1,0 +1,1182 @@
+﻿{
+  "builder": {
+    "accountNumber": "Account Number",
+    "builderType": "Builder Type",
+    "address": "Address",
+    "address1": "Address 1",
+    "address2": "Address 2",
+    "address3": "Address 3",
+    "address4": "Address 4",
+    "address5": "Address 5",
+    "builderName": "Builder Name",
+    "companyName": "Company Name",
+    "contactDetails": "Contact Details",
+    "countryCode": "Country Code",
+    "countrySelector": "Country Selector",
+    "email": "Email",
+    "firstName": "First Name",
+    "landlineNumber": "Landline Number",
+    "mobileNumber": "Mobile Number",
+    "owningAiep": "Owning Aiep",
+    "sAPAccountStatus": "Status",
+    "planCountDisplay": "{{ planCount }} plans in total",
+    "plans": "Plans",
+    "activePlans": "Active Plans",
+    "archivedPlans": "Archived Plans",
+    "postcode": "Postcode",
+    "surname": "Surname",
+    "title": "Title",
+    "type": {
+      "credit": "Credit"
+    },
+    "createBuilderTitle": "Create New Builder",
+    "tradingName": "Trading Name",
+    "name": "Name",
+    "pendingCredit": "Pending Credit",
+    "notes": "Notes",
+    "notesPlaceholder": "Add notes about this Trade Customer here...",
+    "createErrorMsg": "There was an error while creating this builder in database",
+    "duplicateValidationError": "Error whilst checking for duplicate builders",
+    "unassigned": "Unassigned Plan",
+    "notApplicable": "N/A"
+  },
+  "button": {
+    "createLocalCashAccount": "Create Local Cash Account",
+    "updateNotes": "Update Notes",
+    "viewAllNotes": "View all notes",
+    "viewAllLogs": "View all logs",
+    "next": "Next",
+    "assign": "Assign",
+    "submit": "Submit",
+    "unassign": "Unassign",
+    "createNewRegion": "Create New Region",
+    "publishAllPlans": "Publish all plans",
+    "createNewArea": "Create New Area",
+    "createNewRole": "Create New Role",
+    "upload": "Upload",
+    "uploadNewVersion": "Upload New Version",
+    "assignPlan": "Assign Plan",
+    "unassignPlan": "Unassign Plan",
+    "archive": "Archive",
+    "archivePlan": "Archive Plan",
+    "recentPlans": "Recent plans",
+    "accept": "OK",
+    "accept2": "Accept",
+    "accept3": "Okay",
+    "close": "Close",
+    "apply": "Apply",
+    "unarchive": "Restore Plan",
+    "discard": "Discard",
+    "discardPlan": "Discard Plan",
+    "discardTemplate": "Discard Template",
+    "discardChanges": "Discard Changes",
+    "overwrite": "Overwrite Existing Version",
+    "newVersion": "Save as a New Version",
+    "restore": "Restore",
+    "searchPlans": "Search Plans",
+    "searchBuilders": "Search Builders",
+    "attachment": "Attachment",
+    "cancel": "Cancel",
+    "download": "Download",
+    "clearAll": "Clear All",
+    "createPlan": "Create Plan",
+    "createAPlan": "Create a plan",
+    "createTemplate": "Create template",
+    "viewInCreatio": "View in Creatio",
+    "createAiep": "Create Aiep",
+    "editBuilder": "Edit Builder",
+    "saveBuilder": "Save Builder",
+    "saveNewPlan": "Save New Plan",
+    "saveNewTemplate": "Save New Template",
+    "save": "Save",
+    "edit": "Edit",
+    "goBack": "Go Back",
+    "back": "Back",
+    "goToBuilder": "Go To Trade Customer",
+    "open": "Open in Fusion",
+    "openFusion": "Open in Fusion",
+    "editFusion": "Edit in Fusion",
+    "orderBy": "Order by",
+    "preview": "Preview",
+    "viewPlan": "View plan details",
+    "print": "Print",
+    "publishPlan": "Publish",
+    "openMyKitchen": "View on My Kitchen",
+    "publishingError": "Publishing Error",
+    "rendering": "Rendering",
+    "send": "Send",
+    "delete": "Delete",
+    "toggleHomeFilters": "Toggle Filters Menu",
+    "createAsNewBuilder": "Create as New Builder",
+    "createUnassignedPlan": "Create Unassigned Plan",
+    "searchTradeAccounts": "Search Trade Accounts",
+    "continueBuilder": "Continue with Builder",
+    "selectBuilder": "Select Builder",
+    "selectPlan": "Select Plan",
+    "markAsMasterVersion": "Mark as Master Version",
+    "promoteToMaster": "Promote to Master Version",
+    "managePermissions": "Manage Roles",
+    "transfer": "Transfer",
+    "transferPlan": "Transfer Plan",
+    "transferBuilderPlans": "Transfer All Plans",
+    "clearReleaseNotes": "Clear",
+    "viewReleaseDocuments": "View",
+    "createUser": "Create User",
+    "editReleaseNotes": "Edit",
+    "editVersionNotes": "Edit",
+    "remove": "Remove",
+    "filter": "Filter",
+    "printTimeline": "Print Timeline",
+    "search": "Search",
+    "goOnline": "Go Online",
+    "continue": "Continue",
+    "retry": "Retry",
+    "goToUnassignedPlans": "Go to Unassigned Plans",
+    "recoverWork": "Recover Plan",
+    "update": "Update",
+    "options": "Options",
+    "moreOptions": "More Options",
+    "createNew": "Create New",
+    "useAccount": "Use Account",
+    "restoreLocalAutosave": "Restore from last autosave",
+    "reset": "Reset order",
+    "check": "Check",
+    "confirm": "Confirm",
+    "confirmed": "Confirmed",
+    "saveNotes": "Save Notes",
+    "notesExpand": "Expand"
+  },
+  "dialog": {
+    "EducationToolUnavailableError": {
+      "title": "Education tool is unavailable",
+      "content": "Protool is currently unavailable. Please try again later. If the problem persists, please contact Service Desk."
+    },
+    "publishPlanServiceBusError": {
+      "title": "Publishing service is not available",
+      "content": "Plan can't be published at the moment. Please try again later. If the problem persists, contact service desk"
+    },
+    "newRoleSuccess": "New Role created successfully",
+    "newRoleError": "Error while creating new Role",
+    "updateRoleSuccess": "The Role was updated successfully",
+    "updateRoleError": "Error while updating the Role",
+    "newRole": "New Role",
+    "editRole": "Edit Role",
+    "entitiesUploadedSuccess": "Uploaded {{ numberOfEntities }} entities successfully",
+    "uploadOnlyOneFile": "You may only upload one file",
+    "accessError": "Access Error",
+    "accessErrorText": "You do not have access to Education View. Click 'OK' to Exit",
+    "accessUnauthorizedText": "You have attempted to access a page for which you are not authorized or your access has been removed. Click 'OK' to Exit",
+    "aboutTitle": "About Education View",
+    "aboutDescription": "Front end Version <strong>{{ version }}</strong><br>Back end Version <strong>{{ backendVersion }}</strong><br>Commit: {{ commit }}<br>Copyright (c) 2018-2019, aiep, All rights reserved",
+    "catalogError": "Catalogue Error",
+    "catalogErrorMessage": "The catalogue you are trying to open is not available in Fusion",
+    "planSaved": "Plan {{ planId }} has been modified",
+    "newPlanSaved": "Save Plan",
+    "newTemplateSaved": "Save Template",
+    "overwritePlanSuccess": "The plan version was overwritten successfully",
+    "overwritePlanError": "Not able to overwrite the plan version",
+    "saveNewVersionSuccess": "A new plan version was saved",
+    "saveNewVersionError": "Not able to save new plan version",
+    "saveFirstSuccess": "First version of the plan created successfully",
+    "saveFirstError": "Error while saving first version of the plan",
+    "planPreview": "Plan Preview",
+    "noPlanPreview": "Image not Available",
+    "archivePlan": "Archive Plan",
+    "archiveProject": "Archive Project",
+    "unarchivePlan": "Restore Plan",
+    "unarchiveProject": "Restore Project",
+    "archiveMessage": "Are you sure you want to archive this plan?",
+    "unarchiveMessage": "The plan is going to be restored and marked as active. Do you want to continue?",
+    "unarchiveProjectMessage": "The project is going to be restored and marked as active. Do you want to continue?",
+    "discardPlanVersion": "Discard Plan Version",
+    "discardTemplateVersion": "Discard Template Version",
+    "discardPlanMessage": "Are you sure you want to discard the plan file? Your updates will not be saved",
+    "discardNewTemplateMessage": "Are you sure you want to discard the template? Your template will not be saved and all work will be lost",
+    "discardNewPlanMessage": "Are you sure you want to discard the plan? Your plan will not be saved and all work will be lost",
+    "duplicatedData": "Existing Builder Found",
+    "builderAlreadyExistsMessage": "This Builder already exists in your Aiep. Go to Builder Record?",
+    "selectMusic": "Select Music",
+    "userDeletion": "User Deletion",
+    "userDeletionMessage": "Are you sure you want to save the changes? This user will be deleted",
+    "leaverAiepChanged": "Leaver Aiep",
+    "leaverAiepChangedMessage": "Aiep cannot be changed for a leaver, save unsuccessful",
+    "deleteUser": "Delete User",
+    "deleteUserMessage": "Are you sure you want to delete {{userName}}?",
+    "transferConfirmation": "Are you sure you want to transfer project to Aiep {{AiepCode}} ?",
+    "publishOptions": {
+      "1": "Standard Quality Images and/or Panorama",
+      "2": "High Quality Images and/or Panorama (Please allow additional time)",
+      "3": "Standard Quality Images & Video and/or Panorama",
+      "4": "Picture + Video + Virtual Showroom",
+      "willReceive": "You will receive: ",
+      "pictureSd": "SD Images",
+      "pictureSdMessage": "Standard Quality Images and/or Panorama",
+      "pictureHd": "HD Images",
+      "pictureHdMessage": "High Quality Images and/or Panorama (Please allow additional time)",
+      "pictureVideo": "SD Images & Video",
+      "pictureVideoMessage": "Standard Quality Images & Video and/or Panorama",
+      "pictureVideoShowroom": "HD Images & Video",
+      "pictureVideoShowroomMessasge": "Standard Quality Images & Video and/or Panorama, plus High Quality Video for Virtual Showroom"
+    },
+    "planPublished": "Your plan has been submitted",
+    "planPublishedDescription": "You will receive an email shortly containing a link for viewing.",
+    "versionPublishing": {
+      "title": "Publishing In Progress",
+      "message": "Check the 'Publish History' tab for more detailed information or possible errors."
+    },
+    "versionNotPublished": {
+      "title": "Version Not Published",
+      "message": "This version has not been published.",
+      "message2": "If you wish to publish this version, click 'More Options' and select 'Publish'."
+    },
+    "uploadReleaseNotes": {
+      "information": "Information",
+      "title": "Title",
+      "titlePlaceholder": "Not more than {{ maxLength }} characters",
+      "releaseDate": "Date",
+      "tdpVersion": "Education View Version",
+      "fusionVersion": "Fusion Version",
+      "datePlaceholder": "Click here to pick a date",
+      "wrongTypeErrorMsg": "You can only upload pdf files."
+    },
+    "EducationerEmail": "Educationer Email",
+    "mailTo": "Mail to",
+    "recipientsEmail": "Recipients Email",
+    "additionalEmail": "Additional Email",
+    "messageCustomer": "Message to customer",
+    "publishOptionsLabel": "Select Format",
+    "publishTitle": "Publish Plan",
+    "printPlan": "Print Plan",
+    "publishTenderPlanTitle": "Publish Plan(s)",
+    "publishTenderPlanMessage": "Publishing <b>floorplans</b> and <b>items list</b>",
+    "cadRenderedImages":"CAD rendered images",
+    "manageRoleTitle": "Manage Role",
+    "builderCreditPendingApproval": "Is the building waiting for their Credit Account to be approved?",
+    "publishCancel": "Are you sure you wish to cancel?",
+    "qualityLabel": "Picture quality",
+    "qualitySD": "Standard Definition",
+    "qualityHD": "High Definition",
+    "publishPlanSuccess": "Plan published successfully",
+    "publishPlanError": "There was an error while publishing the plan",
+    "publishProjectSuccess": "Project published successfully",
+    "publishProjectError": "There was an error while publishing the project",
+    "genericCancelDialog": "There are unsaved changes. Are you sure you want to leave?",
+    "genericUnsavedChanges": "Unsaved Changes",
+    "builderDuplicatedDialogTitle": "Existing Builder Found",
+    "builderDuplicatedDialogMessage": "The Builder information you have entered already exists in the system. Please check the information or Contact Support",
+    "versionModified": "Plan Version {{ versionNumber }} has been modified",
+    "unassignedPlanDialogTitle": "Assign a Plan",
+    "unassignedPlanDialogMessage": "Are you sure you want to assign this plan to the selected trade customer?",
+    "unassignedPlanCancelMessage": "Are you sure to cancel plan assign?",
+    "fusionNotAllowedToUserDialogTittle": "User not allowed to edit plans",
+    "fusionNotAllowedToUserDialogMessage": "Your user permissions do not allow you to edit plans in Fusion, please speak with your Aiep manager",
+    "signoutDialogTitle": "Sign out",
+    "signoutDialogMessage": "Are you sure you want to sign out?",
+    "uploadPlans": "Upload Plans",
+    "dropFileMsg": "Drop File to Upload or",
+    "deleteCommentTitle": "Delete Comment",
+    "deleteCommentMessage": "Are you sure you want to delete this comment?",
+    "saveEmptyComment": "Empty Comment",
+    "saveEmptyCommentMessage": "Not allowed to submit empty text in a comment",
+    "chooseAFileMsg": "Choose a File",
+    "uploadDialogMaxFilesError": "Max number of files exceeded",
+    "uploadDialogMaxSizeError": "Size of files exceeded",
+    "uploadDialogWrongTypesError": "Only one plan can be uploaded at a time, with optionally one JSON file and/or one image.",
+    "uploadPlanFilesOneFileAtAType": "You may only upload one file at a time",
+    "uploadPlanFilesVersionNotesHere": "Write your version notes here",
+    "serviceUnavailable": "Service Unavailable",
+    "errorInfo": "Error",
+    "fusionDisabled": {
+      "title": "No Fusion Avaliable",
+      "description": "You do not have the Fusion program installed or you may have the wrong configuration, you cannot:",
+      "createPlan": "Open Plan",
+      "openPlan": "Create Plan",
+      "modifyPlan": "Modify Plan",
+      "support": "Please contact technical support."
+    },
+    "EducationToolOpened" : {
+      "title": "Only one instance of Education tool can be opened",
+      "content": "Click to go to Education tool"
+    },
+    "endUserExistingTitle": "Existing End User found",
+    "endUserExistingSameAiepMessage": "This end user already exists in your Aiep, are you sure you wish to continue?",
+    "endUserExistingOtherAiep": "This end user already exists in Aiep {{ AiepName }}, are you sure you wish to continue?",
+    "noUnassignedPlansFoundTitle": "No unassigned plans found",
+    "noUnassignedPlansFoundMsg": "No plans available to be assigned",
+    "removeEndUserTitle": "Remove end user",
+    "removeEndUserMsg": "This will delete the relationship between the end user and this plan. Are you sure you want to continue?",
+    "creditBuilderUpdateForbiddenTitle": "Credit Builder Account",
+    "creditBuilderUpdateForbiddenMsg": "You cannot make changes to Credit Builders. Please contact Credit Control in order to update builder information",
+    "emptyPlanTitle": "Empty plan",
+    "emptyTemplateTitle": "Empty template",
+    "emptyPlanMsg": "This plan was discarded and will be removed from the system within 24 hours. If you have any questions then please contact Support.",
+    "emptyTemplateMsg": "This template was discarded and will be removed from the system within 24 hours. If you have any questions then please contact Support.",
+    "uploadCSV": {
+      "title": "Upload CSV",
+      "wrongTypeErrorMsg": "You can only upload CSV files."
+    },
+    "transferBuilderPlans": {
+      "title": "Transfer all plans to other Aiep",
+      "fromAiep": "From Aiep",
+      "toAiep": "To Aiep",
+      "successMessage": "Plans transferred successfully",
+      "errorMessage": "Error while transfering plans"
+    },
+    "transferSinglePlan": {
+      "title": "Transfer Single Plan",
+      "successMessage": "Plan transferred successfully",
+      "errorMessage": "Error while transfering plans"
+    },
+    "transferProject": {
+      "title": "Transfer Project",
+      "successMessage": "Project transferred successfully",
+      "errorMessage": "Error while transfering project"
+    },
+    "createEditCountry": {
+      "titleCreate": "Create Country",
+      "titleEdit": "Edit Country",
+      "name": "Name of country"
+    },
+    "removeCountry": "Remove Country",
+    "removeCountryMessage": "The country is going to be removed. Do you want to continue?",
+    "createEditRegion": {
+      "titleCreate": "Create Region",
+      "titleEdit": "Edit Region",
+      "name": "Name of region"
+    },
+    "removeRegion": "Remove Region",
+    "removeRegionMessage": "The region is going to be removed. Do you want to continue?",
+    "createEditArea": {
+      "titleCreate": "Create Area",
+      "titleEdit": "Edit Area",
+      "name": "Name of area"
+    },
+    "removeArea": "Remove Area",
+    "removeAreaMessage": "The area is going to be removed. Do you want to continue?",
+    "logDetail": "Log Detail",
+    "logDetailError": {
+      "title": "No message available",
+      "message": "There is no log detail available"
+    },
+    "unassignBuilder": {
+      "title": "Unassign Trade Customer",
+      "message": "Are you sure you want to remove '{{ name }}' from this plan?",
+      "stepsTitle": "Next Steps:",
+      "stepsMessage": "1. Find your builder.",
+      "stepsMessage2": "2. Re-assign this plan."
+    },
+    "actionLogExportDateNotFilled": {
+      "title": "Unable Supports Logs",
+      "message": "Remember, in order to export the logs both start date and end date must be filled in"
+    },
+    "narrowSearch": {
+      "title": "Unable to retrieve the data",
+      "message": "Please, narrow your search in order to get a more accurate result"
+    },
+    "editVersionNotes": {
+      "title": "Edit Version",
+      "versionNotes": "Edit Version Notes",
+      "quoteOrderNumber": "Edit K8 Order Number"
+    },
+    "builderAccountNumberNotFound": {
+      "title": "No account found",
+      "message": "Please check the account number or enter the builder name and address to continue"
+    },
+    "builderAccountNumberNotEntered": {
+      "title": "No account provided",
+      "message": "Please input an account number"
+    },
+    "homeLimitExceeded": {
+      "title": "Results limit exceed",
+      "message": "Please refine your search"
+    },
+    "updateBuilderConfirmation": {
+      "title": "Update builder",
+      "message": "Are you sure to update builder?"
+    },
+    "connectionIssues": {
+      "title": "Connection Issue",
+      "connectionLost": " Network Connection has been lost",
+      "experienceIssues": "Your most recently saved plan may need to be restored. Please contact Service Desk",
+      "options": "Please wait for the connection to be restored, or click вЂContinueвЂ™ to work offline.",
+      "description": "Whilst offline you are able to create and edit locally saved plans only",
+      "action": "Continue"
+    },
+    "workOffline": {
+      "title": "You are currently offline",
+      "description": "Whilst offline you are able to create and edit locally saved plans only",
+      "action": "Work offline"
+    },
+    "offlineBanner": {
+      "offline": "You are currently in Offline Mode"
+    },
+    "backOnline": {
+      "title": "Connection Restored",
+      "connected": "Network connection has been restored. If your CAD plan is still open, please save and exit before continuing. Click 'Go Online' to proceed."
+    },
+    "plansWillBeSynced": {
+      "title": "You have been working offline",
+      "message": "The plans created during this period will be synced"
+    },
+    "syncOfflinePlans": {
+      "title": "Offline Plan Upload",
+      "syncSummary": "Your offline plan upload is now complete",
+      "areUnassigned": "Successfully uploaded plans will be found in the \"unassigned\" plans list.",
+      "planId": "Offline Plan ID",
+      "offlineId": "Offline ID",
+      "offlinePlansSynced": "Upload successful:",
+      "offlinePlansNotSynced": "Upload failed:",
+      "serviceDesk": "Please contact Service Desk to restore your failed upload."
+    },
+    "file": {
+      "readFileError": "Error reading the file",
+      "readFileErrorMessage": "There is an error in file you are trying to read"
+    },
+    "plansToBeSynced": {
+      "title": "Offline Plan Upload",
+      "message1": "Your offline plans are being uploaded and will be available shortly.",
+      "message2": "Click 'Ok' to continue.",
+      "readFileErrorMessage": "There is an error in the file you are trying to read",
+      "createFileError": "Error creating the plan",
+      "createFileErrorMessage": "There is an error in the file you are trying to write",
+      "editFileError": "Error editing the plan",
+      "editFileErrorMessage": "There is an error in the plan you are trying to edit"
+    },
+    "previewUnavailable": {
+      "title": "Preview unavailable",
+      "message": "There is no image preview for this version.",
+      "messageOnline": "There is no image preview for this version.<br> Contact Support to upload image files."
+    },
+    "unableToPrintPreview": {
+      "title": "Plan Preview",
+      "message": "There is no preview for the selected plan"
+    },
+    "saveAutosaveSuccess": "An autosaved version was saved",
+    "saveAutosaveError": "Not able to save autosaved version",
+    "unableToRecoverAutosave": {
+      "title": "Unable to restore last autosave",
+      "message": "No autosave found since your last recovery",
+      "message2": "Please ensure the computer you are using is the same on as was used save the plan"
+    },
+    "recoverLastAutosave": {
+      "title": "Restore plan",
+      "message": "Would you like to restore the plan "
+    },
+    "noMatchesFound": {
+      "noMatchesFoundTitle": "No Match Found - Create a New Local Trade Account",
+      "noMatchesFoundDescription": "We couldnвЂ™t find a customer based on the information provided . . . letвЂ™s create a new local account"
+    }
+  },
+  "offline": {
+    "createPlan": "Create plan",
+    "login": {
+      "status": "You are currently offline",
+      "actions": "You can perform the following actions:",
+      "create": "Create new plans",
+      "edit": "Edit new plans",
+      "workOffline": "Work Offline"
+    },
+    "planForm": {
+      "offlinePlans": "Offline Plans",
+      "planNumber": "Plan number",
+      "planName": "Plan name",
+      "EducationerName": "Educationer name",
+      "lastUpdate": "Last update",
+      "catalogue": "Catalogue",
+      "planId": "Plan ID",
+      "createdAt": "Created At"
+    },
+    "list": {
+      "none": "There are no offline plans"
+    }
+  },
+  "housingTypePlanForm": {
+    "housingSpecification": "Housing Specification",
+    "housingType": "Housing Type Name",
+    "template": "Template",
+    "reference": "Reference"
+  },
+  "booleanResponse": {
+    "no": "No",
+    "yes": "Yes"
+  },
+  "builderType": {
+    "Cash": "Local customer",
+    "Credit": "Credit account"
+  },
+  "EducationToolType": {
+    "Fusion": "Fusion",
+    "3DC": "Protool"
+  },
+  "dropdownCatalogue": {
+    "kitchen": "Kitchen",
+    "balham": "Balham"
+  },
+  "dropdownSortOptions": {
+    "firstName": "First name",
+    "id": "Plan ID",
+    "createdDate": "Created Date",
+    "surname": "Surname",
+    "postcode": "Postcode",
+    "endUserFullName": "End user full name"
+  },
+  "filters": {
+    "address1": "Address 1",
+    "Educationer": "Educationer",
+    "email": "Email",
+    "endUser": "End User",
+    "firstName": "End User First Name",
+    "initials": "Initials",
+    "accountNumber": "Account Number",
+    "postcode": "Postcode",
+    "postcodeEndUser": "End User Postcode",
+    "addressEndUser": "End User Address",
+    "endUserSurname": "End User Surname",
+    "mobileNumber": "Mobile Number",
+    "mobileNumberEndUser": "End User Mobile Number",
+    "landlineNumber": "LandLine Number",
+    "tradeCustomerLabel": "Trade Customer",
+    "projectLabel": "Project",
+    "endUserLabel": "Plan by End User",
+    "planLabel": "Plan",
+    "planId": "Plan ID",
+    "builderType": "Builder Type",
+    "companyName": "Company Name",
+    "telephone": "Mobile Number",
+    "unassignedPlans": "Unassigned Plans",
+    "archivedPlans": "Archived Plans",
+    "archivedProjects": "Archived Projects",
+    "planName": "Plan Name",
+    "sAPAccountStatus": "Status",
+    "showAll": "Show All",
+    "advancedOptions": "Advanced Options",
+    "searchBarPlaceholder": "Search for Trade Customers, Plans and Projects",
+    "searchBarPlaceholderWithoutProjects": "Search for Trade Customers and Plans"
+  },
+  "endUser": {
+    "title": "End Users",
+    "createNewEndUser": "Create End User",
+    "endUserDetails": "End User Details",
+    "formTitle": "Title",
+    "firstName": "Firstname",
+    "surname": "Surname",
+    "email": "Email",
+    "landlineNumber": "Landline Number",
+    "mobileNumber": "Mobile Number",
+    "postcode": "Postcode",
+    "address1": "Address 1",
+    "address2": "Address 2",
+    "address3": "Address 3",
+    "notes": "Notes",
+    "notesPlaceholder": "Take a Note...",
+    "comments": "Comments",
+    "commentsPlaceholder": "Make a comment...",
+    "results": "Results",
+    "resNum": "Numbers of Results"
+  },
+  "fusionNotifications": {
+    "alreadyOpen": "This plan is already open in Fusion",
+    "excededFusionInstances": "Only one instance of Fusion can be opened",
+    "goToFusion": "Click to go to Fusion"
+  },
+  "home": {
+    "results": "{{ resNum }} results for your search",
+    "title": "Builders & Plans",
+    "enterBuilderButton": "Create New Builder",
+    "sort": "Sort by",
+    "createWalletButton": "Wallets",
+    "endUser": "Create End User",
+    "builderTitle": "Builders",
+    "planTitle": "Plans",
+    "tradeCustomers": "Trade Customers",
+    "personal": "Personal"
+  },
+  "login": {
+    "forgotPassword": "Forgot your password?",
+    "keepSignedIn": "Keep me signed in",
+    "logIn": "Log In",
+    "password": "Password",
+    "username": "Username",
+    "email": "Email",
+    "environment": "Environment",
+    "mainRol": "Main Role",
+    "Aiep": "Aiep",
+    "signIn": "Sign in"
+  },
+  "validationErrors": {
+    "required": "Required field",
+    "mustBeEmail": "Value must be an email",
+    "maxlength": "Maximum {{ maxlength }} characters",
+    "minlength": "Minimum {{ minLength }} characters",
+    "maxNumericLength": "Maximum {{ maxlength }} digits",
+    "aiepEmail": "Value must be a aiep Email. Ex. @aiep.com ",
+    "invalidPostcode": "Invalid postcode",
+    "invalidVersionNumber": "Use format x.y.z",
+    "invalidFusionVersionNumber": "Use format a.b.c.d",
+    "invalidIpAddress": "IP address must be up to 255.255.255.255",
+    "valueList": "The value must be one of the list values below",
+    "min": "Min value must be {{ minValue }}",
+    "max": "Max value must be {{ maxValue }}",
+    "invalidNumber": "Value must be a number",
+    "invalidPhoneNumber": "Invalid phone number",
+    "invalidDateFormat": "The date must be in the format dd/mm/YYYY.",
+    "duplicatePlanName": "The plan with entered name already exists.",
+    "duplicateTemplateName": "The template with entered name already exists."
+  },
+  "plan": {
+    "plan": "Plan",
+    "tradeCustomer": "Trade Customer",
+    "endUserFullName": "End User Full Name",
+    "versionId": "Version ID",
+    "K8Number": "Order Number",
+    "createNewPlan": "Create New Plan",
+    "planId": "Plan ID",
+    "range": "Range",
+    "createdDatetime": "Create Datetime",
+    "lastUpdate": "Last Update",
+    "EducationOrigin": "Education Origin",
+    "EducationTool": "Education Tool",
+    "versionNum": "Version number",
+    "versionNo": "Version No.",
+    "versionNotes": "Version notes",
+    "quoteOrderNumber": "Order Number",
+    "houseTypeName": "House Type Name",
+    "lastUpdated": "Last Updated",
+    "updated": "Updated",
+    "versionsLabel": "Versions",
+    "builderName": "Builder Name",
+    "catalogue": "Catalogue",
+    "Educationer": "Educationer",
+    "planDetails": "Plan Details",
+    "unassigned": "Unassigned",
+    "survey": "aiep Survey",
+    "endUser": "End User",
+    "endUserName": "First name",
+    "fromAiep": "From Aiep",
+    "toAiep": "To Aiep",
+    "planHeader": "Plan ID {{ id }}",
+    "attachments": "Attachments",
+    "timeline": "Timeline",
+    "endUserTitle": "Enter End User Details",
+    "comments": "Comments",
+    "makeNote": "Make a note...",
+    "assignBuilderPlaceholder": "Type builder to assign...",
+    "savedPlanComment": "Leave comments of the Version here...",
+    "masterVersion": "Master Version",
+    "versionHistory": "Version History",
+    "publishHistory": "Publish History",
+    "cadFilePlanId": "CADfile Plan ID",
+    "planType": "Plan Type",
+    "planName": "Plan Name",
+    "CADFilePlanId": "CAD File Plan ID",
+    "planTypeOptions": {
+      "noPlanType": "No Plan Type",
+      "localAuthNewBuild": "Local Authority - New Build",
+      "localAuthPlannedMaint": "Local Authority - Planned Maintenance",
+      "localAuthReactiveMaint": "Local Authority - Reactive Maintenance",
+      "housingAssnNewBuild": "Housing Association - New Build",
+      "housingAssnPlannedMaint": "Housing Association - Planned Maintenance",
+      "housingAssnReactiveMaint": "Housing Association - Reactive Maintenance",
+      "commercialNewBuild": "Commercial - New Build",
+      "commercialDev": "Commercial вЂ“ Development",
+      "landlordsNewBuild": "LandLords - New Build",
+      "landlordsDev": "LandLords вЂ“ Development",
+      "landlordsMaint": "Landlords вЂ“ Maintenance",
+      "rentalNewBuild": "Rental - New Build",
+      "rentalDev": "Rental - Development",
+      "rentalMaint": "Rental - Maintenance",
+      "domesticNewBuild": "Domestic - New Build",
+      "domesticRepl": "Domestic - Replacement",
+      "privateNewBuild": "Private - New Build",
+      "privateRepl": "Private - Replacement"
+    }
+  },
+  "project": {
+    "projectName": "Project Name",
+    "projectReference": "Project Reference",
+    "lastUpdated": "Last Updated",
+    "createdDate": "Created date",
+    "backToProjects": "Back to projects"
+  },
+  "template": {
+    "createNewTemplate": "Create new template",
+    "templateName": "Template name",
+    "templateType": "Template type",
+    "housingSpecification": "Housing specification",
+    "projectWide": "Project wide",
+    "assignedToHouseSpecification": "Assigned to house specification",
+    "noTemplate": "No template"
+  },
+  "publish": {
+    "renderType": "Render Type",
+    "state": "State",
+    "dateTime": "Date/Time",
+    "renderTypeOptions": {
+      "1": "SD Images",
+      "2": "HD Images",
+      "3": "SD Images & Video",
+      "4": "HD Images & Video"
+    },
+    "publishJobState": {
+      "Requested": "Requested",
+      "Render": "Render",
+      "PlanFileUploadedToStorage": "Plan File Uploaded To Storage",
+      "QueuedForRendering": "Queued For Rendering",
+      "Rendering": "Rendering",
+      "Rendered": "Rendered",
+      "Encode": "Encode",
+      "QueuedForEncoding": "Queued For Encoding",
+      "Encoding": "Encoding",
+      "Encoded": "Encoded",
+      "Publish": "Publish",
+      "Published": "Published",
+      "EmailSent": "Email Sent",
+      "PlanFileUploadedToStorageError": "Plan File Uploaded To Storage Error",
+      "QueuedForRenderingError": "Queued For Rendering Error",
+      "SubscribedToRenderingError": "Subscribed To Rendering Error",
+      "RenderingError": "Rendering Error",
+      "QueuedForEncodingError": "Queued For Encoding Error",
+      "SubscribedToEncodingError": "Subscribed To Encoding Error",
+      "EncodingError": "Encoding Error",
+      "PublishedError": "Published Error",
+      "EmailError": "Email Error",
+      "Error": "Error"
+    }
+  },
+  "timeline": {
+    "commentPlaceholder": "Write a comment...",
+    "genericTimelineMessage": "{{ entity }} has been {{ action }} on {{ date }} by {{ user }}.",
+    "entityCreateMessage": "{{ entity }} {{ additionalInfo }} has been created on {{ date }} by {{ user }}.",
+    "entityUpdateMessage": "{{ entity }} {{ additionalInfo }} has been updated on {{ date }} by {{ user }}.",
+    "entityDeleteMessage": "{{ entity }} {{ additionalInfo }} has been deleted on {{ date }} by {{ user }}",
+    "planPublishMessage": "Plan has been sent to publish on {{ date }} by {{ user }}.",
+    "fileCreateMessage": "A new file has been uploaded on {{ date }} by {{ user }}.",
+    "fileUpdateMessage": "A file has been updated on {{ date }} by {{ user }}.",
+    "commentEdited": "Edited on {{ date }}.",
+    "planActions": {
+      "1": "{{ entity }} {{ additionalInfo }} has been created on {{ date }} by {{ user }}.",
+      "2": "{{ entity }} {{ additionalInfo }} has been updated on {{ date }} by {{ user }}.",
+      "3": "{{ entity }} {{ additionalInfo }} has been deleted on {{ date }} by {{ user }}",
+      "4": "Plan has been sent to publish on {{ date }} by {{ user }}.",
+      "5": "A new file has been uploaded on {{ date }} by {{ user }}.",
+      "6": "A file has been updated on {{ date }} by {{ user }}."
+    }
+  },
+  "printTimeline": {
+    "entityCreateMessage": " has been created on ",
+    "entityUpdateMessage": " has been updated on ",
+    "entityDeleteMessage": " has been deleted on ",
+    "planPublishMessage": "Plan has been sent to publish on ",
+    "fileCreateMessage": "A new file has been uploaded on ",
+    "fileUpdateMessage": "A file has been updated on ",
+    "comment": " commented on ",
+    "by": " by ",
+    "on": " on ",
+    "timeline": "Timeline",
+    "plan": "Plan"
+  },
+  "notification": {
+    "result": {
+      "none": "No results returned",
+      "plural": "results returned",
+      "singular": "result returned"
+    },
+    "search": "Search",
+    "assignBuilderSuccess": "Plan assigned successfully to the builder",
+    "assignBuilderError": "There was an error assigning the plan",
+    "markMasterVersionError": "There was an error while updating the master version",
+    "archivePlanSuccess": "The Plan was archived successfully",
+    "archivePlanError": "There was an error archiving the Plan",
+    "archiveProjectSuccess": "The Project was archived successfully",
+    "archiveProjectError": "There was an error archiving the Project",
+    "unarchivePlanSuccess": "The Plan was restored successfully",
+    "unarchivePlanError": "There was an error restoring the Plan",
+    "unarchiveProjectSuccess": "The Project was restored successfully",
+    "unarchiveProjectError": "There was an error restoring the Project",
+    "noProjectSearchResults": "No projects match your search criteria",
+    "noReleaseInfo": "There is no Release Information available",
+    "invalidFormTitle": "Invalid form data",
+    "invalidFormMessage": "Invalid Entry. Please review the data entered for builder",
+    "changesSaved": "Changes saved",
+    "saveError": "Save error",
+    "updateBuilderSuccess": "The builder has been successfully updated",
+    "updateBuilderError": "A problem occurred while saving your changes",
+    "documentUploadSuccess": "Document uploaded successfully",
+    "documentUploadError": "Error while uploading document",
+    "documentDuplicatedError": "Duplicated document",
+    "versionUploadSuccess": "Version was successfully uploaded",
+    "versionUploadError": "Error while uploading version",
+    "countryCreatedSuccess": "Country was successfully created",
+    "countryCreatedError": "Error while creating country",
+    "countryEditedSuccess": "Country was successfully edited",
+    "countryEditedError": "Error while editing country",
+    "countryDeletedSuccess": "Country was successfuly removed",
+    "countryDeletedError": "Error while removing country",
+    "regionCreatedSuccess": "Region was successfully created",
+    "regionCreatedError": "Error while creating region",
+    "regionEditedSuccess": "Region was successfully edited",
+    "regionEditedError": "Error while editing region",
+    "regionDeletedSuccess": "Region was successfuly removed",
+    "regionDeletedError": "Error while removing region",
+    "areaCreatedSuccess": "Area was successfully created",
+    "areaCreatedError": "Error while creating area",
+    "areaEditedSuccess": "Area was successfully edited",
+    "areaEditedError": "Error while editing area",
+    "areaDeletedSuccess": "Area was successfuly removed",
+    "areaDeletedError": "Error while removing area",
+    "planUpdatedSuccess": "Plan updated successfully",
+    "planUpdatedError": "A problem occurred while saving the plan changes",
+    "userDeletedSuccess": "The user has been deleted successfully",
+    "deleteUserError": "Error while deleting user",
+    "AiepInfo": "Aiep Info",
+    "AiepCreatedSuccess": "The Aiep has been created successfully",
+    "AiepCreatedError": "An error occurs while creating your Aiep",
+    "AiepUpdatedSuccess": "The Aiep has been updated successfully",
+    "AiepUpdatedError": "An error occurs while updating your Aiep",
+    "planInfo": "Plan Info",
+    "planCreatedSuccess": "The Plan has been created successfully",
+    "planActivatedSuccess": "The Plan was activated successfully",
+    "planActivatedError": "There was an error activating the Plan",
+    "planCreatedError": "There was an error while creating the Plan",
+    "planCreatingError": "An error occurs while creating your Plan",
+    "endUserInfo": "End User Info",
+    "endUserCreatedSuccess": "The End User has been created successfully",
+    "endUserCreatedError": "An error occurs while creating your End User",
+    "endUserUpdatedSuccess": "The End User has been updated successfully",
+    "endUserUpdatedError": "An error occurs while updating your End User",
+    "permissionWarning": "You are not allowed to perform this action",
+    "emptySearchWarning": "Queries with extra empty spaces are ignored",
+    "noActivePlans": "No active plans available for transfer."
+  },
+  "paginator": {
+    "display": "Show Items"
+  },
+  "topbar": {
+    "noAiep": "No Aiep",
+    "supportAiep": "Support",
+    "workingAiep": "Working Aiep",
+    "about": "About",
+    "releaseNotesDocumentMenu": "Release Notes Document",
+    "externalReleaseNotesMenu": "Release Notes Web",
+    "uploadReleaseNotesDialogMenu": "Edit Release Notes",
+    "signOutMenu": "Sign Out",
+    "placeholder": "Search",
+    "selectAiepPlaceholder": "Select Working Aiep",
+    "title": "Education View",
+    "supportDashboard": "Support Dashboard",
+    "viewProjects": "View projects",
+    "offline": "Offline",
+    "AiepError": "Error while updating the current working Aiep",
+    "releaseNotesError": "Fusion couldn't load release notes",
+    "releaseNotesRecoveringError": "There was an error while recovering release notes data"
+  },
+  "existingBuilderDialog": {
+    "exactMatchTitle": "Existing Trade Customer found",
+    "partialMatchTitle": "Existing Builder records found",
+    "createBuilderMessage1": "None of these are your builder?",
+    "createBuilderMessage2": "Continue to create builder {{ builderSurname }}, {{ builderAddress1 }}, {{ builderPostcode }}"
+  },
+  "existingTradeCustomers": {
+    "foundTradeCustomersTitle": "We've Found These Accounts"
+  },
+  "licence": {
+    "title": "Fusion Licence",
+    "correctMessage": "Your Fusion licence is correct",
+    "expireMessage": "Your Fusion licence has expired since: {{ licenceDate }}, please contact support.",
+    "warnMessage": "Your Fusion licence will expire on: {{ licenceDate }}, please contact support.",
+    "noLicenceMessage": "You do not have a fusion licence, please contact support."
+  },
+  "support": {
+    "title": "Support Team",
+    "manageBuilderPlans": "Manage Builders and Plans",
+    "userRolesPermissions": "User Roles & Permissions",
+    "archivedPlans": "Archived Plans",
+    "supportTeamAiep": "Support Team Aiep",
+    "manageAieps": "Manage Aieps",
+    "releaseNotes": "Release Notes & FAQs",
+    "publishSystem": "Publish System",
+    "usersAndRoles": "Users & Roles",
+    "logs": "System Logs",
+    "actionLogs": "Action Logs",
+    "jobs": "Jobs"
+  },
+  "clearReleaseNotes": {
+    "clearSuccessMessage": "Release notes cleared successfully",
+    "clearErrorMessage": "Error while clearing release notes"
+  },
+  "releaseNotesPage": {
+    "title": "Release Notes",
+    "releaseTitle": "Title",
+    "upload": "Upload Release Notes",
+    "dvVersion": "DV Version",
+    "fusionVersion": "Fusion Version",
+    "date": "Date"
+  },
+  "AiepsPage": {
+    "title": "Manage Aieps",
+    "createNewAiep": "Create New Aiep",
+    "manageContryRegionArea": "Manage Country, Regions and Areas"
+  },
+  "countriesPage": {
+    "title": "Manage Countries",
+    "createNewCountry": "Create New Country"
+  },
+  "Aiep": {
+    "AiepCode": "Aiep Code",
+    "AiepNumber": "Aiep Number",
+    "address": "Address",
+    "address1": "Address 1",
+    "address2": "Address 2",
+    "address3": "Address 3",
+    "address4": "Address 4",
+    "address5": "Address 5",
+    "faxNumber": "Fax Number",
+    "phoneNumber": "Phone Number",
+    "name": "Name",
+    "email": "Email",
+    "area": "Area",
+    "ipAddress": "IP Address",
+    "manager": "Manager",
+    "region": "Region",
+    "lastUpdate": "Last Update",
+    "AiepDetails": "Aiep Details",
+    "postcode": "Postcode",
+    "downloadSpeed": "Download Speed (KB/s)",
+    "downloadLimit": "Download Limit (%)",
+    "htmlEmail": "Enable HTML email"
+  },
+  "country": {
+    "name": "Name",
+    "regions": "Regions",
+    "areas": "Areas",
+    "Aieps": "Aieps",
+    "lastUpdate": "Last Update"
+  },
+  "areasPage": {
+    "title": "Manage Areas",
+    "area": "Area",
+    "Aieps": "Aieps"
+  },
+  "regionsPage": {
+    "title": "Manage Regions",
+    "region": "Region",
+    "areas": "Areas"
+  },
+  "rolesPage": {
+    "title": "Roles and Permissions",
+    "role": "Role",
+    "name": "Name"
+  },
+  "archivedPlans": {
+    "title": "Archived Plans",
+    "planNumber": "Plan number",
+    "endClient": "End user",
+    "tradingName": "Trading Name",
+    "range": "Range",
+    "archivedOn": "Archived on"
+  },
+  "restoreArchivedPlan": {
+    "restoredSuccessMessage": "Archived plan restored successfully",
+    "restoredErrorMessage": "Error while restoring archived plan"
+  },
+  "systemLog": {
+    "title": "System Logs",
+    "level": "Level",
+    "message": "Message",
+    "messageTemplate": "Message Template",
+    "exception": "Exception Type",
+    "dateTime": "Last Updated",
+    "properties": "Properties"
+  },
+  "sortBy": {
+    "title": "Sort by",
+    "ascending": "Ascending",
+    "descending": "Descending"
+  },
+  "filterBy": {
+    "title": "Filter by",
+    "placeholder": "Enter keyword"
+  },
+  "user": {
+    "name": "Name",
+    "AiepCode": "Aiep Code",
+    "AiepName": "Aiep Name",
+    "upn": "UPN",
+    "create": "Create New User",
+    "role": "Role",
+    "newUser": "New User",
+    "userDetails": "User Details",
+    "firstName": "First Name",
+    "surname": "Surname",
+    "uniqueIdentifier": "Unique Identifier",
+    "notification": {
+      "header": "User Info",
+      "createSuccess": "User created successfully",
+      "createError": "An error occurred while creating User",
+      "updateSuccess": "User updated successfully",
+      "updateError": "An error ocurred while updating User"
+    },
+    "leaver": "Leaver",
+    "delegatetouser": "Delegate To"
+  },
+  "assignEntities": {
+    "permissions": "Permissions",
+    "assignedListTitle": "Assigned",
+    "availableListTitle": "Available",
+    "searchPlaceHolder": "Type something..."
+  },
+  "actionLogsPage": {
+    "title": "Action Logs",
+    "export": "Export"
+  },
+  "actionLogs": {
+    "action": "Action",
+    "user": "User",
+    "date": "Date",
+    "belongsTo": "Belongs to",
+    "value": "Value",
+    "messages": {
+      "entityCreateMessage": "Create",
+      "entityUpdateMessage": "Update",
+      "entityDeleteMessage": "Delete",
+      "planPublishMessage": "PlanPublished",
+      "fileCreateMessage": "FileCreate",
+      "fileUpdateMessage": "FileUpdate"
+    }
+  },
+  "dateRange": {
+    "end": "End Date",
+    "start": "Start Date",
+    "startDate": "From",
+    "endDate": "To"
+  },
+  "Plan": {
+    "PlanCode": "Plan ID",
+    "EndUser.Surname": "End Client",
+    "BuilderTradingName": "Trading Name",
+    "Educationer.Surname": "Educationer",
+    "CadFilePlanId": "CADfile Plan ID",
+    "UpdatedDate": "Last Update"
+  },
+  "Builder": {
+    "AccountNumber": "Account Number",
+    "TradingName": "Trading Name",
+    "Address1": "Address",
+    "Postcode": "Postcode",
+    "MobileNumber": "Mobile Number"
+  },
+  "SystemLog": {
+    "Level": "Level",
+    "Message": "Message",
+    "MessageTemplate": "Message Template",
+    "Exception": "Exception Type",
+    "Properties": "Properties",
+    "TimeStamp": "Date"
+  },
+  "ActionLogs": {
+    "ActionType": "Action",
+    "User": "User",
+    "Date": "Date",
+    "EntityName": "Belongs to",
+    "EntityValue": "Value"
+  },
+  "ReleaseInfo": {
+    "Title": "Title",
+    "Version": "DV Version",
+    "FusionVersion": "Fusion Version",
+    "DateTime": "Date"
+  },
+  "ArchivedPlan": {
+    "PlanCode": "Plan Number",
+    "EndUser.FirstName": "End Client",
+    "BuilderTradingName": "Trading Name",
+    "UpdatedDate": "Archived On"
+  },
+  "Country": {
+    "KeyName": "Name",
+    "RegionsCount": "Regions"
+  },
+  "Region": {
+    "KeyName": "Region",
+    "AreasCount": "Areas"
+  },
+  "Area": {
+    "KeyName": "Area",
+    "AiepCount": "Aieps"
+  },
+  "Aiep": {
+    "AiepCode": "Aiep Code",
+    "Name": "Name",
+    "Area.KeyName": "Area",
+    "UpdatedDate": "Last Update"
+  },
+  "Role": {
+    "Name": "Role"
+  },
+  "User": {
+    "FirstName": "Name",
+    "UniqueIdentifier": "UPN",
+    "Aiep.AiepCode": "Aiep Code",
+    "Aiep.Name": "Aiep Name"
+  },
+  "BuilderPlan": {
+    "Id": "Plan ID",
+    "EndUser.Surname": "End Client",
+    "Educationer.Surname": "Educationer",
+    "cadFilePlanId": "CADfile Plan ID",
+    "updatedDate": "Last Update"
+  },
+  "planSummary": {
+    "planSummary": "Plan Summary",
+    "planCreated": "Plan created",
+    "lastUpdated": "Last updated",
+    "EducationerName": "Educationer Name",
+    "masterVersionId": "Master version id",
+    "noOfVersions": "Number of versions",
+    "survey": "aiep survey",
+    "logButton": "View detailed log"
+  },
+  "planDetails": {
+    "planDetailsTitle": "Plan Details",
+    "tradingName": "Trading Name",
+    "postcode": "Postcode",
+    "address1": "Address 1",
+    "knownAccountMessage": "Already know the account number?",
+    "accountNumber": "Account Number"
+  },
+  "projectOverview": {
+    "projectOverviewString": "Overview",
+    "projectName": "Project Name",
+    "projectReference": "Project Ref",
+    "customerName": "Customer name"
+  },
+  "projectTemplates": {
+    "templates": "Templates",
+    "templatesAndPlans": "Templates and Plans",
+    "name": "Name",
+    "housingSpec": "Housing spec"
+  },
+  "projectSpecifications": {
+    "projectsSpecificationString": "Specifications"
+  },
+  "projectPlans": {
+    "cadPlanNo": "CAD Plan No.",
+    "housingSpec": "Housing spec",
+    "housingType": "Housing type",
+    "plans": "Plans",
+    "status": "Status",
+    "archived": "Archived",
+    "active": "Active"
+  },
+  "search": {
+    "title": "Search"
+  },
+  "selectOptions": {
+    "postcodeCountries": {
+      "FRA": "France",
+      "BEL": "Belgium"
+    }
+  }
+}
+
+

@@ -1,0 +1,48 @@
+@import '/src/assets/sass/abstracts/_variables.scss';
+
+.tdp-filter-container {
+  height: 100%;
+  align-items: center;
+  margin: 0 1em;
+  .tdp-filter-label {
+    margin-right: 1em;
+    font-weight: bold;
+    font-size: 13px;
+  }
+
+  .tdp-filter-dropdown {
+    .tdp-select-container {
+      height: 30px;
+      margin-right: 1em;
+      .tdp-input {
+        font-size: 13px;
+        height: 24px;
+        padding: 1px 7px;
+        box-sizing: content-box;
+      }
+    }
+  }
+    
+  .tdp-chevron {
+    padding-right: 1em;
+  }
+    
+  .tdp-filter-input {
+    background-color: white;
+    border-style: solid;
+    border-width: thin;
+    height: 26px;
+    padding: 1px 7px;
+    font-size: 13px;
+    &:disabled {
+      color: $input-disabled-text;
+      background-color: $input-disabled;
+      &::placeholder {
+        color: $input-disabled-text;
+      }
+    }
+    &:focus {
+      outline-color: $input-focus;
+    }
+  }
+}

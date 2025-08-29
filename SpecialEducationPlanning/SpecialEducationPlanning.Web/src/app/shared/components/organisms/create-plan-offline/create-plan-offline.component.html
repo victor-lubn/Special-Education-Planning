@@ -1,0 +1,34 @@
+<tdp-modal
+  class="tdp-create-plan-offline"
+  maxWidth="1000px"
+  height="100%"
+  [closable]="true"
+  (onClosed)="closeModal()"
+>
+  <div title class="tdp-create-plan-offline-header--title">
+    {{ "plan.planDetails" | translate }}
+  </div>
+
+  <div class="tdp-create-plan-offline-body">
+    <tdp-plan-form-offline> </tdp-plan-form-offline>
+  </div>
+
+  <div actions class="tdp-create-plan-offline-buttons">
+    <tdp-button
+      [color]="'text-only'"
+      [size]="'large'"
+      [mat-dialog-close]
+      (onClick)="closeModal()"
+      >{{ "button.cancel" | translate }}</tdp-button
+    >
+
+    <tdp-button
+      [color]="'green'"
+      [size]="'large'"
+      [disabled]="planFormComponent.entityForm.invalid"
+      (onClick)="onSubmit()"
+    >
+      {{ "button.createPlan" | translate }}
+    </tdp-button>
+  </div>
+</tdp-modal>

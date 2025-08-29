@@ -1,0 +1,24 @@
+<tdp-modal
+    class="tdp-unable-supports-log-dialog"
+    maxWidth="37.5rem"
+    height="22rem"
+    [hasBodySeparator]="true"
+    [closable]="true"
+    (onClosed)="onCancel()">
+
+    <div title class="tdp-unable-supports-log-header">
+        {{ 'dialog.actionLogExportDateNotFilled.title' | translate }}
+    </div>
+
+    <div sub-title class="tdp-unable-supports-log-header-subtitle" >
+        {{ 'dialog.actionLogExportDateNotFilled.message' | translate }}
+    </div>
+
+    <tdp-button 
+    class="tdp-unable-supports-log-header-okay"
+    size="large"
+    color="green"
+    (onClick)="onCancel()">
+    {{ 'button.accept' | translate }}
+</tdp-button>
+</tdp-modal>

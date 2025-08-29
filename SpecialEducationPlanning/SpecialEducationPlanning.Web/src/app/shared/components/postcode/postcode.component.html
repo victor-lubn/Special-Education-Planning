@@ -1,0 +1,24 @@
+<div class="tdp-postcode-container">
+  <input
+    #postcodeInput
+    type="text"
+    (input)="inputChange($event)"
+    (blur)="inputTouched()"
+    [ngClass]="{ 'tdp-error-border': hasError }"
+    [matAutocomplete]="postcodeOptions">
+  <mat-spinner
+    class="tdp-postcode-spinner"
+    [diameter]="20"
+    *ngIf="searching">
+  </mat-spinner>
+</div>
+<mat-autocomplete
+  #postcodeOptions="matAutocomplete"
+  (optionSelected)="selectedPostcodeOption($event)"
+  [displayWith]="displayEmpty">
+  <ng-container *ngIf="suggestions.length">
+    <mat-option *ngFor="let addressItem of suggestions" [value]="addressItem">
+      {{ addressItem.suggestion }}
+    </mat-option>
+  </ng-container>
+</mat-autocomplete>

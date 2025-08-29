@@ -1,0 +1,46 @@
+<div class="tdp-row tdp-search-result">
+    <i class="fas fa-warehouse"></i>
+    <div class="tdp-row tdp-search-result-column-group">
+      <div class="tdp-column tdp-search-result-column">
+        <span class="tdp-search-result-label">
+          {{ 'endUser.firstName' | translate }}
+        </span>
+        <span class="tdp-search-result-value">
+          {{endUserInput.firstName ? endUserInput.firstName : '-' }}
+        </span>
+      </div>
+      <div class="tdp-column tdp-search-result-column">
+        <span class="tdp-search-result-label">
+          {{ 'endUser.surname' | translate }}
+        </span>
+        <span class="tdp-search-result-value">
+          {{  endUserInput.surname ? endUserInput.surname : '-' }}
+        </span>
+      </div>
+      <div class="tdp-column tdp-search-result-column">
+        <span class="tdp-search-result-label">
+          {{ 'endUser.address1' | translate }}
+        </span>
+        <span class="tdp-search-result-value">
+          {{ endUserInput.address1 ? endUserInput.address1 : '-' }}
+        </span>
+      </div>
+      <div class="tdp-column tdp-search-result-column">
+        <span class="tdp-search-result-label">
+          {{ 'endUser.postcode' | translate }}
+        </span>
+        <span class="tdp-search-result-value">
+          {{  endUserInput.postcode ? endUserInput.postcode  : '-' }}
+        </span>
+      </div>
+    </div>
+    
+    <div class="tdp-row tdp-search-result-buttons">
+      <div
+        matTooltip="{{ 'button.edit' | translate }}"
+        class="tdp-action-btn"
+        (click)="goToEndUserDetails()"> 
+          <i class="fas fa-edit"></i>
+      </div>    
+    </div>
+  </div>

@@ -1,0 +1,10 @@
+<button class="tdp-atom-button-filter" (click)="handleOnClick()">
+  <div *ngIf="tag || icon" class="button-filter-header">
+    <tdp-label *ngIf="tag" class="tdp-atom-button-filter-tag">{{tag}}</tdp-label>
+    <i *ngIf="icon" class="tdp-atom-button-filter-icon fa {{icon}}"></i>
+  </div>
+  <div class="button-filter-content">
+    <span class="tdp-atom-button-filter-number">{{number || 0}}</span>
+    <ng-content></ng-content>
+  </div>
+</button>

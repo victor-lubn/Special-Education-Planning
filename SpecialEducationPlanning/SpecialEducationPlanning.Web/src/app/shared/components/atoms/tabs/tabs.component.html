@@ -1,0 +1,11 @@
+<mat-tab-group
+  animationDuration="0"
+  disableRipple
+  class="tdp-atom-tabs"
+  [disablePagination]="'true'"
+  [class.single-tab]="singleTab"
+  (selectedTabChange)="getCurrentTabIndex($event)"
+  #matTabGroup
+>
+  <ng-content></ng-content>
+</mat-tab-group>

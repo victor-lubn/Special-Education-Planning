@@ -1,0 +1,22 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-simple-archive-dialog {
+
+  &-title {
+    text-align: center;
+  }
+
+  &-actions {
+    justify-content: center !important;
+    gap: 2rem !important;
+    min-height: unset !important;
+  }
+
+  ::ng-deep .separator { 
+    display: none !important;
+  }
+
+  ::ng-deep .tdp-atom-button-xl {
+    padding: 0 60px;
+  }
+}

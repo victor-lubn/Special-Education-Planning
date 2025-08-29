@@ -1,0 +1,6 @@
+<Project>  
+  <PropertyGroup Label="KOA">    
+	<KoaPackageVersion>6.1.0</KoaPackageVersion>
+  </PropertyGroup>
+  <Import Project="external-dependencies.props" />
+</Project>

@@ -1,0 +1,20 @@
+@use '../abstracts/variables';
+
+.mat-mdc-checkbox {
+   .mdc-checkbox {
+    .mdc-checkbox__native-control:enabled:checked~.mdc-checkbox__background {
+        background-color: variables.$aiep-green !important;
+        border-color: variables.$aiep-green !important;
+    }
+
+    &:hover {
+        .mdc-checkbox__native-control:not([disabled])~.mdc-checkbox__ripple {
+            background-color: variables.$aiep-green !important;
+        }
+    }
+
+    label {
+        font-family: Rooster, 'Open Sans', serif;
+    }
+   }
+}

@@ -1,0 +1,51 @@
+// Definition of typographic styles that are common for all the application
+
+button {
+  font-family: 'Open Sans', serif;
+}
+
+a {
+  color: $navy;
+}
+
+textarea {
+  resize: vertical;
+  border: 1px solid $keyline-grey;
+  font-family: 'Open Sans', serif;
+  &:disabled {
+    color: $input-disabled-text;
+    background-color: $input-disabled;
+    &::placeholder {
+      color: $input-disabled-text;
+    }
+  }
+  &:focus {
+    outline-color: $input-focus;
+  }
+}
+
+.tdp-form-row {
+  display: flex;
+}
+
+.tdp-form-group input[type=text],
+.tdp-form-group input[type=password],
+.tdp-form-group input[type=number] {
+  height: 30px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  border: 1px solid $keyline-grey;
+  font-size: 0.9375rem;
+  font-family: Rooster, 'Open Sans', serif;
+  color: $navy;
+  &:disabled {
+    color: $input-disabled-text;
+    background-color: $input-disabled;
+    &::placeholder {
+      color: $input-disabled-text;
+    }
+  }
+  &:focus {
+    outline-color: $input-focus;
+  }
+}

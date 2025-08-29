@@ -1,0 +1,115 @@
+/* You can add global styles to this file, and also import other style files */
+
+@charset 'utf-8';
+
+@import "@angular/material/prebuilt-themes/indigo-pink.css";
+@import "./material/main";
+
+@import "abstracts/__abstracts-dir";
+@import "base/__base-dir";
+@import "vendors/__vendors-dir";
+@import "partials/__partials-dir";
+
+@import "./font-awesome/scss/fontawesome.scss";
+@import "./font-awesome/scss/solid.scss";
+@import "./font-awesome/scss/brands.scss";
+@import "./font-awesome/scss/regular.scss";
+@import "/src/assets/sass/abstracts/_variables.scss";
+
+body {
+  margin: 0;
+  font-family: "Rooster", "Open Sans", serif;
+  background-color: $white;
+  color: $navy;
+  overflow-x: hidden;
+}
+
+/* Here Angular Material overrides */
+
+.mat-mdc-menu-item {
+  font-family: "Open Sans", serif;
+}
+
+/* Material Icons */
+.material-icons.md-18 {
+  font-size: 18px;
+  height: 18px;
+  width: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+  height: 24px;
+  width: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+  height: 36px;
+  width: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
+  height: 48px;
+  width: 48px;
+}
+
+.mat-expansion-panel-body {
+  padding: 24px 16px !important;
+}
+
+.mat-expansion-panel-content {
+  font-family: "Open Sans", serif;
+}
+
+.mat-expansion-panel .mat-expansion-panel-header:hover {
+  border-radius: 4px;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  font-style: normal;
+  margin: 10px 0;
+}
+
+h1 {
+  font-size: 30px;
+  line-height: 40px;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 40px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.body--size-normal {
+  font-size: 15px;
+  line-height: 21px;
+
+  p {
+    margin: 20px 0;
+  }
+}
+
+.body--size-small {
+  font-size: 12px;
+  line-height: 18px;
+
+  p {
+    margin: 8px 0;
+  }
+}
+
+.mat-mdc-dialog-container {
+  padding: 0 !important;
+  border-radius: 10px !important;
+}
+
+textarea {
+  font-family: Rooster, "Open Sans", serif;
+}

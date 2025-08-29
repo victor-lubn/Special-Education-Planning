@@ -1,0 +1,45 @@
+﻿@use "/src/assets/sass/abstracts/variables";
+
+.tdp-Aiep-new-template {
+  width: 90vw;
+  max-width: 75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1.6rem auto 2.5rem;
+
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    background-color: variables.$very-light-grey;
+    border-radius: 10px;
+    border: 1px solid variables.$gray-89;
+
+    .top-container,
+    .bottom-container {
+      padding: 2.5rem;
+      box-sizing: border-box;
+    }
+
+    .separator {
+      border-bottom: 1px solid variables.$gray-89;
+    }
+
+    .bottom-container {
+      height: 8rem;
+      display: flex;
+
+      .Aiep-new-bottom-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-left: auto;
+
+        tdp-button {
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,33 @@
+﻿<tdp-modal
+  class="tdp-create-new-plan"
+  maxWidth="1000px"
+  maxHeight="100vh"
+  height="100%"
+  [closable]="true"
+  (onClosed)="closeModal()"
+>
+  <div title class="tdp-create-new-plan-header--title">
+    {{ "plan.createNewPlan" | translate }}
+  </div>
+  <div class="tdp-create-new-plan-body" [ngClass]="{ 'tall-body': viewChanged, 'short-body': !viewChanged }">
+    <tdp-housing-type-plan-form [data]="data" (viewChanged)="viewChanged = $event"> </tdp-housing-type-plan-form>
+  </div>
+  <div actions class="tdp-create-new-plan-buttons">
+    <tdp-button
+      [color]="'white'"
+      [size]="'large'"
+      [mat-dialog-close]
+      (onClick)="closeModal()"
+      >{{ "button.cancel" | translate }}</tdp-button
+    >
+    <tdp-button
+      [color]="'green'"
+      [size]="'large'"
+      [disabled]="planFormComponent.entityForm.invalid"
+      (onClick)="openInEducationTool()"
+    >
+      {{ 'button.edit' | translate }}
+    </tdp-button>
+  </div>
+</tdp-modal>
+

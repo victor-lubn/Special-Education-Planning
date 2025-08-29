@@ -1,0 +1,62 @@
+replicaCount: __APP_IMAGE_REPLICACOUNT__
+
+image:
+    repository: __APP_IMAGE_REPOSITORY__
+    tag: __image_tag__
+    pullPolicy: __APP_IMAGE_PULLPOLICY__
+    readinessProbePath: __APP_IMAGE_READINESSPROBEPATH__
+    env: [
+        { name: "CORECLR_ENABLE_PROFILING", value: "__APPD_CORECLR_ENABLE_PROFILING__" },
+        { name: "APPDYNAMICS_CONTROLLER_HOST_NAME", value: "__APPD_APPDYNAMICS_CONTROLLER_HOST_NAME__" },
+        { name: "APPDYNAMICS_CONTROLLER_PORT", value: "__APPD_APPDYNAMICS_CONTROLLER_PORT__" },
+        { name: "APPDYNAMICS_CONTROLLER_SSL_ENABLED", value: "__APPD_APPDYNAMICS_CONTROLLER_SSL_ENABLED__" },
+        { name: "APPDYNAMICS_AGENT_ACCOUNT_NAME", value: "__APPD_APPDYNAMICS_AGENT_ACCOUNT_NAME__" },
+        { name: "APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY", value: "__APPD_APPDYNAMICS_AGENT_ACCOUNT_ACCESS_KEY__" },
+        { name: "APPDYNAMICS_AGENT_APPLICATION_NAME", value: "__APPD_APPDYNAMICS_AGENT_APPLICATION_NAME__" },
+        { name: "APPDYNAMICS_AGENT_TIER_NAME", value: "__APPD_APPDYNAMICS_AGENT_TIER_NAME__" },
+        { name: "APPDYNAMICS_AGENT_NODE_NAME", value: "__APPD_APPDYNAMICS_AGENT_NODE_NAME__" },
+        { name: "APPDYNAMICS_AGENT_REUSE_NODE_NAME", value: "__APPD_APPDYNAMICS_AGENT_REUSE_NODE_NAME__" },
+        { name: "APPDYNAMICS_AGENT_REUSE_NODE_NAME_PREFIX", value: "__APPD_APPDYNAMICS_AGENT_REUSE_NODE_NAME_PREFIX__" }
+    ]
+
+nameOverride: ""
+fullnameOverride: ""
+
+service:
+    type: ClusterIP
+    port: 80
+
+ingress:
+    enabled: true
+    className: __APP_INGRESS_CLASSNAME__
+    annotations: {
+      ingressclass.kubernetes.io/is-default-class: "true"
+    }
+
+    paths: ["/"]
+    hosts:  ["__APP_INGRESS_HOSTS__"]
+    tlsEnabled: __APP_INGRESS_TLS_ENABLED__
+    tls: [{
+        secretName: "__APP_INGRESS_SECRET_NAME__",
+        hosts: ["__APP_INGRESS_HOSTS__"]
+    }]
+
+secrets: {
+    enabled: __APP_SECRETS_ENABLED__,
+    name: "__APP_SECRETS_NAME__",
+    mountPath: "__APP_SECRETS_MOUNTHPATH__"
+}
+
+resources:
+    limits:
+        cpu: __QUOTA_LIMIT_CPU__
+        memory: __QUOTA_LIMIT_MEMORY__
+    requests:
+        cpu: __QUOTA_REQUESTS_CPU__
+        memory: __QUOTA_REQUESTS_MEMORY__
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

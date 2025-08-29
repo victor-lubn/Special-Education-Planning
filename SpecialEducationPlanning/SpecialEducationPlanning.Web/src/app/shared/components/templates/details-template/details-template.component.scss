@@ -1,0 +1,78 @@
+@import "/src/assets/sass/abstracts/variables";
+
+tdp-details-template {
+  width: 90vw;
+  max-width: 75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
+
+  .header,
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1200px;
+  }
+
+  .header {
+    height: 90px;
+  }
+
+  .footer {
+    margin-top: 3rem;
+  }
+
+  .main-container {
+    max-width: 75rem;
+    display: flex;
+    flex-direction: row;
+    margin-top: 15px;
+
+    .left-container {
+      display: flex;
+      margin-right: 30px;
+    }
+
+    .right-container {
+      display: flex;
+      flex-grow: 3;
+      flex-direction: column;
+      max-width: 49.35rem;
+
+      .top-container {
+        display: flex;
+
+        .details-top-container {
+          width: 100%;
+          margin-bottom: 30px;
+          position: relative;
+
+          .mat-mdc-tab-header {
+            margin-bottom: 37px;
+          }
+
+          h2 {
+            font-size: 20px;
+            line-height: 30px;
+          }
+        }
+      }
+
+      .bottom-container {
+        display: flex;
+        flex-grow: 3;
+
+        .details-bottom-container {
+          position: relative;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .details-footer {
+    width: 100%;
+  }
+}

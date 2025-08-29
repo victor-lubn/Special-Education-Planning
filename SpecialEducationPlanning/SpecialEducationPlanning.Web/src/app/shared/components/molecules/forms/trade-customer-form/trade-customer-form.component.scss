@@ -1,0 +1,47 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-trade-customer-form {
+    margin-top: 0.625rem;
+
+    .error-message {
+        ::ng-deep {
+          input {
+            border: 2px solid $error-red !important;
+            outline: none;
+          }
+        }
+    }
+
+    &-partial-address-container {
+        flex: 2 1 1%;
+    }
+
+    &-input {
+        ::ng-deep {
+            input {
+                width: 100%;
+                height: 3.5rem;
+            }
+        }
+    }
+
+    &-textarea {
+        ::ng-deep {
+            textarea {     
+                height: 8.125rem;
+            }
+        }
+    }
+
+    .textarea-error {
+        ::ng-deep { 
+            textarea {
+                border: 0.125rem $error-red solid !important;
+            }
+        }
+    }
+
+    .tdp-form-group {
+        align-self: auto;
+    }
+}

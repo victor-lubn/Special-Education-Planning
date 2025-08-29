@@ -1,0 +1,11 @@
+.tdp-unable-autosave-recover-body {
+  text-align: center;
+
+  & div {
+    margin-top: 1.5rem;
+  }
+  & > div:last-child {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+}

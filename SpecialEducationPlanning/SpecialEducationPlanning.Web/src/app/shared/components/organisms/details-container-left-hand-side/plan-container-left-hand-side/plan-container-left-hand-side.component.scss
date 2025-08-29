@@ -1,0 +1,66 @@
+@import '/src/assets/sass/abstracts/_variables.scss';
+
+.separator {
+    border-bottom: 1px solid #E3E3E3;
+    margin-top: auto;
+    width: calc(100% + 64px);
+    margin-left: -2rem;
+    margin-top: auto;
+}
+
+.plan-details {
+    color: $navy;
+
+    &-header {
+        font-size: 20px;
+        margin-bottom: 20px;
+
+        &--title {
+            font-weight: 700;
+        }
+    }
+
+    &-group {
+        margin-bottom: 20px;
+        font-size: 15px;
+        line-height: 21px;
+
+        .plan-details-sub-header-key {
+            font-weight: 700;
+        }
+    }
+
+    .tdp-plan-details-input {
+        ::ng-deep {
+            input {
+                width: 315px;
+            }
+        }
+    }
+
+    .radio-button-options {
+        margin-bottom: 10px;
+    }
+
+    .radio-button-option {
+        margin-top: 8px;
+    }
+
+    .update-button {
+        letter-spacing: 2px;
+    }
+}
+
+.plan-footer {
+    min-height: 5.625rem;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.625rem;
+    flex-wrap: wrap;
+    padding: 0.625rem;
+}
+
+.survey-group {
+    margin-top: 1.875rem;
+}

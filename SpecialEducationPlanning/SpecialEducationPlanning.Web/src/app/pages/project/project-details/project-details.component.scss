@@ -1,0 +1,79 @@
+@use '/src/assets/sass/abstracts/variables';
+@import '/src/assets/sass/abstracts/_variables.scss';
+
+tdp-details-template {
+
+  .header {
+    display: none !important;
+  }
+
+  .right-container {
+    max-width: unset !important;
+  }
+
+  .details-top-container {
+     tdp-star-filled-svg {
+      display: flex;
+      justify-content: center;
+    }
+  
+    .tdp-restore-button { 
+      position: absolute;
+      text-transform: uppercase;
+      right: 0;
+      top: 1rem;
+      z-index: 2;
+    }
+  
+    .plan-details-table {
+      .mat-column-versionNumber {
+        flex: 0 0 10%;
+      }
+  
+      .mat-column-externalCode {
+        flex: 0 0 20%;
+      }
+  
+      .mat-column-range {
+        flex: 1 0 15%;
+      }
+  
+      .mat-column-versionNotes {
+        flex: 1 0 13%;
+      }
+  
+      .mat-column-quoteOrderNumber {
+        flex: 0 0 14%;
+      }
+  
+      .mat-column-updatedDate {
+        flex: 0 0 17%;
+      }
+    }
+
+    .plan-publish-jobs-table {
+      .mat-column-versionCode {
+        flex: 0 0 16%;
+      }
+      .mat-column-renderingType {
+        flex: 0 0 20%;
+      }
+      .mat-column-updatedDate {
+        flex: 0 0 25%;
+      }
+      .mat-column-stateName {
+        flex: 0 0 25%;
+      }
+    }
+  }
+}
+
+.tdp-back-with-title {
+    &-container {
+        padding: 20px 0 0 20px !important;
+    }
+    &--text {
+        font-size: 1.25rem !important;
+        line-height: 1.875rem !important;
+    }
+}  

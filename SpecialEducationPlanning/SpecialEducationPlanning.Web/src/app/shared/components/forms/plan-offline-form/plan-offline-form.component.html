@@ -1,0 +1,118 @@
+﻿<form class="tdp-column tdp-entity-form" [formGroup]="entityForm">
+
+  <div class="tdp-row">
+    <div class="tdp-form-group">
+      <label class="tdp-form-group-label">
+        {{ 'offline.planForm.catalogue' | translate }}
+        <div class="tdp-required-dot"></div>
+      </label>
+      <tdp-selector
+        [elementList]="catalogs"
+        formControlName="catalogueCode">
+      </tdp-selector>
+    </div>
+    <div class="tdp-form-group">
+    </div>
+    <div class="tdp-form-group">
+    </div>
+    <div class="tdp-form-group">
+    </div>
+
+  </div>
+  <div class="tdp-row">
+    <div class="tdp-form-group">
+      <label class="tdp-form-group-label">
+        {{ 'offline.planForm.planName' | translate }}
+        <div class="tdp-required-dot"></div>
+      </label>
+      <input
+        type="text"
+        [ngClass]="{ 'tdp-form-border-error': checkHasError(entityForm, 'planName', 'required') }"
+        formControlName="planName">
+      <div *ngIf="checkHasError(entityForm, 'planName', 'required')" class="tdp-form-error">
+          {{ 'validationErrors.required' | translate }}
+      </div>
+    </div>
+    <div class="tdp-form-group">
+      <label class="tdp-form-group-label">
+        {{ 'offline.planForm.EducationerName' | translate }}
+      </label>
+      <input
+        type="text"
+        formControlName="EducationerName">
+    </div>
+    <div class="tdp-form-group tdp-plan-create-radio-group">
+      <label class="tdp-form-group-label">
+        {{ 'plan.survey' | translate }}
+      </label>
+      <div class="tdp-horizontal-radio">
+        <label class="tdp-radio-container"
+          [ngClass]="{ 'tdp-radio-container-hover': entityForm.get('survey').enabled }">
+          {{ 'booleanResponse.yes' | translate }}
+          <input type="radio" name="survey" formControlName="survey" [value]="true">
+          <span class="tdp-radio-checkmark"
+            [ngClass]="{ 'tdp-radio-checkmark-disabled': entityForm.get('survey').disabled }">
+          </span>
+        </label>
+        <label class="tdp-radio-container"
+          [ngClass]="{ 'tdp-radio-container-hover': entityForm.get('survey').enabled }">
+          {{ 'booleanResponse.no' | translate }}
+          <input
+            type="radio" name="survey" formControlName="survey" [value]="false">
+          <span class="tdp-radio-checkmark"
+            [ngClass]="{ 'tdp-radio-checkmark-disabled': entityForm.get('survey').disabled }">
+          </span>
+        </label>
+      </div>
+    </div>
+    <div class="tdp-form-group">
+    </div>
+  </div>
+
+</form>
+
+<div class="tdp-row tdp-entity-form-actions">
+  <!-- Create -->
+  <ng-container *ngIf="!planOffline; else edit">
+    <button
+      class="tdp-secondary-btn"
+      (click)="goBack()">
+      {{ 'button.cancel' | translate }}
+      <i class="fas fa-times"></i>
+    </button>
+    <button
+      class="tdp-primary-btn"
+      (click)="submitForm()"
+      [disabled]="!entityForm.valid">
+      {{ 'button.save' | translate }}
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </ng-container>
+  <!-- Edit -->
+  <ng-template #edit>
+    <button
+      *ngIf="!editing"
+      class="tdp-secondary-btn"
+      [disabled]="planOffline.EducationOrigin === EducationToolType.THREE_DC"
+      (click)="enablePlanEdit()">
+      {{ 'button.edit' | translate }}
+      <i class="fas fa-pen"></i>
+    </button>
+    <button
+      *ngIf="editing"
+      class="tdp-secondary-btn"
+      (click)="cancelEdit(planOffline)">
+      {{ 'button.cancel' | translate }}
+      <i class="fas fa-times"></i>
+    </button>
+    <button
+      *ngIf="editing"
+      class="tdp-primary-btn"
+      (click)="submitForm()"
+      [disabled]="!entityForm.valid">
+      {{ 'button.save' | translate }}
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </ng-template>
+</div>
+

@@ -1,0 +1,9 @@
+ @import "/src/assets/sass/abstracts/variables";
+
+.tdp-radio-button {
+    &--text {
+        color: $navy;
+        font-size: 0.938rem;
+        line-height: 1.313rem;
+    }
+}

@@ -1,0 +1,53 @@
+<form
+  [formGroup]="entityForm"
+  (ngSubmit)="onSubmit()"
+  class="tdp-customer-notes-expanded"
+>
+  <div class="tdp-customer-notes-content">
+    <tdp-text-area
+      formControlName="note"
+      (changeText)="changeText($event)"
+      [value]="noteValue"
+      [placeholder]="_data.placeholder"
+      (keydown)="autoGrowTextZone($event)"
+    ></tdp-text-area>
+  </div>
+  <div class="tdp-customer-notes-button-container">
+    <div *ngIf="checkHasErrorV2('note', 'maxlength')" class="tdp-atoms-error-message">
+      {{ 'validationErrors.maxlength' | translate: { maxlength: _data.maxNotesLength }  }}
+    </div>
+    <tdp-button
+      [color]="'white'"
+      [size]="'small'"
+      class="tdp-customer-notes-cancel-button"
+      [mat-dialog-close]="initialValue"
+      (click)="closeExpandedCustomerNotes()"
+      >
+       {{ 'button.cancel' | translate }}
+      </tdp-button
+    >
+    <tdp-button
+      [color]="'green'"
+      [size]="'small'"
+      type="submit"
+      [mat-dialog-close]="noteValue"
+      [disabled]="checkHasErrorV2('note', 'maxlength')"
+      >
+        {{ 'button.updateNotes' | translate}}
+    </tdp-button
+    >
+  </div>
+
+  <div
+    class="tdp-customer-notes-close"
+    (click)="closeExpandedCustomerNotes()"
+    [mat-dialog-close]="initialValue"
+  >
+    <tdp-cancel-icon
+      fillColor="#ADADAD"
+      width="1.125rem"
+      height="1.125rem"
+      [matTooltip]="'button.close' | translate">
+    </tdp-cancel-icon>
+  </div>
+</form>

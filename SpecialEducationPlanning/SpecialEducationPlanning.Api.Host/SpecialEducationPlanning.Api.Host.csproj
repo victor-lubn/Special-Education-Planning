@@ -1,0 +1,62 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>$(netcoreapp)</TargetFramework>
+    <UserSecretsId>779CB267-3F9B-4BBE-9790-3ED57CF0F2D4</UserSecretsId>
+    <PublishDocumentationFile>true</PublishDocumentationFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);1591</NoWarn>
+  </PropertyGroup>
+  <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
+    <ItemGroup>
+      <DocFile Include="bin\$(Configuration)\net6.0\SpecialEducationPlanning
+.Api.Host.xml" />
+    </ItemGroup>
+    <Copy SourceFiles="@(DocFile)" DestinationFolder="$(PublishDir)" SkipUnchangedFiles="false" />
+  </Target>
+
+  <PropertyGroup>
+    <DocumentationFile>bin\$(Configuration)\net6.0\SpecialEducationPlanning
+.Api.Host.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="healthchecksdb*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="swagger-custom-styles.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="wwwroot\swagger-custom-styles.css">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpecialEducationPlanning
+.Api\SpecialEducationPlanning
+.Api.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Hangfire.AspNetCore" Version="$(HangfireAspNetCore)" />
+    <PackageReference Include="Hangfire.Core" Version="$(HangfireCore)" />
+    <PackageReference Include="Hangfire.SqlServer" Version="$(HangfireSqlServer)" />
+    <PackageReference Include="LaunchDarkly.ServerSdk" Version="$(LaunchDarklyServerSdk)" />
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="$(MicrosoftExtensionsCachingStackExchangeRedis)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="$(MicrosoftExtensionsConfigurationAbstractions)" />
+    <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="$(MicrosoftExtensionsPlatformAbstractions)" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(MicrosoftAspNetCoreAuthenticationJwtBearer)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="$(MicrosoftEntityFrameworkCoreSqlServer)" />
+    <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="$(MicrosoftApplicationInsightsAspNetCore)" />
+    <PackageReference Include="AspNetCore.HealthChecks.UI" Version="$(AspNetCoreHealthChecksUI)" />
+    <PackageReference Include="Serilog" Version="$(Serilog)" />
+    <PackageReference Include="Serilog.Settings.Configuration" Version="$(SerilogSettingsConfiguration)" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="$(SerilogSinksConsole)" />
+    <PackageReference Include="Serilog.Sinks.MSSqlServer" Version="$(SerilogSinksMSSqlServer)" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="$(SwashbuckleAspNetCore)" />
+    <PackageReference Include="Serilog.AspNetCore" Version="$(SerilogAspNetCore)" />
+    <PackageReference Include="Serilog.Sinks.ApplicationInsights" Version="$(SerilogSinksApplicationInsights)" />
+  </ItemGroup>
+</Project>

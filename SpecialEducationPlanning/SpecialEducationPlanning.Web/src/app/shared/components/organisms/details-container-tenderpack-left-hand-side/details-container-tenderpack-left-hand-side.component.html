@@ -1,0 +1,77 @@
+﻿<div #detailsWrapper class="tdp-details-wrapper">
+    <div class="details-tabs-wrapper">
+        <div class="details-tab selected">
+            {{ 'plan.plan' | translate }}
+        </div>
+    </div>
+    <div class="details-container-wrapper">
+        <div class="plan-body">
+            <div class="plan-details">
+    
+                <div class="plan-details-group">
+                    <div class="plan-details-sub-header-key">
+                        {{ 'plan.CADFilePlanId' | translate }}
+                    </div>
+                    <div class="plan-details-sub-header-value">
+                        {{ plan?.cadFilePlanId || '-' }}
+                    </div>
+                </div>
+                <div class="plan-details-group">
+                    <div class="plan-details-sub-header-key">
+                        {{ 'plan.Educationer' | translate }}
+                    </div>
+                    <div class="plan-details-sub-header-value">
+                        {{ Educationer?.fullName || '-' }}
+                    </div>
+                </div>
+                <form [formGroup]="entityForm" (ngSubmit)="onUpdate()">
+                    <div class="plan-details-group">
+                        <tdp-select formControlName="housingSpecification" ngDefaultControl [label]="housingSpecificationTranslation"
+                        [options]="displayHousingSpecificationOptions()">
+                        </tdp-select>
+                    </div>
+                    <div class="plan-details-group">
+                        <tdp-select formControlName="housingTypeName" ngDefaultControl [label]="housingTypeTranslation"
+                            [options]="displayHousingTypeOptions()">
+                        </tdp-select>
+                    </div>
+                    <div class="plan-details-group">
+                        <tdp-select formControlName="planType" ngDefaultControl [label]="planTypeTranslation"
+                            [options]="displayPlanTypeOptions()">
+                        </tdp-select>
+                    </div>
+                    <div class="plan-details-group">
+                        <tdp-input [title]="'plan.planName' | translate" [type]="'text'" class="tdp-plan-details-input" ngDefaultControl
+                            formControlName="planName">
+                        </tdp-input>
+                    </div>
+                    <div class="plan-details-group">
+                        <tdp-select formControlName="catalogId" ngDefaultControl [label]="catalogueTranslation" 
+                            [options]="displayCatalogOptions()">
+                        </tdp-select>
+                    </div>
+                    <div class="plan-details-group">
+                        <tdp-input [title]="'housingTypePlanForm.reference' | translate" [type]="'text'" class="tdp-plan-details-input" ngDefaultControl
+                            formControlName="planReference">
+                        </tdp-input>
+                    </div>
+                    <tdp-button class="update-button" [size]="'small'" [color]="'white'" [disabled]="entityForm.pristine" type="submit">
+                        {{ 'button.update' | translate | uppercase }}
+                    </tdp-button>
+                </form>
+            </div>
+        </div>
+        <div class="separator"></div>
+        <div class="plan-footer">
+            <tdp-button *ngIf="plan?.planState === planStateEnum.Active" [size]="'small'" [color]="'white'" (onClick)="onArchivePlanClick()">
+                {{ 'button.archivePlan' | translate }}
+            </tdp-button>
+            <tdp-button *ngIf="plan?.planState === planStateEnum.Archived" [size]="'small'" [color]="'white'" (onClick)="onRestoreArchivedPlanClick()">
+                {{ 'button.unarchive' | translate }}
+            </tdp-button>
+            <tdp-button *tdpPermission="'Plan_Management'" [size]="'small'" [color]="'white'" (onClick)="onUploadPlanClick()">
+                {{ 'button.uploadNewVersion' | translate }}
+            </tdp-button>
+        </div>
+    </div>
+</div>

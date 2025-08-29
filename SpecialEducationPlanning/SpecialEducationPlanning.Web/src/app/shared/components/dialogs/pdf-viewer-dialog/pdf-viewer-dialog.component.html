@@ -1,0 +1,24 @@
+<tdp-modal
+  height="95vh"
+  (onClosed)="closeDialog()"
+>
+
+  <div title>
+    <tdp-button
+      size="large"
+      color="green"
+      (onClick)="downloadRelaseNotes()"
+    >
+        {{ 'button.download' | translate }}
+    </tdp-button>
+  </div>
+
+  <div class="tdp-embed-pdf-viewer-container" #pdfContainer>
+    <pdf-viewer [src]="pdfByteArray"
+                (after-load-complete)="setPdfLoaded()"
+                [original-size]="false"
+                style="width: 100%; height: {{pdfHeight}}"
+    ></pdf-viewer>
+  </div>
+
+</tdp-modal>

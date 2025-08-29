@@ -1,0 +1,86 @@
+<form [formGroup]="entityForm">
+  <div class="tdp-housing-type-plan-form">
+    <tdp-select
+      formControlName="housingSpecification"
+      [label]="housingSpecificationString"
+      [options]="housingSpecificationsOptions"
+      [required]="true" 
+      (valueChange)="selectHousingSpecification($event)"
+    ></tdp-select>
+    <div class="tdp-housing-type-plan-form-container">
+      <div
+        *ngIf="checkHasErrorV2('housingSpecification', 'required')"
+        class="tdp-housing-type-plan-form-container-error"
+      >
+        {{ "validationErrors.required" | translate }}
+      </div>
+    </div>
+    <tdp-select
+      formControlName="housingType"
+      [ngClass]="{ 'error-message': checkHasErrorV2('housingType') }"
+      [label]="housingTypeString"
+      [options]="housingTypeOptions"
+      [required]="true"
+      (valueChange)="selectHousingType($event)"
+    ></tdp-select>
+    <div class="tdp-housing-type-plan-form-container">
+      <div
+        *ngIf="checkHasErrorV2('housingType', 'required')"
+        class="tdp-housing-type-plan-form-container-error"
+      >
+        {{ "validationErrors.required" | translate }}
+      </div>
+    </div>
+    <tdp-select
+      formControlName="template"  
+      [label]="templateString"
+      [options]="templateOptions"
+      (valueChange)="selectTemplate($event)"
+    ></tdp-select>
+    <div class="tdp-housing-type-plan-form-container"></div>
+    <div *ngIf="!entityForm.get('template').value || entityForm.get('template').value === noTemplateText">
+      <div class="plan-details-group">
+        <tdp-select 
+          formControlName="planType" 
+          [ngClass]="{ 'error-message': checkHasErrorV2('planType') }"
+          [label]="planTypeString"
+          [required]="true"
+          [options]="displayPlanTypeOptions()"
+          ></tdp-select>
+      </div>
+      <div class="tdp-housing-type-plan-form-container">
+        <div
+          *ngIf="checkHasErrorV2('planType', 'required')"
+          class="tdp-housing-type-plan-form-container-error"
+        >
+          {{ "validationErrors.required" | translate }}
+        </div>
+      </div>
+    </div>
+    <div *ngIf="!entityForm.get('template').value || entityForm.get('template').value === noTemplateText">
+      <div class="plan-details-group">
+        <tdp-select 
+          formControlName="catalogue"
+          [ngClass]="{ 'error-message': checkHasErrorV2('catalogue') }"
+          ngDefaultControl
+          [required]="true"
+          [label]="catalogueString" 
+          [options]="displayCatalogOptions()"
+        ></tdp-select>
+      </div>
+      <div class="tdp-housing-type-plan-form-container">
+        <div *ngIf="checkHasErrorV2('catalogue', 'required')" class="tdp-housing-type-plan-form-container-error">
+          {{ "validationErrors.required" | translate }}
+        </div>
+      </div>
+  </div>
+  <tdp-input
+    class="tdp-housing-type-plan-form-input"
+    formControlName="reference"
+    [type]="'text'"
+    [title]="referenceString"
+  ></tdp-input>
+  <div class="tdp-housing-type-plan-form-container">
+  </div>
+</div>
+</form>

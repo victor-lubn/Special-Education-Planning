@@ -1,0 +1,51 @@
+<tdp-main-view [stickyHeader]="minimizeHeader">
+    <div class="main-view--content">
+      <tdp-multi-table [tables]="tables" [tableHeight]="tableHeight">
+        <ng-template let-record="record" let-table="table">
+          <div
+            class="ng-content-wraper"
+          >
+            <ng-content
+              *ngTemplateOutlet="
+                templatesRef; 
+                context: { record: record, table: table }
+              "
+              [ngIf]="templatesRef"
+            ></ng-content> 
+            <ng-container *ngIf="!record.isArchived">
+              <tdp-table-action (click)="viewInCreatio($event, record)" [matTooltip]="'button.viewInCreatio' | translate">
+                <tdp-view-in-creatio-icon class="tdp-actions-icon"></tdp-view-in-creatio-icon>
+              </tdp-table-action>
+              <tdp-table-action (click)="createPlan($event, record)" [matTooltip]="'button.createAPlan' | translate">
+                <tdp-create-plan-icon class="tdp-actions-icon"></tdp-create-plan-icon>
+              </tdp-table-action>
+              <tdp-table-action (click)="createTemplate($event, record)" [matTooltip]="'button.createTemplate' | translate">
+                <tdp-create-template-icon class="tdp-actions-icon"></tdp-create-template-icon>
+              </tdp-table-action>
+              <tdp-table-more-actions>
+                <tdp-table-more-action
+                  (click)="openTransferProjectDialog($event, record)"
+                >
+                  {{ "button.transfer" | translate }}
+                </tdp-table-more-action>
+                <tdp-table-more-action
+                  (click)="openArchiveProjectDialog($event, record)"
+                >
+                  {{ "button.archive" | translate }}
+                </tdp-table-more-action>
+              </tdp-table-more-actions>
+          </ng-container>
+          <tdp-table-action *ngIf="record.isArchived" (click)="openRestoreDialog($event, record)" [matTooltip]="'button.restore' | translate">
+            <tdp-restore-icon
+              class="tdp-actions-icon"
+              fillColor="#ADADAD"
+              width="1.5rem"
+              height="1.5rem">
+            </tdp-restore-icon>
+          </tdp-table-action>
+          </div>
+        </ng-template>
+      </tdp-multi-table>
+    </div>
+  </tdp-main-view>
+  

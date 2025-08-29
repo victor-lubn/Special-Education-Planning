@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="
+    default-src 'self';
+    style-src 'self' 'unsafe-inline';
+    style-src-elem 'self' https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css 'unsafe-inline';
+    script-src 'self' 'unsafe-inline';
+    script-src-elem 'self'
+      https://www.googletagmanager.com/
+      http://cdn.appdynamics.com/
+      https://cdn.jsdelivr.net/npm/pdfjs-dist@4.8.69/legacy/build/pdf.worker.min.mjs 'unsafe-inline';
+    img-src 'self' blob:;
+    worker-src 'self' blob:;
+    connect-src 'self'
+      https://*.aiep.corp/
+      https://*.howdev.corp/
+      https://login.microsoftonline.com/
+      http://*.eum-appdynamics.com/
+      http://localhost:19226/;
+"
+    />
+
+    <script
+      type="text/javascript"
+      src="./assets/country-configuration/gbr.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./assets/country-configuration/irl.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="./assets/country-configuration/fra.js"
+    ></script>
+    <script type="text/javascript" src="./assets/configuration.js"></script>
+    <script charset="UTF-8">
+      window["adrum-start-time"] = new Date().getTime();
+      (function (config) {
+        config.appKey = window.APP_DYNAMICS_KEY;
+        config.adrumExtUrlHttp = "http://cdn.appdynamics.com";
+        config.adrumExtUrlHttps = "https://cdn.appdynamics.com";
+        config.beaconUrlHttp = "http://fra-col.eum-appdynamics.com";
+        config.beaconUrlHttps = "https://fra-col.eum-appdynamics.com";
+        config.xd = { enable: false };
+        config.spa = { spa2: true };
+      })(window["adrum-config"] || (window["adrum-config"] = {}));
+    </script>
+    <meta charset="utf-8" />
+    <title>Education View</title>
+    <base href="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/fontawesome.min.css"
+      integrity="sha384-jLKHWM3JRmfMU0A5x5AkjWkw/EYfGUAGagvnfryNV3F9VqM98XiIH7VBGVoxVSc7"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/icons/Education_view_icon.ico"
+    />
+
+    <script async id="googleAnalytics"></script>
+    <script charset="UTF-8">
+      var url =
+        "https://www.googletagmanager.com/gtag/js?id=" +
+        window.GOOGLE_ANALYTICS_TOKEN;
+      document.getElementById("googleAnalytics").src = url;
+    </script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+    </script>
+  </head>
+
+  <body>
+    <tdp-root></tdp-root>
+    <app-redirect></app-redirect>
+  </body>
+</html>
+

@@ -1,0 +1,36 @@
+.tdp-info-body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: auto;
+  flex-grow: 1;
+  margin: 0 -2.5rem;
+  padding: 0 2.5rem 2.5rem 2.5rem;
+
+  .tdp-info-title {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .tdp-info-description {
+    font-size: 15px;
+    text-align: center;
+  }
+
+  .tdp-info-icon {
+    ::ng-deep {
+      img {
+        height: 83px;
+        width: 83px;
+        padding-top: 1.5rem;
+      }
+    }
+  }
+}
+
+.tdp-info-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  align-self: center;
+}

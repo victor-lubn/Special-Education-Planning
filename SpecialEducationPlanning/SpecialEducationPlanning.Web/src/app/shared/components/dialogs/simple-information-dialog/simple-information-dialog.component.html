@@ -1,0 +1,21 @@
+<tdp-modal
+  [width]="width"
+  [height]="height"
+  (onClosed)="handleClose()">
+
+  <div title class="tdp-simple-information-dialog-title">
+    {{ titleStringKey | translate }}
+  </div>
+
+  <div sub-title>
+    <div>{{ messageStringKey | translate }}</div>
+    <div>{{ messageStringKey2 | translate }}</div>
+  </div>
+
+  <div actions>
+    <tdp-button size="large" color="green" (onClick)="handleClose()">
+      {{ acceptStringKey | translate }}
+    </tdp-button>
+  </div>
+
+</tdp-modal>

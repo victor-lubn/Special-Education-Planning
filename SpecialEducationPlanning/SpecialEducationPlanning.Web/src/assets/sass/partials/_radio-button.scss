@@ -1,0 +1,74 @@
+.tdp-horizontal-radio {
+  display: flex;
+  height: 30px;
+  align-items: center;
+}
+
+.tdp-vertical-radio {
+  .tdp-vertical-radio-title {
+    margin-bottom: 0.4em;
+  }
+  .tdp-radio-container {
+    margin-bottom: 0.3em;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  min-height: 100px;
+}
+
+.tdp-radio-container {
+  display: block;
+  position: relative;
+  padding-left: 21px;
+  margin-right: 17px;
+  cursor: pointer;
+  user-select: none;
+  input[type=radio] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+}
+
+.tdp-radio-checkmark {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  height: 13px;
+  width: 13px;
+  background-color: $white;
+  border-radius: 50%;
+  border: 1px solid $keyline-grey;
+}
+
+.tdp-radio-checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.tdp-radio-container input[type=radio]:checked ~ .tdp-radio-checkmark:after {
+  display: block;
+}
+
+.tdp-radio-container .tdp-radio-checkmark:after {
+  top: 3px;
+  left: 3px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: $aiep-red;
+}
+
+.tdp-radio-container .tdp-radio-checkmark-disabled:after {
+  background: grey;
+}
+
+.tdp-radio-container-hover {
+  &:hover {
+    .tdp-radio-checkmark {
+      background-color: $off-white;
+    }
+  }
+}

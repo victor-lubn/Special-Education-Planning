@@ -1,0 +1,22 @@
+﻿<div class="admin-panel">
+  <div class="cards-wrapper">
+    <div class="centered-view">
+      <tdp-route-card route="/support/users" [title]="'support.userRolesPermissions' | translate" [ngClass]="{ 'tdp-disabled': hideUserBlock }">
+        <tdp-user-icon></tdp-user-icon>
+      </tdp-route-card>
+      <tdp-route-card route="/support/Aieps" [title]="'support.manageAieps' | translate" [ngClass]="{ 'tdp-disabled': hideAiepsBlock }">
+        <tdp-Aieps-icon></tdp-Aieps-icon>
+      </tdp-route-card>
+      <tdp-route-card route="/support/releaseNotes" [title]="'support.releaseNotes' | translate" [ngClass]="{ 'tdp-disabled': hideReleaseNotesBlock }">
+        <tdp-release-notes-icon></tdp-release-notes-icon>
+      </tdp-route-card>
+      <tdp-route-card route="/support/system-logs" [title]="'support.logs' | translate" [ngClass]="{ 'tdp-disabled': hideReleaseNotesBlock }">
+        <tdp-system-log-icon></tdp-system-log-icon>
+      </tdp-route-card>
+      <tdp-route-card route="/support/actionLogs" [title]="'support.actionLogs' | translate">
+        <tdp-action-logs-icon></tdp-action-logs-icon>
+      </tdp-route-card>
+    </div>
+  </div>
+</div>
+

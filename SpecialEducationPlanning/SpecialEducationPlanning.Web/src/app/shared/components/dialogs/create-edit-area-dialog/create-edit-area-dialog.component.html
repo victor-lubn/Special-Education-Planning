@@ -1,0 +1,76 @@
+﻿<tdp-modal
+  class="tdp-create-edit-area"
+  [hasBodySeparator]="true"
+  [closable]="true"
+  (onClosed)="closeModal()"
+>
+  <div title class="tdp-create-edit-area__title">
+    {{
+      !area
+        ? ("dialog.createEditArea.titleCreate" | translate)
+        : ("dialog.createEditArea.titleEdit" | translate)
+    }}
+  </div>
+  <div class="tdp-create-edit-area-body">
+    <div class="create-edit-area-wrapper">
+      <form [formGroup]="entityForm">
+        <div class="tdp-create-edit-area-form__group">
+          <tdp-input
+            class="tdp-create-edit-area-form__input"
+            formControlName="keyName"
+            [ngClass]="{ 'error-message': checkHasErrorV2('keyName') }"
+            [type]="'text'"
+            [required]="true"
+            [title]="keyNameString"
+          ></tdp-input>
+          <div
+            *ngIf="checkHasErrorV2('keyName', 'required')"
+            class="tdp-form-error-message"
+          >
+            {{ "validationErrors.required" | translate }}
+          </div>
+          <div
+            *ngIf="checkHasErrorV2('keyName', 'maxlength')"
+            class="tdp-form-error-message"
+          >
+            {{
+              "validationErrors.maxlength"
+                | translate: { maxlength: planNameMaxLength }
+            }}
+          </div>
+        </div>
+      </form>
+      <div class="assign-entities-wrapper">
+        <tdp-assign-entities
+          (changedLists)="onChangedLists($event)"
+          [displayProperty]="AiepDisplayProperty"
+          [assignedEntities]="AiepsAssigned"
+          [availableEntities]="AiepsAvailable"
+          [leftInputTitle]="leftInputTitle"
+          [rightInputTitle]="rightInputTitle"
+          [onlyAssignAction]="false"
+        >
+        </tdp-assign-entities>
+      </div>
+    </div>
+  </div>
+
+  <div actions class="tdp-create-edit-region-buttons">
+    <tdp-button
+      [color]="'text-only'"
+      [size]="'large'"
+      [mat-dialog-close]
+      (onClick)="closeModal()"
+      >{{ "button.cancel" | translate }}</tdp-button
+    >
+    <tdp-button
+      [color]="'green'"
+      [size]="'large'"
+      [disabled]="entityForm.invalid || (entityForm.pristine && !AiepsChanged)"
+      (onClick)="!area ? createArea() : editArea()"
+    >
+      {{ "button.save" | translate }}
+    </tdp-button>
+  </div>
+</tdp-modal>
+

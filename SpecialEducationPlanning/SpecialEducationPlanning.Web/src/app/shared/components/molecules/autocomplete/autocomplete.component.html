@@ -1,0 +1,23 @@
+<div (click)="openOptions()">
+  <tdp-input
+    type="text"
+    [title]="title"
+    [required]="required"
+    (input)="inputChange($event)"
+    (blur)="inputTouched()"
+    #autocompleteTrigger
+    [class.autocomplete-opened]="optionsDisplay.isOpen"
+    [matAutocomplete]="optionsDisplay">
+  </tdp-input>
+</div>
+
+<mat-autocomplete
+  class="tdp-autocomplete"
+  #optionsDisplay="matAutocomplete"
+  [autoActiveFirstOption]="autoActiveFirstOption"
+  [displayWith]="displayWith"
+  (optionSelected)="onSelectedOption($event)">
+  <mat-option *ngFor="let option of filteredOptions" [value]="displayWith ? displayWith(option) : option">
+    {{ displayWith ? displayWith(option) : option }}
+  </mat-option>
+</mat-autocomplete>

@@ -1,0 +1,40 @@
+@import "/src/assets/sass/abstracts/_variables.scss";
+
+.tdp-timeline {
+  .tdp-timeline-list {
+    justify-content: space-between;
+    max-height: 500px;
+    overflow-y: auto;
+    .tdp-timeline-item {
+      align-items: center;
+      margin: 10px 0;
+      min-height: 47px;
+      margin-left: 10px;
+      i {
+        line-height: 0;
+      }
+    }
+    .tdp-timeline-action {
+      margin: 0 15px;
+      .tdp-timeline-action-additional-info {
+        padding-top: 3px;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .tdp-timeline-edit {
+    textarea {
+      margin-top: 20px;
+      box-sizing: border-box;
+      padding: 10px;
+    }
+    .tdp-timeline-button-group {
+      margin-top: 24px;
+      justify-content: flex-end;
+      button {
+        margin-left: 15px;
+      }
+    }
+  }
+}

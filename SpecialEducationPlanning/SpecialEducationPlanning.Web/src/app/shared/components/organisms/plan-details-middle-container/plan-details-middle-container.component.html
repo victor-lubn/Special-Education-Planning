@@ -1,0 +1,49 @@
+
+<form [formGroup]="entityForm">
+<div class="plan-details-middle-container">
+
+  <div class="plan-details-middle-container-top">
+
+    <div class="plan-details-middle-container-top-details">
+
+        <div class="plan-details-middle-container-top-details-catalogue">
+          {{ planVersion?.range }}
+        </div>
+        <div class="plan-details-middle-container-text">
+          <strong>{{ 'plan.lastUpdated' | translate }}: </strong>{{ plan?.updatedDate | date: 'dd/MM/yy' }}
+        </div>
+        <div class="plan-details-middle-container-text">
+          <strong>{{ 'plan.versionId' | translate }}: </strong>{{ planVersion?.externalCode ? planVersion.externalCode : '-'}}
+        </div>
+      </div>
+
+    <div class="plan-details-middle-container-top-order">
+      <tdp-input
+        [title]="'plan.K8Number' | translate"
+        formControlName="quoteOrderNumber"
+        [ngClass]="{ 'plan-details-middle-container-error': checkHasErrorV2('quoteOrderNumber')}"
+      ></tdp-input>
+      <div *ngIf="checkHasErrorV2('quoteOrderNumber', 'maxlength')" class="plan-details-middle-container-error-message">
+        {{ 'validationErrors.maxlength' | translate: { maxlength: maxVersionQuoteNumberLength }  }}
+      </div>
+
+    </div>
+  </div>
+
+  <div class="plan-details-middle-container-bottom">
+    <div class="plan-details-middle-container-text-label">
+      {{ 'builder.notes' | translate }}
+    </div>
+    <tdp-customer-notes
+      [noteValue]="versionNotesValue"
+      [placeholder]="'plan.makeNote' | translate"
+      [updateButtonText]="'button.update'"
+      [disabledButton]="disableButton"
+      (submitted)="updateQuoteAndNotes($event)"
+      formControlName="versionNotes"
+      ngDefaultControl
+    ></tdp-customer-notes>
+  </div>
+
+</div>
+</form>

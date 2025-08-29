@@ -1,0 +1,55 @@
+@use "/src/assets/sass/abstracts/variables";
+
+.tdp-account-look-up {
+    &-input {
+        ::ng-deep {
+            input {
+                width: 100%;
+                padding-right: 12.5rem;
+            }
+        }
+
+        &.checked {
+            ::ng-deep {
+                input {
+                    border-bottom-right-radius: 0%;
+                    border-bottom-left-radius: 0%;
+                }   
+            }  
+        }
+
+        &.error {
+            ::ng-deep {
+                input {
+                   border: 2px variables.$error-red solid;
+                }   
+            }  
+        }
+    }
+
+    &-container {
+        position: relative;
+    }
+
+    &-buttons {
+        position: absolute;
+        top: 2.375rem;
+        right: 1.125rem;
+        display: flex;
+
+        ::ng-deep {
+            button {
+                letter-spacing: normal;
+                text-transform: none;
+            }
+        }
+    }
+
+    &-confirmed {
+        ::ng-deep {
+            button {
+                cursor: default;
+            }
+        }
+    }
+}

@@ -1,0 +1,89 @@
+<div class="tdp-column tdp-timeline">
+
+  <div class="tdp-timeline-list">
+    <div *ngFor="let item of timelineItems" class="tdp-row tdp-timeline-item">
+      <ng-container *ngIf="item.type === timelineItemEnum.COMMENT; else action">
+        <tdp-timeline-comment
+          [comment]="item.object"
+          (commentEdited)="emitCommentEdited($event)"
+          (commentDeleted)="emitCommentDeleted($event)">
+        </tdp-timeline-comment>
+      </ng-container>
+
+      <ng-template #action>
+        <ng-container [ngSwitch]="item.object.actionType">
+          <ng-container *ngSwitchCase="actionTypeEnum.Create">
+            <i class="fas fa-plus fa-2x"></i>
+            <div class="tdp-column tdp-timeline-action">
+              <span>
+                {{ 'timeline.entityCreateMessage' | translate: { 'entity': item.object.entityName, 'additionalInfo': item.object.additionalInfo, 'date': item.object.date | tdpDate: true, 'user': item.object.user } }}
+              </span>
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchCase="actionTypeEnum.Update">
+            <i class="fas fa-pen fa-2x"></i>
+            <div class="tdp-column tdp-timeline-action">
+              <span>
+                {{ 'timeline.entityUpdateMessage' | translate: { 'entity': item.object.entityName, 'additionalInfo': item.object.additionalInfo, 'date': item.object.date | tdpDate: true, 'user': item.object.user } }}
+              </span>
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchCase="actionTypeEnum.Delete">
+            <i class="fas fa-trash fa-2x"></i>
+            <div class="tdp-column tdp-timeline-action">
+              <span>
+                {{ 'timeline.entityDeleteMessage' | translate: { 'entity': item.object.entityName, 'additionalInfo': item.object.additionalInfo, 'date': item.object.date | tdpDate: true, 'user': item.object.user } }}
+              </span>
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchCase="actionTypeEnum.Publish">
+            <i class="fas fa-paper-plane fa-2x"></i>
+            <div class="tdp-column tdp-timeline-action">
+              <span>
+                {{ 'timeline.planPublishMessage' | translate: { 'date': item.object.date | tdpDate: true, 'user': item.object.user } }}
+              </span>
+              <span class="tdp-timeline-action-additional-info">{{ item.object.additionalInfo }}</span>
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchCase="actionTypeEnum.FileCreate">
+            <i class="far fa-file fa-2x"></i>
+            <div class="tdp-column tdp-timeline-action">
+              <span>
+                {{ 'timeline.fileCreateMessage' | translate: { 'date': item.object.date | tdpDate: true, 'user': item.object.user } }}
+              </span>
+            </div>
+          </ng-container>
+          <ng-container *ngSwitchCase="actionTypeEnum.FileUpdate">
+            <i class="far fa-file-signature fa-2x"></i>
+            <div class="tdp-column tdp-timeline-action">
+              <span>
+                {{ 'timeline.fileUpdateMessage' | translate: { 'date': item.object.date | tdpDate: true, 'user': item.object.user } }}
+              </span>
+            </div>
+          </ng-container>
+        </ng-container>
+      </ng-template>
+
+    </div>
+  </div>
+
+  <div class="tdp-column tdp-timeline-edit" *tdpPermission="'Plan_Comment'">
+    <textarea 
+      #commentTextArea
+      rows="5"
+      [formControl]="commentInput"
+      class="tdp-row"
+      placeholder="{{ 'timeline.commentPlaceholder' | translate }}">
+    </textarea>
+    <div class="tdp-row tdp-timeline-button-group">
+      <button
+        [disabled]="commentInput.value.trim().length === 0"
+        class="tdp-primary-btn"
+        (click)="submitNewComment()">
+        {{ 'button.save' | translate }}
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+
+</div>

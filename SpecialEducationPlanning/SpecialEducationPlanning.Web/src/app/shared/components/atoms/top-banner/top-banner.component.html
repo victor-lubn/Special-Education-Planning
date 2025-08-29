@@ -1,0 +1,13 @@
+<div
+  class="tdp-atoms-top-banner"
+  [ngClass]="{ informative: informative, error: error }"
+>
+  <tdp-thunder-icon
+    *ngIf="offline && informative"
+    [fillColor]="'#70c624'"
+  ></tdp-thunder-icon>
+  <tdp-thunder-icon *ngIf="offline && !(informative || error)"></tdp-thunder-icon>
+  <p>
+    <ng-content></ng-content>
+  </p>
+</div>

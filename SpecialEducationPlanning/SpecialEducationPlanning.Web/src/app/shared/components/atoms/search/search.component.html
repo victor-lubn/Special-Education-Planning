@@ -1,0 +1,365 @@
+﻿<div class="tdp-atom-search-form" (tdpClickOutside)="updateIsAdvancedSearch(false)">
+
+  <form class="form-field" (ngSubmit)="omniSearchHandler()">
+    <div
+      class="tdp-atom-search-icon-container"
+      [ngClass]="{ focused: isFocused }"
+      (click)="omniSearchHandler()"
+    >
+      <tdp-search-icon
+        fillColor="#979797"
+        width="1.5rem"
+        height="1.5rem">
+      </tdp-search-icon>
+    </div>
+    <div class="tdp-atom-dropdown-icon-container">
+      <tdp-cancel-icon
+        *ngIf="searchTerm.valueChanges | async; else dropDown"
+        class="button-x"
+        fillColor="#28343D"
+        width="0.8rem"
+        height="0.8rem"
+        [matTooltip]="'button.clearReleaseNotes' | translate"
+        (click)="clearAllForms()">
+      </tdp-cancel-icon>
+      <ng-template #dropDown>
+        <ng-container>
+          <tdp-arrow-dropdown-rounded-icon
+            fillColor="#28343D"
+            width="2.4rem"
+            height="2.4rem"
+            [ngClass]="{ 'tdp-atom-search-close-arrow': isAdvancedSearch }"
+            (click)="toggleAdvancedSearch()">
+          </tdp-arrow-dropdown-rounded-icon>
+        </ng-container>
+      </ng-template>
+    </div>
+    <input
+      class="tdp-omni-search-field"
+      type="text"
+      [placeholder]="searchBarPlaceholderKey | translate"
+      [formControl]="searchTerm"
+      [ngClass]="{ 'tdp-atom-input-bottom-border': isAdvancedSearch }"
+      (focus)="onFocus()"
+      (blur)="onBlur()"
+    />
+    <div *ngIf="isLengthExceeded" class="tdp-omni-search-field-error-message">
+      {{ 'validationErrors.minlength' | translate: { minLength: searchTermMinLength }  }}
+    </div>
+
+  </form>
+
+  <div class="tdp-search-data-container" *ngIf="isAdvancedSearch">
+    <div *ngIf="isAdvancedSearch; then advancedSearch"></div>
+
+    <ng-template #advancedSearch>
+      <div class="tdp-search-advanced-search" >
+        <tdp-tabs #formTab (onTabClicked)="clearOnTabsChanges($event)">
+          <mat-tab [label]="'filters.planLabel' | translate">
+            <div class="tdp-atom-search-form-group">
+              <form
+                [formGroup]="planForm"
+                (ngSubmit)="submitPlanFormHandler()"
+              >
+                <div class="tdp-atom-search-container">
+                  <div class="tdp-atom-search-input-row">
+                    <tdp-input
+                      [title]="'filters.planId' | translate"
+                      [type]="'text'"
+                      class="tdp-search-input"
+                      ngDefaultControl
+                      formControlName="planCode"
+                    ></tdp-input>
+                    <tdp-input
+                      [title]="'filters.planName' | translate"
+                      [type]="'text'"
+                      class="tdp-search-input"
+                      ngDefaultControl
+                      formControlName="planName"
+                    ></tdp-input>
+                  </div>
+                  <div class="tdp-atom-search-input-row">
+                    <tdp-input
+                      [title]="'plan.cadFilePlanId' | translate"
+                      [type]="'text'"
+                      class="tdp-search-input"
+                      ngDefaultControl
+                      formControlName="cadFilePlanId"
+                    ></tdp-input>
+                    <ng-container formGroupName="versions">
+                      <tdp-input
+                        [title]="'plan.versionId' | translate"
+                        [type]="'text'"
+                        class="tdp-search-input"
+                        ngDefaultControl
+                        formControlName="externalCode"
+                      ></tdp-input>
+                    </ng-container>
+                  </div>
+                  <div class="tdp-atom-search-input-row">
+                    <tdp-select
+                      [label]="'filters.Educationer' | translate"
+                      [options]="EducationersOptionsList"
+                      class="tdp-search-input"
+                      ngDefaultControl
+                      formControlName="EducationerId"
+                    ></tdp-select>
+                    <ng-container formGroupName="endUser">
+                      <tdp-input
+                        [title]="'filters.endUserSurname' | translate"
+                        [type]="'text'"
+                        class="tdp-search-input"
+                        ngDefaultControl
+                        formControlName="surname"
+                      ></tdp-input>
+                    </ng-container>
+                  </div>
+                  <div class="tdp-atom-search-input-row" formGroupName="endUser">
+                    <tdp-input
+                      [title]="'filters.addressEndUser' | translate"
+                      [type]="'text'"
+                      class="tdp-search-input"
+                      ngDefaultControl
+                      formControlName="address0"
+                    ></tdp-input>
+                    <tdp-input
+                      [title]="'filters.postcodeEndUser' | translate"
+                      [type]="'text'"
+                      class="tdp-search-input"
+                      ngDefaultControl
+                      formControlName="postcode"
+                    ></tdp-input>
+                  </div>
+                  <div class="tdp-atom-search-advanced-options">
+                    <div class="tdp-atom-search-advanced-options-label">
+                      {{ 'filters.advancedOptions' | translate }}
+                    </div>
+                    <div class="tdp-atom-search-advanced-options-checkbox">
+                      <mat-checkbox
+                        ngDefaultControl
+                        formControlName="showUnassigned">
+                        {{ 'filters.unassignedPlans' | translate }}
+                      </mat-checkbox>
+                    </div>
+                    <div  class="tdp-atom-search-advanced-options-checkbox">
+                      <mat-checkbox
+                        ngDefaultControl
+                        formControlName="showArchived">
+                        {{ 'filters.archivedPlans' | translate }}
+                      </mat-checkbox>
+                  </div>
+                  </div>
+                </div>
+                <div class="separator"></div>
+                <div class="tdp-atom-search-advanced-buttons">
+                  <tdp-button
+                    [color]="'white'"
+                    [size]="'medium'"
+                    type="button"
+                    (onClick)="clearAllPlanInputFields()"
+                    >
+                      {{ 'button.clearAll' | translate }}
+                    </tdp-button
+                  >
+                  <tdp-button
+                    type="submit"
+                    [color]="'green'"
+                    [size]="'medium'">
+                      {{ 'button.search' | translate }}
+                    </tdp-button
+                  >
+                </div>
+              </form>
+            </div>
+          </mat-tab>
+          <mat-tab [label]="'filters.tradeCustomerLabel' | translate">
+            <div class="tdp-atom-search-form-group">
+              <form
+                [formGroup]="tradeCustomerForm"
+                (ngSubmit)="submitTradeCustomerFormHandler()">
+                <div class="tdp-atom-search-container">
+                  <div class="tdp-atom-search-input-row">
+                    <tdp-input
+                      [title]="'filters.accountNumber' | translate"
+                      [type]="'text'"
+                      class="tdp-search-input"
+                      ngDefaultControl
+                      formControlName="accountNumber"
+                    ></tdp-input>
+                    <tdp-input
+                      [title]="'builder.tradingName' | translate"
+                      [type]="'text'"
+                      class="tdp-search-input"
+                      ngDefaultControl
+                      formControlName="tradingName"
+                    ></tdp-input>
+                  </div>
+                  <div class="tdp-atom-search-input-row">
+                    <tdp-input
+                      [title]="'builder.name' | translate"
+                      [type]="'text'"
+                      class="tdp-search-input"
+                      ngDefaultControl
+                      formControlName="name"
+                    ></tdp-input>
+                    <tdp-input
+                      [title]="'builder.address' | translate "
+                      [type]="'text'"
+                      class="tdp-search-input"
+                      ngDefaultControl
+                      formControlName="address0"
+                    ></tdp-input>
+                  </div>
+                  <div class="tdp-atom-search-input-row">
+                    <tdp-input
+                      [title]="'builder.postcode' | translate"
+                      [type]="'text'"
+                      class="tdp-search-input"
+                      ngDefaultControl
+                      formControlName="postcode"
+                    ></tdp-input>
+                    <tdp-input
+                      [title]="'builder.mobileNumber' | translate"
+                      [type]="'text'"
+                      class="tdp-search-input"
+                      ngDefaultControl
+                      formControlName="mobileNumber"
+                    ></tdp-input>
+                  </div>
+                  <tdp-input
+                    [title]="'builder.landlineNumber' | translate"
+                    [type]="'text'"
+                    class="tdp-search-input"
+                    ngDefaultControl
+                    formControlName="landlineNumber"
+                  ></tdp-input>
+                </div>
+                <div class="separator"></div>
+                <div class="tdp-atom-search-advanced-buttons">
+                  <tdp-button
+                    type="button"
+                    [color]="'white'"
+                    [size]="'medium'"
+                    (onClick)="clearAllTradeCustomerFields()"
+                  >
+                    {{ 'button.clearAll' | translate }}
+                  </tdp-button>
+                  <tdp-button
+                    type="submit"
+                    [color]="'green'"
+                    [size]="'medium'"
+                  >
+                    {{ 'button.search' | translate }}
+                  </tdp-button>
+                </div>
+              </form>
+            </div>
+          </mat-tab>
+          <mat-tab *tdpPermission="'Project_Management'" [label]="'filters.projectLabel' | translate">
+            <div class="tdp-atom-search-form-group">
+              <form
+                [formGroup]="projectForm"
+                (ngSubmit)="submitProjectFormHandler()"
+              >
+                <div class="tdp-atom-search-container">
+                  <div class="tdp-atom-search-input-row">
+                    <tdp-input
+                      [title]="'project.projectName' | translate"
+                      [type]="'text'"
+                      class="tdp-search-input"
+                      ngDefaultControl
+                      formControlName="projectName"
+                    ></tdp-input>
+                    <tdp-input
+                      [title]="'project.projectReference' | translate"
+                      [type]="'text'"
+                      class="tdp-search-input"
+                      ngDefaultControl
+                      formControlName="projectReference"
+                    ></tdp-input>
+                  </div>
+                  <div class="tdp-atom-search-input-row">
+                    <ng-container formGroupName="builder">
+                      <tdp-input
+                        [title]="'projectOverview.customerName' | translate"
+                        [type]="'text'"
+                        class="tdp-search-input"
+                        ngDefaultControl
+                        formControlName="tradingName"
+                      ></tdp-input>
+                    </ng-container>
+                    <tdp-input
+                      [title]="'project.createdDate' | translate"
+                      [type]="'text'"
+                      class="tdp-search-input"
+                      ngDefaultControl
+                      formControlName="createdDate"
+                    ></tdp-input>
+                  </div>
+                  <div class="tdp-atom-search-input-row">
+                    <div class="tdp-atom-search-input-row-error"></div>
+                    <div
+                      *ngIf="projectForm.get('createdDate').hasError('invalidDateFormat')"
+                      class="tdp-atom-search-input-row-error"
+                    >
+                      {{ "validationErrors.invalidDateFormat" | translate }}
+                    </div>
+                  </div>
+                  <div class="tdp-atom-search-input-row">
+                    <tdp-input
+                      [title]="'project.lastUpdated' | translate"
+                      [type]="'text'"
+                      class="tdp-search-input"
+                      ngDefaultControl
+                      formControlName="updatedDate"
+                    ></tdp-input>
+                  </div>
+                  <div class="tdp-atom-search-input-row">
+                    <div
+                      *ngIf="projectForm.get('updatedDate').hasError('invalidDateFormat')"
+                      class="tdp-atom-search-input-row-error"
+                    >
+                      {{ "validationErrors.invalidDateFormat" | translate }}
+                    </div>
+                  </div>
+                  <div class="tdp-atom-search-advanced-options">
+                    <div class="tdp-atom-search-advanced-options-label">
+                      {{ 'filters.advancedOptions' | translate }}
+                    </div>
+                    <div  class="tdp-atom-search-advanced-options-checkbox">
+                      <mat-checkbox
+                        ngDefaultControl
+                        formControlName="isArchived">
+                        {{ 'filters.archivedProjects' | translate }}
+                      </mat-checkbox>
+                  </div>
+                  </div>
+                </div>
+                <div class="separator"></div>
+                <div class="tdp-atom-search-advanced-buttons">
+                  <tdp-button
+                    [color]="'white'"
+                    [size]="'medium'"
+                    type="button"
+                    (onClick)="clearAllProjectInputFields()"
+                  >
+                      {{ 'button.clearAll' | translate }}
+                  </tdp-button
+                >
+                  <tdp-button
+                    type="submit"
+                    [color]="'green'"
+                    [size]="'medium'">
+                      {{ 'button.search' | translate }}
+                    </tdp-button
+                  >
+                </div>
+              </form>
+            </div>
+          </mat-tab>
+        </tdp-tabs>
+      </div>
+    </ng-template>
+  </div>
+</div>
+

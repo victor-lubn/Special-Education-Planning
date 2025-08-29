@@ -1,0 +1,52 @@
+﻿<div class="tdp-plan-summary">
+    <div class="tdp-plan-summary-title">
+        {{ planSummaryString }}
+    </div>
+    <div class="tdp-plan-summary-panels">
+        <tdp-information-panel
+            class="tdp-plan-summary-panels--panel"
+            [title]="planCreatedString"
+            [size]="'medium'">
+            {{ plan?.createdDate | date: 'dd/MM/yy' }}
+        </tdp-information-panel>
+        <tdp-information-panel
+            class="tdp-plan-summary-panels--panel"
+            [title]="lastUpdatedString"
+            [size]="'medium'">
+            {{ plan?.updatedDate | date: 'dd/MM/yy' }}
+        </tdp-information-panel>
+        <tdp-information-panel
+            class="tdp-plan-summary-panels--panel"
+            [title]="EducationerNameString"
+            [size]="'medium'">
+            {{ Educationer?.fullName || '-'}}
+        </tdp-information-panel>
+        <tdp-information-panel
+            class="tdp-plan-summary-panels--panel"
+            [title]="masterVersionIdString"
+            [size]="'medium'">
+            {{ masterVersionCode ? masterVersionCode : '-'}}
+        </tdp-information-panel>
+        <tdp-information-panel
+            class="tdp-plan-summary-panels--panel"
+            [title]="noOfVersionsString"
+            [size]="'medium'">
+            {{ numberOfVersions }}
+        </tdp-information-panel>
+        <tdp-information-panel
+            class="tdp-plan-summary-panels--panel"
+            [title]="surveyString"
+            [size]="'medium'">
+            {{ (plan?.survey ? yesString : noString) }}
+        </tdp-information-panel>
+    </div>
+    <div class="tdp-plan-summary-button">
+        <tdp-button
+            [size]="'large'"
+            [color]="'white'"
+            (onClick)="onViewDetailedLog()">
+            {{ logButtonString | uppercase }}
+        </tdp-button>
+    </div>
+</div>
+

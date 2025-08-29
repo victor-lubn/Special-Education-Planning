@@ -1,0 +1,172 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-button-filter-group {
+  display: inline-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 32px 28px;
+}
+
+tdp-button-filter {
+  background-color: #fff;
+
+  .tdp-atom-button-filter {
+    cursor: pointer;
+    border: 1px solid $keyline-grey;
+    border-radius: 10px;
+    width: 380px;
+    height: 160px;
+    background-color: transparent;
+    padding: 14px 14px 42px 35px;
+    font-size: 14px;
+    text-transform: uppercase;
+    line-height: 20px;
+    letter-spacing: 2px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex: 1 0 100%;
+    justify-content: center;
+  
+    .button-filter-header {
+      display: flex;
+      flex-direction: row;
+      flex: 1 0 100%;
+      justify-content: flex-end;
+      align-items: center;
+  
+      .tdp-atom-button-filter-tag {
+        display: none;
+      }
+    
+      .tdp-atom-button-filter-icon {
+        color: $disabled-color;
+        font-size: 18px;
+        margin-left: 4px;
+      }
+    }
+  
+    .button-filter-content {
+      display: flex;
+      font-weight: 700;
+      flex-direction: row;
+      margin-right: 35px;
+      align-items: center;
+      text-align: start;
+  
+      .tdp-atom-button-filter-number {
+        font-size: 3rem;
+        color: $navy;
+        margin-right: 35px;
+      }
+    }
+  
+  
+    &:hover {
+      .button-filter-header .tdp-atom-button-filter-icon {
+        color: $navy;
+      }
+    }
+  
+    &:hover, &.tdp-atom-button-filter-checked {
+      .button-filter-header .tdp-atom-button-filter-tag {
+        display: flex;
+      }
+    }
+
+    &:focus { 
+      outline: none;
+    }
+  
+  }
+
+  &.tdp-atom-button-filter-checked {
+
+    .tdp-atom-button-filter {
+      border-color: $navy;
+      border-width: 2px;
+
+      .button-filter-header {
+        .tdp-atom-button-filter-icon {
+          color: $navy;
+        }
+
+        .tdp-atom-button-filter-tag {
+          display: flex;
+        }
+      }
+    }
+
+  }
+}
+
+.minimize-header {
+
+  .tdp-button-filter-group {
+    flex-wrap: nowrap;
+
+    tdp-button-filter {
+      background-color: transparent;
+
+      .tdp-atom-button-filter {
+        border: 1px solid #A9A9A9;
+        border-radius: 4px;
+        height: 32px;
+        width: max-content;
+        padding: 3px 13px;
+        text-transform: none;
+
+        .button-filter-header {
+          flex: auto;
+
+          .tdp-atom-button-filter-icon {
+            font-size: 12px;
+            line-height: 20px;
+            margin-left: 0;
+            margin-right: 6px;
+          }
+
+          .tdp-atom-button-filter-tag {
+            display: none;
+          }
+        }
+
+        &:hover {
+          .button-filter-header .tdp-atom-button-filter-icon {
+            color: #A9A9A9;
+          }
+        }
+
+        .button-filter-content {
+          font-size: 15px;
+          text-align: center;
+          margin-right: 0;
+          font-weight: 400;
+          color: #A9A9A9;
+      
+          .tdp-atom-button-filter-number {
+            display: none;
+          }
+        }
+      }
+
+      &.tdp-atom-button-filter-checked {
+        background-color: #fff;
+        
+        .tdp-atom-button-filter {
+          border: 2px solid $navy;
+
+          .button-filter-content {
+            color: $navy;
+          }
+
+          &:hover {
+            .button-filter-header .tdp-atom-button-filter-icon {
+              color: $navy;
+            }
+          }
+        }
+      }
+    }
+  }
+}

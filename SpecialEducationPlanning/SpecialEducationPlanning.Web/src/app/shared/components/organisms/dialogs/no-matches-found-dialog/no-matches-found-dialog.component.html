@@ -1,0 +1,39 @@
+<tdp-modal
+    class="tdp-no-matches-found"
+    height="100%"
+    maxWidth="1000px"
+    [hasBodySeparator]="true"
+    (onClosed)="onClose()">
+
+    <div title class="tdp-no-matches-found-header--title">
+        {{ 'dialog.noMatchesFound.noMatchesFoundTitle' | translate }}
+    </div>
+
+    <div sub-title class="tdp-no-matches-found-header--sub-title">
+        {{ 'dialog.noMatchesFound.noMatchesFoundDescription' | translate }}
+    </div>
+
+    <div class="tdp-no-matches-found-body">
+        <tdp-trade-customer-form
+            [tradeCustomer]="tradeCustomer">
+        </tdp-trade-customer-form>
+    </div>
+
+    <div actions class="tdp-no-matches-found-actions">
+        <tdp-button 
+            class="tdp-no-matches-found-actions--button-back"
+            [size]="'large'"
+            [color]="'text-only'"
+            (onClick)="onBack()">
+            {{ 'button.back' | translate }}
+        </tdp-button>
+        <tdp-button 
+            class="tdp-no-matches-found-actions--button-create"
+            [size]="'large'"
+            [color]="'green'"
+            (onClick)="onCreateLocalCashAccount()">
+            {{ 'button.createLocalCashAccount' | translate }}
+        </tdp-button>
+    </div>
+
+</tdp-modal>

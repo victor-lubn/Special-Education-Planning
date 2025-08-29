@@ -1,0 +1,174 @@
+﻿stages:
+#### UK
+- template: docker/stages/deploy_database_schema_stage.yaml@templates
+  parameters:
+    StageName:               DBUPDATE_UK_QA
+    VariableGroups:          ['qa-uk-tdp']
+    DependsOn:               ['APP_UK_DEV','APP_UK_DEV_SEC']
+    Environment:              tdp-qa
+    AgentPool:                'aiep Trade Windows NonPrd UKS - VMSS'
+    BuildArtifactName:        $(database_artifact_name)
+    ServiceConnection:        hjs-trade-qa-001-app-svc
+    ConnectionString:         $(kvs-ConnectionStrings-DefaultConnectionString)
+    DACPACFile:               'bin/Release/SpecialEducationPlanning
+.Database.dacpac'
+    BlockOnPossibleDataLoss:  $(BlockOnPossibleDataLoss)
+    DatabaseEdition:          $(DatabaseEdition)
+    DatabaseServiceObjective: $(DatabaseServiceObjective)
+    KeyVaultName:             kvuktdpqauks001
+
+- template: docker/stages/deploy_kubernetes_secrets_stage.yaml@templates
+  parameters:
+    StageName:            APP_SECRETS_UK_QA
+    VariableGroups:       ['qa-uk-tdp','qa-uk-tdp-appsettings']
+    DependsOn:            ['Build_and_Push_Image','DBUPDATE_UK_QA']
+    Environment:          tdp-qa
+    AgentPool:            'aiep Trade Linux NonPrd UKS - VMSS'
+    BuildArtifactName:    $(artifact_name)
+    AKSServiceConnection: aks-akstdpaksqauks001-svc
+    ServiceConnection:    hjs-trade-qa-001-app-svc
+    KeyVaultName:         kvuktdpqauks001
+    TlsCertificateFile:   $(tls_cert_file)
+    TlsKeyFile:           $(tls_key_file)
+    TlsSecretName:        $(tls_secret_name)
+    Namespace:            $(namespace)
+    SecretsFile:          $(app_settings_file)
+    SecretsName:          $(app_settings_name)
+
+- template: docker/stages/deploy_kubernetes_helm_chart_stage.yaml@templates
+  parameters:
+    StageName:            APP_UK_QA
+    VariableGroups:       ['Educationview-common','qa-uk-tdp']
+    DependsOn:            ['APP_SECRETS_UK_QA']
+    Environment:          tdp-qa
+    AgentPool:            'aiep Trade Linux NonPrd UKS - VMSS'
+    BuildArtifactName:    $(artifact_name)
+    AKSServiceConnection: aks-akstdpaksqauks001-svc
+    ServiceConnection:    hjs-trade-qa-001-app-svc
+    ChartName:            tdp-qa
+    ChartPath:            deployment/tdp-api
+    Namespace:            $(namespace)
+    ValuesFile:           deployment/tdp-api/values.yaml
+    KeyVaultName:         kvuktdpqauks001
+    PAT:                  $(AdoPatToken)
+    Organization:         $(AdoOrganization)
+    ProjectName:          $(AdoProject)
+    LibraryGroupName:     'build-details'
+    BranchVariableName:   'qa-uk-api-branch'
+    BuildIdVariableName:  'qa-uk-api-buildId'
+
+#### FRA
+- template: docker/stages/deploy_database_schema_stage.yaml@templates
+  parameters:
+    StageName:                DBUPDATE_FRA_QA
+    VariableGroups:           ['qa-fra-tdp']
+    DependsOn:                ['APP_FRA_DEV']
+    Environment:              tdp-qa
+    AgentPool:                'aiep Trade Windows NonPrd UKS - VMSS'
+    BuildArtifactName:        $(database_artifact_name)
+    ServiceConnection:        hjs-trade-qa-001-app-svc
+    ConnectionString:         $(kvs-ConnectionStrings-DefaultConnectionString)
+    DACPACFile:               'bin/Release/SpecialEducationPlanning
+.Database.dacpac'
+    BlockOnPossibleDataLoss:  $(BlockOnPossibleDataLoss)
+    DatabaseEdition:          $(DatabaseEdition)
+    DatabaseServiceObjective: $(DatabaseServiceObjective)
+    KeyVaultName:             kvfratdpqauks001
+
+- template: docker/stages/deploy_kubernetes_secrets_stage.yaml@templates
+  parameters:
+    StageName:            APP_SECRETS_FRA_QA
+    VariableGroups:       ['qa-fra-tdp','qa-fra-tdp-appsettings']
+    DependsOn:            ['Build_and_Push_Image','DBUPDATE_FRA_QA']
+    Environment:          tdp-qa
+    AgentPool:            'aiep Trade Linux NonPrd UKS - VMSS'
+    BuildArtifactName:    $(artifact_name)
+    AKSServiceConnection: aks-akstdpaksqauks001-svc
+    ServiceConnection:    hjs-trade-qa-001-app-svc
+    KeyVaultName:         kvfratdpqauks001
+    TlsCertificateFile:   $(tls_cert_file)
+    TlsKeyFile:           $(tls_key_file)
+    TlsSecretName:        $(tls_secret_name)
+    Namespace:            $(namespace)
+    SecretsFile:          $(app_settings_file)
+    SecretsName:          $(app_settings_name)
+
+- template: docker/stages/deploy_kubernetes_helm_chart_stage.yaml@templates
+  parameters:
+    StageName:            APP_FRA_QA
+    VariableGroups:       ['Educationview-common','qa-fra-tdp']
+    DependsOn:            ['APP_SECRETS_FRA_QA']
+    Environment:          tdp-qa
+    AgentPool:            'aiep Trade Linux NonPrd UKS - VMSS'
+    BuildArtifactName:    $(artifact_name)
+    AKSServiceConnection: aks-akstdpaksqauks001-svc
+    ServiceConnection:    hjs-trade-qa-001-app-svc
+    ChartName:            fra-tdp-qa
+    ChartPath:            deployment/tdp-api
+    Namespace:            $(namespace)
+    ValuesFile:           deployment/tdp-api/values.yaml
+    KeyVaultName:         kvfratdpqauks001
+    PAT:                  $(AdoPatToken)
+    Organization:         $(AdoOrganization)
+    ProjectName:          $(AdoProject)
+    LibraryGroupName:     'build-details'
+    BranchVariableName:   'qa-fra-api-branch'
+    BuildIdVariableName:  'qa-fra-api-buildId'
+
+#### ROI
+- template: docker/stages/deploy_database_schema_stage.yaml@templates
+  parameters:
+    StageName:                DBUPDATE_ROI_QA
+    VariableGroups:           ['qa-roi-tdp']
+    DependsOn:                ['APP_ROI_DEV']
+    Environment:              tdp-qa
+    AgentPool:                'aiep Trade Windows NonPrd UKS - VMSS'
+    BuildArtifactName:        $(database_artifact_name)
+    ServiceConnection:        hjs-trade-qa-001-app-svc
+    ConnectionString:         $(kvs-ConnectionStrings-DefaultConnectionString)
+    DACPACFile:               'bin/Release/SpecialEducationPlanning
+.Database.dacpac'
+    BlockOnPossibleDataLoss:  $(BlockOnPossibleDataLoss)
+    DatabaseEdition:          $(DatabaseEdition)
+    DatabaseServiceObjective: $(DatabaseServiceObjective)
+    KeyVaultName:             kvroitdpqauks001
+
+- template: docker/stages/deploy_kubernetes_secrets_stage.yaml@templates
+  parameters:
+    StageName:            APP_SECRETS_ROI_QA
+    VariableGroups:       ['qa-roi-tdp','qa-roi-tdp-appsettings']
+    DependsOn:            ['Build_and_Push_Image','DBUPDATE_ROI_QA']
+    Environment:          tdp-qa
+    AgentPool:            'aiep Trade Linux NonPrd UKS - VMSS'
+    BuildArtifactName:    $(artifact_name)
+    AKSServiceConnection: aks-akstdpaksqauks001-svc
+    ServiceConnection:    hjs-trade-qa-001-app-svc
+    KeyVaultName:         kvroitdpqauks001
+    TlsCertificateFile:   $(tls_cert_file)
+    TlsKeyFile:           $(tls_key_file)
+    TlsSecretName:        $(tls_secret_name)
+    Namespace:            $(namespace)
+    SecretsFile:          $(app_settings_file)
+    SecretsName:          $(app_settings_name)
+
+- template: docker/stages/deploy_kubernetes_helm_chart_stage.yaml@templates
+  parameters:
+    StageName:            APP_ROI_QA
+    VariableGroups:       ['Educationview-common','qa-roi-tdp']
+    DependsOn:            ['APP_SECRETS_ROI_QA']
+    Environment:          tdp-qa
+    AgentPool:            'aiep Trade Linux NonPrd UKS - VMSS'
+    BuildArtifactName:    $(artifact_name)
+    AKSServiceConnection: aks-akstdpaksqauks001-svc
+    ServiceConnection:    hjs-trade-qa-001-app-svc
+    ChartName:            roi-tdp-qa
+    ChartPath:            deployment/tdp-api
+    Namespace:            $(namespace)
+    ValuesFile:           deployment/tdp-api/values.yaml
+    KeyVaultName:         kvroitdpqauks001
+    PAT:                  $(AdoPatToken)
+    Organization:         $(AdoOrganization)
+    ProjectName:          $(AdoProject)
+    LibraryGroupName:     'build-details'
+    BranchVariableName:   'qa-roi-api-branch'
+    BuildIdVariableName:  'qa-roi-api-buildId'

@@ -1,0 +1,60 @@
+@import '/src/assets/sass/abstracts/_variables.scss';
+
+.tdp-details-wrapper {
+    color: $navy;
+    width: 23.813rem;
+
+    .details-tabs-wrapper {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .details-tab {
+        width: 11.563rem;
+        height: 3.063rem;
+        background-color: $white;
+        box-sizing: border-box;
+        border: 0.063rem solid $gray-89;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700;
+        font-size: 0.938rem;
+        cursor: pointer;
+        &:hover {
+            background-color: $very-light-grey;
+        }
+
+        &.selected {
+            width: 11.563rem;
+            height: 3.75rem;
+            background-color: $very-light-grey;
+            border-bottom: 0;
+            transform: translateY(0.063rem);
+        }
+
+        &.disabled {
+            pointer-events: none;
+            color: $gray-68
+        }
+    }
+
+    .details-container-wrapper {
+        background-color: $very-light-grey;
+        border: 0.063rem solid $gray-89;
+        border-bottom-left-radius: 0.625rem;
+        border-bottom-right-radius: 0.625rem;
+        padding: 2rem 2rem 0 2rem;
+    }
+
+    .details-container {
+        min-height: 62.5rem;
+        flex-direction: column;
+        display: none;
+
+        &.selected {
+            display: flex;
+        }
+    }
+}
+

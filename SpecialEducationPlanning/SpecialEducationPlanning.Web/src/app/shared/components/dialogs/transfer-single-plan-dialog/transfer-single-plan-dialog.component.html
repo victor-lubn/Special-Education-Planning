@@ -1,0 +1,48 @@
+﻿<tdp-modal
+  height="600px"
+  [closable]="true"
+  (onClosed)="cancelDialog()">
+  <div title> {{ 'dialog.transferSinglePlan.title' | translate }} </div>
+
+  <div details>
+    <tdp-item-details [label]="'plan.planId' | translate" [data]="plan.planCode" ></tdp-item-details>
+    <tdp-item-details [label]="'plan.endUser' | translate" [data]="plan.endUserId ? plan.endUser.fullName : null" ></tdp-item-details>
+    <tdp-item-details [label]="'builder.tradingName' | translate" [data]="plan.builderTradingName"></tdp-item-details>
+    <tdp-item-details [label]="'plan.Educationer' | translate" [data]="EducationerFullName" ></tdp-item-details>
+    <tdp-item-details [label]="'plan.lastUpdate' | translate" [data]="plan.updatedDate | date: 'dd/MM/yyyy'"></tdp-item-details>
+  </div>
+
+  <div class="tdp-row transfer-sigle-plan-content">
+    <tdp-input
+      type="text"
+      [title]="'dialog.transferBuilderPlans.fromAiep' | translate"
+      readonly
+      [formControl]="sourceAiepCode">
+    </tdp-input>
+
+    <tdp-autocomplete
+      [title]="'dialog.transferBuilderPlans.toAiep' | translate"
+      [elementList]="AiepList"
+      [displayWith]="displayWith"
+      [formControl]="targetAiepCode">
+    </tdp-autocomplete>
+  </div>
+
+  <div actions>
+    <tdp-button
+      [size]="'medium'"
+      [color]="'text-only'"
+      (onClick)="cancelDialog()">
+      {{ 'button.cancel' | translate }}
+    </tdp-button>
+    <tdp-button
+      [size]="'medium'"
+      [color]="'green'"
+      (onClick)="submitTransfer()"
+      [disabled]="!targetAiepCode.valid">
+      {{ 'button.transfer' | translate }}
+    </tdp-button>
+  </div>
+</tdp-modal>
+
+

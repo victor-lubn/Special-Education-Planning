@@ -1,0 +1,32 @@
+﻿{
+  "name": "education-platform-tdp",
+  "productName": "Education Platform",
+  "description": "Education Platform",
+  "repository": {
+    "type": "git",
+    "url": "https://aiep.visualstudio.com/Education%20Platform/_git/EducationPlatform"
+  },
+  "version": "1.0.0",
+  "main": "electron.js",
+  "license": "MIT",
+  "scripts": {
+    "preinstall": "npm install cross-env -g",
+    "postinstall": "cross-env ../node_modules/.bin/electron-rebuild"
+  },
+  "dependencies": {
+    "connect": "3.6.6",
+    "electron": "20.3.8",
+    "ffi-napi": "3.0.1",
+    "fusion-middleware": "file:../../SpecialEducationPlanning
+.EducationMiddleware/Fusion.Middleware",
+    "offline-middleware": "file:../../SpecialEducationPlanning
+.EducationMiddleware/Offline.Middleware",
+    "3dc-middleware": "file:../../SpecialEducationPlanning
+.EducationMiddleware/3DC.Middleware",
+    "node-watch": "0.5.8",
+    "portscanner": "2.2.0",
+    "ps-node": "0.1.6",
+    "serve-static": "1.13.2"
+  }
+}
+

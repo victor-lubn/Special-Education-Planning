@@ -1,0 +1,16 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-create-plan-offline {
+  &-body {
+    overflow: scroll;
+    flex-grow: 1;
+    margin: 0 -2.5rem;
+    padding: 1.25rem 2.5rem;
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}

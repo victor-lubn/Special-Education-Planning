@@ -1,0 +1,41 @@
+@use '../abstracts/variables';
+
+.tdp-form-group {
+  flex: 1 1 0;
+  position: relative;
+  margin-top: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-bottom: 21px;
+  align-self: flex-end;
+  .tdp-form-group-label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  input {
+    width: 100%;
+  }
+  .tdp-form-error {
+    position: absolute;
+    color: $aiep-red;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+  textarea.tdp-form-border-error,
+  input.tdp-form-border-error[type=text],
+  input.tdp-form-border-error[type=password],
+  input.tdp-form-border-error[type=number] {
+    border: 1px solid $aiep-red;
+    outline: none;
+  }
+}
+
+.tdp-form-error-message {
+  color: variables.$error-red;
+  font-size: 0.75rem;
+  line-height: 1.3125rem;
+  position: relative;
+  margin-top: 0.5625rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

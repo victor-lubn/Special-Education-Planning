@@ -1,0 +1,26 @@
+@use "/src/assets/sass/abstracts/variables";
+
+.tdp-organism-project-without-end-user {
+  color: variables.$navy;
+
+  .body-separator {
+    margin-top: initial !important;
+  }
+
+  &-body {
+    overflow: auto;
+    flex-grow: 1;
+    margin: 0 -2.5rem;
+    padding: 1.25rem 2.5rem;
+  }
+
+  &-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+}
+
+.mat-mdc-dialog-container {
+  overflow: hidden;
+}

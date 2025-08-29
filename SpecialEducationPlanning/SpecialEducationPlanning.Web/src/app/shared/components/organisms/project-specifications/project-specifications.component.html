@@ -1,0 +1,29 @@
+<div class="tdp-project-specifications">
+  <div class="tdp-project-specifications-title">
+    {{ projectsSpecificationString }}
+  </div>
+  <mat-accordion>
+    <ng-container *ngFor="let spec of project.housingSpecifications">
+      <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+        <mat-expansion-panel-header class="tdp-project-specifications-header">
+          <mat-panel-title>{{ spec.name }}</mat-panel-title>
+          <mat-panel-description>
+            <div class="ng-content-wrapper" *ngIf="!project?.isArchived">
+              <tdp-table-action (click)="createTemplate($event, spec)" [matTooltip]="'button.createTemplate' | translate">
+                <tdp-create-template-icon class="tdp-actions-icon"></tdp-create-template-icon>
+              </tdp-table-action>
+            </div>
+          </mat-panel-description>
+        </mat-expansion-panel-header> 
+        <div class="mat-expansion-panel-content">
+          <div *ngFor="let type of spec.housingTypes" class="record-item">
+            <span class="tdp-project-specifications-subtitle">{{ type.name }}</span>
+            <tdp-table-action *ngIf="!project?.isArchived" (click)="createPlan($event, type)" [matTooltip]="'button.createAPlan' | translate">
+              <tdp-create-plan-icon class="tdp-actions-icon"></tdp-create-plan-icon>
+            </tdp-table-action>
+          </div>
+        </div>
+      </mat-expansion-panel>
+    </ng-container>
+  </mat-accordion>
+</div>

@@ -1,0 +1,20 @@
+<div class="tdp-details-wrapper">
+  <div class="details-tabs-wrapper">
+    <div
+      class="details-tab"
+      [ngClass]="{ selected: selectedTab === 'plan' }"
+      (click)="onSelectTab('plan')"
+    >
+      {{ "plan.plan" | translate }}
+    </div>
+  </div>
+  <div class="details-container-wrapper">
+    <tdp-offline-plan-container-left-hand-side
+      class="details-container"
+      [ngClass]="{ selected: selectedTab === 'plan' }"
+      [plan]="plan"
+      (submit)="onUpdate($event)"
+    >
+    </tdp-offline-plan-container-left-hand-side>
+  </div>
+</div>

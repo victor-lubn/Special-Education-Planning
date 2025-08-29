@@ -1,0 +1,85 @@
+<tdp-modal
+  class="upload-plan-dialog"
+  maxWidth="800px"
+  height="100%"
+  [hasBodySeparator]="'true'"
+  (onClosed)="cancelDialog()">
+
+  <div title>
+    {{ 'dialog.uploadPlans' | translate }}
+  </div>
+
+  <div class="upload-plan-dialog-body">
+    
+    <div 
+      tdpDndZone
+      (filesChange)="onFileschange($event)"
+      class="upload-plan-dialog-upload-files">
+        <tdp-icon [size]="'48px'" [name]="cloudUploadFileIcon" class="upload-plan-dialog-upload-files-icon"></tdp-icon>
+        <div class="upload-plan-dialog-upload-files-main-text">
+          {{ ('dialog.dropFileMsg' | translate) }}&nbsp;
+          <input 
+            type="file"
+            #uploadExplorer
+            hidden
+            multiple
+            accept="{{ uploadExtensionsString }}"
+            (input)="onFileschange($event.srcElement.files)">
+          <span class="upload-plan-dialog-upload-files-link"
+            (click)="onClickSpan()">
+            {{ 'dialog.chooseAFileMsg' | translate }}
+        </span>
+        </div>
+        <div class="upload-plan-dialog-upload-files-bottom-text">
+          {{ 'dialog.uploadPlanFilesOneFileAtAType' | translate }}
+        </div>
+    </div>
+  
+    <form [formGroup]="entityForm" class="textarea-form">
+      <tdp-text-area
+        *tdpPermission="'Plan_Comment'"
+        [title]="'plan.versionNotes' | translate"
+        [placeholder]="'dialog.uploadPlanFilesVersionNotesHere' | translate"
+        formControlName="uploadVersionNotes"
+        [ngClass]="{ 'upload-plan-error': checkHasErrorV2('uploadVersionNotes') }">
+      </tdp-text-area>
+      <div *ngIf="checkHasErrorV2('uploadVersionNotes', 'maxlength')" class="tdp-form-error-message">
+        {{ 'validationErrors.maxlength' | translate: { maxlength: maxVersionNotesLength }  }}
+      </div>
+    </form>
+
+    <div class="upload-plan-dialog-body-files">
+      <div *ngFor="let file of files" class="upload-plan-dialog-body-file">
+        <tdp-note-icon-svg></tdp-note-icon-svg>
+        {{ file.name }}
+        <tdp-cancel-icon
+          fillColor="#adadad"
+          width="0.8rem"
+          height="0.8rem"
+          (click)="deleteFile(file)"
+        ></tdp-cancel-icon>
+      </div>
+    </div>
+
+  </div>
+
+  <div actions>
+    <tdp-button
+    [size]="'large'"
+    [color]="'text-only'"
+    (onClick)="cancelDialog()"
+    >
+    {{ 'button.cancel' | translate }}
+    </tdp-button>
+    <tdp-button
+      [size]="'large'"
+      [color]="'green'"
+      [disabled]="!entityForm.valid"
+      (onClick)="submitFiles()"
+      >
+      {{ 'button.upload' | translate }}
+    </tdp-button>
+
+  </div>
+
+</tdp-modal>

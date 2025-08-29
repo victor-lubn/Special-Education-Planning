@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(netcoreapp)</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Koa.Domain" Version="$(KoaPackageVersion)" />
+    <PackageReference Include="Koa.Domain.Specification" Version="$(KoaPackageVersion)" />
+    <PackageReference Include="Koa.Platform.Providers" Version="$(KoaPackageVersion)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="$(MicrosoftEntityFrameworkCore)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="$(MicrosoftEntityFrameworkCoreRelational)" />
+    <PackageReference Include="Microsoft.Azure.Search" Version="$(MicrosoftAzureSearch)" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="1.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="$(MicrosoftExtensionsConfigurationAbstractions)" />
+  </ItemGroup>
+
+</Project>

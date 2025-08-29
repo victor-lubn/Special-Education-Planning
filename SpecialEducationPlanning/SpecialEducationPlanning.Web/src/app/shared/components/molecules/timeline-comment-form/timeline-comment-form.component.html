@@ -1,0 +1,25 @@
+<form
+  class="tdp-molecules-timeline-comment-form"
+  [formGroup]="timelineCommentForm"
+>
+  <tdp-text-area
+    type="text"
+    name="comment-form"
+    [placeholder]="'timeline.commentPlaceholder'| translate"
+    formControlName="text"
+  ></tdp-text-area>
+  <div class="tdp-molecules-timeline-comment-form-actions">
+    <div></div>
+    <tdp-button [size]="'small'" [color]="'text-only'" (onClick)="handlePrint()"
+      ><div title>{{ "button.print" | translate }}</div></tdp-button
+    >
+    <tdp-button
+      [size]="'small'"
+      [color]="'green'"
+      [disabled]="!timelineCommentForm.dirty"
+      type="submit"
+      (onClick)="onSubmit()"
+      ><div title>{{ "button.updateNotes" | translate }}</div></tdp-button
+    >
+  </div>
+</form>

@@ -1,0 +1,36 @@
+﻿{
+  "name": "fusion-middleware",
+  "version": "1.0.0",
+  "description": "Software that connects TDP with Fusion throught windows libraries.",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build",
+    "build": "mkdirp ./dist && cd ./dist && npm pack ../",
+    "test": "node-gyp rebuild --directory test && mocha -gc --reporter spec",
+    "doc": "documentation build ./library/** -f md -o api.md"
+  },
+  "keywords": [
+    "middleware",
+    "fusion"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://aiep.visualstudio.com/Trade%20Education%20Platform/_git/Fusion-Middleware"
+  },
+  "author": "Everis Spain",
+  "license": "ISC",
+  "dependencies": {
+    "documentation": "^14.0.2",
+    "electron": "20.3.8",
+    "ffi-napi": "3.0.1",
+    "node-process-windows": "^0.0.2",
+    "node-watch": "0.5.8",
+    "ps-node": "0.1.6",
+    "simple-node-logger": "18.12.21"
+  },
+  "devDependencies": {
+    "eslint": "5.12.0",
+    "eslint-config-google": "0.11.0"
+  }
+}
+

@@ -1,0 +1,21 @@
+﻿.btn-text {
+  font-family: 'Rooster';
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  font-size: 1rem;
+  color: #28343d;
+}
+
+.tdp-Aieps-list {
+  &-header {
+    display: flex;
+    align-items: center;
+
+    &--manage-button {
+      margin-left: auto;
+    }
+  }
+}
+

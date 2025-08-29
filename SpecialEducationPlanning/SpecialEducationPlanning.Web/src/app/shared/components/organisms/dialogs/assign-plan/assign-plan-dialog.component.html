@@ -1,0 +1,42 @@
+<tdp-modal
+    class="tdp-assign-plan"
+    height="100%"
+    maxWidth="1000px"
+    [closable]="true"
+    [hasBodySeparator]="true"
+    (onClosed)="onCancel()"
+>
+
+    <div title class="tdp-assign-plan-header--title">
+        {{ 'dialog.unassignedPlanDialogTitle' | translate }}
+    </div>
+
+    <div class="tdp-assign-plan-body">
+        <tdp-table
+            [records]="tablePlans"
+            [columnsConfiguration]="columnsConfiguration"
+            [hasActions]="false"
+            [selectable]="true"
+            [pageSize]="pageSize"
+            (onPageChanged)="pageChanged($event)"
+            (onSortChanged)="sortChanged($event)">
+        </tdp-table>
+    </div>
+
+    <div actions class="tdp-assign-plan-actions">
+        <tdp-button
+            class="tdp-assign-plan-actions--button-cancel"
+            [size]="'large'"
+            [color]="'text-only'"
+            (onClick)="onCancel()">
+            {{ 'button.cancel' | translate | uppercase }}
+        </tdp-button>
+        <tdp-button
+            [size]="'large'"
+            [color]="'green'"
+            [disabled]="!selected"
+            (onClick)="onAssignPlan()">
+            {{ 'button.assignPlan' | translate | uppercase }}
+        </tdp-button>
+    </div>
+</tdp-modal>

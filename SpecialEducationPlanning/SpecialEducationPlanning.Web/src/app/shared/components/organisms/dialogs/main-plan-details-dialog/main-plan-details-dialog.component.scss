@@ -1,0 +1,23 @@
+@use "/src/assets/sass/abstracts/variables";
+
+.tdp-main-plan-details-dialog {
+  color: variables.$navy;
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    flex-grow: 1;
+    margin: 0 -2.5rem;
+    padding: 1.25rem 2.5rem;
+  }
+
+  &-known-account-message {
+    font-weight: 700;
+    color: variables.$blue;
+    font-size: 15px;
+    line-height: 21px;
+    margin-left: auto;
+    cursor: pointer;
+  }
+}

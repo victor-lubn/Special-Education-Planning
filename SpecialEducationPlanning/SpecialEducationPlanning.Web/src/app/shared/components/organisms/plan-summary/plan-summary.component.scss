@@ -1,0 +1,26 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-plan-summary {
+    color: $navy;
+    
+    &-title {
+        font-weight: 700;
+        font-size: 1.25rem;
+        line-height: 1.875rem;
+    }
+
+    &-panels {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem 1.875rem;
+        margin-top: 2rem;
+    }
+
+    &-button {
+        display: flex;
+        justify-content: center;
+        margin-top: 2.8125rem;
+        margin-bottom: 1.5rem;
+    }
+}

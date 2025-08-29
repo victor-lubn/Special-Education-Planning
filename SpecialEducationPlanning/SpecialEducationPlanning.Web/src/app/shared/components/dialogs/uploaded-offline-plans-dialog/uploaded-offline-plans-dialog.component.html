@@ -1,0 +1,71 @@
+<tdp-modal
+  maxWidth="600px"
+  height="100%"
+  (onClosed)="cancelAndCloseDialog()"
+>
+
+  <div title class="uploaded-offline-plans-title">
+    {{ 'dialog.syncOfflinePlans.title' | translate }}
+  </div>
+
+  
+  <div class="uploaded-offline-plans-body">
+    <div class="uploaded-offline-plans-body-text">{{ 'dialog.syncOfflinePlans.syncSummary' | translate }}</div>
+    <div class="uploaded-offline-plans-body-text">{{ 'dialog.syncOfflinePlans.areUnassigned' | translate }}</div>
+
+    <!-- Successfully synchronized plans -->
+    <div class="uploaded-offline-plans-body-text">
+      <b><div
+        *ngIf="syncedPlans.length"
+        class="uploaded-offline-plans-body-text">
+          {{ 'dialog.syncOfflinePlans.offlinePlansSynced' | translate }}
+      </div></b>
+      <div *ngFor="let plan of syncedPlans">
+        <div class="uploaded-offline-plans-body-plans">
+          {{ 'dialog.syncOfflinePlans.offlineId' | translate }} <b> {{ plan.idOffline }} </b> : 
+          {{ 'dialog.syncOfflinePlans.planId' | translate }} <b> {{ plan.planCode }} </b>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Not synchronized plans -->
+    <div>
+        <b><div 
+            *ngIf="notSyncedPlans?.length" 
+            class="uploaded-offline-plans-body-text">
+              {{ 'dialog.syncOfflinePlans.offlinePlansNotSynced' | translate }}
+        </div></b>
+
+      <div *ngFor="let offlineId of notSyncedPlans">
+        <div class="uploaded-offline-plans-body-plans">
+          {{ 'dialog.syncOfflinePlans.offlineId' | translate }} <b> {{ offlineId }} </b>
+        </div> 
+      </div>
+        <div *ngIf="notSyncedPlans?.length" class="uploaded-offline-plans-body-support">
+          {{ 'dialog.syncOfflinePlans.serviceDesk' | translate }}
+        </div>
+    </div>
+
+  </div>
+
+<div actions>
+
+  <tdp-button
+    size="large"
+    color="text-only"
+    (onClick)="acceptAction()"
+  >
+    {{ 'button.continue' | translate }}
+  </tdp-button>
+
+  <tdp-button
+    size="large"
+    color="green"
+    (onClick)="navigateToUnassignedPlans()"
+  >
+    {{ 'button.goToUnassignedPlans' | translate }}
+  </tdp-button>
+
+</div>
+
+</tdp-modal>

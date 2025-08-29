@@ -1,0 +1,31 @@
+.tdp-regions-list {
+  &-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.25rem;
+
+    &--manage-button {
+      margin-left: auto;
+    }
+  }
+
+  &-body {
+    max-width: 75rem;
+    margin: 2.5rem auto;
+    width: 100%;
+  }
+
+  &-table {
+    ::ng-deep {
+      .mat-column-keyName {
+        flex: 0 1 45%;
+      }
+
+      .mat-column-areasCount {
+        flex: 0 1 40%;
+      }
+
+    }
+
+  }
+}

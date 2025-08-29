@@ -1,0 +1,178 @@
+<div class="tdp-column tdp-entity-page">
+
+  <div class="tdp-row tdp-entity-header">
+    <div class="tdp-row tdp-entity-header-start-section">
+      <button class="tdp-text-btn" (click)="goBack()">
+        <i class="fas fa-chevron-left"></i>
+        <span>
+          {{ 'button.goBack' | translate }}
+        </span>
+      </button>
+    </div>
+    <div class="tdp-row tdp-entity-header-center-section">
+      <div class="tdp-entity-title">
+        {{ 'plan.createNewPlan' | translate }}
+      </div>
+    </div>
+    <div class="tdp-row tdp-entity-header-end-section"></div>
+  </div>
+
+  <div class="tdp-column tdp-entity-page-content">
+    <!-- Plan form -->
+    <mat-expansion-panel expanded>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ 'plan.planDetails' | translate }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <form class="tdp-column tdp-entity-form" [formGroup]="planCreateForm">
+        <div class="tdp-row tdp-plan-create-row">
+          <div class="tdp-form-group">
+            <label class="tdp-form-group-label">
+              {{ 'plan.planId' | translate }}
+            </label>
+            <input type="text" formControlName="planCode">
+          </div>
+          <div class="tdp-form-group">
+            <label class="tdp-form-group-label">
+              {{ 'plan.cadFilePlanId' | translate }}
+            </label>
+            <input type="text" formControlName="cadFilePlanId" disabled>
+          </div>
+          <div class="tdp-form-group tdp-long-dropdown">
+            <label class="tdp-form-group-label">
+              {{ 'plan.planType' | translate }}
+            </label>
+            <div class="tdp-select-container" (click)="openPlanTypeOptions()">
+              <input type="text" #planTypeTrigger readonly [matAutocomplete]="planTypeOptions"
+                formControlName="planType">
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <mat-autocomplete #planTypeOptions="matAutocomplete" [displayWith]="displayPlanType.bind(this)">
+              <ng-container *ngFor="let planType of planTypes">
+                <mat-option [value]="planType.value">
+                  {{ planType.value | translate }}
+                </mat-option>
+              </ng-container>
+            </mat-autocomplete>
+          </div>
+          <div class="tdp-form-group">
+            <label class="tdp-form-group-label">
+              {{ 'plan.planName' | translate }}
+            </label>
+            <input type="text" formControlName="planName">
+          </div>
+        </div>
+        <div class="tdp-row tdp-plan-create-row">
+          <div class="tdp-form-group">
+            <label class="tdp-form-group-label">
+              {{ 'plan.builderName' | translate }}
+            </label>
+            <input type="text" formControlName="builderTradingName">
+          </div>
+          <div class="tdp-form-group">
+            <label class="tdp-form-group-label">
+              {{ 'plan.catalogue' | translate }}
+              <div class="tdp-required-dot"></div>
+            </label>
+            <div class="tdp-select-container" (click)="openCatalogueOptions()">
+              <input [ngClass]="{ 'tdp-form-border-error': checkHasError(planCreateForm, 'catalogId') }" type="text"
+                #catalogueTrigger readonly [matAutocomplete]="catalogueOptions" formControlName="catalogId">
+              <i class="fas fa-chevron-down"></i>
+              <div *ngIf="checkHasError(planCreateForm, 'catalogId', 'required')" class="tdp-form-error">
+                {{ 'validationErrors.required' | translate }}
+              </div>
+            </div>
+            <mat-autocomplete #catalogueOptions="matAutocomplete" [displayWith]="displayCatalog.bind(this)">
+              <mat-option></mat-option>
+              <ng-container *ngFor="let option of catalogs">
+                <mat-option [value]="option.id" *ngIf="option.enabled">
+                  {{ option.name }}
+                </mat-option>
+              </ng-container>
+            </mat-autocomplete>
+          </div>
+          <div class="tdp-form-group tdp-plan-create-radio-group">
+            <label class="tdp-form-group-label">
+              {{ 'plan.survey' | translate }}
+            </label>
+            <div class="tdp-horizontal-radio">
+              <label class="tdp-radio-container"
+                [ngClass]="{ 'tdp-radio-container-hover': planCreateForm.get('survey').enabled }">
+                {{ 'booleanResponse.yes' | translate }}
+                <input type="radio" name="survey" formControlName="survey" [value]="true">
+                <span class="tdp-radio-checkmark"
+                  [ngClass]="{ 'tdp-radio-checkmark-disabled': planCreateForm.get('survey').disabled }">
+                </span>
+              </label>
+              <label class="tdp-radio-container"
+                [ngClass]="{ 'tdp-radio-container-hover': planCreateForm.get('survey').enabled }">
+                {{ 'booleanResponse.no' | translate }}
+                <input type="radio" name="survey" formControlName="survey" [value]="false">
+                <span class="tdp-radio-checkmark"
+                  [ngClass]="{ 'tdp-radio-checkmark-disabled': planCreateForm.get('survey').disabled }">
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="tdp-form-group tdp-plan-create-radio-group" *tdpPermission="'Plan_Create'">
+            <label class="tdp-form-group-label">
+              {{ 'plan.endUser' | translate }}
+            </label>
+            <div class="tdp-horizontal-radio">
+              <label class="tdp-radio-container"
+                [ngClass]="{ 'tdp-radio-container-hover': planCreateForm.get('hasEndUser').enabled }">
+                {{ 'booleanResponse.yes' | translate }}
+                <input type="radio" name="hasEndUser" formControlName="hasEndUser" [value]="true">
+                <span class="tdp-radio-checkmark"
+                  [ngClass]="{ 'tdp-radio-checkmark-disabled': planCreateForm.get('hasEndUser').disabled }">
+                </span>
+              </label>
+              <label class="tdp-radio-container"
+                [ngClass]="{ 'tdp-radio-container-hover': planCreateForm.get('hasEndUser').enabled }">
+                {{ 'booleanResponse.no' | translate }}
+                <input type="radio" name="hasEndUser" formControlName="hasEndUser" [value]="false">
+                <span class="tdp-radio-checkmark"
+                  [ngClass]="{ 'tdp-radio-checkmark-disabled': planCreateForm.get('hasEndUser').disabled }">
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="tdp-form-group">
+          </div>
+        </div>
+      </form>
+
+      <div class="tdp-row tdp-entity-form-actions">
+        <button (click)="goBack()" class="tdp-secondary-btn">
+          {{ 'button.cancel' | translate }}
+          <i class="fas fa-times"></i>
+        </button>
+        <button [disabled]="!planCreateForm.valid || (planCreateForm.get('hasEndUser').value && !endUserForm?.entityForm.valid)"
+          (click)="submitForms()" class="tdp-primary-btn">
+          {{ 'button.createPlan' | translate }}
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
+    </mat-expansion-panel>
+
+    <!-- End User form -->
+    <mat-expansion-panel expanded *ngIf="planCreateForm.get('hasEndUser').value">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ 'plan.endUserTitle' | translate }}
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <tdp-end-user-form
+        #endUserForm
+        [endUser]="endUser"
+        [endUserValidation]="getEndUserValidation()"
+        (endUserCanceled)="cancelEndUser()"
+        (endUserSubmitted)="submitForms()">
+      </tdp-end-user-form>
+    </mat-expansion-panel>
+
+  </div>
+
+</div>

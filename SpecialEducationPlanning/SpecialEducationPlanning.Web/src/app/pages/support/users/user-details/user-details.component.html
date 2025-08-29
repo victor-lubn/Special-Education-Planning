@@ -1,0 +1,35 @@
+﻿<tdp-Aiep-details-template class="tdp-Aiep-details">
+  <div class="Aiep-details-header">
+    <tdp-back-with-title
+      [title]="'user.userDetails' | translate"
+      (onClick)="goBack()">
+    </tdp-back-with-title>
+  </div>
+
+  <div class="Aiep-details-top-container">
+    <tdp-user-create-and-details-form
+      [user]="user"
+      (userSubmitted)="userSubmittedHandler($event)">
+    </tdp-user-create-and-details-form>
+  </div>
+
+  <div class="Aiep-details-bottom-container">
+    <tdp-button
+      color="ghost"
+      size="large"
+      (onClick)="cancel()"
+      class="cancel-button"
+    >
+      <span class="btn-text">{{ 'button.cancel' | translate }}</span>
+    </tdp-button>
+    <tdp-button
+      size="large"
+      color="green"
+      [disabled]="!hasChanges()"
+      (onClick)="updateUser()"
+    >
+      {{ 'button.save' | translate }}
+    </tdp-button>
+  </div>
+</tdp-Aiep-details-template>
+

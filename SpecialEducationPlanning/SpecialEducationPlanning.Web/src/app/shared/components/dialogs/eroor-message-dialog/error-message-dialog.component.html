@@ -1,0 +1,19 @@
+<tdp-modal
+    width="400px"
+    height="auto"
+    (onClosed)="close()">
+
+    <div title> {{ title | translate }} </div>
+    <div class="tdp-error-message-body"> {{ description | translate }}</div>
+
+    <div actions>
+        <tdp-button
+            size="large"
+            color="navy"
+            (onClick)="close()"
+        >
+        {{ 'button.cancel' | translate }}
+        </tdp-button>
+    </div>
+
+</tdp-modal>

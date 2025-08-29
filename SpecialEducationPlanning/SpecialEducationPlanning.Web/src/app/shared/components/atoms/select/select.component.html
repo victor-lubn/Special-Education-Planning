@@ -1,0 +1,34 @@
+<div class="tdp-atoms-select">
+  <label class="tdp-atoms-select-label" [ngClass]="{ required: required }">
+    {{ label }}
+  </label>
+  <div class="tdp-atoms-select-container" (click)="changePanel()">
+    <input
+      class="tdp-atoms-select-container-input"
+      type="text"
+      [value]="value?.text"
+      (blur)="closePanel(); _onTouched()"
+      (change)="_onChange($event.target.value)"
+      readonly
+      #inputElement
+    />
+    <tdp-icon
+      [size]="'24px'"
+      [name]="iconChevron"
+      class="tdp-atoms-select-container-arrow"
+      [ngClass]="{
+        'tdp-atoms-select-container-arrow__down': panelOpened
+      }"
+    ></tdp-icon>
+  </div>
+
+  <div class="tdp-atoms-select-panel" *ngIf="panelOpened">
+    <div
+      class="tdp-atoms-select-panel-option"
+      *ngFor="let option of options"
+      (mousedown)="selectOption(option)"
+    >
+      {{ option.text }}
+    </div>
+  </div>
+</div>

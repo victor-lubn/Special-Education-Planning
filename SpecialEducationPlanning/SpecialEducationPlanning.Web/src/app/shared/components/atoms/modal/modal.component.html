@@ -1,0 +1,27 @@
+<div class="tdp-modal--overlay-container">
+    <div class="tdp-modal--overlay-wrapper">
+        <div class="tdp-modal--overlay">
+            <div #tdpModal class="tdp-modal">
+                <div 
+                    *ngIf="closable"
+                    class="button-close _svg _svg__clickable _svg__primary"
+                    [matTooltip]="'button.close' | translate"
+                    (click)="onClose()">
+                    <tdp-cancel-icon 
+                        fillColor="#ADADAD"
+                        width="1.125rem"
+                        height="1.125rem"
+                        >
+                    </tdp-cancel-icon>
+                </div>
+                <ng-content select="[title]"></ng-content>
+                <ng-content select="[sub-title]"></ng-content>
+                <div *ngIf="hasBodySeparator" class="separator body-separator"></div>
+                <ng-content select="[details]"></ng-content>
+                <ng-content></ng-content>
+                <div class="separator"></div>
+                <ng-content select="[actions]"></ng-content>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<button mat-icon-button [matMenuTriggerFor]="moreOptionsMenu" #moreOptionsMenuTrigger="matMenuTrigger" (menuOpened)="onMenuOpenedHandler()" tdpClickStopPropagation>
+  <tdp-more-options-icon class="tdp-actions-icon" [matTooltip]="'button.moreOptions' | translate"></tdp-more-options-icon>
+</button>
+
+<mat-menu class="tdp-more-options-menu" #moreOptionsMenu="matMenu" [overlapTrigger]="true" [hasBackdrop]="false" xPosition="before">
+  <ng-container *ngTemplateOutlet="contentTpl"></ng-container> 
+</mat-menu>
+
+<ng-template #contentTpl>
+  <div (mouseover)="mouseOverRow()" (mouseleave)="mouseLeaveRow()">
+    <ng-content></ng-content>
+  </div>
+</ng-template>

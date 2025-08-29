@@ -1,0 +1,163 @@
+﻿<Project>
+  <PropertyGroup Label="Dotnet Framework">
+    <netcoreapp>net8.0</netcoreapp>
+  </PropertyGroup>
+  
+  <PropertyGroup Label="Aspnet Core">  	
+    <MicrosoftAspNetWebApiClient>6.0.0</MicrosoftAspNetWebApiClient>
+	  <MicrosoftAspNetCoreAuthenticationJwtBearer>8.0.0</MicrosoftAspNetCoreAuthenticationJwtBearer>
+	  <SwashbuckleAspNetCore>5.5.1</SwashbuckleAspNetCore>
+	  <AspNetCoreHealthChecksUI>8.0.0</AspNetCoreHealthChecksUI>
+	  <SerilogAspNetCore>8.0.1</SerilogAspNetCore>
+	  <SerilogSinksApplicationInsights>4.0.0</SerilogSinksApplicationInsights>
+	  <SerilogExtensionsLogging>8.0.0</SerilogExtensionsLogging>
+    <SerilogSinksMSSqlServer>6.6.0</SerilogSinksMSSqlServer>
+    <Serilog>3.1.1</Serilog>
+    <SerilogSettingsConfiguration>8.0.0</SerilogSettingsConfiguration>
+    <SerilogSinksConsole>5.0.0</SerilogSinksConsole>
+    <SerilogSinksEmail>2.4.0</SerilogSinksEmail>
+	  <MicrosoftAspNetCoreMvcNewtonsoftJson>8.0.0</MicrosoftAspNetCoreMvcNewtonsoftJson>
+    <MicrosoftAspNetCoreMvcAbstractions>2.2.0</MicrosoftAspNetCoreMvcAbstractions>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Microsoft ApplicationInsights">
+    <MicrosoftApplicationInsightsAspNetCore>2.8.0</MicrosoftApplicationInsightsAspNetCore>   
+  </PropertyGroup>
+
+  <PropertyGroup Label="Microsoft Identity">
+    <MicrosoftIdentityClient>4.73.1</MicrosoftIdentityClient>   
+  </PropertyGroup>
+
+  <PropertyGroup Label="Entity Framework Core">
+	  <EntityFramework>6.5.1</EntityFramework>
+	  <MicrosoftEntityFrameworkCore>8.0.3</MicrosoftEntityFrameworkCore>
+	  <MicrosoftEntityFrameworkCoreSqlServer>8.0.3</MicrosoftEntityFrameworkCoreSqlServer>
+	  <MicrosoftEntityFrameworkCoreInMemory>8.0.3</MicrosoftEntityFrameworkCoreInMemory>
+	  <MicrosoftEntityFrameworkCoreSqlite>8.0.3</MicrosoftEntityFrameworkCoreSqlite>
+	  <MicrosoftEntityFrameworkCoreRelational>8.0.3</MicrosoftEntityFrameworkCoreRelational>
+	  <MicrosoftEntityFrameworkCoreEducation>8.0.3</MicrosoftEntityFrameworkCoreEducation>
+  </PropertyGroup>  
+
+  <PropertyGroup Label="Azure">  
+    <MicrosoftAzureStorageBlob>11.2.3</MicrosoftAzureStorageBlob>   
+	  <MicrosoftAzureSearch>10.1.0</MicrosoftAzureSearch>
+    <AzureMessagingServiceBus>7.20.1</AzureMessagingServiceBus>
+    <MicrosoftExtensionsAzure>1.12.0</MicrosoftExtensionsAzure>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Microsoft Extensions">
+	  <MicrosoftExtensionsCachingStackExchangeRedis>8.0.0</MicrosoftExtensionsCachingStackExchangeRedis>
+	  <MicrosoftExtensionsLoggingAbstractions>8.0.0</MicrosoftExtensionsLoggingAbstractions>
+	  <MicrosoftExtensionsLogging>8.0.0</MicrosoftExtensionsLogging>
+	  <MicrosoftExtensionsLoggingDebug>8.0.0</MicrosoftExtensionsLoggingDebug>
+	  <MicrosoftExtensionsLoggingConsole>8.0.0</MicrosoftExtensionsLoggingConsole>
+	  <MicrosoftExtensionsDependencyInjection>8.0.0</MicrosoftExtensionsDependencyInjection>
+	  <MicrosoftExtensionsDependencyInjectionAbstractions>8.0.0</MicrosoftExtensionsDependencyInjectionAbstractions>  
+	  <MicrosoftExtensionsOptionsConfigurationExtensions>8.0.0</MicrosoftExtensionsOptionsConfigurationExtensions>
+	  <MicrosoftExtensionsConfiguration>8.0.0</MicrosoftExtensionsConfiguration>
+	  <MicrosoftExtensionsConfigurationAbstractions>8.0.0</MicrosoftExtensionsConfigurationAbstractions>
+	  <MicrosoftExtensionsConfigurationBinder>8.0.0</MicrosoftExtensionsConfigurationBinder>
+	  <MicrosoftExtensionsConfigurationJson>8.0.0</MicrosoftExtensionsConfigurationJson>
+	  <MicrosoftExtensionsConfigurationUserSecrets>8.0.0</MicrosoftExtensionsConfigurationUserSecrets>
+	  <MicrosoftExtensionsConfigurationEnvironmentVariables>8.0.0</MicrosoftExtensionsConfigurationEnvironmentVariables>
+	  <MicrosoftExtensionsConfigurationAzureKeyVaultVersion>3.1.24</MicrosoftExtensionsConfigurationAzureKeyVaultVersion>
+	  <MicrosoftExtensionsPlatformAbstractions>1.1.0</MicrosoftExtensionsPlatformAbstractions>
+	  <MicrosoftExtensionsHttpPolly>8.0.4</MicrosoftExtensionsHttpPolly>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Amazon">
+	  <AWSSDKS3>3.7.307</AWSSDKS3>
+  </PropertyGroup>
+
+  <PropertyGroup Label="JWT">
+    <SystemIdentityModelTokensJwt>6.23.1</SystemIdentityModelTokensJwt>   
+  </PropertyGroup>
+
+  <PropertyGroup Label="SQL">
+    <SystemDataSqlClient>4.8.6</SystemDataSqlClient>   
+	  <MicrosoftDataSqlClient>5.2.0</MicrosoftDataSqlClient>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Testing">
+    <MicrosoftNETTestSdk>17.9.0</MicrosoftNETTestSdk>
+	  <xunit>2.7.0</xunit> 
+    <ILoggerMoq>1.1.10</ILoggerMoq>
+	  <xunitrunnervisualstudio>2.5.7</xunitrunnervisualstudio>
+	  <dotnetxunit>2.3.1</dotnetxunit>
+	  <MicrosoftAspNetCoreTestHost>8.0.3</MicrosoftAspNetCoreTestHost>
+	  <Moq>4.20.70</Moq>
+	  <coverletmsbuild>6.0.2</coverletmsbuild>
+	  <AcheveTestHost>3.5.0</AcheveTestHost>
+	  <Respawn>4.0.0</Respawn>
+    <MockQueryableMoq>5.0.0</MockQueryableMoq>
+	  <Shouldly>4.2.1</Shouldly>
+  </PropertyGroup>
+
+  <PropertyGroup Label="System">
+    <MicrosoftCSharp>4.7.0</MicrosoftCSharp>
+    <SystemComponentModelAnnotations>5.0.0</SystemComponentModelAnnotations>   
+    <SystemTextJson>6.0.6</SystemTextJson>
+	 <SystemServiceModelDuplex>4.7.0</SystemServiceModelDuplex>
+    <SystemServiceModelHttp>4.8.1</SystemServiceModelHttp>
+    <SystemServiceModelNetTcp>4.7.0</SystemServiceModelNetTcp>
+    <SystemServiceModelPrimitives>4.8.1</SystemServiceModelPrimitives>
+    <SystemServiceModelSecurity>4.7.0</SystemServiceModelSecurity>
+    <SystemInteractiveAsync>6.0.1</SystemInteractiveAsync>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Ping">
+    <SystemNetPing>4.3.0</SystemNetPing>   
+  </PropertyGroup>
+
+  <PropertyGroup Label="Newtonsoft.Json">
+    <NewtonsoftJson>13.0.3</NewtonsoftJson>   
+  </PropertyGroup>
+
+   <PropertyGroup Label="AutoMapper">
+    <AutoMapper>13.0.1</AutoMapper>   
+  </PropertyGroup>  
+
+  <PropertyGroup Label="SendGrid">
+    <SendGrid>9.29.2</SendGrid>   
+  </PropertyGroup>  
+
+  <PropertyGroup Label="Document">
+    <CsvHelper>12.3.2</CsvHelper>  
+  </PropertyGroup>  
+
+  <PropertyGroup Label="Hangfire">
+    <HangfireAspNetCore>1.8.12</HangfireAspNetCore> 
+    <HangfireCore>1.8.12</HangfireCore>  
+    <HangfireSqlServer>1.8.12</HangfireSqlServer>  
+  </PropertyGroup> 
+
+  <PropertyGroup Label="LaunchDarkly">
+    <LaunchDarklyServerSdk>8.3.0</LaunchDarklyServerSdk> 
+  </PropertyGroup> 
+
+  <PropertyGroup Label="SOAP Services">
+    <SoapCore>1.1.0.49</SoapCore> 
+  </PropertyGroup> 
+
+  <PropertyGroup Label="Polly">
+    <Polly>7.2.4</Polly> 
+    <PollyContribWaitAndRetry>1.1.1</PollyContribWaitAndRetry> 
+  </PropertyGroup> 
+
+  <PropertyGroup Label="Oracle">
+    <OracleManagedDataAccessCore>3.21.130</OracleManagedDataAccessCore> 
+  </PropertyGroup> 
+
+  <PropertyGroup Label="FlurlHttp">
+    <FlurlHttp>4.0.2</FlurlHttp> 
+  </PropertyGroup>
+
+  <PropertyGroup Label="MockHttp">
+    <MockHttp>6.0.0</MockHttp> 
+  </PropertyGroup>
+
+  <PropertyGroup Label="MediatR">
+    <MediatR>12.2.0</MediatR> 
+  </PropertyGroup>
+</Project>
+

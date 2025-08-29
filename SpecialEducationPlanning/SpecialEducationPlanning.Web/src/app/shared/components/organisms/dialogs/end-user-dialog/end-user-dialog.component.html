@@ -1,0 +1,39 @@
+<tdp-modal
+    class="tdp-end-user-dialog"
+    maxWidth="1000px"
+    height="100%"
+    [closable]="true"
+    [hasBodySeparator]="true"
+    (onClosed)="onClose()">
+
+    <div title class="tdp-end-user-dialog--title">
+        {{ 'endUser.endUserDetails' | translate }}
+    </div>
+
+    <div class="tdp-end-user-dialog-body">
+        <tdp-end-user-form-dialog
+            class="tdp-end-user-dialog-form"
+            [endUser]="endUser"
+            (endUserSubmitted)="onEndUserFormSubmitted($event)">
+        </tdp-end-user-form-dialog>
+    </div>
+
+    <div actions class="tdp-end-user-actions">
+        <tdp-button
+            class="tdp-end-user-back"
+            [size]="'large'"
+            [color]="'text-only'"
+            (onClick)="onBack()">
+            {{ 'button.back' | translate }}
+        </tdp-button>
+        <tdp-button
+            class="tdp-end-user-create-plan"
+            [size]="'large'"
+            [color]="'green'"
+            [disabled]="!isFormValid()"
+            (onClick)="onCreatePlan()">
+            {{ 'button.createPlan' | translate }}
+        </tdp-button>
+    </div>
+
+</tdp-modal>

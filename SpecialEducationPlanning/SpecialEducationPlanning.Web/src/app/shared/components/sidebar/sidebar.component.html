@@ -1,0 +1,9 @@
+<div *ngIf="position === 'right'" class="drag">
+  <tdp-icon size="24px" [name]="dragIcon"></tdp-icon>
+</div>
+<div class="content" [ngClass]="{ scrollable: scrollable }">
+  <ng-content></ng-content>
+</div>
+<div *ngIf="position === 'left'" class="drag">
+  <tdp-icon size="24px" [name]="dragIcon"></tdp-icon>
+</div>

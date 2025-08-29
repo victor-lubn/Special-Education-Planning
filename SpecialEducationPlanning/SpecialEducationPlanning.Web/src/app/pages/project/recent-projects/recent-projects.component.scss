@@ -1,0 +1,30 @@
+@use '/src/assets/sass/abstracts/variables';
+@import '/src/assets/sass/abstracts/_variables.scss';
+
+tdp-recent-projects {
+    .header {
+      .main-view--header {
+        &.minimize-header {
+          margin: 2rem auto;
+        }
+        &.hidden-header {
+          display: none;
+        }
+      }
+    }
+  
+    .mat-mdc-cell {
+      border: none;
+    }
+
+    .table-actions,
+    .ng-content-wraper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+  
+    .underlined-text {
+        text-decoration: underline;
+    }
+}

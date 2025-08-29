@@ -1,0 +1,24 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-transfer-builder-plans-dialog-body {
+  overflow-y: auto;
+  flex-grow: 1;
+  margin: 0 -2.5rem;
+  padding: 1.25rem 2.5rem;
+  &-table {
+    max-height: 25.125rem;
+    overflow-y: hidden;
+  }
+
+  &-selectors {
+    display: flex;
+    flex-direction: row;
+    height: 9rem;
+    justify-content: space-between;
+    padding-top: 3rem;
+  }
+
+  .tdp-transfer-builder-plans-dialog-body-selectors-input input {
+    width: 25.5rem;
+  }
+}

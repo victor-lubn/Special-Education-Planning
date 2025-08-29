@@ -1,0 +1,131 @@
+.tdp-base-btn {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 15px;
+  height: 40px;
+  min-width: 120px;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+  &:disabled {
+    cursor: default;
+    background-color: $white;
+    color: $light-grey;
+    border: 1px solid $keyline-grey;
+  }
+}
+
+.tdp-primary-btn {
+  @extend .tdp-base-btn;
+  background-color: $aiep-button-red;
+  color: $white;
+  mat-spinner {
+    margin: 0 7px;
+    circle {
+      stroke: $white;
+    }
+  }
+  border: 1px solid $aiep-button-red;
+  i {
+    margin: 0px 11px !important;
+    font-size: 13px;
+    height: 11px;
+    width: 18px;
+  }
+  &:active {
+    background-color: $aiep-second-red;
+  }
+}
+
+.tdp-secondary-btn {
+  @extend .tdp-base-btn;
+  background-color: $white;
+  color: $navy;
+  border: 1px solid $keyline-grey;
+  i {
+    color: #D22630 !important;
+    margin: 0px 11px !important;
+    font-size: 13px;
+    height: 11px;
+    width: 18px;
+  }
+  &:active {
+    background-color: $off-white;
+  }
+  &:disabled {
+    i {
+      color: $light-grey !important;
+    }
+  }
+}
+
+.tdp-text-btn {
+  display: flex;
+  align-items: center;
+  min-width: 70px;
+  padding: 0;
+  color: $navy;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  span {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  i {
+    color: $aiep-red;
+    margin: 0 5px;
+    font-size: 13px;
+    height: 11px;
+    width: 18px;
+  }
+  &:hover:enabled {
+    span {
+      line-height: 16px;
+      border-bottom: 1px solid $aiep-red;
+    }
+  }
+  &:focus:enabled {
+    outline: none;
+    span {
+      color: $aiep-red;
+    }
+  }
+  &:active:enabled {
+    span {
+      color: $aiep-red;
+    }
+  }
+  &:disabled {
+    cursor: default;
+    color: $light-grey;
+    border: none;
+    i {
+      color: $light-grey;
+    }
+  }
+}
+
+.tdp-action-btn {
+  position: relative;
+  cursor: pointer;
+  margin: 0 1em;
+  height: 1.5em;
+  width: 2.1em;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+  i {
+    font-size: 1.33333333em;
+    vertical-align: -.0667em;
+    line-height: 0.4em;
+    position: absolute;
+    top: 0.40em;
+    left: -0.35em;
+    color: $contemporary;
+  }
+}

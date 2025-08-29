@@ -1,0 +1,11 @@
+<div class="filter-header-container">
+  <div [formGroup]="form" class="filter-header-form">
+    <div class="select">
+      <tdp-select  formControlName="filterBy" label="{{ 'filterBy.title' | translate }}" [options]="options">
+      </tdp-select>
+    </div>
+    <div class="input">
+      <tdp-input  formControlName="search" title="{{ 'search.title' | translate }}" placeholder="{{ 'filterBy.placeholder' | translate }}"></tdp-input>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+.tdp-assign-plan {
+    ::ng-deep {
+        .body-separator {
+            padding-top: 30px;
+            margin-top: initial !important;
+        }
+    }
+
+    &-body {
+        overflow: auto;
+        flex-grow: 1;
+        margin: 0 -2.5rem;
+        padding: 1.25rem 2.5rem;
+    }
+
+    &-actions {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+
+        &--button-cancel {
+            margin-right: 16px;
+        }
+    }
+
+  ::ng-deep .tdp-modal {
+     *[title] {
+        margin-bottom: 0;
+      }
+  }
+}

@@ -1,0 +1,36 @@
+<div class="tdp-account-details">
+    <div class="tdp-account-details-box">
+        <div class="tdp-account-details-item trading-name">
+            <div class="tdp-account-details-item--title">
+                {{ 'builder.tradingName' | translate }}
+            </div>
+            <div class="tdp-account-details-item--value">
+                {{ tradeCustomer?.tradingName }}
+            </div>
+        </div>
+        <div class="tdp-account-details-item address">
+            <div class="tdp-account-details-item--title">
+                {{ 'builder.address' | translate }}
+            </div>
+            <div class="tdp-account-details-item--value">
+                {{ tradeCustomer.address1 ? tradeCustomer.address1 : '-'}}
+            </div>
+        </div>
+        <div class="tdp-account-details-item postcode">
+            <div class="tdp-account-details-item--title">
+                {{ 'builder.postcode' | translate }}
+            </div>
+            <div class="tdp-account-details-item--value">
+                {{ tradeCustomer?.postcode | tdpPostcode: true : countrySvc }}
+            </div>
+        </div>
+        <div class="tdp-account-details-item mobile-number">
+            <div class="tdp-account-details-item--title">
+                {{ 'builder.mobileNumber' | translate }}
+            </div>
+            <div class="tdp-account-details-item--value">
+                {{ tradeCustomer.mobileNumber ? tradeCustomer.mobileNumber : '-'}}
+            </div>
+        </div>
+    </div>
+</div>

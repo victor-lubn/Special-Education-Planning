@@ -1,0 +1,39 @@
+@use "/src/assets/sass/abstracts/variables";
+
+.tdp-postcode-container {
+  position: relative;
+  .tdp-postcode-spinner {
+    right: 0.688rem;
+    top: 1.125rem;
+    position: absolute;
+  }
+  input {
+    border-radius: 0.625rem;
+    height: 3.5rem;
+    font-family: "Rooster";
+    padding-left: 1.125rem;
+    padding-right: 2.75rem;
+    box-sizing: border-box;
+    border: 0.063rem solid variables.$input-border-grey;
+    outline: none;
+    width: 100%;
+    font-size: 0.9375rem;
+
+    &:focus, &:focus-within {
+      border-color: variables.$navy;
+    }
+  }
+
+  .tdp-error-border { 
+    border: 2px solid variables.$error-red !important;
+    outline: none;
+  }
+
+  ::ng-deep {
+    .mat-mdc-progress-spinner, .mat-mdc-progress-spinner {
+      circle {
+        stroke: variables.$input-border-grey;
+      }
+    }
+  }
+}

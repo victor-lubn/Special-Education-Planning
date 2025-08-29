@@ -1,0 +1,29 @@
+@use '../abstracts/variables';
+
+.mat-mdc-radio-button {
+  transform: translateY(-1px);
+      .mdc-radio {
+
+        &:not(.mdc-radio--disabled) {   
+          transform: translateY(-1px);
+
+          &:hover > .mdc-radio__native-control:enabled+ .mdc-radio__background .mdc-radio__inner-circle {
+            transform: scale(0.5);
+            opacity: 0.5;
+          }
+        
+          .mdc-radio__native-control:enabled+ .mdc-radio__background .mdc-radio__outer-circle {
+            border-color: variables.$gray-68 !important;
+          }
+          
+          .mdc-radio__native-control:enabled+ .mdc-radio__background .mdc-radio__inner-circle {
+            border-color: variables.$aiep-green !important;
+          }
+          
+          .mat-radio-ripple {
+            display: none;
+          }
+      }
+  }
+}
+

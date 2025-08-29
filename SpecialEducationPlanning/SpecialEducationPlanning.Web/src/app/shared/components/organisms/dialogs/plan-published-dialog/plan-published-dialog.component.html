@@ -1,0 +1,18 @@
+<tdp-modal
+  class="plan-published-modal"
+  maxWidth="600px"
+  height="100%"
+  (onClosed)="closeDialog()">
+
+  <div title class="plan-published-text">
+    {{ titleStringKey | translate }}
+  </div>
+  <div subtitle class="plan-published-text">
+    {{ messageStringKey | translate }}
+  </div> 
+  <tdp-icon
+    class="plan-published-icon"
+    [size]="'146px'"
+    [name]="checkCircleIcon"
+  ></tdp-icon>
+</tdp-modal>

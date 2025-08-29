@@ -1,0 +1,72 @@
+<tdp-modal
+  width="900px"
+  height="600px"
+  [hasBodySeparator]="true"
+  (onClosed)="discardVersion()">
+
+  <div title>
+    <div class="saved-plan-title">{{ isNewPlan ? (isTemplate ? newTemplateTitleLabel : newPlanTitleLabel) : versionModifiedTitleLabel }}</div>
+    <div class="saved-plan-subtitle" *ngIf="!isTemplate"> {{ 'filters.tradeCustomerLabel' | translate}}: {{ builderName }} </div>
+  </div>
+
+  <div class="saved-plan-body" *tdpPermission="'Plan_Comment'">
+    <form [formGroup]="entityForm">
+      <tdp-text-area
+        [title]="'builder.notes' | translate"
+        [placeholder]="'plan.makeNote' | translate"
+        formControlName="versionNotes"
+        [ngClass]="{ 'saved-plan-body-error': checkHasErrorV2('versionNotes') }"
+      ></tdp-text-area>
+      <div *ngIf="checkHasErrorV2('versionNotes', 'maxlength')" class="saved-plan-body-error-message">
+        {{ 'validationErrors.maxlength' | translate: { maxlength: maxVersionNotesLength }  }}
+      </div>
+
+      <ng-container *ngIf="!isTemplate">
+        <tdp-input
+          class="saved-plan-body-input"
+          [title]="'plan.K8Number' | translate"
+          formControlName="quoteOrderNumber"
+          [ngClass]="{ 'saved-plan-body-error': checkHasErrorV2('quoteOrderNumber')}"
+        ></tdp-input>
+        <div *ngIf="checkHasErrorV2('quoteOrderNumber', 'maxlength')" class="saved-plan-body-error-message">
+          {{ 'validationErrors.maxlength' | translate: { maxlength: maxVersionQuoteNumberLength }  }}
+        </div>
+      </ng-container>
+    </form>
+  </div>
+
+  <div actions>
+    
+    <tdp-button
+      size="large"
+      color="text-only"
+      (onClick)="discardVersion()"
+    >
+      {{ isNewPlan ? (isTemplate? discardTemplateButtonText : discardPlanButtonText) : discardChangesButtonText }}
+    </tdp-button>
+
+    <ng-container *tdpPermission="'Plan_Modify'">
+      <tdp-button
+        *ngIf="!isNewPlan"
+        size="large"
+        color="text-only"
+        [disabled]="!entityForm.valid"
+        (onClick)="saveVersion(false)"
+      >
+        {{ 'button.overwrite' | translate }}
+      </tdp-button>
+    </ng-container>
+
+    <tdp-button 
+      *tdpPermission="'Plan_Create'"
+      size="large"
+      color="green"
+      [disabled]="!entityForm.valid"
+      (onClick)="saveVersion(true)"
+    >
+      {{ isNewPlan ? (isTemplate? newTemplateButtonText : newPlanButtonText) : newVersionButtonText }}
+    </tdp-button>
+      
+  </div>
+
+</tdp-modal>

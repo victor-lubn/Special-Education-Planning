@@ -1,0 +1,38 @@
+﻿.tdp-user-list {
+  &-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+
+    &--manage-button {
+      margin-left: auto;
+    }
+  }
+}
+
+.user-column-width {
+  ::ng-deep {
+    .mat-column-surname {
+      flex: 0 1 20%;
+    }
+
+    .mat-column-userRoles {
+      flex: 0 1 20%;
+    }
+
+    .mat-column-uniqueIdentifier {
+      flex: 0 1 25%;
+    }
+
+    .mat-column-AiepCode {
+      flex: 0 1 15%;
+    }
+
+    .mat-column-name {
+      flex: 0 1 15%;
+    }
+
+  }
+
+}
+

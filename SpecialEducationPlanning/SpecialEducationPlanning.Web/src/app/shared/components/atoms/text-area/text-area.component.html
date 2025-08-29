@@ -1,0 +1,16 @@
+<div class="tdp-atoms-textarea-input-container">
+  <label>{{ title }}</label>
+  <textarea
+    (ngModelChange)="onChange($event)"
+    class="tdp-atoms-textarea-body"
+    [(ngModel)]="value"
+    [placeholder]="placeholder"
+    (blur)="_onTouched()"
+    (input)="_controlValueAccessorChangeFn($event.target.value)"
+    [ngClass]="{ 'error-message': errorMessage }"
+    #textareaContainer
+  ></textarea>
+  <div *ngIf="errorMessage" class="tdp-form-error-message">
+    {{ errorMessage }}
+  </div>
+</div>

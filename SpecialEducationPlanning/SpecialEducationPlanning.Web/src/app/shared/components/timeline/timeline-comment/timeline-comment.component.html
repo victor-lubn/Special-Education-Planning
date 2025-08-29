@@ -1,0 +1,35 @@
+<div class="tdp-row tdp-timeline-item">
+  <i class="fas fa-user-circle fa-2x"></i>
+  <div class="arrow-left"></div>
+  <div class="tdp-column tdp-timeline-comment">
+    <div class="tdp-row tdp-timeline-comment-header">
+      {{ comment.date | tdpDate: true }} by {{ comment.user }}. {{ (comment.date?.getTime() !== comment.updatedDate?.getTime() ? 'timeline.commentEdited' : '') | translate: { 'date' : comment.updatedDate | tdpDate: true } }}
+      <div class="rdp-row tdp-icon-line">
+        <ng-container *ngIf="!editing">
+          <i
+            class="fas fa-pen fa-lg"
+            *tdpPermission="'Comment_Management'"
+            (click)="editComment()">
+          </i>
+          <i
+            class="fas fa-trash fa-lg"
+            *tdpPermission="'Comment_Management'"
+            (click)="deleteComment()">
+          </i>
+        </ng-container>
+        <ng-container *ngIf="editing">
+          <i
+            class="fas fa-check fa-lg"
+            (click)="submitEdit()">
+          </i>
+          <i
+            class="fas fa-times fa-lg"
+            (click)="cancelEdit()">
+          </i>
+        </ng-container>
+      </div>
+    </div>
+    <tdp-textarea [outlined]="false" [formControl]="commentInput">
+    </tdp-textarea>
+  </div>
+</div>

@@ -1,0 +1,4 @@
+<div class="tdp-atoms-item-details">
+  <p class="tdp-atoms-item-details__title">{{ label | translate }}</p>
+  <p [ngClass]="{ 'unassigned-text': isNotice }">{{ data || "-" }}</p>
+</div>

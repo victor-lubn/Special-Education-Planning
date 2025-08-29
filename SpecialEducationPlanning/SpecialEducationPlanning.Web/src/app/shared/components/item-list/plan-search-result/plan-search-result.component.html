@@ -1,0 +1,164 @@
+﻿<div
+  class="tdp-row tdp-search-result"
+  [ngClass]="{ 'tdp-clickable-search-result': isClickable }"
+  (click)="goToPlanDetails()">
+  <i
+    class="far fa-file fa-lg"
+    *ngIf="plan.planState === planStateEnum.Active && !plan.offlineSyncDate">
+  </i>
+  <i
+    class="fas fa-file-archive fa-lg tdp-archived-icon"
+    *ngIf="plan.planState === planStateEnum.Archived">
+  </i>
+  <i
+    class="fas fa-sync fa-lg"
+    *ngIf="plan.offlineSyncDate">
+  </i>
+  <div class="tdp-row tdp-search-result-column-group">
+    <div class="tdp-column tdp-search-result-column">
+      <span class="tdp-search-result-label">
+        {{ 'plan.planId' | translate }}
+      </span>
+      <span class="tdp-search-result-value">
+        {{ plan.planCode ? plan.planCode : '-' }}
+      </span>
+    </div>
+    <ng-container *ngIf="!isUnassignedDialog; else unassignedDialogColumns">
+      <div class="tdp-column tdp-search-result-column">
+        <span class="tdp-search-result-label">
+          {{ 'plan.endUser' | translate }}
+        </span>
+        <span
+          class="tdp-search-result-value"
+          [matTooltipDisabled]="!plan.endUser"
+          matTooltip="{{ plan.endUserId && plan.endUser ? ((plan.endUser?.firstName ? (plan.endUser.firstName + ' ') : '') + plan.endUser.surname) : '-' }}">
+          {{ plan.endUserId && plan.endUser ? ((plan.endUser?.firstName ? (plan.endUser.firstName + ' ') : '') + plan.endUser.surname) : '-' }}
+        </span>
+      </div>
+      <ng-container *ngIf="!isBuilderDetails">
+        <div class="tdp-column tdp-search-result-column">
+          <span class="tdp-search-result-label">
+            {{ 'builder.tradingName' | translate }}
+          </span>
+          <span
+            class="tdp-search-result-value"
+            matTooltip="{{ plan.builderTradingName }}">
+            {{ plan.builderTradingName ? plan.builderTradingName : '-' }}
+          </span>
+        </div>
+      </ng-container>
+      <div class="tdp-column tdp-search-result-column">
+        <span class="tdp-search-result-label">
+          {{ 'plan.Educationer' | translate }}
+        </span>
+        <span
+          class="tdp-search-result-value"
+          matTooltip="{{ plan.Educationer?.uniqueIdentifier }}">
+          {{ plan.EducationerId && plan.Educationer ? plan.Educationer.firstName + ' ' + plan.Educationer.surname : '-' }}
+        </span>
+      </div>
+      <div class="tdp-column tdp-search-result-column">
+        <span class="tdp-search-result-label">
+          {{ 'plan.cadFilePlanId' | translate }}
+        </span>
+        <span class="tdp-search-result-value">
+          {{ plan.cadFilePlanId ? plan.cadFilePlanId : '-'  }}
+        </span>
+      </div>
+      <div class="tdp-column tdp-search-result-column">
+        <span class="tdp-search-result-label">
+          {{ 'plan.lastUpdate' | translate }}
+        </span>
+        <span class="tdp-search-result-value">
+          {{ plan.updatedDate | tdpDate }}
+        </span>
+      </div>
+    </ng-container>
+    <ng-template #unassignedDialogColumns>
+      <div class="tdp-column tdp-search-result-column">
+        <span class="tdp-search-result-label">
+          {{ 'plan.endUser' | translate }}
+        </span>
+        <span
+          class="tdp-search-result-value"
+          [matTooltipDisabled]="!plan.endUser"
+          matTooltip="{{  plan.endUserId && plan.endUser ? ((plan.endUser?.firstName ? (plan.endUser.firstName + ' ') : '') + plan.endUser.surname) : '-' }}">
+          {{ plan.endUserId && plan.endUser ? ((plan.endUser?.firstName ? (plan.endUser.firstName + ' ') : '') + plan.endUser.surname) : '-' }}
+        </span>
+      </div>
+      <div class="tdp-column tdp-search-result-column">
+        <span class="tdp-search-result-label">
+          {{ 'plan.lastUpdate' | translate }}
+        </span>
+        <span class="tdp-search-result-value">
+          {{ plan.updatedDate | tdpDate }}
+        </span>
+      </div>
+      <div class="tdp-column tdp-search-result-column">
+        <span class="tdp-search-result-label">
+          {{ 'filters.Educationer' | translate }}
+        </span>
+        <span class="tdp-search-result-value tdp-wrap-text">
+          {{ plan.Educationer && plan.Educationer.firstName && plan.Educationer.surname ? plan.Educationer.firstName + ' ' + plan.Educationer.surname : '-' }}
+        </span>
+      </div>
+    </ng-template>
+  </div>
+  <ng-container *ngIf="!hideButtons">
+    <div class="tdp-row tdp-search-result-buttons">
+      <ng-container *ngIf="!isUnassignedDialog; else unassignedDialogButtons">
+        <div
+          class="tdp-row"
+          *ngIf="plan.planState !== planStateEnum.Archived; else archived">
+          <div
+            matTooltip="{{ 'button.transfer' | translate }}"
+            class="tdp-action-btn"
+            (click)="openTransferSinglePlanDialog()"
+            *tdpPermission="'Plan_Management'">
+              <i class="fas fa-exchange-alt"></i>
+          </div>
+          <div
+            matTooltip="{{ 'button.preview' | translate }}"
+            class="tdp-action-btn"
+            (click)="openPreviewDialog()">
+              <i class="fas fa-eye"></i>
+          </div>
+          <ng-container *tdpPlatformElement="'electron'">
+            <div
+              *tdpPermission="'Plan_Modify'"
+              matTooltip="{{ 'button.open' | translate }}"
+              class="tdp-action-btn"
+              (click)="openInEducationTool()">
+                <i class="fas fa-external-link-alt"></i>
+            </div>
+          </ng-container>
+        </div>
+        <ng-template #archived>
+          <div
+            *tdpPermission="'Plan_Modify'"
+            matTooltip="{{ 'button.preview' | translate }}"
+            class="tdp-action-btn"
+            (click)="openPreviewDialog()">
+              <i class="fas fa-eye"></i>
+          </div>
+          <div
+            *tdpPermission="'Plan_Modify'"
+            matTooltip="{{ 'button.restore' | translate }}"
+            class="tdp-action-btn"
+            (click)="unarchivePlan()">
+              <i class="fas fa-undo"></i>
+          </div>
+        </ng-template>
+      </ng-container>
+      <ng-template #unassignedDialogButtons>
+        <div
+          matTooltip="{{ 'button.selectPlan' | translate }}"
+          class="tdp-action-btn"
+          (click)="selectPlan()">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+      </ng-template>
+    </div>
+  </ng-container>
+</div>
+

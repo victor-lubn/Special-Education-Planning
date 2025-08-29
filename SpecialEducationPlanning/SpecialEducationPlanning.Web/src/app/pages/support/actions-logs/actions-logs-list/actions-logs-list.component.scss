@@ -1,0 +1,11 @@
+tdp-main-view {
+  .tdp-action-logs-list-subheader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    &-button {
+      margin-left: auto;
+    }
+  }
+}

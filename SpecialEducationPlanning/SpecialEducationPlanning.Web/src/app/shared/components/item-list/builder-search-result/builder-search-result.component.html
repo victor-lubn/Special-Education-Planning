@@ -1,0 +1,118 @@
+﻿<div
+  class="tdp-row tdp-search-result"
+  [ngClass]="{ 'tdp-clickable-search-result': isClickable }"
+  (click)="goToBuilderDetails()">
+  <div *ngIf="isSAP; else builderIcon" class="tdp-builder-sap-indicator">
+    SAP
+  </div>
+  <ng-template #builderIcon>
+    <i class="far fa-user fa-lg"></i>
+  </ng-template>
+  <div class="tdp-row tdp-search-result-column-group">
+    <div class="tdp-column tdp-search-result-column">
+      <span class="tdp-search-result-label">
+        {{ 'builder.accountNumber' | translate }}
+      </span>
+      <span class="tdp-search-result-value">
+        {{ builder.accountNumber ? builder.accountNumber : '-'  }}
+      </span>
+    </div>
+    <div class="tdp-column tdp-search-result-column">
+      <ng-container>
+        <span class="tdp-search-result-label">
+          {{ 'builder.tradingName' | translate }}
+        </span>
+        <span class="tdp-search-result-value"
+              matTooltip="{{ builder.tradingName }}">
+          {{ builder.tradingName ? builder.tradingName : '-'  }}
+        </span>
+      </ng-container>
+    </div> 
+    <div class="tdp-column tdp-search-result-column">
+      <span class="tdp-search-result-label">
+        {{ 'builder.address' | translate }}
+      </span>
+      <span class="tdp-search-result-value"
+            matTooltip="{{ builder.address1 }}">
+        {{ builder.address1 ? builder.address1 : '-'  }}
+      </span>
+    </div>
+    <div class="tdp-column tdp-search-result-column">
+      <span class="tdp-search-result-label">
+        {{ 'builder.postcode' | translate }}
+      </span>
+      <span class="tdp-search-result-value">
+        {{ builder.postcode | tdpPostcode: 'true':countryService }}
+
+      </span>
+    </div>
+    <!--<div class="tdp-column tdp-search-result-column">
+      <ng-container>
+        <span class="tdp-search-result-label">
+          {{ 'builder.owningAiep' | translate }}
+        </span>
+        <span class="tdp-search-result-value"
+              matTooltip="{{ owningAiep }}">
+          {{ owningAiep ? owningAiep : '-'  }}
+        </span>
+      </ng-container>
+    </div>-->
+    <div class="tdp-column tdp-search-result-column">
+      <span class="tdp-search-result-label">
+        {{ 'builder.mobileNumber' | translate }}
+      </span>
+      <span class="tdp-search-result-value">
+        {{ builder.mobileNumber ? builder.mobileNumber : '-'  }}
+      </span>
+    </div>
+    <!--<div class="tdp-column tdp-search-result-column">
+      <span class="tdp-search-result-label">
+        {{ 'builder.sAPAccountStatus' | translate }}
+      </span>
+      <span class="tdp-search-result-value">
+        {{ sAPAccountStatus ? sAPAccountStatus : '-'  }}
+      </span>
+    </div>-->
+    <div class="tdp-column tdp-search-result-column"></div>
+  </div>
+  <ng-container *ngIf="!isInExistBuilderDialog; else dialog">
+    <div class="tdp-row tdp-search-result-buttons">
+      <div class="tdp-action-btn"></div>
+      <div
+        matTooltip="{{ 'button.transferBuilderPlans' | translate }}"
+        class="tdp-action-btn"
+        (click)="openTransferBuilderPlansDialog()"
+        *tdpPermission="'Structure_Management'">
+          <i class="fas fa-exchange-alt"></i>
+      </div>
+      <div
+        matTooltip="{{ 'button.createPlan' | translate }}"
+        class="tdp-action-btn"
+        (click)="goToCreatePlan()"
+        *tdpPermission="'Plan_Create'">
+          <i class="fas fa-plus"></i>
+      </div>
+    </div>
+  </ng-container>
+  <ng-template #dialog>
+    <div class="tdp-row tdp-search-result-buttons" *ngIf="isExactMatch; else partial">
+      <div
+        matTooltip="{{ 'button.continueBuilder' | translate }}"
+        class="tdp-action-btn"
+        (click)="selectBuilder()">
+          <i class="fas fa-chevron-right"></i>
+      </div>
+    </div>
+    <ng-template #partial>
+      <div class="tdp-row tdp-search-result-buttons">
+        <div
+          matTooltip="{{ 'button.selectBuilder' | translate }}"
+          class="tdp-action-btn"
+          (click)="selectBuilder()">
+            <i class="fas fa-chevron-right"></i>
+        </div>
+      </div>
+    </ng-template>
+  </ng-template>
+</div>
+

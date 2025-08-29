@@ -1,0 +1,161 @@
+﻿<tdp-details-template>
+  <div class="details-header">
+    <tdp-back-with-title
+      title="{{ 'plan.plan' | translate }}: {{ originalPlan?.planCode }}"
+      (onClick)="goBack()">
+    </tdp-back-with-title>
+    <div class="details-header-buttons">
+      @if (showRestoreButton) {
+        <tdp-button
+          class="tdp-restore-button"
+          [icon]="true"
+          [whiteBlueButton]="true"
+          (onClick)="restoreLastPlanAutosave()">
+            <tdp-restore-icon icon-button></tdp-restore-icon>
+            {{ 'button.restoreLocalAutosave' | translate }}
+        </tdp-button>
+      }
+      @if (originalPlan?.builderId && !isTenderPack) {
+        <tdp-button
+          [icon]="true"
+          [whiteBlueButton]="true"
+          (onClick)="goToBuilder()">
+            <tdp-back-icon icon-button fillColor="#4A90E2" class="back-icon"></tdp-back-icon>
+            {{ 'button.goToBuilder' | translate }}
+        </tdp-button>
+      }
+    </div>
+  </div>
+
+  <div class="details-top-container">
+    <tdp-tabs (onTabClicked)="getCurrentTabIndex($event)">
+      <mat-tab label="{{ 'plan.masterVersion' | translate }}">
+        <tdp-plan-preview-container
+          [image]="imageUrl"
+          [EducationOrigin]="originalPlan?.EducationOrigin"
+          [noImageAvailable]="noImageAvailable"
+          [previewUnavailable]="previewUnavailable"
+          [loadingImage]="loadingImage"
+          [publishStatus]="masterPublishStatus"
+          (edit)="openMasterVersionInEducationTool(originalPlan)"
+          (onDownloadFittersPackPdf)="downloadFittersPackPdf(originalPlan)"
+          (publish)="isTenderPack? publishPlan(originalPlan) : publishVersion(originalPlan?.masterVersionId)"
+          (openMyKitchen)="openMyKitchenMasterVersion()"
+        ></tdp-plan-preview-container>
+        <tdp-plan-details-middle-container
+          [plan]="originalPlan"
+          [planVersion]="currentPlanMasterVersion"
+          (updateVersionNotes)="updateNotesAndQuote($event)"
+        ></tdp-plan-details-middle-container>
+      </mat-tab>
+
+      <mat-tab label="{{ 'plan.versionHistory' | translate }}">
+        <tdp-table
+          class="plan-details-table"
+          [tableSort]="false"
+          [dynamicData]="false"
+          [pageSize]="pageSize"
+          [records]="versionsTable"
+          [columnsConfiguration]="versionsColumnNames"
+          [firstRowItemIndex]="masterVersionIndex"
+          (onRowClicked)="openPlanPreview($event)"
+          tableHeight="1020px"
+        >
+        <tdp-table-actions>
+          <ng-template let-record="record">
+            <tdp-table-action (click)="markMasterVersionHandler($event, record.id)">
+              @if (checkVersionStatus(record)) {
+                <tdp-star-filled-svg matTooltip="{{ 'plan.masterVersion' | translate }}"></tdp-star-filled-svg>
+              }
+              @if (!checkVersionStatus(record)) {
+                <tdp-star-border-svg
+                  class="tdp-actions-icon"
+                  matTooltip="{{ 'button.markAsMasterVersion' | translate }}">
+                </tdp-star-border-svg>
+}
+            </tdp-table-action>
+            <tdp-table-action (click)="openVersionPlanInEducationTool($event, record)">
+              <tdp-launch-icon
+                class="tdp-actions-icon"
+                [matTooltip]="'button.open' | translate">
+              </tdp-launch-icon>
+            </tdp-table-action>
+
+            <tdp-table-more-actions>
+              <tdp-table-more-action
+                *tdpPermission="'Plan_Publish'"
+                (click)="isTenderPack ? publishPlan(record) : publishVersion(record.id)">
+                {{ 'button.publishPlan' | translate }}
+              </tdp-table-more-action>
+             <!-- <tdp-table-more-action
+                (click)="openMyKitchenByVersionCode(record.externalCode)">
+                {{ 'button.openMyKitchen' | translate }}
+              </tdp-table-more-action>-->
+              <tdp-table-more-action
+                *tdpPermission="'Plan_Management'"
+                (click)="uploadVersionRom(record.id)">
+                {{ 'button.upload' | translate }}
+              </tdp-table-more-action>
+              <tdp-table-more-action
+                *tdpPermission="'Plan_Management'"
+                (click)="downloadPlanRom(record.id)">
+                {{ 'button.download' | translate }}
+              </tdp-table-more-action>
+              <tdp-table-more-action
+                (click)="editVersionNotes(record.id)">
+                {{ 'dialog.editVersionNotes.versionNotes' | translate }}
+              </tdp-table-more-action>
+            </tdp-table-more-actions>
+          </ng-template>
+        </tdp-table-actions>
+      </tdp-table>
+      </mat-tab>
+    </tdp-tabs>
+  </div>
+
+  <div class="details-left-sidebar">
+    <tdp-details-container-left-hand-side
+      *ngIf="!isTenderPack"
+      [plan]="originalPlan"
+      [endUser]="originalEndUser"
+      [Educationer]="originalEducationer"
+      (onUnassignPlanClicked)="unassignPlan()"
+      (onArchivePlanClicked)="archivePlan()"
+      (onRestoreArchivedPlanClicked)="restoreArchivedPlan()"
+      (onUploadPlanClicked)="uploadPlan()"
+      (onPlanSubmit)="onUpdatePlan($event)"
+      (onEndUserSubmit)="onUpdateEndUser($event)"
+    >
+    </tdp-details-container-left-hand-side>
+    <tdp-details-container-tenderpack-left-hand-side
+      *ngIf="isTenderPack"
+      [plan]="originalPlan"
+      [Educationer]="originalEducationer"
+      (onArchivePlanClicked)="archivePlan()"
+      (onRestoreArchivedPlanClicked)="restoreArchivedPlan()"
+      (onUploadPlanClicked)="uploadPlan()"
+      (onPlanSubmit)="onUpdateTenderPackPlan($event)"
+    >
+  </tdp-details-container-tenderpack-left-hand-side>
+  </div>
+
+  <div class="details-footer">
+    <tdp-plan-summary
+      [plan]="originalPlan"
+      [Educationer]="originalEducationer"
+      [numberOfVersions]="planVersions?.length"
+      [masterVersionCode]="currentPlanMasterVersion?.externalCode"
+      (viewDetailedLogClicked)="openTimeline()"
+    >
+    </tdp-plan-summary>
+  </div>
+</tdp-details-template>
+
+<ng-container *ngIf="!isTenderPack">
+  <tdp-create-button
+    *tdpPermission="'Plan_Create'"
+    [text]="'button.createPlan' | translate"
+    (onClick)="openCreatePlanModal()">
+  </tdp-create-button>
+</ng-container>
+

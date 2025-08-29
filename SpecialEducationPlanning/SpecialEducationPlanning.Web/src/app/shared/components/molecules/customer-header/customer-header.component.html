@@ -1,0 +1,30 @@
+<div class="tdp-molecule-customer-header">
+  <div class="tdp-molecule-customer-header-back">
+    <tdp-back-icon
+      class="tdp-back-with-title--icon"
+      fillColor="#28343d"
+      (click)="handleGoBack()">
+    </tdp-back-icon>
+    <ng-container *ngIf="builderName; else unassigned">
+      <div class="tdp-molecule-customer-header-back__name">
+        {{ builderName }}
+      </div>
+    </ng-container>
+    <ng-template #unassigned>
+      <div class="tdp-molecule-customer-header-back__name">
+        {{ "builder.unassigned" | translate }}
+      </div>
+    </ng-template>
+  </div>
+
+  <div *ngIf="builderName" class="tdp-molecule-customer-header__info">
+    <ng-container *ngIf="creditAccount; else cashAccount">
+      <h1>{{ "builder.accountNumber" | translate }}: {{ creditAccount }}</h1>
+      <tdp-label>{{ "builderType.Credit" | translate }}</tdp-label>
+    </ng-container>
+
+    <ng-template #cashAccount>
+      <tdp-label>{{ "builderType.Cash" | translate }}</tdp-label>
+    </ng-template>
+  </div>
+</div>

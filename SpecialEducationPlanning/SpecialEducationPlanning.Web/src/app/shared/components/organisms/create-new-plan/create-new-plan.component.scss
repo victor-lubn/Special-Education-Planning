@@ -1,0 +1,20 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-create-new-plan {
+    ::ng-deep .separator { 
+      display: none !important;
+    }
+
+    ::ng-deep .tdp-modal {
+      max-height: unset !important;
+
+      .tdp-create-new-plan-body.tall-body {
+        max-height: 70vh;
+        overflow-y: auto;
+      }
+      .tdp-create-new-plan-body.short-body {
+        max-height: 60vh;
+        overflow-y: auto;
+      }
+    }
+  }

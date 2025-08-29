@@ -1,0 +1,67 @@
+<div class="tdp-organism-timeline">
+  <div 
+    class="tdp-organism-timeline-close _svg _svg__primary _svg__clickable" 
+    [matTooltip]="'button.close' | translate"
+    (click)="closeTimeline()">
+    <tdp-cancel-icon
+      fillColor="#ADADAD"
+      width="1.125rem"
+      height="1.125rem">
+    </tdp-cancel-icon>
+  </div>
+  <div class="tdp-organism-timeline-top-header">
+    <div class="tdp-organism-timeline-header line-separator">
+      <h2>{{ "plan.timeline" | translate }}</h2>
+    </div>
+    <div class="tdp-organism-timeline-view-all line-separator">
+      <tdp-account-icon-svg fillColor="#ADADAD"></tdp-account-icon-svg>
+      <h4 (click)="switchViews()">
+        {{
+          !showAllLogs
+            ? ("button.viewAllLogs" | translate)
+            : ("button.viewAllNotes" | translate)
+        }}
+      </h4>
+    </div>
+  </div>
+
+  <div class="tdp-organism-timeline-logs">
+    <div
+      *ngFor="
+        let item of showAllLogs
+          ? (listItems | sortTimelineItems)
+          : (timelineComments | sortTimelineItems)
+      "
+    >
+      <ng-container
+        *ngIf="item.type === timelineItemEnum.COMMENT; else systemLog"
+      >
+        <tdp-timeline-comment
+          [comment]="item"
+          (commentDeleted)="deletedComment($event)"
+          (commentEdited)="editedComment($event)"
+          *ngIf="item.type === timelineItemEnum.COMMENT"
+        ></tdp-timeline-comment>
+      </ng-container>
+      <ng-template #systemLog>
+        <tdp-timeline-system-log>{{
+          "timeline.planActions." + item.object.actionType
+            | translate
+              : {
+                  entity: item.object.entityName,
+                  additionalInfo: item.object.additionalInfo,
+                  date: item.object.date | tdpDate: true,
+                  user: item.object.user
+                }
+        }}</tdp-timeline-system-log>
+      </ng-template>
+    </div>
+  </div>
+
+  <div class="tdp-organism-timeline-form" *tdpPermission="'Plan_Comment'">
+    <tdp-timeline-comment-form
+      (print)="printPage()"
+      (newCommentEmit)="newComment($event)"
+    ></tdp-timeline-comment-form>
+  </div>
+</div>

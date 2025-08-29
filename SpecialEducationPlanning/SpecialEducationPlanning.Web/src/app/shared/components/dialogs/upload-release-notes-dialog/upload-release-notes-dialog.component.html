@@ -1,0 +1,158 @@
+﻿<tdp-modal
+  class="upload-release-notes-dialog"
+  maxWidth="1000px"
+  height="100%"
+  (onClosed)="cancelDialog()">
+
+  <div title>
+    {{ (this.releaseInfoId === 0 ? 'releaseNotesPage.upload' : 'topbar.uploadReleaseNotesDialogMenu') | translate }}
+  </div>
+
+  <div class="upload-release-notes-dialog-body">
+    <ng-container *ngIf="!file; else fileUploaded">
+      <div
+        tdpDndZone
+        (filesChange)="onFileschange($event)"
+        class="upload-release-notes-dialog-upload-files"
+        >
+        <div class="icon-padding">
+          <tdp-cloud-upload-icon></tdp-cloud-upload-icon>
+        </div>
+        <div class="upload-release-notes-dialog-upload-files-main-text">
+          {{ ('dialog.dropFileMsg' | translate) }}
+            <input
+              type="file"
+              #uploadExplorer
+              hidden
+              multiple
+              accept=".pdf"
+              (input)="onFileschange($event.srcElement.files)">
+            <span
+              class="upload-release-notes-dialog-upload-files-link"
+              (click)="onClickSpan()">
+              {{ 'dialog.chooseAFileMsg' | translate }}
+            </span>
+        </div>
+        <div class="upload-release-notes-dialog-upload-files-bottom-text">
+          {{ 'dialog.uploadOnlyOneFile' | translate }}
+        </div>
+    </div>
+  </ng-container>
+  <ng-template #fileUploaded>
+    <div class="upload-release-notes-dialog-body-files">
+      <div class="tdp-row tdp-dialog-file-uploaded">
+        <tdp-note-icon-svg></tdp-note-icon-svg>
+        {{ file.name }}
+        <tdp-cancel-icon
+          fillColor="#adadad"
+          width="0.8rem"
+          height="0.8rem"
+          (click)="deleteFile()"
+        ></tdp-cancel-icon>
+      </div>
+    </div>
+  </ng-template>
+
+  <form [formGroup]="entityForm" class="upload-release-notes-form">
+    <!--Title Input -->
+    <div>
+      <tdp-input
+        [title]="'dialog.uploadReleaseNotes.title' | translate"
+        formControlName="title"
+        [ngClass]="{ 'tdp-form-input-error': checkHasErrorV2('title') }"
+        [required]="true"
+        placeholder="{{ 'dialog.uploadReleaseNotes.titlePlaceholder' | translate: { maxLength: titleMaxLength } }}"
+      ></tdp-input>
+      <div *ngIf="checkHasErrorV2('title', 'required')" class="tdp-form-error-message">
+        {{ 'validationErrors.required' | translate }}
+      </div>
+      <div *ngIf="checkHasErrorV2('title', 'maxlength')" class="tdp-form-error-message">
+        {{ 'validationErrors.maxlength' | translate: {'maxlength': titleMaxLength} }}
+      </div>
+    </div>
+
+    <div class="upload-release-notes-form-row">
+      <!--Date Input  -->
+      <div class="upload-release-notes-form-row-input">
+        <tdp-date-picker
+          class="upload-release-notes-form-date-picker"
+          [label]="'dialog.uploadReleaseNotes.releaseDate' | translate"
+          formControlName="dateTime"
+          [placeholder]="'dialog.uploadReleaseNotes.datePlaceholder' | translate"
+          [required]="true"
+          [ngClass]="{ 'tdp-form-input-error': checkHasErrorV2('dateTime') }"
+        ></tdp-date-picker>
+        <div *ngIf="checkHasErrorV2('dateTime', 'required')" class="tdp-form-error-message">
+          {{ 'validationErrors.required' | translate }}
+        </div>
+      </div>
+
+      <!--Education View Version Input-->
+      <div class="upload-release-notes-form-row-input">
+        <tdp-input
+          [title]="'dialog.uploadReleaseNotes.tdpVersion' | translate"
+          formControlName="version"
+          [ngClass]="{ 'tdp-form-input-error': checkHasErrorV2('version') }"
+          [required]="true"
+
+        ></tdp-input>
+        <div *ngIf="checkHasErrorV2('version', 'required')" class="tdp-form-error-message">
+          {{ 'validationErrors.required' | translate }}
+        </div>
+        <div *ngIf="checkHasErrorV2('version', 'invalidVersionNumber')" class="tdp-form-error-message">
+          {{ 'validationErrors.invalidVersionNumber' | translate }}
+        </div>
+      </div>
+
+      <!--Fusion Version Input-->
+      <div class="upload-release-notes-form-row-input">
+        <tdp-input
+          [title]="'dialog.uploadReleaseNotes.fusionVersion' | translate"
+          formControlName="fusionVersion"
+          [ngClass]="{ 'tdp-form-input-error': checkHasErrorV2('fusionVersion') }"
+        ></tdp-input>
+        <div *ngIf="checkHasErrorV2('fusionVersion', 'required')" class="tdp-form-error-message">
+          {{ 'validationErrors.required' | translate }}
+        </div>
+        <div *ngIf="checkHasErrorV2('fusionVersion', 'invalidVersionNumber')" class="tdp-form-error-message">
+          {{ 'validationErrors.invalidFusionVersionNumber' | translate }}
+        </div>
+      </div>
+    </div>
+
+  </form>
+</div>
+
+
+  <div actions>
+    <tdp-button
+      color="text-only"
+      size="large"
+      (onClick)="cancelDialog()"
+    >
+      {{ 'button.cancel' | translate }}
+    </tdp-button>
+
+    <ng-container *ngIf="!releaseInfoId; else update">
+      <tdp-button
+        color="green"
+        size="large"
+        (onClick)="submitFiles()"
+        [disabled]="!(entityForm.valid && file)"
+      >
+        {{ 'button.upload' | translate }}
+      </tdp-button>
+    </ng-container>
+    <ng-template #update>
+      <tdp-button
+        color="green"
+        size="large"
+        (onClick)="submitUpdate()"
+        [disabled]="!isFileUploaded"
+      >
+        {{ 'button.upload' | translate }}
+      </tdp-button>
+    </ng-template>
+  </div>
+</tdp-modal>
+

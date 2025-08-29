@@ -1,0 +1,81 @@
+﻿<form [formGroup]="entityForm">
+  <div class="tdp-plan-form-offline">
+    <tdp-select
+      formControlName="catalogueCode"
+      [ngClass]="{ 'error-message': checkHasErrorV2('catalogueCode') }"
+      [label]="planCatalogueString"
+      [options]="catalogs"
+      [required]="true"
+      (valueChange)="selectCatalogue($event)"
+    ></tdp-select>
+    <div class="tdp-plan-form-offline-container">
+      <div
+        *ngIf="checkHasErrorV2('catalogueCode', 'required')"
+        class="tdp-plan-form-offline-container-error"
+      >
+        {{ "validationErrors.required" | translate }}
+      </div>
+    </div>
+    <tdp-input
+      class="tdp-plan-form-offline-input"
+      formControlName="planName"
+      [ngClass]="{ 'error-message': checkHasErrorV2('planName') }"
+      [type]="'text'"
+      [title]="planNameString"
+      [required]="true"
+    ></tdp-input>
+    <div class="tdp-plan-form-offline-container">
+      <div
+        *ngIf="checkHasErrorV2('planName', 'required')"
+        class="tdp-plan-form-offline-container-error"
+      >
+        {{ "validationErrors.required" | translate }}
+      </div>
+      <div
+        *ngIf="checkHasErrorV2('planName', 'maxlength')"
+        class="tdp-plan-form-offline-container-error"
+      >
+        {{
+          "validationErrors.maxlength"
+            | translate: { maxlength: planNameMaxLength }
+        }}
+      </div>
+    </div>
+    <tdp-input
+      class="tdp-plan-form-offline-input"
+      formControlName="EducationerName"
+      [ngClass]="{ 'error-message': checkHasErrorV2('EducationerName') }"
+      [type]="'text'"
+      [title]="desingerString"
+    ></tdp-input>
+    <div class="tdp-plan-form-offline-container">
+      <div
+        *ngIf="checkHasErrorV2('EducationerName', 'maxlength')"
+        class="tdp-plan-form-offline-container-error"
+      >
+        {{
+          "validationErrors.maxlength"
+            | translate: { maxlength: planNameMaxLength }
+        }}
+      </div>
+    </div>
+
+    <div class="tdp-plan-form-offline-radios">
+      <label id="aiepSurvey">{{ planSurveyString }}</label>
+      <mat-radio-group
+        aria-labelledby="aiepSurvey"
+        class="radio-group"
+        formControlName="survey"
+        [name]="planSurveyString"
+      >
+        <mat-radio-button class="radio-button" [value]="true">
+          {{ yesString }}
+        </mat-radio-button>
+        <mat-radio-button class="radio-button" [value]="false">
+          {{ noString }}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+</form>
+

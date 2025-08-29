@@ -1,0 +1,274 @@
+@import "@angular/material/theming";
+
+$fa-font-path: "font-awesome/webfonts";
+
+// Style guide colour palettes
+// Primary
+$aiep-button-red: #c20016;
+$aiep-button-green: #70c624;
+$aiep-second-red: #ad0014;
+$navy: #28343d;
+$grey-navy: #71777b;
+$light-grey: #dedede;
+$white: #ffffff;
+$red: #ff0000;
+$error-red: #ef5350;
+$notice-red: #d22630;
+$light-blue: #f1f8fd;
+$border-blue: #c4d6e3;
+$input-border-grey: #d5d5d5;
+$header-grey: #f0f0f0;
+
+// Collection colours
+$contemporary: #767572;
+$keyline-grey: #c8c8c8;
+$disabled-color: #dadada;
+$border-grey: #e5eaeb;
+$universal: #6a7477;
+$off-white: #f1f1f1;
+$shaker: #3f454e;
+$black: #000000;
+
+$dark-brown: #474745;
+$light-grey-blue: #e4e9ec;
+$aiep-red: $aiep-button-red;
+$success-green: #4bb543;
+$tea-green: #d5f0c0;
+$aiep-green: #70c624;
+$light-green: #f1faea;
+$blue: #4a90e2;
+$very-light-grey: #f9f9f9;
+$gray-89: #e3e3e3;
+$gray-68: #adadad;
+$ford-grey: #979797;
+$gray-72: #727272;
+$light-silver: #eaebec;
+
+$input-focus: $navy;
+$input-disabled: $white;
+$input-disabled-text: rgba(0, 0, 0, 0.36);
+
+// button text and border color
+$button-enabled-text-border-color: $navy;
+$button-disabled-text-border-color: #979797;
+
+//blue-white button
+$blue-white-hovered-background-color: linear-gradient(
+    0deg,
+    rgba(74, 144, 226, 0.07),
+    rgba(74, 144, 226, 0.07)
+  ),
+  #ffffff;
+$blue-white-focused-background-color: linear-gradient(
+    0deg,
+    rgba(74, 144, 226, 0.2),
+    rgba(74, 144, 226, 0.2)
+  ),
+  #ffffff;
+$blue-white-active-background-color: linear-gradient(
+    0deg,
+    rgba(74, 144, 226, 0.3),
+    rgba(74, 144, 226, 0.3)
+  ),
+  #ffffff;
+
+//green-white button
+$green-white-hovered-background-color: linear-gradient(
+    0deg,
+    rgba(112, 198, 36, 0.07),
+    rgba(112, 198, 36, 0.07)
+  ),
+  #ffffff;
+$green-white-focused-background-color: linear-gradient(
+    0deg,
+    rgba(112, 198, 36, 0.2),
+    rgba(112, 198, 36, 0.2)
+  ),
+  #ffffff;
+$green-white-active-background-color: linear-gradient(
+    0deg,
+    rgba(112, 198, 36, 0.3),
+    rgba(112, 198, 36, 0.3)
+  ),
+  #ffffff;
+
+// configurable sizes
+$topbar-height: 82px;
+$header-height: 84px;
+$scroll-bar-size: 6px;
+
+// button padding
+$small-medium-button-padding: 0 17px;
+$large-button-padding: 0 19px;
+$xl-button-padding: 0 42px;
+
+// button border radius
+$small-medium-button-radius: 20px;
+$large-button-radius: 43px;
+$xl-button-radius: 30px;
+
+// button font sizes
+$small-medium-button-font-size: 11px;
+$large-button-font-size: 14px;
+$xl-button-font-size: 16px;
+
+// button backgrounds
+$white-disabled-border-color: #dadada;
+$white-disabled-background-color: linear-gradient(
+    0deg,
+    rgba(40, 52, 61, 0.07),
+    rgba(40, 52, 61, 0.07)
+  ),
+  #ffffff;
+$white-hovered-background-color: linear-gradient(
+    0deg,
+    rgba(40, 52, 61, 0.07),
+    rgba(40, 52, 61, 0.07)
+  ),
+  #ffffff;
+$white-focused-background-color: linear-gradient(
+    0deg,
+    rgba(40, 52, 61, 0.2),
+    rgba(40, 52, 61, 0.2)
+  ),
+  #ffffff;
+$white-active-background-color: linear-gradient(
+    0deg,
+    rgba(40, 52, 61, 0.3),
+    rgba(40, 52, 61, 0.3)
+  ),
+  #ffffff;
+$navy-disabled-background-color: linear-gradient(
+    0deg,
+    rgba(40, 52, 61, 0.3),
+    rgba(40, 52, 61, 0.3)
+  ),
+  #ffffff;
+$navy-hovered-background-color: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.2),
+    rgba(255, 255, 255, 0.2)
+  ),
+  $navy;
+$navy-focused-background-color: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2)
+  ),
+  $navy;
+$navy-active-background-color: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ),
+  $navy;
+$green-disabled-background-color: #c4c4c4;
+$green-hovered-background-color: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.15),
+    rgba(255, 255, 255, 0.15)
+  ),
+  #70c624;
+$green-hovered-border-color: #70c624;
+$green-focused-background-color: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1)
+  ),
+  #70c624;
+$green-active-background-color: linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2)
+  ),
+  #70c624;
+$textonly-text-color: $navy;
+$textonly-hovered-text-color: #535d64;
+$textonly-focused-text-color: #202a31;
+$textonly-active-text-color: #141a1e;
+
+// tooltip colors
+$tooltip-background-color: #252525;
+// Tabs colors
+$tdp-atom-tabs-count-background: #adadad;
+$tdp-atom-tabs-label-background: #f9f9f9;
+$tdp-atom-tabs-label-border: #eeeeee;
+$tdp-atom-tabs-selected-tab-background: $notice-red;
+$error-color: #d22630;
+$tdp-atom-tabs-selected-tab-ink-bar: $navy;
+
+// search bar colors
+$tdp-atom-search-bar-border-color: #d3d3d3;
+$tdp-atom-search-bar-icon-background: #f5f7f7;
+
+// Palettes
+$tdp-red: (
+  50: #faeaea,
+  100: #f4cbca,
+  200: #eca9a7,
+  300: #e48784,
+  400: #df6d69,
+  500: #d9534f,
+  600: #d54c48,
+  700: #cf423f,
+  800: #ca3936,
+  900: #c02926,
+  A100: #fffdfd,
+  A200: #ffcbca,
+  A400: #ff9997,
+  A700: #ff807e,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $dark-primary-text,
+    400: $dark-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $dark-primary-text,
+    A700: $dark-primary-text,
+  ),
+);
+$tdp-navy-palette: (
+  50: #e5e7e8,
+  100: #bfc2c5,
+  200: #949a9e,
+  300: #697177,
+  400: #48525a,
+  500: $navy,
+  600: #242f37,
+  700: #1e272f,
+  800: #182127,
+  900: #0f151a,
+  A100: #5daeff,
+  A200: #2a95ff,
+  A400: #007bf6,
+  A700: #006edd,
+  contrast: (
+    50: $dark-primary-text,
+    100: $dark-primary-text,
+    200: $dark-primary-text,
+    300: $light-primary-text,
+    400: $light-primary-text,
+    500: $light-primary-text,
+    600: $light-primary-text,
+    700: $light-primary-text,
+    800: $light-primary-text,
+    900: $light-primary-text,
+    A100: $dark-primary-text,
+    A200: $dark-primary-text,
+    A400: $light-primary-text,
+    A700: $light-primary-text,
+  ),
+);
+
+$tdp-size-text-title: 30px;
+$tdp-size-text-body: 15px;
+
+$tdp-weight-text-title: 700;
+$tdp-weight-text-body: 400;

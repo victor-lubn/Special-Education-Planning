@@ -1,0 +1,41 @@
+﻿trigger: none
+
+schedules:
+- cron: "0 20 * * 1-5"  # Runs at 8pm UTC Mon - Fri
+  displayName: "Daily Back-End CD Build"
+  branches:
+    include:
+    - develop
+  always: true
+
+resources:
+  repositories:
+  - repository: templates
+    type: git
+    name: 'aiep Core/aiep.core.azdo.templates'
+    ref: feature/Educationview_templates
+
+name: $(Build.DefinitionName)_$(Date:ddMMyyyy)$(Rev:.r)
+
+extends:
+  template: docker/base/docker_base_template.yaml@templates
+  parameters:
+    BuildStages:
+
+    - template: docker/stages/build_net_8_app_stage.yaml@templates
+      parameters:
+        StageName:              'Daily_Build'
+        VariableGroups:         []
+        DependsOn:              []
+        Demands:                []
+        AgentPool:              'aiep Trade Linux NonPrd UKS - VMSS'
+        VMImage:                'ubuntu-latest'
+        DotNetVersion:          '8.0.x'
+        Project:                SpecialEducationPlanning
+/SpecialEducationPlanning
+.Api.Host/*.csproj
+        NugetFeed:              '800e42bd-640c-4531-9216-2ccd562a596d'
+        UnitTestProject:        '**/*.Test.csproj'
+        vsVersion:              '17.8'
+        WorkingDirectory:        $(System.DefaultWorkingDirectory)
+    

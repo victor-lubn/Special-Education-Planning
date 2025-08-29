@@ -1,0 +1,36 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.edit-version-notes-body {
+  overflow: auto;
+  flex-grow: 1;
+  margin: 0 -2.5rem;
+  padding: 1.25rem 2.5rem;
+
+  &-error-message {
+    margin-top: 0.563rem;
+    color: $error-red;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 0.75rem;
+    line-height: 1.313rem;
+  }
+
+  tdp-text-area textarea { 
+    height: 9.375rem;
+  }
+
+  .edit-version-notes-body-input input {
+    width: 100%;
+  }
+
+  div.tdp-input-container {
+    padding-top: 1.5rem;
+  }
+
+  .edit-version-notes-body-error input.tdp-input {
+    border: 0.125rem $error-red solid;
+  }
+  
+  .edit-version-notes-body-error .tdp-atoms-textarea-input-container textarea.tdp-atoms-textarea-body {
+    border: 0.125rem $error-red solid;
+  }
+}

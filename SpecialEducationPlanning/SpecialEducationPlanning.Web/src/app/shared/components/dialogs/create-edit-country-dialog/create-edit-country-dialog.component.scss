@@ -1,0 +1,30 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-create-edit-country {
+  &__title {
+    text-align: center;
+  }
+
+  &-form {
+    &__group {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+  }
+
+  ::ng-deep {
+    .tdp-input {
+      width: 100%;
+    }
+  }
+
+  .error-message {
+    ::ng-deep {
+      input {
+        border: 0.125rem solid $error-red;
+        outline: none;
+      }
+    }
+  }
+}

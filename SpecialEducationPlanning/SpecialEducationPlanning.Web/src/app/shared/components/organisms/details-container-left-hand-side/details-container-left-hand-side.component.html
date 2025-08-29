@@ -1,0 +1,41 @@
+﻿<div #detailsWrapper class="tdp-details-wrapper">
+    <div class="details-tabs-wrapper">
+        <div 
+            class="details-tab"
+            [ngClass]="{ 'selected': selectedTab === 'plan' }"
+            (click)="onSelectTab('plan')">
+            {{ 'plan.plan' | translate }}
+        </div>
+        <div 
+            class="details-tab"
+            [ngClass]="{
+                'selected': selectedTab === 'endUser',
+                'disabled': endUserDisabled
+            }"
+            (click)="onSelectTab('endUser')">
+            {{ 'plan.endUser' | translate }}
+        </div>
+    </div>
+    <div class="details-container-wrapper">
+        <tdp-plan-container-left-hand-side
+            class="details-container"
+            [ngClass]="{ 'selected': selectedTab === 'plan' }"
+            [plan]="plan"
+            [Educationer]="Educationer"
+            (onUnassignPlanClicked)="onUnassignPlan()"
+            (onArchivePlanClicked)="onArchivePlan()"
+            (onRestoreArchivedPlanClicked)="onRestoreArchivedPlan()"
+            (onUploadPlanClicked)="onUploadPlan()"
+            (onDisableEndUser)="setEndUserDisable($event)"
+            (onEndUserSelected)="goToEndUser()"
+            (onPlanSelected)="goToPlan()"
+            (onSubmit)="onUpdate($event)">    
+        </tdp-plan-container-left-hand-side>
+        <tdp-end-user-container-left-hand-side
+            class="details-container"
+            [endUser]="endUser"
+            [ngClass]="{ 'selected': selectedTab === 'endUser' }"
+            (submit)="onEndUserUpdate($event)">
+        </tdp-end-user-container-left-hand-side>
+    </div>
+</div>

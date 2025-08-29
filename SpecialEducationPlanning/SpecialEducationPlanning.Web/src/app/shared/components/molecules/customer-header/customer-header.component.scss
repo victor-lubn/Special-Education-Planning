@@ -1,0 +1,42 @@
+@import "/src/assets/sass/abstracts/variables";
+
+$flex-gap: 20px;
+
+.tdp-molecule-customer-header {
+  display: flex;
+  gap: $flex-gap;
+  display: flex;
+  align-items: center;
+
+  .tdp-molecule-customer-header-back {
+    display: flex;
+    gap: 25px;
+    cursor: pointer;
+    align-items: center;
+
+    &__name {
+      font-size: 30px;
+      font-weight: 700;
+      color: $navy;
+    }
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    gap: $flex-gap;
+
+    h1 {
+      font-size: 30px;
+      line-height: 40px;
+      font-weight: 300;
+    }
+
+    tdp-label {
+      transform: translateY(2px);
+      padding: 0 10px;
+    }
+  }
+}

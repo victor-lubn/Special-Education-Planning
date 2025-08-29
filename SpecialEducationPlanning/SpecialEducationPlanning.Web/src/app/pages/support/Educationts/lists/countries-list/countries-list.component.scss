@@ -1,0 +1,19 @@
+.tdp-countries-list {
+  &-header {
+    margin-bottom: 2.5rem;
+  }
+
+  &-table {
+    ::ng-deep {    
+      .mat-column-keyName {
+        flex: 0 1 45%;
+      }
+
+      .mat-column-regionsCount {
+        flex: 0 1 40%
+      }
+  
+    }
+  
+  }
+}

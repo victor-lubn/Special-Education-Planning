@@ -1,0 +1,35 @@
+<tdp-modal
+  class="tdp-tenderpack-plan-publish"
+  maxWidth="400px"
+  height="100%"
+  [closable]="false" 
+>
+  <div title>
+    {{ "dialog.publishTenderPlanTitle" | translate }}
+  </div>
+  <div sub-title [innerHTML]="'dialog.publishTenderPlanMessage' | translate">
+  </div>
+  <div class="tdp-tenderpack-plan-publish-checkbox">
+    <mat-checkbox
+      [(ngModel)]="cadRenderingImages"
+    >
+      {{ 'dialog.cadRenderedImages' | translate }}
+    </mat-checkbox>
+  </div>         
+  <div actions class="tdp-tenderpack-plan-publish-buttons"> 
+    <tdp-button
+      [color]="'white'"
+      [size]="'large'"
+      [mat-dialog-close]
+      (onClick)="closeModal()"
+      >{{ "button.cancel" | translate }}</tdp-button
+    >
+    <tdp-button
+      [color]="'green'"
+      [size]="'large'"
+      (onClick)="onSubmit()"
+    >
+      {{ "button.publishPlan" | translate }}
+    </tdp-button>
+  </div>
+</tdp-modal>

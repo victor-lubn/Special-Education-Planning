@@ -1,0 +1,60 @@
+<tdp-main-view>
+  <div class="main-view--header">
+    <tdp-filter-header
+    [options]="options" 
+    [form]="form">
+    >
+    </tdp-filter-header>
+  </div>
+  <div class="main-view--content">
+    <div class="tdp-countries-list-header">
+      <tdp-back-with-title
+        [title]="'countriesPage.title' | translate"
+        (onClick)="goBack()"
+      >
+      </tdp-back-with-title>
+    </div>
+    <div class="tdp-countries-list-table-container">
+      <tdp-table
+        class="tdp-countries-list-table"
+        [records]="countries"
+        [columnsConfiguration]="columnsConfiguration"
+        [pageSize]="pageSize"
+        [hasActions]="true"
+        (onPageChanged)="pageChanged($event)"
+        (onSortChanged)="sortChanged($event)"
+        (onRowClicked)="goToRegionsList($event)"
+      >
+        <tdp-table-actions>
+          <ng-template let-record="record">
+            <tdp-table-action (click)="openEditCountry($event, record)">
+              <tdp-pencil-icon
+                class="tdp-actions-icon"
+                fillColor="#ADADAD"
+                [matTooltip]="'button.edit' | translate"
+              >
+              </tdp-pencil-icon>
+            </tdp-table-action>
+            <tdp-table-action
+              *ngIf="!record.regionsCount"
+              (click)="removeCountry($event, record)"
+            >
+              <tdp-trash-icon
+                class="tdp-actions-icon"
+                fillColor="#ADADAD"
+                [matTooltip]="'button.remove' | translate"
+              >
+              </tdp-trash-icon>
+            </tdp-table-action>
+          </ng-template>
+        </tdp-table-actions>
+      </tdp-table>
+    </div>
+  </div>
+
+  <tdp-create-button
+    [text]="'countriesPage.createNewCountry' | translate"
+    (click)="openCreateCountry()"
+  >
+  </tdp-create-button>
+</tdp-main-view>

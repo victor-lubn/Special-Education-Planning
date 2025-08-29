@@ -1,0 +1,39 @@
+.tdp-dialog-upper {
+  justify-content: space-between;
+  font-weight: normal;
+}
+
+.tdp-plan-preview-container {
+  padding: 0.5em;
+  align-items: center;
+  img {
+    height: 35em;
+    margin-bottom: 1em;
+  }
+}
+
+@media print {
+  #printableImagePreview {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    border: none;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    img {
+      max-width: 100%;
+      max-height: 100%;
+
+      // this aproach maintains the aspect radio in vertical print mode, avoiding width overflow in hortizontal print mode
+      width: 100%;
+      height: auto;
+
+      // this aproach maintains the aspect radio in horizontal print mode, avoiding height overflow in vertical print mode
+      // width: auto;
+      // height: 100%;
+    }
+  }
+}

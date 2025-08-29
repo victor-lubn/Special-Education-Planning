@@ -1,0 +1,37 @@
+<div class="datepicker-header">
+  <tdp-button
+    color="ghost"
+    type="button"
+    (onClick)="previousClicked('year')"
+    class="datepicker-header__double-arrow"
+  >
+    <span>
+      <tdp-arrow-left-icon width="1.5rem" height="1.5rem"></tdp-arrow-left-icon>
+    </span>
+    <span>
+      <tdp-arrow-left-icon width="1.5rem" height="1.5rem"></tdp-arrow-left-icon>
+    </span>
+  </tdp-button>
+  <tdp-button color="ghost" type="button" (onClick)="previousClicked('month')">
+    <tdp-arrow-left-icon width="1.5rem" height="1.5rem"></tdp-arrow-left-icon>
+  </tdp-button>
+  <span class="datepicker-header__label">
+    {{ periodLabel }}
+  </span>
+  <tdp-button color="ghost" type="button" (onClick)="nextClicked('month')">
+    <tdp-arrow-right-icon width="1.5rem" height="1.5rem"></tdp-arrow-right-icon>
+  </tdp-button>
+  <tdp-button
+    color="ghost"
+    type="button"
+    (onClick)="nextClicked('year')"
+    class="datepicker-header__double-arrow"
+  >
+    <span>
+      <tdp-arrow-right-icon width="1.5rem" height="1.5rem"></tdp-arrow-right-icon>
+    </span>
+    <span>
+      <tdp-arrow-right-icon width="1.5rem" height="1.5rem"></tdp-arrow-right-icon>
+    </span>
+  </tdp-button>
+</div>

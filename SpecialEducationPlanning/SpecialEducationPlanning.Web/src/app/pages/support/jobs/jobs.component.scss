@@ -1,0 +1,38 @@
+@use "/src/assets/sass/abstracts/variables";
+
+.tdp-jobs-header {
+    padding-left: 0.938rem;
+    padding-right: 0.938rem;
+    margin: 2.375rem auto;
+
+    &-container {
+        background-color: variables.$header-grey;
+    }
+}
+
+@media (min-width: 48rem) {
+    .tdp-jobs-header {
+        width: 46.875rem;
+    }
+}
+
+@media (min-width: 62rem) {
+    .tdp-jobs-header {
+        width: 60.625rem;
+    }
+}
+
+@media (min-width: 75rem) {
+    .tdp-jobs-header {
+        width: 73.125rem
+    }
+}
+
+.tdp-entity-page-content {
+    padding: 0px;
+}
+
+.tdp-jobs-iframe {
+    width: 100%;
+    height: 99%;
+}

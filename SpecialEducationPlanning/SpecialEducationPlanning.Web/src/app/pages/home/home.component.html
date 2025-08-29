@@ -1,0 +1,97 @@
+﻿<tdp-main-view [stickyHeader]="minimizeHeader">
+  <div
+    class="main-view--header" #header
+    [class.minimize-header]="minimizeHeader"
+    [class.hidden-header]="globalFilter"
+  >
+    <tdp-button-filter-group #filterGroup="tdpButtonFilterGroup">
+      @for (filter of filters; track filter) {
+        <tdp-button-filter [icon]="filter.icon" [tag]="filter.tag" [number]="filter.number" [value]="filter.value" [checked]="filter.checked">
+          {{ filter.label }}
+        </tdp-button-filter>
+      }
+    </tdp-button-filter-group>
+  </div>
+
+  <div class="main-view--content">
+    @if (showResetButton) {
+      <tdp-button class="reset-button" [icon]="true" [whiteBlueButton]="true" (onClick)="resetView()">
+        <tdp-restore-icon icon-button></tdp-restore-icon>
+        {{ 'button.reset' | translate }}
+      </tdp-button>
+    }
+    <tdp-multi-table [tables]="tables" [tableHeight]="tableHeight">
+      <ng-template let-record="record" let-table="table">
+        @if (table.key === 'plans') {
+          <tdp-table-action (click)="openPreviewDialog($event, record)">
+            <tdp-preview-icon
+              class="tdp-actions-icon"
+              fillColor="#ADADAD"
+              width="1.5rem"
+              height="1.5rem"
+              [matTooltip]="'button.preview' | translate">
+            </tdp-preview-icon>
+          </tdp-table-action>
+          @if (record?.planState !== planStateEnum.Archived) {
+            <tdp-table-action
+              (click)="openPlanInEducationTool($event, record)">
+              <tdp-launch-icon
+                class="tdp-actions-icon"
+                [matTooltip]=" ('button.open' | translate)">
+              </tdp-launch-icon>
+            </tdp-table-action>
+          }
+          @if (record?.planState === planStateEnum.Archived) {
+            <tdp-table-action
+                *tdpPermission="'Plan_Modify'"
+                (click)="restoreArchivedPlan($event, record)"
+                >
+                <tdp-restore-icon
+                  class="tdp-actions-icon"
+                  fillColor="#ADADAD"
+                  width="1.5rem"
+                  height="1.5rem"
+                  [matTooltip]="'button.restore' | translate">
+                </tdp-restore-icon>
+            </tdp-table-action>
+          }
+          <tdp-table-more-actions *tdpPermission="'Plan_Management'">
+            <tdp-table-more-action (click)="openTransferSinglePlanDialog($event, record)">
+              {{ 'button.transferPlan' | translate }}
+            </tdp-table-more-action>
+          </tdp-table-more-actions>
+        }
+        @if (table.key === 'tradeCustomers') {
+          <tdp-table-action (click)="openTransferBuilderPlansDialog($event, record)" *tdpPermission="'Hub_Management'">
+            <tdp-swap-icon
+              class="tdp-actions-icon"
+              [matTooltip]="'button.transferBuilderPlans' | translate">
+            </tdp-swap-icon>
+          </tdp-table-action>
+          <tdp-table-action (click)="openCreatePlanModalHandler($event, record)" *tdpPermission="'Plan_Create'">
+            <tdp-plus-icon
+              class="tdp-actions-icon"
+              width="1.188rem"
+              height="1.188rem"
+              [matTooltip]="'button.createPlan' | translate">
+            </tdp-plus-icon>
+          </tdp-table-action>
+        }
+      </ng-template>
+    </tdp-multi-table>
+  </div>
+
+  @if (proToolEnabled) {
+    <tdp-create-button
+      [text]="'button.createPlan' | translate"
+      (click)="openMainPlanDetails()"
+    ></tdp-create-button>
+  }
+
+<!--  <tdp-create-button-->
+<!--    [text]="'button.createPlan' | translate"-->
+<!--    (click)="openPlanTest()"-->
+<!--  ></tdp-create-button>-->
+
+</tdp-main-view>
+

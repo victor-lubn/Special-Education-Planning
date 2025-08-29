@@ -1,0 +1,49 @@
+<tdp-modal
+    class="tdp-trade-customer-found"
+    maxWidth="1050px"
+    height="100%"
+    [hasBodySeparator]="true"
+    (onClosed)="onCancel()">
+
+    <div title class="tdp-trade-customer-found-header--title">
+        {{ exactMatch ? ('existingBuilderDialog.exactMatchTitle' | translate) : ('existingTradeCustomers.foundTradeCustomersTitle' | translate) }}
+    </div>
+
+    <div class="tdp-trade-customer-found-body">
+        <tdp-table
+            [records]="tableTradeCustomers"
+            [columnsConfiguration]="columnsConfiguration"
+            [hasActions]="false"
+            [selectable]="true"
+            [pageSize]="pageSize"
+            (onPageChanged)="pageChanged($event)" 
+            (onSortChanged)="sortChanged($event)">
+        </tdp-table>
+    </div>
+    
+    <div actions class="tdp-trade-customer-found-actions">
+        <tdp-button 
+            class="tdp-trade-customer-found-actions--button-back"
+            [size]="'large'"
+            [color]="'text-only'"
+            (onClick)="onBack()">
+            {{ 'button.back' | translate | uppercase }}
+        </tdp-button>
+        <tdp-button 
+            *ngIf="!exactMatch"
+            class="tdp-trade-customer-found-actions--button-create-new"
+            [size]="'large'"
+            [color]="'text-only'"
+            (onClick)="onCreateNew()">
+            {{ 'button.createNew' | translate | uppercase }}
+        </tdp-button>
+        <tdp-button 
+            class="tdp-trade-customer-found-actions--button-use-account"
+            [size]="'large'"
+            [color]="'green'"
+            [disabled]="!selectedTradeCustomerSearch"
+            (onClick)="onUseAccount()">
+            {{ 'button.useAccount' | translate | uppercase }}
+        </tdp-button>
+    </div>
+</tdp-modal>

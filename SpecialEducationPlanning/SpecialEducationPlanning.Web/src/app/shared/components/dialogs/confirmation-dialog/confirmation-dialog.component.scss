@@ -1,0 +1,11 @@
+.tdp-dialog-upper {
+  font-size: 16px;
+}
+
+.tdp-confirmation {
+  &-actions {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+}

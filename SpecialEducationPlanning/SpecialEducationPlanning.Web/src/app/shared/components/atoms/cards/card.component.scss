@@ -1,0 +1,22 @@
+@import '/src/assets/sass/abstracts/_variables.scss';
+
+.card-style {
+  display: grid;
+  text-align: center;
+  padding-top: 0.94rem;
+  border: 1px solid $keyline-grey;
+  border-radius: 0.62rem;
+  width: 23.75rem;
+  height: 10rem;
+  background-color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  line-height: 1.25rem;
+  cursor: pointer;
+}
+
+div:hover  {
+  background-color: rgba(245, 247, 247, 1);
+  border-radius: 0.62rem;
+}

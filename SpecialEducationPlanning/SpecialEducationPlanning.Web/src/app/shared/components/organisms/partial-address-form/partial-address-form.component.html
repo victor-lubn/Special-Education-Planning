@@ -1,0 +1,57 @@
+<fieldset
+  class="tdp-partial-address-form"
+  [formGroup]="entityForm"
+  [style.width]="width"
+  [class.single-line]="singleLine"
+>
+  <div [ngStyle]="{ 'gap': singleLine ? gap : '0rem' }" class="fields-container">
+    <div class="address-selectors" [class.has-country-selector]="postcodeCountries">
+      <div *ngIf="postcodeCountries" class="select-country-field">
+        <tdp-select
+          class="tdp-partial-address-form--country"
+          [ngModel]="countryCode"
+          (ngModelChange)="countryCodeHandler($event)"
+          [label]="'builder.countrySelector' | translate"
+          [options]="postcodeCountries"
+          [ngModelOptions]="{standalone: true}"
+          [required]="true"
+        ></tdp-select>
+      </div>
+      <div class="tdp-partial-address-form--postcode">
+        <label class="tdp-form-group-label required">
+          {{ 'builder.postcode' | translate }}
+        </label>
+        <tdp-postcode
+          [selectedCountry]="countryCode"
+          [hasError]="checkHasErrorV2('postcode')"
+          (selectedAddress)="onSelectedAddress($event)"
+          formControlName="postcode"
+        ></tdp-postcode>
+        <div *ngIf="checkHasErrorV2('postcode', 'required')" class="tdp-form-error tdp-partial-address-form--postcode-error">
+          {{ 'validationErrors.required' | translate }}
+        </div>
+        <div *ngIf="checkHasErrorV2('postcode', 'invalidPostcode')" class="tdp-form-error tdp-partial-address-form--postcode-error">
+          {{ 'validationErrors.invalidPostcode' | translate }}
+        </div>
+      </div>
+    </div>
+    <div 
+      class="tdp-partial-address-form--address"
+      >
+      <label class="tdp-form-group-label required">
+        {{ 'builder.address1' | translate }}
+      </label>
+      <tdp-postcode
+        [selectedCountry]="countryCode"
+        [hasError]="checkHasErrorV2('address1')"
+        [postcode]="postcode$ | async"
+        [isAddress1]="true"
+        (selectedAddress)="onSelectedAddress($event)"
+        formControlName="address1"
+      ></tdp-postcode>
+      <div *ngIf="checkHasErrorV2('address1', 'required')" class="tdp-form-error">
+        {{ 'validationErrors.required' | translate }}
+      </div>
+    </div>
+  </div>
+</fieldset>

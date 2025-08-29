@@ -1,0 +1,34 @@
+<div class="tdp-row tdp-home-page">
+  <div class="tdp-column tdp-home-content">
+    <div class="tdp-row tdp-home-header">
+      <div class="tdp-row tdp-home-header-btn-group">
+        <button class="tdp-text-btn" (click)="goToCreateEndUser()">
+          <i class="fas fa-chevron-left"></i>
+          <span>
+            {{ "button.goBack" | translate }}
+          </span>
+        </button>
+      </div>
+      <span class="tdp-row tdp-home-title">
+        {{ "endUser.title" | translate }}
+      </span>
+      <div class="tdp-row tdp-home-header-btn-group">
+        <button class="tdp-text-btn" (click)="goToCreateEndUser()">
+          <span>
+            {{ "endUser.createNewEndUser" | translate }}
+          </span>
+          <i class="fas fa-plus"></i>
+        </button>
+      </div>
+    </div>
+    <div class="tdp-column tdp-home-under-header">
+      <div class="tdp-home-list-container">
+        <ng-container *ngFor = "let endUser of endUsersList">
+        <tdp-end-user-result
+        [endUserInput] = "endUser">
+        </tdp-end-user-result>
+      </ng-container>
+      </div>
+    </div>
+  </div>
+</div>

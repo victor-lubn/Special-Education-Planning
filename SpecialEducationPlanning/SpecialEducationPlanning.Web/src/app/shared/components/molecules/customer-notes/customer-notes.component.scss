@@ -1,0 +1,117 @@
+@use "/src/assets/sass/abstracts/variables";
+
+.tdp-customer-notes {
+  width: 100%;
+  border: 1px solid variables.$gray-89;
+  border-radius: 0.625rem;
+  background-color: variables.$white;
+  position: relative;
+
+  & > * {
+    width: 100%;
+  }
+  .tdp-customer-notes-content {
+    box-sizing: border-box;
+    padding: 1.875rem;
+    padding-right: 0.375rem;
+
+    label {
+      display: none;
+    }
+
+    &-error {
+      border: 2px solid variables.$error-red;
+      border-top-left-radius: 0.625rem;
+      border-top-right-radius: 0.625rem;
+    }
+  }
+  .tdp-atoms-textarea-input-container {
+    display: grid;
+    grid-template-rows: 1fr 3.5rem;
+    grid-template-columns: 1fr;
+    .tdp-atoms-textarea-body.tdp-atoms-textarea-body.tdp-atoms-textarea-body {
+      padding: 0;
+      border: none;
+      padding-right: 1.5rem;
+      font-size: 0.938rem;
+      line-height: 1.313rem;
+      resize: none;
+      overflow: auto;
+      border-radius: 0;
+      height: auto;
+      &:focus {
+        border: none;
+      }
+
+      &::-webkit-scrollbar {
+        width: 0.25rem;
+      }
+    }
+  }
+
+
+  // Button container styling
+  .tdp-customer-notes-button-container {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid variables.$white-disabled-border-color;
+    align-items: flex-end;
+    box-sizing: border-box;
+    padding-right: 1.5rem;
+    padding-bottom: 1.5rem;
+    height: 5rem;
+
+    .tdp-customer-notes-cancel-button {
+      margin-right: 1rem;
+    }
+  }
+
+  // Popup button resizer
+  .tdp-customer-notes-resizer {
+    position: absolute;
+    top: 0.625rem;
+    right: 0.75rem;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+    border: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    &:hover {
+      background-color: rgba(218, 218, 218, 0.5);
+      border-radius: 100%;
+      cursor: pointer;
+      & svg path{
+        fill: variables.$navy;
+      }
+    }
+  }
+}
+
+.tdp-customer-notes-backgrdop {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(0.625rem);
+}
+
+.tdp-customer-notes-panel {
+  width: 46.25rem;
+
+  .mat-mdc-dialog-container {
+    padding: 0;
+    overflow: hidden;
+  }
+}
+
+.tdp-atoms-error-message {
+  margin-top: 0.563rem;
+  color: variables.$error-red;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1.313rem;
+  align-self: flex-start;
+  display: flex;
+  padding-left: 0.625rem;
+  margin-right: auto;
+}

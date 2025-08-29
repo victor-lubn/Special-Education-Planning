@@ -1,0 +1,121 @@
+﻿@import "/src/assets/sass/abstracts/_variables.scss";
+
+.tdp-topbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  height: $topbar-height;
+  background-color: $navy;
+  color: $white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  .tdp-sidenav-btn {
+    margin: 0 0.6em !important;
+    i {
+      left: 0.6em;
+      color: $white;
+    }
+  }
+  a {
+    padding: 0 0.8125rem;
+    img {
+      width: 8rem;
+      cursor: pointer;
+    }
+  }
+  .tdp-topbar-title {
+    border-left: 1px solid $white;
+    padding: 0 0.8125rem;
+    text-transform: uppercase;
+    font-size: 0.8125rem;
+  }
+  .tdp-topbar-network-status {
+    padding: 0 2em;
+    font-size: 0.8125rem;
+    i {
+      padding-right: 0.3em;
+    }
+  }
+  .tdp-search-container {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 1 auto;
+    input {
+      width: 100%;
+      max-width: 250px;
+      padding-bottom: 5px;
+      border: none;
+      border-bottom: 1px solid $white;
+      background-color: $navy;
+      color: $white;
+      &:focus {
+        outline: none;
+      }
+    }
+    i {
+      color: $contemporary;
+      position: relative;
+      right: 1.3125rem;
+      top: -0.0625rem;
+      &:hover {
+        cursor: pointer;
+        color: $white;
+      }
+    }
+  }
+  .tdp-login-notifications-container {
+    display: flex;
+    height: 4rem;
+    width: 4.375rem;
+    border-left: 0.0625rem solid $white;
+    justify-content: space-around;
+    align-items: center;
+    i {
+      cursor: pointer;
+    }
+  }
+}
+
+.tdp-user-login-info {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  .user-icon-row {
+    justify-content: center;
+    margin-bottom: 0.6em;
+  }
+  .login-info-row {
+    margin: 0 0.6em 0.8em;
+  }
+  i {
+    color: $contemporary;
+  }
+}
+
+.support-Aiep-selector {
+  margin-right: 3em;
+}
+
+.tdp-working-Aiep-span {
+  width: 15em;
+  span {
+    margin: 0 1em;
+  }
+}
+
+.offline-icon {
+  height: 1em;
+}
+
+a {
+  text-decoration: none;
+  font-size: 1.5rem;
+  line-height: 1.25rem;
+  font-weight: 900;
+  color: $white;
+}
+

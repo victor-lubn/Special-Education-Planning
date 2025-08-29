@@ -1,0 +1,31 @@
+<div class="tdp-row tdp-date-range-container">
+  <div class="tdp-input-container">
+    <input class="tdp-input"
+      (click)="startDatepicker.open()"
+      placeholder="{{ 'dateRange.start' | translate }}"
+      readonly
+      type="text"
+      [matDatepicker]="startDatepicker"
+      [max]="dateRange.endDate"
+      [value]="dateRange.startDate"
+      (dateChange)="selectedStartDate($event)">
+    <i class="fas fa-calendar tdp-calendar" (click)="startDatepicker.open()"></i>
+    <mat-datepicker #startDatepicker></mat-datepicker>
+  </div>
+  <div class="tdp-input-container">
+    <input class="tdp-input"
+      (click)="endDatepicker.open()"
+      placeholder="{{ 'dateRange.end' | translate }}"
+      readonly
+      type="text"
+      [matDatepicker]="endDatepicker"
+      [min]="dateRange.startDate"
+      [value]="dateRange.endDate"
+      (dateChange)="selectedEndDate($event)">
+      <i class="fas fa-calendar tdp-calendar" (click)="endDatepicker.open()"></i>
+    <mat-datepicker #endDatepicker ></mat-datepicker>
+  </div>
+  <div>
+    <i class="fas fa-times clean-date-range" (click)="cleanDateRange()"></i>
+  </div>
+</div>

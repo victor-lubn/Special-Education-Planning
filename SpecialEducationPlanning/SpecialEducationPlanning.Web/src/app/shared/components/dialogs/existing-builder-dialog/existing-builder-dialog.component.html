@@ -1,0 +1,39 @@
+<div class="tdp-row tdp-dialog-upper">
+  {{ (isExactMatch ? 'existingBuilderDialog.exactMatchTitle' : 'existingBuilderDialog.partialMatchTitle') | translate }}
+  <i class="fas fa-times" (click)="cancelDialog()"></i>
+</div>
+<div class="tdp-dialog-list-container">
+  <ng-container *ngFor="let builderItem of builderList">
+    <tdp-builder-search-result
+      [builder]="builderItem.builder"
+      [isSAP]="builderItem.builderSearchType === builderSearchTypeEnum.SapCredit"
+      [isInExistBuilderDialog]="true"
+      [isExactMatch]="isExactMatch"
+      (selectedExistingBuilder)="selectBuilderAction($event)"
+      (selectedExistingSAPBuilder)="selectSAPBuilderAction($event)">
+    </tdp-builder-search-result>
+  </ng-container>
+</div>
+<div class="tdp-row tdp-dialog-actions">
+  <button
+    (click)="cancelDialog()"
+    class="tdp-secondary-btn">
+    {{ 'button.cancel' | translate}}
+    <i class="fas fa-times"></i>
+  </button>
+  <ng-container *ngIf="!isExactMatch">
+    <button
+      *tdpPermission="'Plan_Create'"
+      (click)="createUnassignedPlanAction()"
+      class="tdp-secondary-btn">
+      {{ 'button.createUnassignedPlan' | translate }}
+      <i class="fas fa-chevron-right"></i>
+    </button>
+    <button
+      (click)="createNewBuilderAction()"
+      class="tdp-primary-btn">
+      {{ 'button.createAsNewBuilder' | translate }}
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </ng-container>
+</div>

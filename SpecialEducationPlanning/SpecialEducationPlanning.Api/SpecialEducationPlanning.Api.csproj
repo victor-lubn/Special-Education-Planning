@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>$(netcoreapp)</TargetFramework>
+  </PropertyGroup>
+  <Import Project="$(MSBuildThisFileDirectory)/../version.props"></Import>
+	
+  <ItemGroup>
+    <PackageReference Include="Azure.Messaging.ServiceBus" Version="$(AzureMessagingServiceBus)" />
+    <PackageReference Include="Flurl.Http" Version="$(FlurlHttp)" />
+    <PackageReference Include="IKVM" Version="8.2.1" />
+    <PackageReference Include="Koa.Hosting.AspNetCore" Version="$(KoaPackageVersion)" />
+    <PackageReference Include="Koa.Hosting.AspNetCore.Delta" Version="$(KoaPackageVersion)" />
+    <PackageReference Include="Koa.IO.FileSystem" Version="$(KoaPackageVersion)" />
+    <PackageReference Include="Koa.IO.FileSystem.AzureStorage" Version="$(KoaPackageVersion)" />
+    <PackageReference Include="Koa.Serialization.Json" Version="$(KoaPackageVersion)" />
+  </ItemGroup>
+	
+  <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="$(CsvHelper)" />
+    <PackageReference Include="Hangfire.AspNetCore" Version="$(HangfireAspNetCore)" />
+    <PackageReference Include="Hangfire.Core" Version="$(HangfireCore)" />
+    <PackageReference Include="Hangfire.SqlServer" Version="$(HangfireSqlServer)" />
+    <PackageReference Include="LaunchDarkly.ServerSdk" Version="$(LaunchDarklyServerSdk)" />
+    <PackageReference Include="MediatR" Version="$(MediatR)" />
+    <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="$(MicrosoftAspNetWebApiClient)" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="$(MicrosoftAspNetCoreAuthenticationJwtBearer)" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="$(MicrosoftAspNetCoreMvcNewtonsoftJson)" />
+    <PackageReference Include="Microsoft.Azure.Search.Service" Version="$(MicrosoftAzureSearch)" />
+    <PackageReference Include="Microsoft.Azure.Storage.Blob" Version="$(MicrosoftAzureStorageBlob)" />
+    <PackageReference Include="Microsoft.Extensions.Azure" Version="$(MicrosoftExtensionsAzure)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="$(MicrosoftExtensionsConfigurationAbstractions)" />
+    <PackageReference Include="Microsoft.Extensions.Http.Polly" Version="$(MicrosoftExtensionsHttpPolly)" />
+    <PackageReference Include="Microsoft.Identity.Client" Version="$(MicrosoftIdentityClient)" />
+    <PackageReference Include="Oracle.ManagedDataAccess.Core" Version="$(OracleManagedDataAccessCore)" />
+    <PackageReference Include="Polly" Version="$(Polly)" />
+    <PackageReference Include="Polly.Contrib.WaitAndRetry" Version="$(PollyContribWaitAndRetry)" />
+    <PackageReference Include="Serilog.Sinks.Email" Version="$(SerilogSinksEmail)" />
+    <PackageReference Include="SoapCore" Version="$(SoapCore)" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="$(SystemServiceModelDuplex)" />
+    <PackageReference Include="System.ServiceModel.Http" Version="$(SystemServiceModelHttp)" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="$(SystemServiceModelNetTcp)" />
+    <PackageReference Include="System.ServiceModel.Primitives" Version="$(SystemServiceModelPrimitives)" />
+    <PackageReference Include="System.ServiceModel.Security" Version="$(SystemServiceModelSecurity)" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpecialEducationPlanning
+.Business\SpecialEducationPlanning
+.Business.csproj" />
+    <ProjectReference Include="..\SpecialEducationPlanning
+.Domain\SpecialEducationPlanning
+.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,19 @@
+@use '/src/assets/sass/abstracts/variables';
+
+.tdp-back-with-title {
+    &-container {
+        display: flex;
+        align-items: center;
+    }
+
+    &--icon {
+        cursor: pointer;
+        margin-right: 1.875rem;
+    }
+
+    &--text {
+        font-weight: 700;
+        font-size: 1.875rem;
+        color: variables.$navy;
+    }
+}   

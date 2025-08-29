@@ -1,0 +1,14 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.spinner {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  position: relative;
+
+  .mat-mdc-progress-spinner circle,
+  .mat-mdc-progress-spinner circle {
+    stroke: $aiep-green;
+  }
+}

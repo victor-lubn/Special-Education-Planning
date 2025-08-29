@@ -1,0 +1,23 @@
+@use 'src/assets/sass/abstracts/variables';
+
+div.datepicker-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  font-family: Rooster;
+  .datepicker-header__double-arrow {
+    span:not(:first-child) {
+      margin-left: -1.15rem;
+    }
+  }
+  span.datepicker-header__label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: variables.$navy;
+    margin: 0 0.5rem;
+    flex-grow: 1;
+    text-align: center;
+    height: 2.35rem;
+  }
+}

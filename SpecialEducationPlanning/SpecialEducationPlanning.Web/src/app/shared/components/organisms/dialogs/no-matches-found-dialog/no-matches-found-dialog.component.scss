@@ -1,0 +1,22 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-no-matches-found {
+    color: $navy;
+
+    &-body {
+        overflow: auto;
+        flex-grow: 1;
+        margin: 0 -2.5rem;
+        padding: 1.25rem 2.5rem;
+    }
+
+    &-actions {
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+    
+        &--button-cancel {
+            margin-right: 1rem;
+        }
+    }
+}

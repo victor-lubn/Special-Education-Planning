@@ -1,0 +1,83 @@
+﻿<div class="tdp-menu">
+  <tdp-topbar-menu>
+    <tdp-topbar-title>
+      <div class="app-name">
+        <tdp-button color="ghost" (onClick)="handleOpenHomePage()">
+          <span class="logo">
+            {{ "topbar.title" | translate }}
+          </span>
+        </tdp-button>
+      </div>
+      <ng-container *tdpPermission="'Hub_Management'">
+        <div class="support-Aiep-selector">
+          <div class="support-Aiep-selector-container">
+            <input
+              class="support-Aiep-selector-container-input"
+              type="text"
+              placeholder="{{ 'topbar.selectAiepPlaceholder' | translate }}"
+              [matAutocomplete]="AiepsSelector"
+              [formControl]="supportSelectedAiep"
+            />
+            <tdp-arrow-down-icon
+              class="tdp-arrow-down-icon"
+            ></tdp-arrow-down-icon>
+          </div>
+
+          <mat-autocomplete
+            #AiepsSelector="matAutocomplete"
+            (optionSelected)="selectedAiepOption($event)"
+          >
+            <ng-container *ngIf="filteredAiepOptions.length">
+              <mat-option value="{{ 'topbar.supportAiep' | translate }}">
+                {{ "topbar.supportAiep" | translate }}
+              </mat-option>
+              <mat-option
+                *ngFor="let Aiep of filteredAiepOptions"
+                [value]="Aiep.AiepCode + ' | ' + Aiep.name"
+              >
+                {{ Aiep.AiepCode }} | {{ Aiep.name }}
+              </mat-option>
+            </ng-container>
+          </mat-autocomplete>
+        </div>
+      </ng-container>
+
+      <div class="environment" *ngIf="!showProduction">
+        {{ activeEnvironment }}
+      </div>
+    </tdp-topbar-title>
+
+    <tdp-search
+      #searchForm
+      [EducationersOptionsList]="EducationersOptionsList"
+      (onAddSearchTerm)="addSearchTermHandler($event)"
+      (onAddAdvancedSearchPlans)="addAdvancedSearchPlansHandler($event)"
+      (onAddAdvancedSearchProject)="addAdvancedSearchProjectsHandler($event)"
+      (onAddAdvancedSearchTradeCustomer)="addAdvancedSearchTradeCustomerHandler($event)"
+      (onReset)="resetFiltersHandler()"
+    ></tdp-search>
+
+    <tdp-topbar-actions>
+      <tdp-avatar
+        [initials]="userInformation.initials"
+        sizeAvatar="small"
+        (onClick)="openMenu()"
+      ></tdp-avatar>
+    </tdp-topbar-actions>
+  </tdp-topbar-menu>
+
+  <tdp-sidebar [name]="sidebar" position="right">
+    <tdp-menu-details
+      [userInfo]="userInformation"
+      [showSupport]="showSupport"
+      (onLogout)="handlelogoutUser()"
+      (onReleaseNotesDocument)="handleReleaseNotesDocument()"
+      (onReleaseNotesWeb)="handleReleaseNotesWeb()"
+      (onSupportDashboard)="handleSupportDashboard()"
+      (onShowProjects)="handleShowProjects()"
+      (onAbout)="handleOpenAbout()"
+    ></tdp-menu-details>
+  </tdp-sidebar>
+</div>
+
+

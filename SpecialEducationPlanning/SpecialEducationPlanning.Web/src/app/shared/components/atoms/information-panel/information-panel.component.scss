@@ -1,0 +1,42 @@
+@import '/src/assets/sass/abstracts/_variables.scss';
+
+.tdp-information-panel {
+    width: 380px;
+    height: 200px;
+    background-color: $very-light-grey;
+    border-radius: 10px;
+    border: 1px solid $border-grey;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    &-title,
+    &-info {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    &-title {
+        letter-spacing: 2px;
+        margin-top: 2rem;
+        text-transform: uppercase;
+    }
+
+    &-info {
+        min-height: 85px;
+        margin-top: 7px;
+        display: flex;
+        align-items: center;
+
+        &--medium {
+            font-size: 32px;
+        }
+
+        &--large {
+            font-size: 72px;
+        }
+    }
+}

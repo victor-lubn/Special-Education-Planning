@@ -1,0 +1,24 @@
+.transfer-project-content {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+
+  &-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+  }
+
+  tdp-table {
+    flex: 0 0 60%;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+
+  tdp-autocomplete {
+    flex: 0 0 30%;
+    margin-left: 2%;
+  }
+}

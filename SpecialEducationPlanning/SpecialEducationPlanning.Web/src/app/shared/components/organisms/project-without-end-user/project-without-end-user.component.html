@@ -1,0 +1,49 @@
+<tdp-modal
+  class="tdp-organism-project-without-end-user"
+  maxWidth="1000px"
+  height="100%"
+  [closable]="true"
+  [hasBodySeparator]="true"
+  (onClosed)="closeModal()">
+
+  <div title class="tdp-organism-project-without-end-user-header--title">
+    {{ 'plan.planDetails' | translate }}
+  </div>
+
+  <div class="tdp-organism-project-without-end-user-body">
+    <tdp-project-container
+      [data]="planDetails"
+      [isUnassigned]="isUnassigned"> </tdp-project-container>
+    <tdp-plan-form [planDetails]="planDetails"> </tdp-plan-form>
+  </div>
+
+  <div actions class="tdp-organism-project-without-end-user-buttons">
+    <tdp-button
+      [color]="'text-only'"
+      [size]="'large'"
+      [mat-dialog-close]
+      (onClick)="closeModal()"
+      >{{ "button.cancel" | translate }}</tdp-button
+    >
+    <ng-container
+      *ngIf="
+        !!planFormComponent.entityForm.value['hasEndUser'];
+        else createProject
+      "
+    >
+      <tdp-button [color]="'green'" [size]="'large'" (onClick)="onSubmit()">
+        {{ "button.next" | translate }}
+      </tdp-button>
+    </ng-container>
+    <ng-template #createProject>
+      <tdp-button
+        [color]="'green'"
+        [size]="'large'"
+        [disabled]="planFormComponent.entityForm.invalid"
+        (onClick)="onSubmit()"
+      >
+        {{ "button.createPlan" | translate }}
+      </tdp-button>
+    </ng-template>
+  </div>
+</tdp-modal>

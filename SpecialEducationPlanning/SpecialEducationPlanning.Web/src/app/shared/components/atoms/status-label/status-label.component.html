@@ -1,0 +1,8 @@
+<div class="tdp-status-label tdp-status-label--{{color}}">
+  <div
+    class="tdp-status-label-icon"
+    *ngIf="icon">
+    <ng-content select="[icon-button]"></ng-content>
+  </div>
+  <ng-content></ng-content>
+</div>

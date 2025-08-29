@@ -1,0 +1,30 @@
+
+.mat-mdc-autocomplete-panel {
+  box-shadow: none !important;
+  border-color: $input-border-grey;
+  border-width: 0.063rem;
+  border-style: solid;
+  border-radius: 0.25rem !important;  
+  &#mat-autocomplete-0 {
+    min-width: max-content;
+  }
+
+  .mat-mdc-option {
+    line-height: normal;
+    height: auto;
+    min-height: 3.125rem;
+    font-family: "Rooster", "Open Sans", serif;
+    font-size: 0.938rem;
+    padding: 0.375rem;
+    cursor: pointer;
+    &:hover {
+      background-color: $very-light-grey;
+      background-clip: content-box;
+      outline: 0.063rem solid $border-grey;
+      outline-offset: -0.375rem;
+    }    
+    .mdc-list-item__primary-text {
+      margin-left: 1.125rem;
+    }
+  }
+}

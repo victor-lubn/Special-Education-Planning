@@ -1,0 +1,12 @@
+<label class="tdp-radio-button">
+  <mat-radio-button
+    [value]="value"
+    [disabled]="disabled"
+    [checked]="checked"
+    (change)="changeHandler($event)"
+  >
+  </mat-radio-button>
+  <span class="tdp-radio-button--text">
+    <ng-content></ng-content>
+  </span>
+</label>

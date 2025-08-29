@@ -1,0 +1,11 @@
+.tdp-plans-list-offline {
+  width: 90vw;
+  margin: 0 auto;
+  margin-top: 8.3rem;
+
+  ::ng-deep {
+    .mat-mdc-tab-header {
+      margin-bottom: 3rem;
+    }
+  }
+}

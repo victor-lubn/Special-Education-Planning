@@ -1,0 +1,18 @@
+<div class="tdp-menu">
+  <tdp-topbar-menu>
+    <tdp-topbar-title>
+      <div class="app-name">
+        <a routerLink="/offline/planOffline/">{{
+          "topbar.title" | translate
+        }}</a>
+      </div>
+    </tdp-topbar-title>
+    <tdp-topbar-actions>
+      <tdp-no-wifi-icon></tdp-no-wifi-icon>
+    </tdp-topbar-actions>
+  </tdp-topbar-menu>
+
+  <tdp-top-banner [offline]="true">{{
+    "dialog.offlineBanner.offline" | translate
+  }}</tdp-top-banner>
+</div>

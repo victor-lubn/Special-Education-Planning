@@ -1,0 +1,25 @@
+<tdp-topbar></tdp-topbar>
+<block-ui>
+  <div class="app-container">
+    <mat-sidenav-container (backdropClick)="handleBackdropClick()">
+      <mat-sidenav
+        disableClose
+        [mode]="currentSidenavMode"
+        [opened]="showSidenav"
+      >
+      </mat-sidenav>
+      <mat-sidenav-content>
+        <router-outlet></router-outlet>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>
+</block-ui>
+
+<tdp-sidebar
+  tdpResizable
+  [name]="'timelineSidebar'"
+  position="right"
+  [scrollable]="false"
+>
+  <tdp-timeline-sidebar></tdp-timeline-sidebar>
+</tdp-sidebar>

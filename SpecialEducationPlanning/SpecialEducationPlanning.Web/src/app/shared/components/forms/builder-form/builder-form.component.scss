@@ -1,0 +1,25 @@
+@import '/src/assets/sass/abstracts/_variables.scss';
+
+.tdp-builder-form-first-column {
+  flex: 1 1 0;
+}
+
+.tdp-builder-form-second-column {
+  flex: 2 1 0;
+}
+
+.tdp-builder-form-textarea {
+  box-sizing: border-box;
+  border-radius: 3px;
+  width: 100%;
+  resize: none;
+}
+
+.tdp-builder-form-postcode {
+  width: 120px;
+  flex: none;
+}
+
+.tdp-builder-form-address {
+  min-width: 300px;
+}

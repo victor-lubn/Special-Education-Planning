@@ -1,0 +1,60 @@
+﻿<tdp-modal (onClosed)="cancelDialog()">
+
+  <div title>
+    {{ 'dialog.transferBuilderPlans.title' | translate }}
+  </div>
+
+  <div class="tdp-transfer-builder-plans-dialog-body">
+    <div *ngIf="plans.data.length" class="tdp-transfer-builder-plans-dialog-body-table">
+      <tdp-table
+        [tableSort]="false"
+        [tablePaginator]="false"
+        [dynamicData]="false"
+        [hasActions]="false"
+        [records]="plans"
+        [columnsConfiguration]="planColumnNames"
+        tableHeight="400px"
+        ></tdp-table>
+    </div>
+
+    <div class="tdp-transfer-builder-plans-dialog-body-selectors">
+      <tdp-input
+        class="tdp-transfer-builder-plans-dialog-body-selectors-input"
+        type="text"
+        [title]="'dialog.transferBuilderPlans.fromAiep' | translate"
+        readonly
+        [formControl]="sourceAiepCode">
+      </tdp-input>
+        
+      <tdp-autocomplete
+        class="tdp-transfer-builder-plans-dialog-body-selectors-input"
+        [title]="'dialog.transferBuilderPlans.toAiep' | translate"
+        [elementList]="AiepFilteredOptions"
+        [displayWith]="displayWith"
+        [formControl]="targetAiepCode">
+      </tdp-autocomplete>
+      
+    </div>
+  </div>
+
+  <div actions>
+    <tdp-button
+      size="large"
+      color="text-only"
+      (onClick)="cancelDialog()"
+    >
+      {{ 'button.cancel' | translate }}
+    </tdp-button>
+
+    <tdp-button
+      size="large"
+      color="green"
+      [disabled]="!targetAiepCode.valid"
+      (onClick)="submitTransfer()"
+    >
+      {{ 'button.transfer' | translate }}
+    </tdp-button>
+  </div>
+
+</tdp-modal>
+

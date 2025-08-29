@@ -1,0 +1,63 @@
+.simple-notification-wrapper {
+    width: 100% !important;
+    //styleName: Body Text;
+    font-family: Rooster !important;
+    font-size: 15px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 21px !important;
+    letter-spacing: 0px !important;
+    text-align: center !important;
+    top: 82px !important;
+}
+
+.simple-notification-svg
+{
+    height: 1.247rem !important;
+    width: 1.247rem !important;
+    fill: black !important;
+}
+
+$error-color: #f9f2f3;
+$success-color: #f3f9eb;
+$alert-color: #f5f7da;
+$info-color: #f0f3fc;
+$warn-color: #f5f7da;
+$border-top: 0.3rem;
+
+$error-font-color: #D22630;
+$success-font-color: #70C624;
+$alert-font-color: #a1a090;
+$info-font-color: #315d91;
+$warn-font-color: #a1a090;
+
+$error-border-top-color:#D22630;
+$success-border-top-color:#437516;
+$alert-border-top-color:#a1a090;
+$info-border-top-color:#315d91;
+$warn-border-top-color:#a1a090;
+
+@mixin notification-base-class($background-color, $color, $border-top-color) {
+    background: $background-color !important; 
+    border-top:  $border-top solid $border-top-color !important;
+    color: $color !important;
+}
+
+.simple-notification {
+    min-height: 0 !important;
+    &.error { 
+        @include notification-base-class($error-color, $error-font-color, $error-border-top-color);
+    }
+    &.success { 
+        @include notification-base-class($success-color,$success-font-color, $success-border-top-color);
+    }
+    &.alert { 
+        @include notification-base-class($alert-color, $alert-font-color, $alert-border-top-color);
+    }
+    &.info { 
+        @include notification-base-class($info-color,$info-font-color, $info-border-top-color);
+    }
+    &.warn { 
+        @include notification-base-class($warn-color,$warn-font-color, $warn-border-top-color);
+    }
+}

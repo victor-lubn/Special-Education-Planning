@@ -1,0 +1,14 @@
+<div class="details-header">
+  <tdp-back-with-title
+    title="{{ 'project.backToProjects' | translate }}"
+    (onClick)="goBack()"> 
+  </tdp-back-with-title>
+</div>
+<tdp-details-template *ngIf="project">
+  <div class="details-top-container">
+    <tdp-project-overview [project]="project"></tdp-project-overview>
+    <tdp-project-specifications [project]="project"></tdp-project-specifications>
+    <tdp-project-templates [project]="project" [plans]="plans"></tdp-project-templates>
+    <tdp-project-plans [project]="project" [plans]="plans"></tdp-project-plans>
+  </div>
+</tdp-details-template>

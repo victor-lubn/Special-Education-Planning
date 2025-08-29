@@ -1,0 +1,57 @@
+<tdp-details-template class="tdp-plan-details-offline">
+  <div class="details-header">
+    <tdp-customer-header
+      creditAccount="{{ 'builder.notApplicable' | translate }}"
+      (click)="goBack()"
+    ></tdp-customer-header>
+  </div>
+
+  <div class="details-left-sidebar">
+    <tdp-offline-details-container-left-hand-side
+      [plan]="plan"
+    ></tdp-offline-details-container-left-hand-side>
+  </div>
+
+  <div class="details-top-container">
+    <tdp-tabs>
+      <mat-tab label="{{ 'plan.versionHistory' | translate }}">
+        <tdp-table
+          [tableSort]="false"
+          [dynamicData]="false"
+          [records]="versionsTable"
+          [pageSize]="pageSize"
+          [columnsConfiguration]="offlineVersionsColumnNames"
+          tableHeight="1020px"
+        >
+          <tdp-table-actions>
+            <ng-template let-record="record">
+              <tdp-table-action (click)="openPlanPreview($event, record)">
+                <tdp-preview-icon
+                  class="tdp-actions-icon"
+                  matTooltip="{{ 'button.preview' | translate }}"
+                ></tdp-preview-icon>
+              </tdp-table-action>
+              <tdp-table-action (click)="openVersionInFusion($event, record)">
+                <tdp-launch-icon
+                  class="tdp-actions-icon"
+                  matTooltip="{{ 'button.open' | translate }}"
+                ></tdp-launch-icon>
+              </tdp-table-action>
+              <tdp-table-more-actions>
+                <tdp-table-more-action (click)="updateNotesAndQuote(record)">
+                  {{ "dialog.editVersionNotes.versionNotes" | translate }}
+                </tdp-table-more-action>
+              </tdp-table-more-actions>
+            </ng-template>
+          </tdp-table-actions>
+        </tdp-table>
+      </mat-tab>
+    </tdp-tabs>
+  </div>
+</tdp-details-template>
+
+<tdp-create-button
+  [text]="'button.createPlan' | translate"
+  (onClick)="openCreatePlanOfflineModal()"
+>
+</tdp-create-button>

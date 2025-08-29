@@ -1,0 +1,40 @@
+﻿.tdp-Aieps-list {
+  &-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2.5rem;
+
+    &--manage-button {
+      margin-left: auto;
+    }
+  }
+}
+
+tdp-table {
+  ::ng-deep {
+    .mat-column-AiepCode {
+      flex: 0 1 15%;
+    }
+  
+    .mat-column-name {
+      flex: 0 1 30%;
+    }
+  
+    .mat-column-keyName {
+      flex: 0 1 35%;
+    }
+
+    .mat-column-updatedDate {
+      flex: 0 1 15%;
+    }
+
+    .mat-column-actions {
+      justify-content: center;
+    }
+  }
+
+  .tdp-pencil-icon {
+    display: flex;
+    justify-content: center;
+  }
+}

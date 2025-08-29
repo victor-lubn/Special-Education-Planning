@@ -1,0 +1,97 @@
+// Font Imports
+// @include font-face("Open Sans", "../fonts/open-sans/OpenSans-Light", 300, $file-formats: ttf);
+
+/* latin-ext */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url('~/../fonts/raleway/raleway-ext.woff2') format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Raleway'), local('Raleway-Regular'), url('~/../fonts/raleway/raleway.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* open-sans-regular - latin */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('~/../fonts/open-sans-v15-latin/open-sans-v15-latin-regular.eot'); /* IE9 Compat Modes */
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+       url('~/../fonts/open-sans-v15-latin/open-sans-v15-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('~/../fonts/open-sans-v15-latin/open-sans-v15-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('~/../fonts/open-sans-v15-latin/open-sans-v15-latin-regular.woff') format('woff'), /* Modern Browsers */
+       url('~/../fonts/open-sans-v15-latin/open-sans-v15-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+       url('~/../fonts/open-sans-v15-latin/open-sans-v15-latin-regular.svg#OpenSans') format('svg'); /* Legacy iOS */
+}
+
+/* open-sans-semibold - latin */
+@font-face {
+  font-family: 'Open Sans Semibold';
+  font-style: normal;
+  src: url('~/../fonts/open-sans-v15-latin/open-sans-v15-latin-semibold.ttf');
+}
+
+/* Rooster */
+
+@font-face {
+  font-family: 'Rooster';
+  src: url('~/../fonts/rooster/Rooster-Italic.ttf') format('truetype');
+  font-style: italic, oblique;
+}
+
+@font-face {
+  font-family: 'Rooster';
+  src: url('~/../fonts/rooster/Rooster-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rooster';
+  src: url('~/../fonts/rooster/Rooster-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: 'Rooster';
+  src: url('~/../fonts/rooster/Rooster-Light.ttf') format('truetype');
+  font-weight: 300;
+}
+
+/* Rooster Black */
+
+@font-face {
+  font-family: 'Rooster Black';
+  src: url('~/../fonts/rooster/Rooster-BlackItalic.ttf') format('truetype');
+  font-style: italic, oblique;
+}
+
+@font-face {
+  font-family: 'Rooster Black';
+  src: url('~/../fonts/rooster/Rooster-Black.ttf') format('truetype');
+}
+
+/* Rooster Condensed */
+
+@font-face {
+  font-family: 'Rooster Condensed';
+  src: url('~/../fonts/rooster/Rooster-CondensedItalic.ttf') format('truetype');
+  font-style: italic, oblique;
+}
+
+@font-face {
+  font-family: 'Rooster Condensed';
+  src: url('~/../fonts/rooster/Rooster-Condensed.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Rooster Condensed';
+  src: url('~/../fonts/rooster/Rooster-CondensedBold.ttf') format('truetype');
+  font-weight: bold;
+}

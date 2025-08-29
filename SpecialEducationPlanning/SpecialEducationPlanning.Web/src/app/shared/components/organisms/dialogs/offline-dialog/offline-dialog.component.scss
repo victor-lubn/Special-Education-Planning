@@ -1,0 +1,46 @@
+@import "/src/assets/sass/abstracts/_variables.scss";
+
+div.offline-dialog-title {
+  text-align: center;
+}
+.tdp-offline {
+  &-body {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: $navy;
+    overflow: auto;
+    flex-grow: 1;
+    margin: 0 -2.5rem;
+    padding: 1.25rem 2.5rem;
+
+    &--title {
+      margin: 0;
+      font-size: 1.875rem;
+      line-height: 2.5rem;
+    }
+
+    &--description {
+      font-size: 1rem;
+      line-height: 1.313rem;
+      margin-bottom: 1.875rem;
+
+      .tdp-icon--offline {
+        margin-top: 30px;
+
+        ::ng-deep {
+          svg {
+            height: 146px;
+            width: 146px;
+            filter: brightness(0) saturate(100%) invert(18%) sepia(33%)
+              saturate(384%) hue-rotate(162deg) brightness(87%) contrast(93%);
+          }
+        }
+      }
+    }
+  }
+
+  &-actions {
+    justify-content: center !important;
+  }
+}

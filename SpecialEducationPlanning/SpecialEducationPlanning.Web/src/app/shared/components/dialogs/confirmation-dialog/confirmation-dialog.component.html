@@ -1,0 +1,32 @@
+<tdp-modal
+  class="tdp-confirmation"
+  [width]="width"
+  [height]="height"
+  (onClosed)="onCancel()">
+
+  <div title>
+    {{ titleStringKey | translate }}
+  </div>
+
+  <div sub-title>
+    {{ messageStringKey | translate }}
+  </div>
+
+  <div actions class="tdp-confirmation-actions">
+    <tdp-button
+      class="tdp-confirmation-button--cancel"
+      [size]="'large'"
+      [color]="'text-only'"
+      (onClick)="onCancel()">
+      {{ cancelationStringKey | translate }}
+    </tdp-button>
+    <tdp-button 
+      class="tdp-confirmation-button--confirm"
+      [size]="'large'"
+      [color]="'green'"
+      (onClick)="onConfirm()">
+      {{ confirmationStringKey | translate }}
+    </tdp-button>
+</div>
+
+</tdp-modal>

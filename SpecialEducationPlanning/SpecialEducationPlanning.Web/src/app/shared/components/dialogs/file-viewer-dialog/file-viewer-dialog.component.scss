@@ -1,0 +1,22 @@
+@import "/src/assets/sass/abstracts/_variables.scss";
+
+.tdp-embed-file-viewer-container {
+  height: calc(100% - 11.563rem);
+  min-width: 40.625rem;
+  iframe {
+    display: none;
+  }
+}
+
+.tdp-embed-txt-viewer {
+  height: 96%;
+  width: 99%;
+  resize: none;
+
+  overflow: scroll;
+  border: 0.063rem solid $gray-68;
+  font-size: 0.938rem;
+  color:#000;
+  padding: 0.125rem;
+  white-space:pre-wrap;
+}

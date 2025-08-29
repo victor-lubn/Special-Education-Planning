@@ -1,0 +1,26 @@
+﻿<tdp-menu
+  #menu
+  [userInformation]="userloginInfo"
+  [showSupport]="showSupportDashboard"
+  [showProduction]="showProduction"
+  [activeEnvironment]="activeEnvironment"
+  [EducationersOptionsList]="EducationersOptionsList"
+  [supportSelectedAiep]="supportSelectedAiep"
+  [filteredAiepOptions]="filteredAiepOptions"
+  (onHomePage)="goToHome()"
+  (onReleaseNotesDocument)="openReleaseNotesDialog()"
+  (onReleaseNotesWeb)="openExternalReleaseNotes()"
+  (onSupportDashboard)="goToSupportView()"
+  (onAbout)="about()"
+  (onLogout)="logout()"
+  (onAddSearchTerm)="addSearchTermHandler($event)"
+  (onAddAdvancedSearchPlans)="addAdvancedSearchPlansHandler($event)"
+  (onAddAdvancedSearchProject)="addAdvancedSearchProjectsHandler($event)"
+  (onAddAdvancedSearchTradeCustomer)="
+    addAdvancedSearchTradeCustomerHandler($event)
+  "
+  (onResetFilters)="resetFiltersHandler()"
+  (onSelectedAiepOption)="selectedAiepOption($event)"
+></tdp-menu>
+
+

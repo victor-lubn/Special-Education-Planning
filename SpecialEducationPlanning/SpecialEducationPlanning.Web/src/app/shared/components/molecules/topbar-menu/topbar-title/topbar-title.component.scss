@@ -1,0 +1,27 @@
+@import "/src/assets/sass/abstracts/variables";
+
+tdp-topbar-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .support {
+    display: flex;
+    justify-content: center;
+    border-left: 1px solid $white;
+    height: 36px;
+    width: 120px;
+    font-family: "Rooster";
+    font-style: normal;
+    font-weight: 300;
+    font-size: 24px;
+  }
+
+  .environment {
+    font-size: 15px;
+    align-items: center;
+    display: flex;
+    color: $aiep-green;
+    padding-left: 5px;
+  }
+}

@@ -1,0 +1,74 @@
+<form [formGroup]="entityForm">
+  <div class="tdp-plan-form">
+    <div class="first-input-row">
+    <tdp-select
+      class="tdp-plan-form-first-select"
+      formControlName="planType"
+      [label]="planTypeString"
+      [options]="planTypes"
+      (valueChange)="selectPlanType($event)"
+    ></tdp-select>
+      <tdp-input
+        class="tdp-plan-form-input"
+        formControlName="planName"
+        [ngClass]="{ 'error-message': checkHasErrorV2('planName') }"
+        [type]="'text'"
+        [title]="planNameString"
+        [required]="false"
+      ></tdp-input>
+      <div *ngIf="checkHasErrorV2('planName', 'required')" class="tdp-plan-form-error">
+        {{ 'validationErrors.required' | translate }}
+      </div>
+      <div *ngIf="checkHasErrorV2('planName', 'maxlength')" class="tdp-plan-form-error">
+        {{ 'validationErrors.maxlength' | translate: { maxlength: planNameMaxLength } }}
+      </div>
+    </div>
+      <tdp-select
+        class="tdp-plan-form-select"
+        formControlName="catalogId"
+        [ngClass]="{ 'error-message': checkHasErrorV2('catalogId') }"
+        [label]="planCatalogueString"
+        [options]="catalogs"
+        [required]="true"
+        (valueChange)="selectCatalogue($event)"
+      ></tdp-select>
+      <div *ngIf="checkHasErrorV2('catalogId', 'required')" class="tdp-plan-form-error">
+        {{ 'validationErrors.required' | translate }}
+      </div>
+
+    <div class="radio-align">
+    <div class="tdp-plan-form-radios first-radio">
+      <label id="aiepSurvey">{{ planSurveyString }}</label>
+      <mat-radio-group
+        aria-labelledby="aiepSurvey"
+        class="radio-group"
+        formControlName="survey"
+        [name]="planSurveyString"
+      >
+        <mat-radio-button class="radio-button" [value]="true">
+          {{ yesString }}
+        </mat-radio-button>
+        <mat-radio-button class="radio-button" [value]="false">
+          {{ noString }}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+    <div class="tdp-plan-form-radios">
+      <label id="endUser">{{ planEndUserString }}</label>
+      <mat-radio-group
+        aria-labelledby="endUser"
+        class="radio-group"
+        formControlName="hasEndUser"
+        [name]="planEndUserString"
+      >
+        <mat-radio-button class="radio-button" [value]="true">
+          {{ yesString }}
+        </mat-radio-button>
+        <mat-radio-button class="radio-button" [value]="false">
+          {{ noString }}
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+  </div>
+  </div>
+</form>

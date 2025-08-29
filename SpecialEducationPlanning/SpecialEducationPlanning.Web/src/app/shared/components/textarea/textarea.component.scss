@@ -1,0 +1,15 @@
+@use "/src/assets/sass/abstracts/_variables.scss";
+
+.no-outline {
+  outline: none;
+}
+
+.tdp-textarea {
+  white-space: pre-line;
+  color: variables.$navy;
+}
+
+.tdp-textarea-disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}

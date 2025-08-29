@@ -1,0 +1,12 @@
+.tdp-more-options-menu {
+
+  &.mat-mdc-menu-panel {
+    border-radius: 0.625rem;
+    min-width: 11.25rem;
+
+    .mat-mdc-menu-item {
+      font-family: 'Rooster';
+      font-size: 0.9rem;
+    }
+  }
+}

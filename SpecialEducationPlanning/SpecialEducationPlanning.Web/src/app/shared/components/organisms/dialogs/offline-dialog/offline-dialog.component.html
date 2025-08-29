@@ -1,0 +1,29 @@
+<tdp-modal
+  maxWidth="600px"
+  height="100%"
+  (onClosed)="onClose()"
+>
+  <div title class="offline-dialog-title">
+    <h1 class="tdp-offline-body--title">
+      {{ titleKey | translate }}
+    </h1>
+  </div>
+  <div class="tdp-offline-body">
+    <div class="tdp-offline-body--description">
+      <div>{{ descriptionKey | translate }}</div>
+      <div>{{ descriptionKey2 | translate }}</div>
+    </div>
+    <tdp-offline-icon></tdp-offline-icon>
+  </div>
+
+  <div actions class="tdp-offline-actions">
+    <tdp-button
+      class="tdp-offline-button"
+      size="large"
+      color="green"
+      (onClick)="onActionClick()"
+    >
+      {{ buttonKey | translate }}
+    </tdp-button>
+  </div>
+</tdp-modal>

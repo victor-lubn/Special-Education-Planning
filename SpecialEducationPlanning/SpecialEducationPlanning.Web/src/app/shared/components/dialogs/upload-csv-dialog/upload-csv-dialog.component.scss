@@ -1,0 +1,91 @@
+@import "/src/assets/sass/abstracts/_variables.scss";
+
+.tdp-dialog-upload-success {
+  color: $success-green;
+}
+
+.tdp-dialog-upload-errors-container {
+  max-height: 16em;
+  margin: 0.8em 0;
+  padding: 0 1em;
+  overflow-y: auto;
+  .tdp-dialog-upload-error {
+    color: $aiep-red;
+    margin: 0.4em 0;
+  }
+}
+
+.manager-input {
+  font-family: "Rooster";
+  font-weight: bold;
+  input {
+    border-radius: 0.44rem;
+    height: 2.5rem;
+  }
+}
+
+.icon-padding {
+  padding-bottom: 0.31rem;
+}
+
+.btn-text {
+  font-family: "Rooster";
+  font-style: normal;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.125rem;
+  font-size: 0.875rem;
+}
+
+.upload-csv-dialog {
+  .upload-csv-dialog-body {
+    padding-top: 1.875rem;
+    padding-bottom: 2rem;
+
+    .upload-csv-dialog-upload-files {
+      border: 2px dashed $gray-68;
+      border-radius: 0.625rem;
+      background-color: $very-light-grey;
+      display: flex;
+      flex-direction: column;
+      height: 9.375rem;
+      align-items: center;
+      justify-content: center;
+      color: $ford-grey;
+
+      &-main-text {
+        line-height: 1.25rem;
+        font-size: 1.25rem;
+        font-weight: bold;
+        padding-bottom: 0.625rem;
+      }
+
+      &-link {
+        text-decoration: underline;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      &-bottom-text {
+        line-height: 1.313rem;
+        font-size: 0.938rem;
+      }
+    }
+
+    .upload-csv-dialog-body-files {
+      padding-top: 0.625rem;
+    }
+  }
+
+  tdp-cancel-icon {
+    margin-top: 0.188rem;
+    margin-left: 0.22rem;
+    cursor: pointer;
+  }
+
+}
+
+.upload-csv-dialog-upload-files-link {
+  text-transform: lowercase;
+}

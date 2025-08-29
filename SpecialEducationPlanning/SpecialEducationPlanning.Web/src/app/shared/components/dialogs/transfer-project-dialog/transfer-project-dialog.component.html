@@ -1,0 +1,51 @@
+﻿<tdp-modal
+  height="800px"
+  [closable]="true"
+  (onClosed)="cancelDialog()">
+  <div title> {{ 'dialog.transferProject.title' | translate }} </div>
+
+  <div details>
+    <tdp-item-details [label]="'projectOverview.projectName' | translate" [data]="project?.codeProject || null" ></tdp-item-details>
+    <tdp-item-details [label]="'projectOverview.projectReference' | translate" [data]="project?.keyName || null" ></tdp-item-details>
+    <tdp-item-details [label]="'projectOverview.customerName' | translate" [data]="project?.builder?.tradingName || null" ></tdp-item-details>
+    <tdp-item-details [label]="'project.createdDate' | translate" [data]="project.createdDate | date: 'dd/MM/yyyy'" ></tdp-item-details>
+    <tdp-item-details [label]="'project.lastUpdated' | translate" [data]="project.updatedDate | date: 'dd/MM/yyyy'" ></tdp-item-details>
+  </div>
+  <div class="transfer-project-content-title">{{ 'projectPlans.plans' | translate }}</div>
+  <div class="tdp-row transfer-project-content">
+    <tdp-table
+      [tableSort]="false"
+      [tablePaginator]="true"
+      [dynamicData]="false"
+      [records]="plansRecords"
+      [columnsConfiguration]="planColumnNames"
+      [hasActions]="false"
+      tableHeight="300px"
+      tableMinHeight="200px"
+    >
+    </tdp-table>
+    <tdp-autocomplete
+      [title]="'plan.toAiep' | translate"
+      [elementList]="AiepList"
+      [displayWith]="displayWith"
+      [formControl]="targetAiepCode">
+    </tdp-autocomplete>
+  </div>
+
+  <div actions>
+    <tdp-button
+      [size]="'medium'"
+      [color]="'text-only'"
+      (onClick)="cancelDialog()">
+      {{ 'button.cancel' | translate }}
+    </tdp-button>
+    <tdp-button
+      [size]="'medium'"
+      [color]="'green'"
+      (onClick)="submitTransfer()"
+      [disabled]="!targetAiepCode.valid">
+      {{ 'button.transfer' | translate }}
+    </tdp-button>
+  </div>
+</tdp-modal>
+

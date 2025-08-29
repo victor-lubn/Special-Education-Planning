@@ -1,0 +1,21 @@
+<div class="tdp-row tdp-dialog-upper">
+  {{ 'dialog.unassignedPlanDialogTitle' | translate }}
+  <i class="fas fa-times" (click)="cancelDialog()"></i>
+</div>
+<div class="tdp-dialog-list-container">
+  <ng-container *ngFor="let planItem of planList">
+    <tdp-plan-search-result
+      [plan]="planItem"
+      [isUnassignedDialog]="true"
+      (selectedPlan)="onSelectedPlan($event)">
+    </tdp-plan-search-result>
+  </ng-container>
+</div>
+<div class="tdp-row tdp-dialog-actions">
+  <button
+    (click)="cancelDialog()"
+    class="tdp-secondary-btn">
+      {{ 'button.cancel' | translate }}
+    <i class="fas fa-times"></i>
+  </button>
+</div>

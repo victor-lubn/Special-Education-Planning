@@ -1,0 +1,57 @@
+﻿<tdp-main-view>
+    <form [formGroup]="form" class="main-view--header">
+      <tdp-filter-header
+        [options]="options"
+        [form]="form">
+      </tdp-filter-header>
+    </form>
+
+    <div class="main-view--content">
+      <div class="tdp-Aieps-list-header">
+        <tdp-back-with-title
+          class="tdp-Aieps-list-header--back-component"
+          [title]="'AiepsPage.title' | translate"
+          (onClick)="goBack()">
+        </tdp-back-with-title>
+        <tdp-button
+          class="tdp-Aieps-list-header--manage-button"
+          [icon]="true"
+          [whiteBlueButton]="true"
+          (onClick)="goToCountriesList()">
+          <tdp-globe-icon icon-button></tdp-globe-icon>
+          {{ 'AiepsPage.manageContryRegionArea' | translate }}
+        </tdp-button>
+      </div>
+
+      <div class="tdp-Aieps-list-table">
+        <ng-container *ngIf="Aieps">
+          <tdp-table
+            [records]="Aieps"
+            [columnsConfiguration]="columnsConfiguration"
+            [pageSize]="pageSize"
+            [hasActions]="true"
+            (onPageChanged)="pageChanged($event)"
+            (onSortChanged)="sortChanged($event)">
+            <tdp-table-actions>
+              <ng-template let-record="record">
+                <tdp-table-action (click)="goToAiepDetails(record)">
+                  <tdp-pencil-icon
+                    class="tdp-actions-icon"
+                    [matTooltip]="'button.edit' | translate"
+                    fillColor="#ADADAD"
+                  ></tdp-pencil-icon>
+                </tdp-table-action>
+              </ng-template>
+            </tdp-table-actions>
+          </tdp-table>
+        </ng-container>
+      </div>
+    </div>
+
+  <tdp-create-button
+    [text]="'AiepsPage.createNewAiep' | translate"
+    (click)="goToNewAiepPage()"
+  >
+  </tdp-create-button>
+</tdp-main-view>
+

@@ -1,0 +1,9 @@
+<div class="header main-view-item" [class.header--sticky]="stickyHeader">
+  <ng-content select=".main-view--header"></ng-content>
+</div>
+
+<div class="content main-view-item">
+  <ng-content select=".main-view--content"></ng-content>
+</div>
+
+<ng-content></ng-content>

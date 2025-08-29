@@ -1,0 +1,32 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-main-plan-details-form {
+    &-control {
+        margin-bottom: 1.25rem;
+    }
+
+    .error-message {
+        ::ng-deep {
+          input {
+            border: 2px solid $error-red !important;
+            outline: none;
+          }
+        }
+    }
+
+    &-error {
+        margin-bottom: 0.5625rem;
+        color: $error-red;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 0.75rem;
+        line-height: 1.3125rem;
+    }
+
+    &-input {
+        ::ng-deep {
+            input {
+                width: 100%;
+            }
+        }
+    }
+}

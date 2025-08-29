@@ -1,0 +1,17 @@
+﻿<tdp-quick-preview
+  title="{{ 'plan.planName' | translate }}"
+  [planId]="currentOfflinePlan?.planName"
+  [EducationOrigin]="currentOfflinePlan?.EducationOrigin"
+  [image]="imageUrl"
+  altText="{{ 'dialog.noPlanPreview' | translate }}"
+  print="{{ 'button.print' | translate }}"
+  edit="{{ 'button.edit' | translate }}"
+  view="{{ 'button.viewPlan' | translate }}"
+  [loadingImage]="loadingImage"
+  [showViewDetailsButton]="showViewDetailsButton"
+  (onClose)="closeDialog()"
+  (onPrint)="printPreview()"
+  (onEdit)="openInFusion()"
+  (onView)="goToPlanDetails()"
+></tdp-quick-preview>
+

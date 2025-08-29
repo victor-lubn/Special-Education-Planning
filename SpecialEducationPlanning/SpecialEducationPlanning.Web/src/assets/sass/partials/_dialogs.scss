@@ -1,0 +1,100 @@
+.tdp-dialog-upper {
+  font-family: 'Open Sans Semibold';
+  justify-content: space-between;
+  font-size: 20px;
+  align-items: center;
+  height: 1.5em;
+  margin-bottom: 1em;
+  i {
+    cursor: pointer;
+  }
+  .tdp-dialog-title {
+    margin-bottom: 0.2em;
+  }
+  .tdp-dialog-subtitle {
+    font-family: 'Open Sans';
+    font-size: 16px;
+  }
+}
+
+.tdp-dialog-textarea {
+  margin-bottom: 1.3em;
+  box-sizing: border-box;
+  border-radius: 4px;
+  padding: 0.7em;
+  width: 100%;
+}
+
+.tdp-dialog-list-container {
+  max-height: 23em;
+  overflow-y: scroll;
+  padding: 0 0.7em;
+  margin-bottom: 1em;
+}
+
+.tdp-dialog-form-container {
+  margin-bottom: 1em;
+}
+
+.tdp-dialog-file-list-container {
+  padding-left: 0.5em;
+  margin-bottom: 0.5em;
+  .tdp-dialog-file-uploaded {
+    margin-top: 0.2em;
+    i {
+      margin-right: 0.4em;
+      margin-left: 0.4em;
+      margin-top: 0.1em;
+    }
+    .tdp-dialog-delete-file-icon {
+      margin-left: 0.3em;
+      align-self: center;
+      color: $aiep-red;
+      cursor: pointer;
+    }
+  }
+}
+
+.tdp-dialog-info-message {
+  margin: 1.3em 0.7em;
+}
+
+.tdp-dialog-upload-files {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5em;
+  color: $light-grey;
+  margin-bottom: 1.3em;
+  border: 1.5px dashed;
+  border-color: $light-grey;
+  i {
+    margin-right: 0.3em;
+  }
+  .tdp-dialog-upload-open-explorer {
+    text-decoration: underline;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .tdp-dialog-upload-upper-msg {
+    font-size: 14px;
+  }
+  .tdp-dialog-upload-bottom-msg {
+    font-size: 12px;
+    margin-top: 0.5em;
+  }
+}
+
+@mixin justify-right {
+  justify-content: flex-end;
+  button {
+    margin-left: 1em;
+  }
+}
+
+.tdp-dialog-actions {
+  width: 100%;
+  justify-content: space-between;
+  @include justify-right();
+}

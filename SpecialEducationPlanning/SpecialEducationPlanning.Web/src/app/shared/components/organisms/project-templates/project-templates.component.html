@@ -1,0 +1,37 @@
+﻿<div class="tdp-project-templates">
+  <div class="tdp-project-templates-title">
+    {{ templatesAndPlansString }}
+  </div>
+  <div class="tdp-project-templates-header">
+    <span class="tdp-project-templates-header-text">{{"projectTemplates.templates" | translate }}</span>
+    <tdp-button
+      *ngIf="!project?.isArchived"
+      class="reset-button"
+      color="green"
+      (onClick)="createTemplate()"
+    >
+      {{ "button.createTemplate" | translate }}
+    </tdp-button>
+  </div>
+  <div class="tdp-project-templates-table-container" [style.height]="containerHeight" #tableContainer>
+    <tdp-table
+      [tableSort]="true"
+      [tablePaginator]="false"
+      [dynamicData]="false"
+      [hasActions]="true"
+      [records]="templates"
+      [columnsConfiguration]="projectTemplatesColumnNames"
+    >
+      <tdp-table-actions>
+        <ng-template let-record="record">
+          <div class="ng-content-wraper">
+            <tdp-table-action *ngIf="!project?.isArchived" (click)="editInEducationTool($event, record)" [matTooltip]="'button.edit' | translate">
+              <tdp-launch-icon class="tdp-actions-icon"></tdp-launch-icon>
+            </tdp-table-action>
+          </div>
+        </ng-template>
+      </tdp-table-actions>
+    </tdp-table>
+  </div>
+</div>
+

@@ -1,0 +1,72 @@
+﻿<form
+  class="tdp-user-create-and-details-form"
+  [formGroup]="entityForm">
+  <div
+    class="tdp-user-create-and-details-form-inputs">
+    <div class="tdp-user-create-and-details-form-control">
+      <tdp-input
+        class="tdp-user-create-and-details-form-control--input"
+        formControlName="firstName"
+        [class.error-message]="checkHasErrorV2('firstName')"
+        [title]="'user.firstName' | translate"
+        [required]="true">
+      </tdp-input>
+      <div *ngIf="checkHasErrorV2('firstName', 'required')" class="tdp-user-create-and-details-form-error">
+        {{ 'validationErrors.required' | translate }}
+      </div>
+    </div>
+    <div class="tdp-user-create-and-details-form-control">
+      <tdp-input
+        class="tdp-user-create-and-details-form-control--input"
+        formControlName="surname"
+        [class.error-message]="checkHasErrorV2('surname')"
+        [title]="'user.surname' | translate">
+      </tdp-input>
+      <div *ngIf="checkHasErrorV2('surname', 'required')" class="tdp-user-create-and-details-form-error">
+        {{ 'validationErrors.required' | translate }}
+      </div>
+    </div>
+    <div class="tdp-user-create-and-details-form-control">
+      <tdp-input
+        class="tdp-user-create-and-details-form-control--input"
+        formControlName="uniqueIdentifier"
+        [class.error-message]="checkHasErrorV2('uniqueIdentifier')"
+        [title]="'user.uniqueIdentifier' | translate"
+        [required]="true">
+      </tdp-input>
+      <div *ngIf="checkHasErrorV2('uniqueIdentifier', 'required')" class="tdp-user-create-and-details-form-error">
+        {{ 'validationErrors.required' | translate }}
+      </div>
+    </div>
+    <div class="tdp-user-create-and-details-form-control" *ngIf="hasRolePermission">
+      <tdp-select
+        [label]="'user.role' | translate"
+        [options]="roleList"
+        [required]="true"
+        [ngClass]="{ 'error-message': checkHasErrorV2('roleId') }"
+        formControlName="roleId"
+      ></tdp-select>
+      <div *ngIf="checkHasErrorV2('roleId', 'required')" class="tdp-user-create-and-details-form-error">
+        {{ 'validationErrors.required' | translate }}
+      </div>
+    </div>
+    <div class="tdp-user-create-and-details-form-control">
+      <tdp-autocomplete 
+          ngDefaultControl
+          class="tdp-user-create-and-details-form-control--autocomplete"
+          formControlName="AiepCode"
+          [title]="'user.AiepCode' | translate"
+          [class.error-message]="checkHasErrorV2('AiepCode')"
+          [elementList]="AiepCodeList"
+          [required]="true">
+      </tdp-autocomplete>
+      <div *ngIf="checkHasErrorV2('AiepCode', 'required')" class="tdp-user-create-and-details-form-error">
+        {{ 'validationErrors.required' | translate }}
+      </div>
+      <div *ngIf="checkHasErrorV2('AiepCode', 'containedInError')" class="tdp-user-create-and-details-form-error">
+        {{ 'validationErrors.valueList' | translate}}
+      </div>
+    </div>
+  </div>
+</form>
+

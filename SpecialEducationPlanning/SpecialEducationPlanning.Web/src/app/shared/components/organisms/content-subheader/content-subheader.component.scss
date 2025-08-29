@@ -1,0 +1,10 @@
+.content-subheader-container{
+    display: flex;
+    align-items: center;
+
+    &-date-picker{
+        margin: 0 4rem;
+        min-width: 30rem;
+        margin-bottom: 0.7rem;
+    }
+}

@@ -1,0 +1,28 @@
+<button
+  [type]="type"
+  [attr.form]="form"
+  class="tdp-atom-button tdp-atom-button-{{ color }} tdp-atom-button-{{ size }}"
+  [ngClass]="{
+    'tdp-atom-white-blue': whiteBlueButton,
+    'tdp-atom-white-green': whiteGreenButton }"
+  [disabled]="disabled"
+  (click)="handleOnClick()"
+  (mouseenter)="showTooltip()"
+  (mouseleave)="hideTooltip()"
+>
+  <div class="tdp-atom-button-icon-container" *ngIf="icon">
+    <ng-content select="[icon-button]"></ng-content>
+  </div>
+  <div
+    class="tdp-atom-button-tooltip"
+    *ngIf="tooltip"
+    [ngClass]="{ 'tdp-atom-button-show-tooltip': activeTooltip }"
+  >
+    <ng-content select="[tooltip]"></ng-content>
+  </div>
+
+  <ng-content></ng-content>
+  <div class="tdp-atom-button-right-icon-container" *ngIf="iconRight">
+    <ng-content select="[right-icon]"></ng-content>
+  </div>
+</button>

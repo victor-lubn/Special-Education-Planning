@@ -1,0 +1,21 @@
+@use "/src/assets/sass/abstracts/variables";
+
+._svg {
+    &._svg__clickable {
+        cursor: pointer;
+    }
+
+    &._svg__primary {
+        path {
+            fill: variables.$gray-68;
+        }
+        
+        &._svg__clickable {
+            &:hover {
+                path {
+                    fill: variables.$navy;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+@import '/src/assets/sass/abstracts/_variables.scss';
+
+
+.upload-release-notes-form {
+  margin-top: 1rem;
+  ::ng-deep {
+    .tdp-input {
+      width: 100%;
+    }
+  }
+
+  &-row { 
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+
+    &-input {
+      width: 280px;
+      margin-top: 1rem;
+    }
+  }
+
+  .tdp-form-input-error {
+    ::ng-deep {
+      input, input:focus {
+          border: 0.125rem solid $error-red;
+          outline: none;
+      }
+    }
+  }
+}
+
+.icon-padding {
+  padding-bottom: 0.31rem;
+}
+
+.upload-release-notes-dialog {
+
+  .upload-release-notes-dialog-body {
+    overflow: auto;
+    flex-grow: 1;
+    margin: 0 -2.5rem;
+    padding: 1.25rem 2.5rem;
+
+    .upload-release-notes-dialog-upload-files {
+      border: 2px dashed $gray-68;
+      border-radius: 0.625rem;
+      background-color: $very-light-grey;
+      display: flex;
+      flex-direction: column;
+      height: 9.375rem;
+      align-items: center;
+      justify-content: center;
+      color: $ford-grey;
+
+      &-main-text {
+        line-height: 1.25rem;
+        font-size: 1.25rem;
+        font-weight: bold;
+        padding-bottom: 0.625rem;
+      }
+
+      &-link {
+        text-decoration: underline;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      &-bottom-text {
+        line-height: 1.313rem;
+        font-size: 0.938rem;
+      }
+    }
+
+    .upload-release-notes-dialog-body-files {
+      padding-top: 0.625rem;
+    }
+  }
+
+  tdp-cancel-icon {
+    margin-top: 0.188rem;
+    margin-left: 0.22rem;
+    cursor: pointer;
+  }
+}

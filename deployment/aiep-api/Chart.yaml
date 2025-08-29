@@ -1,0 +1,6 @@
+﻿apiVersion: v1
+appVersion: "1.0"
+description: Helm chart for Trade Education Platform APIs
+name: tdp-api
+version: 0.1.0
+

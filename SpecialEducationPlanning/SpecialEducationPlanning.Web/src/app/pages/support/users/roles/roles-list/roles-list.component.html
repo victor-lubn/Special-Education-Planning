@@ -1,0 +1,48 @@
+<tdp-main-view>
+  <div class="main-view--header">
+    <tdp-filter-header [options]="options" [form]="form"> </tdp-filter-header>
+  </div>
+</tdp-main-view>
+
+<div class="tdp-roles-list-body">
+  <div class="tdp-roles-list-header">
+    <tdp-back-with-title
+      class="tdp-roles-list-header--back-component"
+      [title]="'rolesPage.title' | translate"
+      (onClick)="goBack()"
+    >
+    </tdp-back-with-title>
+  </div>
+
+  <div class="tdp-roles-list-table">
+    <ng-container *ngIf="entityEnvelopeResponse">
+      <tdp-table
+        [records]="entityEnvelopeResponse"
+        [columnsConfiguration]="columnsConfiguration"
+        [pageSize]="defaultPageSize"
+        [hasActions]="true"
+        (onPageChanged)="pageChanged($event)"
+        (onSortChanged)="sortChanged($event)"
+        (onRowClicked)="openRegionDetails($event)"
+      >
+        <tdp-table-actions>
+          <ng-template let-record="record">
+            <tdp-table-action (click)="openEditRole($event, record)">
+              <tdp-pencil-icon
+                class="tdp-actions-icon"
+                fillColor="#ADADAD"
+                [matTooltip]="'button.edit' | translate"
+              >
+              </tdp-pencil-icon>
+            </tdp-table-action>
+          </ng-template>
+        </tdp-table-actions>
+      </tdp-table>
+    </ng-container>
+  </div>
+</div>
+
+<tdp-create-button
+  [text]="'button.createNewRole' | translate"
+  (click)="openCreateNewRole()"
+></tdp-create-button>

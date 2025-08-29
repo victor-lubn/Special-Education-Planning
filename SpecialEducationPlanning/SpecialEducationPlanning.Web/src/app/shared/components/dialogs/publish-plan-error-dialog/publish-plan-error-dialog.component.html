@@ -1,0 +1,19 @@
+<tdp-modal
+  height="300px"
+  width="700px"
+  [closable]="true"
+  (onClosed)="closeDialog()">
+  <div title> {{ 'dialog.publishPlanServiceBusError.title' | translate }} </div>
+  <div>
+    {{ 'dialog.publishPlanServiceBusError.content' | translate }}
+  </div>
+
+  <div actions>
+    <tdp-button
+      [size]="'medium'"
+      [color]="'green'"
+      (onClick)="closeDialog()">
+      {{ 'button.accept' | translate }}
+    </tdp-button>
+  </div>
+</tdp-modal>

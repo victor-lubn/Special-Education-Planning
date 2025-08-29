@@ -1,0 +1,11 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-end-user-dialog {
+    color: $navy;
+    &-body {
+        overflow: auto;
+        flex-grow: 1;
+        margin: 0 -2.5rem;
+        padding: 1.25rem 2.5rem;
+    }
+}

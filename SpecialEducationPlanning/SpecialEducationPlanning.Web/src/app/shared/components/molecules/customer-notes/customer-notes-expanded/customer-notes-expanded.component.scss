@@ -1,0 +1,95 @@
+@use "/src/assets/sass/abstracts/variables";
+
+.tdp-customer-notes-expanded {
+  width: 100%;
+  border: 0.063rem solid variables.$gray-89;
+  border-radius: 0.625rem;
+  background-color: variables.$white;
+  position: relative;
+
+  & > * {
+    width: 100%;
+  }
+  // Content styling
+  .tdp-customer-notes-content {
+    box-sizing: border-box;
+    padding: 1.875rem;
+    padding-right: 0.375rem;
+
+    label {
+      display: none;
+    }
+  }
+
+  .tdp-atoms-textarea-input-container
+    .tdp-atoms-textarea-body.tdp-atoms-textarea-body.tdp-atoms-textarea-body.tdp-atoms-textarea-body {
+    padding: 0;
+    border: none;
+    padding-right: 1.5rem;
+    font-size: 0.938rem;
+    line-height: 1.313;
+    resize: none;
+    height: 16.25rem;
+
+    &:focus {
+      border: none;
+    }
+
+    &::-webkit-scrollbar {
+      width: 0.25rem;
+    }
+  }
+
+  // Button container styling
+  .tdp-customer-notes-button-container {
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid variables.$disabled-color;
+    align-items: flex-end;
+    box-sizing: border-box;
+    padding-right: 1.875rem;
+    padding-bottom: 1.875rem;
+    height: 5rem;
+
+    .tdp-customer-notes-cancel-button {
+      margin-right: 1rem;
+    }
+  }
+
+  // Popup button resizer
+  .tdp-customer-notes-close {
+    position: absolute;
+    top: 0.625rem;
+    right: 0.75rem;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(218, 218, 218, 0.5);
+      border-radius: 100%;
+      cursor: pointer;
+      & svg path{
+        fill: variables.$navy;
+      }
+    }
+  }
+}
+
+.tdp-customer-notes-backgrdop {
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.tdp-customer-notes-panel {
+  width: 46.25rem;
+
+  .mat-mdc-dialog-container {
+    padding: 0;
+    overflow: hidden;
+  }
+}
+

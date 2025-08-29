@@ -1,0 +1,36 @@
+<tdp-main-view>
+
+  <div [formGroup]="form" class="main-view--header">
+    <tdp-filter-header [options]="options" [form]="form"></tdp-filter-header>
+  </div>
+
+  <div class="main-view--content">
+    <div class="tdp-system-logs-list-subheader">
+      <tdp-back-with-title
+        [title]="'systemLog.title' | translate"
+        (onClick)="goBack()">
+      </tdp-back-with-title>
+    </div>
+    <tdp-table
+      class="tdp-system-logs-list-table"
+      [records]="systemLogs"
+      [columnsConfiguration]="systemLogsConfiguration"
+      [pageSize]="pageSize"
+      (onPageChanged)="pageChanged($event)"
+      (onSortChanged)="sortChanged($event)">
+    </tdp-table>
+    <tdp-table-actions>
+      <ng-template let-record="record">
+        <tdp-table-action (click)="openPreviewDialog($event, record)">
+          <tdp-launch-icon
+            class="tdp-actions-icon"
+            fillColor="#ADADAD"
+            [matTooltip]="'button.preview' | translate">
+          </tdp-launch-icon>
+        </tdp-table-action>
+
+      </ng-template>
+    </tdp-table-actions>
+  </div>
+
+</tdp-main-view>

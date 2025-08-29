@@ -1,0 +1,22 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-atoms-item-details {
+  margin-bottom: 24px;
+  margin-right: 54px;
+  min-width: 254px;
+
+  p {
+    font-size: 15px;
+    line-height: 21px;
+    margin: 0;
+    margin-bottom: 7px;
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+
+  .unassigned-text {
+    color: $notice-red;
+  }
+}

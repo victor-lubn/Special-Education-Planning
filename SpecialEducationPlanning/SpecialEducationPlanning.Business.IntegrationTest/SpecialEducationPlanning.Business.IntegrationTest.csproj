@@ -1,0 +1,65 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>    
+    <TargetFramework>$(netcoreapp)</TargetFramework>
+  </PropertyGroup>
+
+  <Import Project="$(MSBuildThisFileDirectory)/../version.props"></Import>
+
+  <ItemGroup>
+    <Content Include="..\SpecialEducationPlanning
+.Api.Host\appsettings.Development.json" Link="appsettings.Development.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="$(AutoMapper)" />
+    <PackageReference Include="coverlet.msbuild" Version="$(coverletmsbuild)">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Koa.Hosting.AspNetCore" Version="$(KoaPackageVersion)" />
+    <!--<PackageReference Include="Koa.Persistence.EntityRepository.EntityFrameworkCore.DependencyInjection" Version="2.5.1" />
+    <PackageReference Include="Koa.Platform.Providers.DependencyInjection" Version="2.5.1" />-->
+	  
+    <PackageReference Include="LaunchDarkly.ServerSdk" Version="$(LaunchDarklyServerSdk)" />
+    <PackageReference Include="Microsoft.Azure.Search" Version="$(MicrosoftAzureSearch)" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="$(MicrosoftEntityFrameworkCoreInMemory)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="$(MicrosoftExtensionsConfiguration)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Abstractions" Version="$(MicrosoftExtensionsConfigurationAbstractions)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="$(MicrosoftExtensionsConfigurationBinder)" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="$(MicrosoftExtensionsConfigurationUserSecrets)" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="$(MicrosoftNETTestSdk)" />
+    <PackageReference Include="MockQueryable.Moq" Version="$(MockQueryableMoq)" />
+    <PackageReference Include="System.Interactive.Async" Version="$(SystemInteractiveAsync)" />
+    <PackageReference Include="xunit" Version="$(xunit)" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="$(xunitrunnervisualstudio)" />
+    <PackageReference Include="Moq" Version="$(Moq)" />
+    <PackageReference Include="ILogger.Moq" Version="$(ILoggerMoq)" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SpecialEducationPlanning
+.Business\SpecialEducationPlanning
+.Business.csproj" />
+  </ItemGroup>
+  
+  
+   <ItemGroup>
+    <Folder Include="Repository\Educationer\" />
+	 </ItemGroup>
+  
+  
+   <ItemGroup>
+     <None Update="DataMigration\plan.zip">
+       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+     </None>
+     <None Update="DataMigration\preview.zip">
+       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+     </None>
+   </ItemGroup>
+	
+	
+</Project>
+

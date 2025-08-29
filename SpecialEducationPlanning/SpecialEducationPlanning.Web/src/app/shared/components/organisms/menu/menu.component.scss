@@ -1,0 +1,50 @@
+﻿@use "/src/assets/sass/abstracts/variables";
+
+.tdp-menu {
+  div.app-name {
+    display: flex;
+    justify-content: center;
+    height: 2.25rem;
+    margin-right: 0.625rem;
+    span.logo {
+      color: variables.$white;
+      font-family: "Rooster";
+      font-style: normal;
+      font-size: 1.5rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+  }
+
+  .support-Aiep-selector-container {
+    border-left: 1px solid variables.$white;
+    position: relative;
+
+    ::placeholder {
+      color: variables.$white;
+    }
+
+    :focus-visible {
+      outline-color: transparent;
+    }
+
+    &-input {
+      padding: 0.5rem 0.75rem;
+      background-color: variables.$navy;
+      border: none;
+      color: variables.$white;
+      font-size: 1rem;
+      font-weight: 300;
+      width: 10.5rem;
+    }
+
+    tdp-arrow-down-icon {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+  }
+}
+

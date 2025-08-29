@@ -1,0 +1,66 @@
+﻿<tdp-modal
+  class="tdp-plan-preview"
+  width="width"
+  height="height"
+  (onClosed)="handleClose()">
+
+  <div class="tdp-plan-preview-body">
+
+    <div title class="tdp-plan-preview-header-title">
+      {{ title }}: <span class="tdp-plan-preview-header-title-id">{{ planId }}</span>
+    </div>
+
+    <div class="tdp-plan-preview-image">
+      <tdp-spinner *ngIf="loadingImage"></tdp-spinner>
+      <div id="printableImagePreview">
+        <img [src]="image" *ngIf="!loadingImage">
+      </div>
+      <ng-template [ngIf]="!image && !loadingImage">
+        <div class="no-image">
+          <tdp-icon size="48px" [name]="preview"></tdp-icon>
+          <div class="alt-text">{{ altText }}</div>
+        </div>
+      </ng-template>
+    </div>
+
+  </div>
+  <div actions class="tdp-plan-preview-footer">
+
+    <tdp-button
+      *ngIf="showPromoteMaster"
+      color="text-only"
+      size="large"
+      [disabled]="isMasterVersion"
+      (onClick)="handlePromoteMaster()"
+    >
+      {{ promoteToMaster }}
+    </tdp-button>
+    <tdp-button
+      color="text-only"
+      size="large"
+      [disabled]="!image"
+      (onClick)="handlePrint()"
+    >
+      {{ print }}
+    </tdp-button>
+    <tdp-button
+      *tdpPermission="'Plan_Modify'"
+      color="text-only"
+      size="large"
+      [disabled]="EducationOrigin === EducationToolType.THREE_DC"
+      (onClick)="handleEdit()"
+    >
+      {{ edit }}
+    </tdp-button>
+    <tdp-button
+      *ngIf="showViewDetailsButton"
+      color="green"
+      size ="large"
+      (onClick)="handleView()"
+    >
+      {{ view }}
+    </tdp-button>
+
+  </div>
+</tdp-modal>
+

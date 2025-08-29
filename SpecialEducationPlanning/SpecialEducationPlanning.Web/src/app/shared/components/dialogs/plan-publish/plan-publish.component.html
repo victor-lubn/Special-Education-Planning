@@ -1,0 +1,92 @@
+﻿<tdp-modal
+  maxWidth="1000px"
+  height="100%"
+  (onClosed)="closeDialog()">
+
+  <div title class="plan-publish-title">
+    {{ 'dialog.publishTitle' | translate }}
+  </div>
+  <div class="plan-publish-body">
+    <div class="plan-publish-plan-header">
+      <strong>{{ 'plan.planId' | translate }}</strong> {{ data.planCode }}
+    </div>
+
+    <form [formGroup]="entityForm">
+    <div class="plan-publish-form">
+      <tdp-input
+        class="plan-publish-form-input"
+        [title]="'dialog.EducationerEmail' | translate"
+        formControlName="EducationerEmail"
+        [ngClass]="{ 'plan-publish-error-input': checkHasErrorV2('EducationerEmail') }"
+        [required]="true"
+      ></tdp-input>
+      <div *ngIf="checkHasErrorV2('EducationerEmail', 'required')" class="plan-publish-error-message">
+        {{ 'validationErrors.required' | translate }}
+      </div>
+      <div *ngIf="checkHasErrorV2('EducationerEmail', 'aiepEmail')" class="plan-publish-error-message">
+        {{ 'validationErrors.aiepEmail' | translate }}
+      </div>
+
+      <tdp-input
+      class="plan-publish-form-input"
+      [title]="'dialog.recipientsEmail' | translate"
+      formControlName="receipientEmail1"
+      [ngClass]="{ 'plan-publish-error-input': checkHasErrorV2('receipientEmail1') }" 
+      ></tdp-input>
+      <div *ngIf="checkHasErrorV2('receipientEmail1', 'email')" class="plan-publish-error-message">
+        {{ 'validationErrors.mustBeEmail' | translate }}
+      </div>
+
+      <tdp-input
+        class="plan-publish-form-input"
+        [title]="'dialog.additionalEmail' | translate"
+        formControlName="receipientEmail2"
+        [ngClass]="{ 'plan-publish-error-input': checkHasErrorV2('receipientEmail2') }" 
+      ></tdp-input>
+      <div *ngIf="checkHasErrorV2('receipientEmail2', 'email')" class="plan-publish-error-message">
+        {{ 'validationErrors.mustBeEmail' | translate }}
+      </div>
+
+      <tdp-text-area
+        [title]="'dialog.messageCustomer' | translate"
+        formControlName="comments"
+        [ngClass]="{ 'plan-publish-error-textarea': checkHasErrorV2('comments') }" 
+      ></tdp-text-area>
+      <div *ngIf="checkHasErrorV2('comments', 'maxlength')" class="plan-publish-error-message">
+        {{ 'validationErrors.maxlength' | translate: { maxlength: maxMessageLength }  }}
+      </div>
+
+
+      <tdp-select
+        [label]="'dialog.publishOptionsLabel' | translate"
+        [options]="publishTypeOptions"
+        ngDefaultFormControl
+        formControlName="publishType"
+      ></tdp-select>
+
+      <div class="plan-publish-text-description">
+        <ng-container *ngIf="(publishValue$ | async) as publishValue">
+          {{ 'dialog.publishOptions.willReceive' | translate }} {{ publishValue | translate }}
+        </ng-container>
+        </div>
+      </div>
+    </form>  
+  </div>
+
+  <div actions>
+    <tdp-button 
+      [size]="'large'" 
+      [color]="'text-only'"
+      (onClick)="closeDialog()">
+      {{ 'button.cancel' | translate  }}
+    </tdp-button>
+    <tdp-button
+      [size]="'large'"
+      [color]="'green'"
+      [disabled]="!entityForm.valid"
+      (onClick)="submitPublish()">
+      {{ 'button.publishPlan' | translate }}
+    </tdp-button>
+  </div>
+
+</tdp-modal>

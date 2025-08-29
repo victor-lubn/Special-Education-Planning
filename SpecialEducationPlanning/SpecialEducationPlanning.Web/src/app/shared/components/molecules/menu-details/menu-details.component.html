@@ -1,0 +1,80 @@
+﻿<div class="tdp-menu-details">
+  <div
+    class="button-close _svg _svg__clickable _svg__primary"
+    [matTooltip]="'button.close' | translate"
+    (click)="closeMenuDetails()"
+  >
+    <tdp-cancel-icon fillColor="#ADADAD" width="1.125rem" height="1.125rem">
+    </tdp-cancel-icon>
+  </div>
+  <div class="tdp-menu-details--avatar">
+    <tdp-avatar [initials]="userInfo.initials" sizeAvatar="large"></tdp-avatar>
+  </div>
+  <div class="seperator"></div>
+
+  <div class="tdp-menu-details--user-info">
+    <div class="user-info-row">
+      <div class="user-info-general">{{ "login.username" | translate }}:</div>
+      <div class="user-info">{{ userInfo.username }}</div>
+    </div>
+    <div class="user-info-row">
+      <div class="user-info-general">{{ "login.email" | translate }}:</div>
+      <div class="user-info">{{ userInfo.email }}</div>
+    </div>
+    <div class="user-info-row">
+      <div class="user-info-general">{{ "login.mainRol" | translate }}:</div>
+      <div class="user-info">{{ userInfo.role }}</div>
+    </div>
+    <div class="user-info-row">
+      <div class="user-info-general">{{ "login.Aiep" | translate }}:</div>
+      <div class="user-info">{{ userInfo.Aiep }}</div>
+    </div>
+  </div>
+  <div class="seperator"></div>
+
+  <div class="tdp-menu-details--options">
+    <button class="tdp-button-with-icon" (click)="handleReleaseNotesDocument()">
+      <tdp-icon
+        [size]="iconOptionsSize"
+        [name]="iconRelaseNotesDocument"
+      ></tdp-icon>
+      {{ "topbar.releaseNotesDocumentMenu" | translate }}
+    </button>
+    <button class="tdp-button-with-icon" (click)="handleReleaseNotesWeb()">
+      <tdp-icon
+        [size]="iconOptionsSize"
+        [name]="iconReleaseNotesWeb"
+      ></tdp-icon>
+      {{ "topbar.externalReleaseNotesMenu" | translate }}
+    </button>
+    <button
+      *ngIf="showSupport"
+      class="tdp-button-with-icon"
+      (click)="handleSupportDashboard()"
+    >
+      <tdp-icon [size]="iconOptionsSize" [name]="iconQuestion"></tdp-icon>
+      {{ "topbar.supportDashboard" | translate }}
+    </button>
+    <button 
+      *tdpPermission="'Project_Management'"
+      class="tdp-button-with-icon" 
+      (click)="handleShowProjects()"
+    >
+      <tdp-icon [size]="iconOptionsSize" [name]="iconShowProjects"></tdp-icon>
+      {{ "topbar.viewProjects" | translate }}
+    </button>
+    <button class="tdp-button-with-icon" (click)="handleAbout()">
+      <tdp-icon [size]="iconOptionsSize" [name]="iconAbout"></tdp-icon>
+      {{ "topbar.about" | translate }}
+    </button>
+  </div>
+  <div class="seperator"></div>
+
+  <div class="tdp-menu-details--sign-out">
+    <tdp-button color="navy" size="medium" (onClick)="handleLogout()">
+      {{ "topbar.signOutMenu" | translate }}
+    </tdp-button>
+  </div>
+  <div class="seperator"></div>
+</div>
+

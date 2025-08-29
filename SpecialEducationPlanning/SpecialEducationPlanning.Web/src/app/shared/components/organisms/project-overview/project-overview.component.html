@@ -1,0 +1,27 @@
+<div class="tdp-project-overview">
+    <div class="tdp-project-overview-title">
+        {{ projectOverviewString }}
+    </div>
+    <div class="tdp-project-overview--panels">
+        <tdp-information-panel
+        class="tdp-project-overview-panels--panel"
+        [title]="customerName"
+        [size]="'medium'">
+        {{ project?.builder?.tradingName || '-' }}
+        </tdp-information-panel>
+        <tdp-information-panel
+            class="tdp-project-overview-panels--panel"
+            [title]="projectNameString"
+            [size]="'medium'">
+            {{ project?.codeProject || '-' }}
+        </tdp-information-panel>
+        <tdp-information-panel
+            class="tdp-project-overview-panels--panel"
+            [title]="projectRef"
+            [size]="'medium'">
+            {{ project?.keyName || '-'}}
+        </tdp-information-panel>
+       
+        
+    </div>
+</div>

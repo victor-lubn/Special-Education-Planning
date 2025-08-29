@@ -1,0 +1,54 @@
+<div class="tdp-timeline-comment">
+  <tdp-account-icon-svg></tdp-account-icon-svg>
+  <div class="tdp-timeline-comment-container">
+    <ng-container *ngIf="edit; else textComment">
+      <form [formGroup]="timelineCommentForm">
+        <tdp-text-area
+          type="text"
+          name="comment-form"
+          [placeholder]="'timeline.commentPlaceholder'| translate"
+          formControlName="text"
+        ></tdp-text-area>
+        <div class="tdp-timeline-comment-container-actions">
+          <tdp-check-icon 
+            class="tdp-timeline-icon"
+            width="1.3rem"
+            height="1.3rem"
+            [matTooltip]="'button.confirm' | translate"
+            (click)="onSubmit()">
+          </tdp-check-icon>
+          <tdp-cancel-icon
+            class="tdp-timeline-icon"
+            width="0.9rem"
+            height="0.9rem"
+            [matTooltip]="'button.cancel' | translate"
+            (click)="cancelEditComment()">
+          </tdp-cancel-icon>       
+        </div>
+      </form>
+    </ng-container>
+    <ng-template #textComment
+      ><p>{{ comment?.object?.text }}</p>
+      <div class="tdp-timeline-comment-container-info">
+        <p class="tdp-timeline-comment-container-info__timestamp">
+          {{ comment?.object?.updatedDate | tdpDate: true }} by
+          {{ comment?.object?.updateUser }}
+        </p>
+        <div class="tdp-timeline-comment-container-info__icons">
+          <tdp-pencil-icon
+            *tdpPermission="'Comment_Management'"
+            class="tdp-timeline-icon"
+            [matTooltip]="'button.edit' | translate"
+            (click)="editComment()">
+          </tdp-pencil-icon>
+          <tdp-trash-icon
+            *tdpPermission="'Comment_Management'"
+            class="tdp-timeline-icon"
+            [matTooltip]="'button.delete' | translate"
+            (click)="deletedComment()">
+          </tdp-trash-icon>
+        </div>
+      </div>
+    </ng-template>
+  </div>
+</div>

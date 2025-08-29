@@ -1,0 +1,25 @@
+<tdp-modal
+  maxWidth="600px"
+  height="100%"
+  (onClosed)="handleClose()"
+>
+  <div class="tdp-info-body">
+    <div title class="tdp-info-title">
+      {{ title }}
+    </div>
+    <div *ngIf="!htmlText" class="tdp-info-description">{{ description }}</div>
+    <div *ngIf="htmlText" class="tdp-info-description" innerHTML="{{ description }}"></div>
+    <div class="tdp-info-image" *ngIf="image">
+      <tdp-icon class="tdp-info-icon" size="48px" [name]="image" ></tdp-icon>
+    </div>
+  </div>
+
+  <div actions class="tdp-info-actions">
+      <tdp-button size="large" color="text-only" (onClick)="handleCancel()" *ngIf="cancel">
+        {{ cancel }}
+      </tdp-button>
+      <tdp-button size="large" color="green" (onClick)="handleAccept()" *ngIf="accept">
+        {{ accept }}
+      </tdp-button>
+  </div>
+</tdp-modal>

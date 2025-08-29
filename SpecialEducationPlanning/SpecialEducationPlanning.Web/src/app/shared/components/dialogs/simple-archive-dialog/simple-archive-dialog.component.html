@@ -1,0 +1,26 @@
+<tdp-modal
+  class="tdp-simple-archive-dialog"
+  [width]="width"
+  [height]="height"
+  [closable]="false"
+>
+  <div title class="tdp-simple-archive-dialog-title">
+    {{ titleStringKey | translate }}
+  </div>
+  <div actions class="tdp-simple-archive-dialog-actions">
+    <tdp-button
+      class="tdp-simple-archive-dialog-button--cancel"
+      [size]="'xl'" 
+      [color]="'white'"
+      (onClick)="onCancel()">
+      {{ cancelationStringKey | translate }}
+    </tdp-button>
+    <tdp-button 
+      class="tdp-simple-archive-dialog-button--confirm"
+      [size]="'xl'"
+      [color]="'green'"
+      (onClick)="onConfirm()">
+      {{ confirmationStringKey | translate }}
+    </tdp-button>
+  </div> 
+</tdp-modal>

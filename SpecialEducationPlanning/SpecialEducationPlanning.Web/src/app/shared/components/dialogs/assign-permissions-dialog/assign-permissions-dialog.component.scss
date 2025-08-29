@@ -1,0 +1,48 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-create-edit-role {
+  &__title {
+    text-align: left;
+    font-size: 1.875rem;
+    font-weight: 700;
+    margin-bottom: 1.125rem;
+  }
+
+  &-body {
+    overflow-y: auto;
+    flex-grow: 1;
+    margin: 0 -2.5rem;
+    padding: 1.25rem 2.5rem;
+    div.assign-permissions-wrapper {
+      min-height: 100%;
+      div.assign-entities-wrapper {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  &-form {
+    &__group {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 1.875rem;
+    }
+  }
+
+  ::ng-deep {
+    .tdp-input {
+      width: 100%;
+    }
+  }
+
+  .error-message {
+    ::ng-deep {
+      input {
+        border: 0.125rem solid $error-red;
+        outline: none;
+      }
+    }
+  }
+}

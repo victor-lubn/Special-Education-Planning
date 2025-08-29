@@ -1,0 +1,28 @@
+﻿@if (checkingNetwork) {
+  <div class="login-page">
+    <div class="login-card tdp-column">
+      <div class="login-card-container">
+        <label class="login-label">Education VIEW</label>
+        @if (!isCallback) {
+          <div>
+            <tdp-button
+              class="login-button"
+              (onClick)="login()"
+              [size]="'xl'"
+              [color]="'navy'"
+            >
+              <div title>
+                {{ "login.signIn" | translate }}
+              </div>
+            </tdp-button>
+          </div>
+        }
+        @if (isCallback && loadingUserInfo) {
+          <div>
+            <tdp-spinner></tdp-spinner>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+}

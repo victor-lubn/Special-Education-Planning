@@ -1,0 +1,9 @@
+.tdp-plan-details-offline {
+  margin-top: 7.4rem;
+
+  ::ng-deep {
+    .tdp-molecule-customer-header__info tdp-label {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,99 @@
+@use '../abstracts/variables';
+.mat-datepicker-content {
+  .mat-datepicker-content-container {
+    .mat-calendar {
+      .mat-calendar-content {
+        font-family: Rooster;
+        border-top: solid 0.063rem variables.$border-grey;
+        padding-top: 1rem;
+        .mat-calendar-table {
+          .mat-calendar-table-header {
+            tr {
+              th {
+                color: variables.$navy;
+                font-size: 0.813rem;
+              }
+              th.mat-calendar-table-header-divider {
+                display: none;
+              }
+            }
+          }
+        }
+        .mat-calendar-body {
+          tr {
+            td {
+              &.mat-calendar-body-label {
+                visibility: hidden;
+                padding: 0 !important;
+                height: 0;
+              }
+              &.mat-calendar-body-cell {
+                &:not(.mat-calendar-body-disabled) {
+                  &:hover > .mat-calendar-body-cell-content {
+                    &:not(.mat-calendar-body-selected) {
+                      &:not(.mat-calendar-body-comparison-identical) {
+                        background-color: rgba($color: variables.$blue, $alpha: 0.3);
+                      }
+                      
+                    }
+                  }
+                  
+                }
+                .mat-calendar-body-cell-content {
+                  &.mat-calendar-body-selected {
+                    background-color: variables.$blue;
+                  }
+                  &.mat-calendar-body-today:not(.mat-calendar-body-selected) {
+                    &:not(.mat-calendar-body-comparison-identical) {
+                      border-color: rgba($color: variables.$blue, $alpha: 0.38);;
+                    }
+                  }
+                }
+              }
+            }
+            
+          }
+        }
+
+        &.cdk-keyboard-focused {
+          .mat-calendar-body {
+            tr {
+              td.mat-calendar-body-cell  {
+                &.mat-calendar-body-active > .mat-calendar-body-cell-content {
+                  &:not(.mat-calendar-body-selected) {
+                    &:not(.mat-calendar-body-comparison-identical) {
+                      background-color: rgba($color: variables.$blue, $alpha: 0.3);
+                    }
+                    
+                  }
+                }
+              }
+              
+            }
+          }
+        }
+        &.cdk-program-focused {
+          .mat-calendar-body {
+            tr {
+              td.mat-calendar-body-cell {
+                &.mat-calendar-body-active > .mat-calendar-body-cell-content {
+                  &:not(.mat-calendar-body-selected) {
+                    &:not(.mat-calendar-body-comparison-identical) {
+                      background-color: rgba($color: variables.$blue, $alpha: 0.3);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .mat-datepicker-actions {
+      gap: 0.5rem;
+      justify-content: center;
+      border-top: solid 0.063rem variables.$border-grey;
+      padding: 1rem;
+    }
+  }
+}

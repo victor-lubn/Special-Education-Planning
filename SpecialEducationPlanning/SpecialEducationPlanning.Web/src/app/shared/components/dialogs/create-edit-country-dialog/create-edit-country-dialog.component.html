@@ -1,0 +1,59 @@
+<tdp-modal
+  class="tdp-create-edit-country"
+  [width]="'600px'"
+  [height]="'308px'"
+  [closable]="true"
+  (onClosed)="closeModal()"
+>
+  <div title class="tdp-create-edit-country__title">
+    {{
+      !country
+        ? ("dialog.createEditCountry.titleCreate" | translate)
+        : ("dialog.createEditCountry.titleEdit" | translate)
+    }}
+  </div>
+  <form [formGroup]="entityForm">
+    <div class="tdp-create-edit-country-form__group">
+      <tdp-input
+        class="tdp-create-edit-country-form__input"
+        formControlName="keyName"
+        [ngClass]="{ 'error-message': checkHasErrorV2('keyName') }"
+        [type]="'text'"
+        [required]="true"
+        [title]="keyNameString"
+      ></tdp-input>
+      <div
+        *ngIf="checkHasErrorV2('keyName', 'required')"
+        class="tdp-form-error-message"
+      >
+        {{ "validationErrors.required" | translate }}
+      </div>
+      <div
+        *ngIf="checkHasErrorV2('keyName', 'maxlength')"
+        class="tdp-form-error-message"
+      >
+        {{
+          "validationErrors.maxlength"
+            | translate: { maxlength: planNameMaxLength }
+        }}
+      </div>
+    </div>
+  </form>
+  <div actions class="tdp-create-edit-country-buttons">
+    <tdp-button
+      [color]="'text-only'"
+      [size]="'large'"
+      [mat-dialog-close]
+      (onClick)="closeModal()"
+      >{{ "button.cancel" | translate }}</tdp-button
+    >
+    <tdp-button
+      [color]="'green'"
+      [size]="'large'"
+      [disabled]="entityForm.invalid || entityForm.pristine"
+      (onClick)="!country ? createCountry() : editCountry()"
+    >
+      {{ "button.save" | translate }}
+    </tdp-button>
+  </div>
+</tdp-modal>

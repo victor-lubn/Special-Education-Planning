@@ -1,0 +1,24 @@
+<div class="tdp-details-template">
+  <div class="header">
+    <ng-content select=".details-header"></ng-content>
+  </div>
+
+  <div class="main-container">
+    <div class="left-container">
+      <ng-content select=".details-left-sidebar"></ng-content>
+    </div>
+
+    <div class="right-container">
+      <div class="top-container">
+        <ng-content select=".details-top-container"></ng-content>
+      </div>
+      <div class="bottom-container">
+        <ng-content select=".details-bottom-container"></ng-content>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <ng-content select=".details-footer"></ng-content>
+  </div>
+</div>

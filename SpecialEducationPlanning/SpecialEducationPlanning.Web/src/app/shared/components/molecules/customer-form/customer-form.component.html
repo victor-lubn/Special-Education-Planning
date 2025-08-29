@@ -1,0 +1,63 @@
+<form [formGroup]="customerInfoForm" (ngSubmit)="onSubmit()">
+  <tdp-input
+    [value]="initialValues.tradingName"
+    title="{{ 'builder.tradingName' | translate }}"
+    [type]="'text'"
+    [errorMessage]="tradingNameErrorMessage"
+    formControlName="tradingName"
+    required="true"
+  ></tdp-input>
+  <tdp-input
+    [value]="initialValues.name"
+    title="{{ 'builder.name' | translate }}"
+    [type]="'text'"
+    formControlName="name"
+  ></tdp-input>
+  <tdp-partial-address-form [formGroup]="customerInfoForm"></tdp-partial-address-form>
+  <div class="form-field-address2">
+    <tdp-input
+      [value]="initialValues.address2"
+      [title]="'builder.address2' | translate"
+      type="text"
+      formControlName="address2"
+    ></tdp-input>
+  </div>
+  <tdp-input
+    [value]="initialValues.address3"
+    title="{{ 'builder.address3' | translate }}"
+    [type]="'text'"
+    formControlName="address3"
+  ></tdp-input>
+  <tdp-input
+    [value]="initialValues.landLineNumber"
+    title="{{ 'builder.landlineNumber' | translate }}"
+    [type]="'text'"
+    [errorMessage]="landlineErrorMessage"
+    formControlName="landLineNumber"
+  ></tdp-input>
+  <tdp-input
+    [value]="initialValues.mobileNumber"
+    title="{{ 'builder.mobileNumber' | translate }}"
+    [type]="'text'"
+    [errorMessage]="mobileErrorMessage"
+    formControlName="mobileNumber"
+  ></tdp-input>
+  <tdp-input
+    [value]="initialValues.email"
+    title="{{ 'builder.email' | translate }}"
+    [type]="'text'"
+    [errorMessage]="emailErrorMessage"
+    formControlName="email"
+  ></tdp-input>
+  <div class="tdp-molecules-customer-container-left-buttons">
+    <tdp-button
+      type="submit"
+      [size]="'small'"
+      [color]="'white'"
+      [disabled]="customerInfoForm.invalid || !customerInfoForm.dirty"
+      ><div title>
+        {{ "button.save" | translate }}
+      </div></tdp-button
+    >
+  </div>
+</form>

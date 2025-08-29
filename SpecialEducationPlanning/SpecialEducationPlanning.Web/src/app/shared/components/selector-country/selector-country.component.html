@@ -1,0 +1,22 @@
+<div
+  class="tdp-select-container"
+  (click)="openOptions()">
+  <input
+    (blur)="inputTouched()"
+    type="text"
+    #inputElement
+    #selectorTrigger
+    [matAutocomplete]="selectorOptions"
+    readonly>
+    <i class="fas fa-chevron-down"></i>
+</div>
+<mat-autocomplete
+  #selectorOptions
+  (optionSelected)="onSelectedOption($event)"
+  [displayWith]="displayOptions.bind(this)">
+  <ng-container *ngFor="let option of elementList">
+    <mat-option [value]="option.key">
+      {{ option.display ? option.display : option.key }}
+    </mat-option>
+  </ng-container>
+</mat-autocomplete>

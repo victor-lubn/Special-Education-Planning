@@ -1,0 +1,24 @@
+<tdp-modal
+  maxWidth="670px"
+  height="auto"
+  (onClosed)="closeDialog()">
+
+  <div title>
+    {{ 'dialog.unableToRecoverAutosave.title' | translate }}
+  </div>
+
+  <div class="tdp-unable-autosave-recover-body">
+    <div> {{ 'dialog.unableToRecoverAutosave.message' | translate}} </div>
+  </div>
+
+  <div actions>
+    <tdp-button
+      size="large"
+      color="green"
+      (onClick)="closeDialog()"
+    >
+      {{ 'button.accept' | translate }}
+    </tdp-button>
+  </div>
+
+</tdp-modal>

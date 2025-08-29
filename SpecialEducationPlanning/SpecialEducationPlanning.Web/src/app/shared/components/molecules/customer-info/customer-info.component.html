@@ -1,0 +1,29 @@
+<div class="tdp-molecules-customer-container-left-address">
+  <div *ngIf="customerData && customerData.name !== null">
+    <h5>{{ 'builder.name' | translate }}</h5>
+    <div class="tdp-molecules-customer-container-left-address_customer-info">
+      <p>{{ customerData?.name }}</p>
+    </div>
+  </div>
+  <h5>{{ 'builder.address' | translate }}</h5>
+  <div class="tdp-molecules-customer-container-left-address_customer-info">
+    <p>{{ customerData?.address1 }}</p>
+    <p>{{ customerData?.address2 }}</p>
+    <p>{{ customerData?.address3 }}</p>
+    <p>{{ customerData?.postcode | tdpPostcode: true : countrySvc }}</p>
+  </div>
+</div>
+<div class="tdp-molecules-customer-container-left-contact-info">
+  <p *ngIf="customerData?.landLineNumber">
+    <tdp-icon [size]="'24px'" [name]="telephoneIcon"></tdp-icon
+    >{{ customerData?.landLineNumber }}
+  </p>
+  <p *ngIf="customerData?.mobileNumber">
+    <tdp-icon [size]="'24px'" [name]="mobileIcon"></tdp-icon
+    >{{ customerData?.mobileNumber }}
+  </p>
+  <p *ngIf="customerData?.email">
+    <tdp-icon [size]="'24px'" [name]="emailIcon"></tdp-icon
+    >{{ customerData?.email }}
+  </p>
+</div>

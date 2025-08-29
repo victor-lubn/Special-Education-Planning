@@ -1,0 +1,35 @@
+@import "/src/assets/sass/abstracts/variables";
+
+tdp-main-view {
+  .tdp-system-logs-list-subheader {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+  }
+
+  tdp-table.tdp-system-logs-list-table {
+    .mat-column-level { 
+      flex: 0 1 10%;
+    }
+
+    .mat-column-message { 
+      flex: 0 1 20%;
+    }
+
+    .mat-column-messageTemplate { 
+      flex: 0 1 20%;
+    }
+
+    .mat-column-exception { 
+      flex: 0 1 15%;
+    }
+
+    .mat-column-properties { 
+      flex: 0 1 12.5%;
+    }
+
+    .mat-column-timeStamp { 
+      flex: 0 1 12.5%;
+    }
+  }
+}

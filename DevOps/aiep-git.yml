@@ -1,0 +1,36 @@
+name: $(date:yyMMdd)$(rev:r) $(Build.SourceBranch)
+
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- task: CmdLine@2
+  inputs:
+    script: |
+      lines=`git branch -r --merged  | egrep -v "(^\*|master|dev|release)" | sed 's/origin\///' | wc -l`
+      git branch -r --merged  | egrep -v "(^\*|master|dev|release)" | sed 's/origin\///'
+      
+      if [ "$lines" -gt "20" ]; then 
+        echo "###########################################################################################"
+        echo "  More than 20 branches already merged"
+        echo "###########################################################################################"
+        exit 1; 
+      fi
+  displayName: 'Merged Branches in $(Build.SourceBranch)'
+
+- task: CmdLine@2
+  inputs:
+    script: |
+      lines=`git branch -r | egrep -v "(^\*|master$|develop$|release$|releases/|bugfix/|hotfix/|maintenance/|pull/|feature/)" | sed 's/origin\///' | wc -l`
+      git branch -r | egrep -v "(^\*|master$|develop$|release$|releases/|bugfix/|hotfix/|maintenance/|pull/|feature/)" | sed 's/origin\///'
+      
+      if [ "$lines" -gt "1" ]; then 
+        echo "###########################################################################################"
+        echo "  Incorrect Branch Names"
+        echo "###########################################################################################"
+        exit 1; 
+      fi
+  displayName: 'Bad Branch Names'

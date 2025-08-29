@@ -1,0 +1,25 @@
+﻿<tdp-Aiep-details-template class="tdp-Aiep-details">
+  <div class="Aiep-details-header">
+    <tdp-back-with-title
+      [title]="'Aiep.AiepDetails' | translate"
+      (onClick)="goBack()">
+    </tdp-back-with-title>
+  </div>
+
+  <div class="Aiep-details-top-container">
+    <tdp-Aiep-details-form
+      [Aiep]="Aiep"
+      (AiepSubmitted)="AiepSubmittedHandler($event)">
+    </tdp-Aiep-details-form>
+  </div>
+
+  <div class="Aiep-details-bottom-container">
+    <tdp-button
+      size="large"
+      color="green"
+      [disabled]="!hasChanges()"
+      (onClick)="updateAiep()">
+      {{ 'button.edit' | translate }}
+    </tdp-button>
+  </div>
+</tdp-Aiep-details-template>

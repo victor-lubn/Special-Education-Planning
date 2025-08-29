@@ -1,0 +1,23 @@
+<fieldset [formGroup]="rangeFormGroup">
+  <div class="tdp-date-picker-range">
+    <label>
+      {{startLabel}}
+    </label>
+    <span></span>
+    <label>
+      {{endLabel}}
+    </label>
+    <tdp-date-picker
+      [formControlName]="startControlName"
+      [min]="min"
+      [max]="endLimit || max"
+    ></tdp-date-picker>
+    <tdp-arrow-right-icon></tdp-arrow-right-icon>
+    <tdp-date-picker
+      [formControlName]="endControlName"
+      [min]="startLimit || min"
+      [max]="max"
+      [isEndDate]="true"
+    ></tdp-date-picker>
+  </div>
+</fieldset>

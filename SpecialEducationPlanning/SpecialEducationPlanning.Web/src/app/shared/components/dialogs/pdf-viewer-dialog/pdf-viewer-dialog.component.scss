@@ -1,0 +1,8 @@
+.tdp-embed-pdf-viewer-container {
+  overflow: hidden;
+  flex-grow: 1;
+  margin: 0 -2.5rem;
+  iframe {
+    display: none;
+  }
+}

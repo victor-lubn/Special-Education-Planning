@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planner Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .response {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            min-height: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Planner Test Page</h1>
+
+    <div class="buttons">
+        <button id="createPlanBtn">Create Plan</button>
+        <button id="savePlanBtn">Save Plan</button>
+        <button id="openPlanBtn">Open Plan</button>
+        <button id="changePlanBtn">Change Plan</button>
+        <button id="sessionErrorBtn">Session Error</button>
+        <button id="sessionCloseBtn">Close Session</button>
+        <!--            <button id="sendPlanCreatedBtn">Send Plan Created</button>-->
+    </div>
+
+    <div class="response" id="responseArea">
+        <p>Response will appear here...</p>
+    </div>
+</div>
+
+<script>
+    // Check if running in Electron
+    const isElectron = window.electronAPI !== undefined;
+
+    // Get DOM elements
+    const createPlanBtn = document.getElementById('createPlanBtn');
+    const savePlanBtn = document.getElementById('savePlanBtn');
+    const openPlanBtn = document.getElementById('openPlanBtn');
+    const changePlanBtn = document.getElementById('changePlanBtn');
+    const sessionErrorBtn = document.getElementById('sessionErrorBtn');
+    const sessionCloseBtn = document.getElementById('sessionCloseBtn');
+    // const sendPlanCreatedBtn = document.getElementById('sendPlanCreatedBtn');
+    const responseArea = document.getElementById('responseArea');
+
+    // Function to display response
+    function displayResponse(message) {
+        responseArea.innerHTML = `<pre>${JSON.stringify(message, null, 2)}</pre>`;
+    }
+
+    if (isElectron) {
+
+        // Send session initialized event when the page loads
+        window.electronAPI.send('session-initialized', {
+            status: 'SUCCESS',
+            timestamp: new Date().toISOString(),
+            EventType: 'SESSION_INITIALIZED'
+        });
+
+
+        window.electronAPI.on('data-to-child', (data) => {
+            displayResponse({
+                action: 'Create Plan Response',
+                data: data,
+                timestamp: new Date().toISOString()
+            });
+        });
+
+        // displayResponse({
+        //     action: 'Session Initialized',
+        //     status: 'SUCCESS',
+        //     timestamp: new Date().toISOString()
+        // });
+
+        // Create Plan button
+        createPlanBtn.addEventListener('click', () => {
+            const planData = {
+                EducationViewPlanUniqueId: Math.random(),
+                plan3DC: 1,
+                version3DC: '1.0.0',
+                EventType: 'PLAN_CREATED',
+                timestamp: Date.now()
+            }
+            window.electronAPI.send('plan-created', planData);
+
+            displayResponse({
+                action: 'Create Plan',
+                data: planData,
+                status: 'Request sent'
+            });
+        });
+        savePlanBtn.addEventListener('click', () => {
+            const planData = {
+                EducationViewPlanUniqueId: Math.random(),
+                plan3DC: 1,
+                version3DC: '1.0.0',
+                thumbnailUrl: 'url',
+                renderRequestJsonUrl: 'url',
+                Catalogue: 'Handleless',
+                timestamp: Date.now(),
+                EventType: 'PLAN_SAVED',
+            };
+            window.electronAPI.send('plan-saved', planData);
+
+            displayResponse({
+                action: 'Save Plan',
+                data: planData,
+                status: 'Request sent'
+            });
+        });
+
+        // Open Plan button
+        openPlanBtn.addEventListener('click', () => {
+            const planData = {
+                id: '42f87bb1-a749-4cd9-ac4b-5c851d0f3784',
+                version: 1,
+                EducationViewPlanUniqueId: Math.random().toString(),
+                EventType: 'PLAN_OPENED',
+                timestamp: Date.now()
+            };
+
+            window.electronAPI.send('plan-opened', planData);
+
+            displayResponse({
+                action: 'Open Plan',
+                data: planData,
+                status: 'Request sent'
+            });
+        });
+
+        // Plan Changed button
+        changePlanBtn.addEventListener('click', () => {
+            const planData = {
+                id: '42f87bb1-a749-4cd9-ac4b-5c851d0f3784',
+                version: 1,
+                EducationViewPlanUniqueId: Math.random().toString(),
+                changes: 'Some changes to the plan',
+                EventType: 'PLAN_CHANGED',
+                timestamp: Date.now()
+            };
+
+            window.electronAPI.send('plan-changed', planData);
+
+            displayResponse({
+                action: 'Plan Changed',
+                data: planData,
+                status: 'Request sent'
+            });
+        });
+
+        // Session Error button
+        sessionErrorBtn.addEventListener('click', () => {
+            const errorData = {
+                error: 'Test error message',
+                code: 'ERR_TEST',
+                EventType: 'SESSION_ERROR',
+                timestamp: Date.now()
+            };
+
+            window.electronAPI.send('session-error', errorData);
+
+            displayResponse({
+                action: 'Session Error',
+                data: errorData,
+                status: 'Error sent'
+            });
+        });
+
+        // Session Close button
+        sessionCloseBtn.addEventListener('click', () => {
+            const closeData = {
+                reason: 'User initiated close',
+                EventType: 'SESSION_CLOSED',
+                timestamp: Date.now()
+            };
+
+            window.electronAPI.send('session-closed', closeData);
+
+            displayResponse({
+                action: 'Session Closed',
+                data: closeData,
+                status: 'Close request sent'
+            });
+        });
+
+        // Clean up listeners and send session-closed event when the page is unloaded
+        window.addEventListener('beforeunload', () => {
+            const closeData = {
+                reason: 'Page unloaded',
+                EventType: 'SESSION_CLOSED',
+                timestamp: Date.now()
+            };
+
+            window.electronAPI.send('session-closed', closeData);
+        });
+    } else {
+        displayResponse({
+            error: 'Not running in Electron',
+            message: 'This page requires Electron to function properly.'
+        });
+    }
+</script>
+</body>
+</html>
+

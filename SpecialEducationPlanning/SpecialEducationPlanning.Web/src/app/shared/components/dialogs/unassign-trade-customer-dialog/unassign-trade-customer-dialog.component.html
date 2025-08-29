@@ -1,0 +1,31 @@
+<tdp-modal
+  class="tdp-unassign-trade-customer"
+  maxWidth="500px"
+  maxHeight="300px"
+  (onClosed)="onCancel()">
+
+  <div title>
+    {{ 'dialog.unassignBuilder.title' | translate }}
+  </div>
+
+  <div sub-title>
+    {{ messageString }}
+  </div>
+
+  <div actions class="tdp-confirmation-actions">
+    <tdp-button
+      class="tdp-unassign-trade-customer-button--cancel"
+      [size]="'large'"
+      [color]="'text-only'"
+      (onClick)="onCancel()">
+      {{ 'booleanResponse.no' | translate }}
+    </tdp-button>
+    <tdp-button 
+      class="tdp-unassign-trade-customer-button--confirm"
+      [size]="'large'"
+      [color]="'green'"
+      (onClick)="onConfirm()">
+      {{ 'booleanResponse.yes' | translate }}
+    </tdp-button>
+  </div>
+</tdp-modal>

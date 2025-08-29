@@ -1,0 +1,26 @@
+.tdp-date-range-container {
+    height: 100%;
+    align-items: center;
+
+    .tdp-input-container {
+        height: 30px;
+        margin-right: 0.5em;
+        position: relative;
+        max-height: 30px;
+        .tdp-input {
+            height: 24px;
+            padding: 1px 7px;
+            box-sizing: content-box;
+        }
+    }
+
+    .tdp-calendar {
+        position: absolute;
+        right: 11px;
+        top: 7px;
+    }
+
+    .clean-date-range {
+        cursor: pointer;
+    }
+}

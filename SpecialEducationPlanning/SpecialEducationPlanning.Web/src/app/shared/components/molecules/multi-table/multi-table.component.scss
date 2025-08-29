@@ -1,0 +1,84 @@
+@import "/src/assets/sass/abstracts/variables";
+
+.tdp-atom-label {
+  display: grid;
+  place-items: center;
+}
+
+.tdp-atom-tab-count {
+  display: table-cell;
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  font-size: 10px;
+  border-radius: 50%;
+  background-color: $tdp-atom-tabs-count-background;
+  margin-left: 8px;
+  color: $white;
+  line-height: 20px;
+}
+
+.mat-mdc-tab-group.mat-primary .mat-ink-bar,
+.mat-mdc-tab-nav-bar.mat-primary .mat-ink-bar {
+  height: 4px;
+  background-color: $tdp-atom-tabs-selected-tab-ink-bar;
+}
+
+.mat-mdc-tab,
+.mat-mdc-tab:not(.mat-mdc-tab-disabled) {
+  &.mdc-tab {
+    //margin-bottom: 8px;
+    border-radius: 7px;
+    height: 42px;
+    opacity: 1;
+    min-width: 195px;
+
+    &:hover {
+      background-color: $tdp-atom-tabs-label-background;
+      //border: 1px solid $tdp-atom-tabs-label-border;
+    }
+
+    .mdc-tab__text-label {
+      font-weight: 700;
+      color: $tdp-atom-tabs-count-background;
+      letter-spacing: normal;
+    }
+
+    &.mdc-tab--active {
+      .mdc-tab__text-label {
+        color: $navy;
+      }
+    }
+  }
+
+  .mdc-tab-indicator__content--underline {
+    border-top-width: 4px;
+    border-color: #28343d;
+  }
+}
+
+.mdc-tab.mdc-tab--active .tdp-atom-tab-count {
+  background-color: $error-color;
+}
+
+.mat-mdc-tab-header {
+  border-bottom: 0;
+  margin-bottom: 3rem;
+
+  .mat-mdc-tab-labels {
+    display: inline-flex;
+    border-bottom: 1px solid $keyline-grey;
+  }
+}
+
+tdp-multi-table .tdp-actions-link {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+tdp-multi-table .tdp-actions-link:hover {
+  text-decoration: none;
+}
