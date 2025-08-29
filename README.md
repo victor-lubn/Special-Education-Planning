@@ -1,6 +1,8 @@
 # AI for special Education Planning (AIEP) ✨  
 _Public knowledge and special education expertise combined with AI to design effective, tailored learning paths for every child._
 
+🌐 **Website:** [https://www.aieduflow.com/)
+
 <p align="center">
   <img alt="AIEP banner" src="https://img.shields.io/badge/AIEP-IEP%20Assistant-6C63FF?style=for-the-badge">&nbsp;
   <img alt="Build" src="https://img.shields.io/badge/build-passing-brightgreen?style=for-the-badge">&nbsp;
