@@ -1,0 +1,15 @@
+<h3>Grades</h3>
+<table>
+  <thead>
+    <tr>
+      <th>Course</th>
+      <th>Grade</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let grade of grades">
+      <td>{{ grade.course }}</td>
+      <td>{{ grade.score }}%</td>
+    </tr>
+  </tbody>
+</table>

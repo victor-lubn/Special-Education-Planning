@@ -1,0 +1,6 @@
+<h3>Assignments</h3>
+<ul>
+  <li *ngFor="let assignment of assignments">
+    <strong>{{ assignment.title }}</strong> - Due: {{ assignment.dueDate | date }}
+  </li>
+</ul>

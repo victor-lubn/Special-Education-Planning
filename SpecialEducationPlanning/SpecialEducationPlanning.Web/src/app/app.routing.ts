@@ -22,7 +22,8 @@ const routes: Routes = [
         loadChildren: () => import('./pages/support/support.module').then(m => m.SupportModule),
         canActivate: [PermissionGuard],
         data: { permission: ['Structure_Management', 'User_Management']}
-      }
+      },
+      { path: 'parent-portal', loadChildren: () => import('./pages/parent-portal/parent-portal.module').then(m => m.ParentPortalModule) }
     ]
   },
   { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },
