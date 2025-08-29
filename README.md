@@ -289,20 +289,12 @@ npm run dev
 
 ---
 
-## 🖼️ Screens & Charts
-- 📊 Drafting time reduction  
-- 📈 Educator acceptance rates  
-- 📌 Goal progress dashboards  
-- 🗂️ Accessibility-first UI previews  
-
----
-
 ## 🗺️ Roadmap
 - [x] Core recommender system  
 - [x] Content library integration  
-- [ ] Parent portal (Q4 2025)  
-- [ ] Multilingual support (Q1 2026)  
-- [ ] SIS vendor integrations  
+- [x] Parent portal (Q4 2025)  
+- [x] Multilingual support (Q4 2025)  
+- [x] SIS vendor integrations  
 
 ---
 
