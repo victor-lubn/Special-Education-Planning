@@ -1,0 +1,13 @@
+
+<div *ngIf="teacher">
+  <h2>{{ teacher.firstName }} {{ teacher.lastName }}</h2>
+  <p>Email: {{ teacher.email }}</p>
+  <p>Phone: {{ teacher.phoneNumber }}</p>
+  <p>Date of Birth: {{ teacher.dateOfBirth | date }}</p>
+  <p>Gender: {{ teacher.gender }}</p>
+  <div *ngIf="teacher.address">
+    <h4>Address</h4>
+    <p>{{ teacher.address.street }}, {{ teacher.address.city }}, {{ teacher.address.state }} {{ teacher.address.zipCode }}</p>
+  </div>
+  <a routerLink="/teacher" class="btn btn-secondary">Back to List</a>
+</div>
