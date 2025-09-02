@@ -14,6 +14,7 @@ namespace SpecialEducationPlanning.Domain.Teacher
         public string Gender { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
+        public string Qualifications { get; set; }
         public TeacherAddress Address { get; set; }
         public ICollection<TeacherCertification> Certifications { get; set; }
         public ICollection<TeacherAvailability> Availabilities { get; set; }

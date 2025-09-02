@@ -24,6 +24,7 @@ export class TeacherAddComponent {
       phoneNumber: [''],
       dateOfBirth: [''],
       gender: [''],
+      qualifications: [''],
       address: this.fb.group({
         street: [''],
         city: [''],

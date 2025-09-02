@@ -27,6 +27,7 @@ export class TeacherEditComponent implements OnInit {
       phoneNumber: [''],
       dateOfBirth: [''],
       gender: [''],
+      qualifications: [''],
       address: this.fb.group({
         street: [''],
         city: [''],

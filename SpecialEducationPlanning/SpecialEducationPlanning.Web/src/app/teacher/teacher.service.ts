@@ -30,4 +30,8 @@ export class TeacherService {
   deleteTeacher(id: number): Observable<any> {
     return this.http.delete<any>(`${this.apiUrl}/${id}`);
   }
+
+  getTeacherAnalytics(teacherId: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${teacherId}/analytics`);
+  }
 }

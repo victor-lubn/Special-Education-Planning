@@ -3,6 +3,7 @@ using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using SpecialEducationPlanning.Api.DtoModel.Teacher;
 using SpecialEducationPlanning.Business.IService;
+using SpecialEducationPlanning.Business.IService.Teacher.Analytics;
 using SpecialEducationPlanning.Data;
 using SpecialEducationPlanning.Domain.Teacher;
 using System.Collections.Generic;
@@ -14,11 +15,13 @@ namespace SpecialEducationPlanning.Business.Service
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
+        private readonly ITeacherAnalyticsService _analyticsService;
 
-        public TeacherService(ApplicationDbContext context, IMapper mapper)
+        public TeacherService(ApplicationDbContext context, IMapper mapper, ITeacherAnalyticsService analyticsService)
         {
             _context = context;
             _mapper = mapper;
+            _analyticsService = analyticsService;
         }
 
         public async Task<IEnumerable<TeacherDto>> GetTeachersAsync()
@@ -38,6 +41,7 @@ namespace SpecialEducationPlanning.Business.Service
             var teacher = _mapper.Map<Teacher>(createTeacherDto);
             _context.Teachers.Add(teacher);
             await _context.SaveChangesAsync();
+            await _analyticsService.UpdateTeacherAnalyticsAsync(teacher.Id);
             return _mapper.Map<TeacherDto>(teacher);
         }
 
@@ -52,6 +56,7 @@ namespace SpecialEducationPlanning.Business.Service
             _mapper.Map(updateTeacherDto, teacher);
             _context.Entry(teacher).State = EntityState.Modified;
             await _context.SaveChangesAsync();
+            await _analyticsService.UpdateTeacherAnalyticsAsync(teacher.Id);
             return true;
         }
 

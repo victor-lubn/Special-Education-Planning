@@ -1,0 +1,8 @@
+
+<div *ngIf="analytics">
+  <h3>Analytics for Teacher #{{ teacherId }}</h3>
+  <p>Students Count: {{ analytics.studentsCount }}</p>
+  <p>Average Student Performance: {{ analytics.averageStudentPerformance | number:'1.2-2' }}</p>
+  <p>Interventions Count: {{ analytics.interventionsCount }}</p>
+  <a [routerLink]="['/teacher/details', teacherId]" class="btn btn-secondary">Back to Details</a>
+</div>

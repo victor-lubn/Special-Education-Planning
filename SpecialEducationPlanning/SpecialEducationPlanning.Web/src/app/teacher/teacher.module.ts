@@ -7,13 +7,15 @@ import { TeacherDetailsComponent } from './teacher-details/teacher-details.compo
 import { TeacherAddComponent } from './teacher-add/teacher-add.component';
 import { TeacherEditComponent } from './teacher-edit/teacher-edit.component';
 import { TeacherRoutingModule } from './teacher-routing.module';
+import { TeacherAnalyticsComponent } from './teacher-analytics/teacher-analytics.component';
 
 @NgModule({
   declarations: [
     TeacherListComponent,
     TeacherDetailsComponent,
     TeacherAddComponent,
-    TeacherEditComponent
+    TeacherEditComponent,
+    TeacherAnalyticsComponent
   ],
   imports: [
     CommonModule,

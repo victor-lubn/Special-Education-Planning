@@ -9,5 +9,6 @@
     <h4>Address</h4>
     <p>{{ teacher.address.street }}, {{ teacher.address.city }}, {{ teacher.address.state }} {{ teacher.address.zipCode }}</p>
   </div>
-  <a routerLink="/teacher" class="btn btn-secondary">Back to List</a>
+  <a [routerLink]="['/teacher/analytics', teacher.id]" class="btn btn-info">View Analytics</a>
+  <a routerLink="/teacher" class="btn btn-secondary ml-1">Back to List</a>
 </div>

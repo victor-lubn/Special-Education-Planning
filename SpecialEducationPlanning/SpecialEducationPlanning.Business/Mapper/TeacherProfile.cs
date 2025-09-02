@@ -1,7 +1,8 @@
 
-using AutoMapper;
 using SpecialEducationPlanning.Api.DtoModel.Teacher;
+using SpecialEducationPlanning.Api.DtoModel.Teacher.Analytics;
 using SpecialEducationPlanning.Domain.Teacher;
+using SpecialEducationPlanning.Domain.Teacher.Analytics;
 
 namespace SpecialEducationPlanning.Business.Mapper
 {
@@ -16,6 +17,7 @@ namespace SpecialEducationPlanning.Business.Mapper
             CreateMap<TeacherSpecialization, TeacherSpecializationDto>().ReverseMap();
             CreateMap<CreateTeacherDto, Teacher>();
             CreateMap<UpdateTeacherDto, Teacher>();
+            CreateMap<TeacherAnalytics, TeacherAnalyticsDto>().ReverseMap();
         }
     }
 }
