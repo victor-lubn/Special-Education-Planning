@@ -18,5 +18,6 @@ namespace SpecialEducationPlanning.Api.DtoModel.Teacher
         public ICollection<TeacherCertificationDto> Certifications { get; set; }
         public ICollection<TeacherAvailabilityDto> Availabilities { get; set; }
         public ICollection<TeacherSpecializationDto> Specializations { get; set; }
+        public ICollection<TeacherOfficeHourDto> OfficeHours { get; set; }
     }
 }

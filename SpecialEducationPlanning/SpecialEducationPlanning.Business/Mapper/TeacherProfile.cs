@@ -18,6 +18,7 @@ namespace SpecialEducationPlanning.Business.Mapper
             CreateMap<CreateTeacherDto, Teacher>();
             CreateMap<UpdateTeacherDto, Teacher>();
             CreateMap<TeacherAnalytics, TeacherAnalyticsDto>().ReverseMap();
+            CreateMap<TeacherOfficeHour, TeacherOfficeHourDto>().ReverseMap();
         }
     }
 }

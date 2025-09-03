@@ -19,5 +19,6 @@ namespace SpecialEducationPlanning.Domain.Teacher
         public ICollection<TeacherCertification> Certifications { get; set; }
         public ICollection<TeacherAvailability> Availabilities { get; set; }
         public ICollection<TeacherSpecialization> Specializations { get; set; }
+        public ICollection<TeacherOfficeHour> OfficeHours { get; set; }
     }
 }
